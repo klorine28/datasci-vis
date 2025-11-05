@@ -58,7 +58,11 @@ ipython_config.py
 # Project specific
 practicals/
 
-# Data files (uncomment if you want to ignore large data files)
+# Large data files
+musicoset_songfeatures/lyrics.csv
+musicoset_songfeatures/acoustic_features.csv
+
+# Data files (uncomment if you want to ignore all CSV files)
 # *.csv
 # *.parquet
 # *.h5
