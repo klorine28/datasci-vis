@@ -28,9 +28,6 @@ Main analysis notebook with:
 - Complete year-by-year rankings
 - Extreme examples (most/least complex songs)
 
-### `data_exploration.ipynb`
-Python-based exploratory analysis with word frequency visualizations.
-
 ### `data_exploration_R.ipynb`
 R-based exploratory analysis.
 
@@ -70,9 +67,15 @@ jupyter notebook
 ## Data Structure
 
 ```
-billboard_24years_lyrics_spotify.csv  # Main dataset
-musicoset_metadata/                    # Artist and song metadata
-musicoset_songfeatures/                # Additional features (large files excluded)
+data/
+├── billboard_24years_lyrics_spotify.csv  # Main dataset
+├── musicoset_metadata/                   # Artist and song metadata
+│   ├── artists.csv
+│   ├── songs.csv
+│   └── ReadMe.txt
+└── musicoset_songfeatures/               # Additional features
+    └── ReadMe.txt
+    # Note: Large files (lyrics.csv, acoustic_features.csv) excluded from git
 ```
 
 ## License
