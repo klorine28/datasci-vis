@@ -30,15 +30,18 @@ This project provides an exploratory overview of Billboard hit songs with a **ly
 
 ## Notebooks
 
-### `data_exploration_focused.ipynb`
+Located in the `exploration/` folder:
+
+### `exploration/data_exploration_focused.ipynb`
 Main analysis notebook with:
 - Word frequency and lexical metrics
+- Lexical density analysis
 - Chart position analysis (groups of 5 songs)
 - Temporal trends and statistical tests
 - Complete year-by-year rankings
 - Extreme examples (most/least complex songs)
 
-### `data_exploration_R.ipynb`
+### `exploration/data_exploration_R.ipynb`
 R-based exploratory analysis with:
 - Audio feature correlations and relationships
 - Audio features vs chart performance
