@@ -58,16 +58,30 @@ R-based exploratory analysis with:
 
 ## Setup
 
+### Python Environment (using UV)
+
+This project uses [UV](https://github.com/astral-sh/uv) for fast Python package management:
+
 ```bash
-# Create virtual environment
-python -m venv .venv
+# Create virtual environment with UV
+uv venv
+
+# Activate virtual environment
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 
 # Install dependencies
+uv pip install pandas numpy matplotlib seaborn jupyter
+```
+
+Alternatively, with standard pip:
+```bash
+python -m venv .venv
+source .venv/bin/activate
 pip install pandas numpy matplotlib seaborn jupyter
 ```
 
-For R notebooks:
+### R Notebooks
+
 ```r
 install.packages(c("tidyverse", "ggplot2", "tidytext", "gridExtra", "stringr"))
 ```
