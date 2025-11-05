@@ -59,8 +59,8 @@ ipython_config.py
 practicals/
 
 # Large data files
-musicoset_songfeatures/lyrics.csv
-musicoset_songfeatures/acoustic_features.csv
+data/musicoset_songfeatures/lyrics.csv
+data/musicoset_songfeatures/acoustic_features.csv
 
 # Data files (uncomment if you want to ignore all CSV files)
 # *.csv
