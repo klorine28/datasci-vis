@@ -1,22 +1,32 @@
 # Billboard Lyrics Analysis (2000-2023)
 
-Data science and visualization project analyzing Billboard Top 100 songs over 24 years, focusing on lyrical characteristics and musical features.
+Data science and visualization project analyzing Billboard Top 100 songs over 24 years, with a primary focus on lyrical characteristics and secondary exploration of musical features.
 
 ## Overview
 
-This project explores patterns in Billboard hit songs through:
-- Lexical diversity and complexity metrics
+This project provides an exploratory overview of Billboard hit songs with a **lyrical lean**, as lyrical analysis was the main area of interest. The analysis includes:
+- Lexical diversity and complexity metrics (density and diversity)
 - Word frequency analysis
 - Relationship between chart performance and lyrical characteristics
 - Temporal trends in lyrics complexity
 - Year-by-year rankings of lexical diversity
-- Audio features analysis (Spotify data)
+- Supplementary audio features analysis (Spotify data)
 
 ## Dataset
 
 - **Billboard Top 100 songs** (2000-2023): 3,397 songs
 - **Complete lyrics data**: 100% coverage
 - **Spotify audio features**: ~14% coverage (486 songs)
+
+### Data Sources
+
+1. **Musicoset Dataset** - [DSW 2019 Project](https://marianaossilva.github.io/DSW2019)
+   - Artist and song metadata
+   - Additional song features
+
+2. **Billboard Hot 100 (2000-2023) with Spotify Features** - [Kaggle Dataset](https://www.kaggle.com/datasets/suparnabiswas/billboard-hot-1002000-2023-data-with-features/code)
+   - Billboard chart data with rankings
+   - Lyrics and Spotify audio features
 
 ## Notebooks
 
@@ -29,7 +39,12 @@ Main analysis notebook with:
 - Extreme examples (most/least complex songs)
 
 ### `data_exploration_R.ipynb`
-R-based exploratory analysis.
+R-based exploratory analysis with:
+- Audio feature correlations and relationships
+- Audio features vs chart performance
+- Bigrams and phrase analysis
+- Energy-valence emotional quadrant analysis
+- Lexical diversity and repetition analysis
 
 ## Key Findings
 
@@ -78,9 +93,13 @@ data/
     # Note: Large files (lyrics.csv, acoustic_features.csv) excluded from git
 ```
 
+## Note on Analysis Focus
+
+This project emphasizes **lyrical analysis** as the primary area of investigation. The exploration provides an overview of Billboard hits with particular attention to vocabulary complexity, repetition patterns, and linguistic trends over time. Audio feature analysis is included as supplementary context.
+
 ## License
 
-Data sourced from publicly available Billboard charts and Spotify API.
+Data sourced from publicly available Billboard charts and Spotify API. See data sources section for attribution.
 
 ## Author
 
