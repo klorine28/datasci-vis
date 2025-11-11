@@ -114,6 +114,10 @@ data/
 
 This project emphasizes **lyrical analysis** as the primary area of investigation. The exploration provides an overview of Billboard hits with particular attention to vocabulary complexity, repetition patterns, and linguistic trends over time. Audio feature analysis is included as supplementary context.
 
+## Development Notes
+
+This project was primarily developed by Lorenzo Garduño. AI assistance (Claude Code) was used to help write and debug portions of the code, particularly for data wrangling and processing tasks. Some git commits were automated through Claude Code for convenience.
+
 ## License
 
 Data sourced from publicly available Billboard charts and Spotify API. See data sources section for attribution.
