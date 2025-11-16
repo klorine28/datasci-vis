@@ -20,25 +20,32 @@ This project provides an exploratory overview of Billboard hit songs with a **ly
 
 ### Data Cleaning & Quality
 
-The dataset underwent comprehensive cleaning to ensure analysis quality:
+R-based cleaning pipeline produces BigQuery-ready datasets:
 
-**Issues Addressed:**
-- **Standalone dash conversion**: Converted 3,148+ standalone "-" values (representing unknown/missing data) to proper NA values
-- **Lyrics data quality**: Identified and flagged 5 songs with suspiciously short lyrics (< 50 words) due to scraping errors
-- **Outlier detection**: Found 8 songs with extreme word counts (>3 standard deviations), including one with 10,498 words
-- **Data validation**: Verified all rankings (1-100), years (2000-2023), and lexical metrics are within valid ranges
+**Billboard Dataset:**
+- Converted multi-line lyrics to single-line format
+- Normalized whitespace and removed newlines
+- Preserved all 26 columns including Spotify features
+- Output: 3,398 lines (1 header + 3,397 songs)
 
-**Cleaning Process:**
-- Missing data visualization and temporal analysis
-- Text standardization (whitespace trimming)
-- Genre string parsing from list format
-- Statistical outlier flagging for manual review
-- Export of flagged records for quality control
+**MusicoSet Metadata:**
+- Converted standalone `-` and empty `[]` to proper NA values
+- Tab-separated format cleaned to standard CSV
+- Trimmed whitespace from all text fields
+- Artists: 11,518 records, Songs: 20,405 records
+
+**Missing Data:**
+- Spotify features: 85.7% missing (2,911/3,397 songs)
+- Artist genres: ~27% missing
+- Core data (lyrics, rankings, years): 100% complete
+
+**Notebooks:**
+- `wrangling and transformation/cleaning/billboard_cleaning.ipynb` - Billboard data cleaning
+- `wrangling and transformation/cleaning/musicoset_cleaning.ipynb` - MusicoSet metadata cleaning
+- `wrangling and transformation/cleaning/missing_data_analysis.ipynb` - Missing data visualization
 
 **Documentation:**
-- `cleaning/DATA_CLEANING_PROCESS.md` - Comprehensive cleaning documentation
-- `wrangling and transformation/data_cleaning.ipynb` - Cleaning notebook
-- `cleaning/flagged_records_for_review.csv` - 539 songs flagged for manual review
+- `wrangling and transformation/cleaning/BILLBOARD_CSV_CLEANING_DOCUMENTATION.md` - Complete cleaning methodology
 
 ### Data Sources
 
@@ -104,8 +111,10 @@ pip install pandas numpy matplotlib seaborn jupyter
 
 ### R Notebooks
 
+Required packages:
 ```r
-install.packages(c("tidyverse", "ggplot2", "tidytext", "gridExtra", "stringr"))
+install.packages(c("tidyverse", "readr", "stringr", "naniar", "visdat",
+                   "ggplot2", "tidytext", "gridExtra"))
 ```
 
 ## Usage
@@ -122,30 +131,30 @@ jupyter notebook
 
 ```
 data/
-├── cleaned/                              # 4 core cleaned datasets
-│   ├── billboard_master.csv             # Song-level data (3,397 songs)
-│   ├── song_artists.csv                 # Artist-level data (3,423 records)
-│   ├── temporal_trends.csv              # Year × genre aggregations (754 rows)
-│   └── genre_network.csv                # Genre co-occurrence (6,316 pairs)
-├── billboard_24years_lyrics_spotify.csv  # Source: Billboard data
-├── musicoset_metadata/                   # Source: Artist and song metadata
-│   ├── artists.csv
-│   ├── songs.csv
+├── cleaned/                                        # Cleaned datasets (BigQuery-ready)
+│   ├── billboard_24years_lyrics_spotify_bigquery.csv  # 3,397 songs, single-line format
+│   ├── musicoset_artists_cleaned.csv                  # 11,518 artists
+│   └── musicoset_songs_cleaned.csv                    # 20,405 songs
+├── billboard_24years_lyrics_spotify.csv            # Source: Billboard data (raw)
+├── musicoset_metadata/                             # Source: Artist and song metadata
+│   ├── artists.csv                                 # Tab-separated, raw
+│   ├── songs.csv                                   # Tab-separated, raw
 │   └── ReadMe.txt
-└── musicoset_songfeatures/               # Source: Additional features
+└── musicoset_songfeatures/                         # Source: Additional features
     ├── lyrics.csv
     ├── acoustic_features.csv
     └── ReadMe.txt
 
-cleaning/
-├── flagged_records_for_review.csv       # 539 songs flagged for quality issues
-└── DATA_CLEANING_PROCESS.md             # Detailed cleaning documentation
-
 wrangling and transformation/
-├── data_wrangling_sql.ipynb             # Data wrangling pipeline
-├── data_cleaning.ipynb                  # Data cleaning notebook
-├── DATA_WRANGLING_METHODOLOGY.md        # Wrangling methodology
-└── DATASET_SCHEMAS.md                   # Dataset schemas reference
+└── cleaning/                                       # R cleaning notebooks
+    ├── billboard_cleaning.ipynb                    # Billboard data cleaning
+    ├── musicoset_cleaning.ipynb                    # MusicoSet metadata cleaning
+    ├── missing_data_analysis.ipynb                 # Missing data visualization
+    └── BILLBOARD_CSV_CLEANING_DOCUMENTATION.md     # Cleaning methodology
+
+exploration/                                        # Analysis notebooks
+├── data_exploration_focused.ipynb                  # Main Python analysis
+└── data_exploration_R.ipynb                        # R-based exploration
 ```
 
 ## Note on Analysis Focus
