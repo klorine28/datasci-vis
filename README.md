@@ -85,31 +85,26 @@ R-based exploratory analysis with:
 - Decade-by-decade analysis reveals evolving patterns
 - Year-over-year rankings provide granular insights
 
+## Libraries & Dependencies
+
+### R Libraries
+
+| Library | Purpose | Covered in Practicals? |
+|---------|---------|----------------------|
+| **tidyverse** | Core data manipulation (dplyr, tidyr, purrr); modern R workflow | ✓ Yes |
+| **readr** | Fast CSV reading with proper type inference | ✓ Yes |
+| **stringr** | String manipulation; cleaning lyrics and text fields | ✓ Yes (part of tidyverse) |
+| **ggplot2** | Advanced data visualization; publication-quality plots | ✓ Yes (part of tidyverse) |
+| **naniar** | Missing data analysis and summary statistics | ✗ **No** - Self-learned |
+| **visdat** | Missing data visualization; exploratory data quality checks | ✗ **No** - Self-learned |
+| **tidytext** | Text mining and NLP; word frequency, bigrams, lexical analysis | ✗ **No** - Self-learned |
+| **gridExtra** | Multi-panel plot layouts; arranging complex visualizations | ✗ **No** - Self-learned |
+
+**Note**: Libraries marked "Self-learned" represent techniques acquired independently beyond course materials, particularly for missing data analysis and text mining workflows. Some library choices (e.g., readr, gridExtra) also accommodate working in Jupyter notebooks rather than RStudio.
+
 ## Setup
 
-### Python Environment (using UV)
-
-This project uses [UV](https://github.com/astral-sh/uv) for fast Python package management:
-
-```bash
-# Create virtual environment with UV
-uv venv
-
-# Activate virtual environment
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-
-# Install dependencies
-uv pip install pandas numpy matplotlib seaborn jupyter
-```
-
-Alternatively, with standard pip:
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install pandas numpy matplotlib seaborn jupyter
-```
-
-### R Notebooks
+### R Environment
 
 Required packages:
 ```r
@@ -120,10 +115,7 @@ install.packages(c("tidyverse", "readr", "stringr", "naniar", "visdat",
 ## Usage
 
 ```bash
-# Activate virtual environment
-source .venv/bin/activate
-
-# Start Jupyter
+# Start Jupyter for R notebooks
 jupyter notebook
 ```
 
