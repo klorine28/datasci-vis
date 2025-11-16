@@ -18,6 +18,28 @@ This project provides an exploratory overview of Billboard hit songs with a **ly
 - **Complete lyrics data**: 100% coverage
 - **Spotify audio features**: ~14% coverage (486 songs)
 
+### Data Cleaning & Quality
+
+The dataset underwent comprehensive cleaning to ensure analysis quality:
+
+**Issues Addressed:**
+- **Standalone dash conversion**: Converted 3,148+ standalone "-" values (representing unknown/missing data) to proper NA values
+- **Lyrics data quality**: Identified and flagged 5 songs with suspiciously short lyrics (< 50 words) due to scraping errors
+- **Outlier detection**: Found 8 songs with extreme word counts (>3 standard deviations), including one with 10,498 words
+- **Data validation**: Verified all rankings (1-100), years (2000-2023), and lexical metrics are within valid ranges
+
+**Cleaning Process:**
+- Missing data visualization and temporal analysis
+- Text standardization (whitespace trimming)
+- Genre string parsing from list format
+- Statistical outlier flagging for manual review
+- Export of flagged records for quality control
+
+**Documentation:**
+- `cleaning/DATA_CLEANING_PROCESS.md` - Comprehensive cleaning documentation
+- `wrangling and transformation/data_cleaning.ipynb` - Cleaning notebook
+- `cleaning/flagged_records_for_review.csv` - 539 songs flagged for manual review
+
 ### Data Sources
 
 1. **Musicoset Dataset** - [DSW 2019 Project](https://marianaossilva.github.io/DSW2019)
@@ -100,14 +122,30 @@ jupyter notebook
 
 ```
 data/
-├── billboard_24years_lyrics_spotify.csv  # Main dataset
-├── musicoset_metadata/                   # Artist and song metadata
+├── cleaned/                              # 4 core cleaned datasets
+│   ├── billboard_master.csv             # Song-level data (3,397 songs)
+│   ├── song_artists.csv                 # Artist-level data (3,423 records)
+│   ├── temporal_trends.csv              # Year × genre aggregations (754 rows)
+│   └── genre_network.csv                # Genre co-occurrence (6,316 pairs)
+├── billboard_24years_lyrics_spotify.csv  # Source: Billboard data
+├── musicoset_metadata/                   # Source: Artist and song metadata
 │   ├── artists.csv
 │   ├── songs.csv
 │   └── ReadMe.txt
-└── musicoset_songfeatures/               # Additional features
+└── musicoset_songfeatures/               # Source: Additional features
+    ├── lyrics.csv
+    ├── acoustic_features.csv
     └── ReadMe.txt
-    # Note: Large files (lyrics.csv, acoustic_features.csv) excluded from git
+
+cleaning/
+├── flagged_records_for_review.csv       # 539 songs flagged for quality issues
+└── DATA_CLEANING_PROCESS.md             # Detailed cleaning documentation
+
+wrangling and transformation/
+├── data_wrangling_sql.ipynb             # Data wrangling pipeline
+├── data_cleaning.ipynb                  # Data cleaning notebook
+├── DATA_WRANGLING_METHODOLOGY.md        # Wrangling methodology
+└── DATASET_SCHEMAS.md                   # Dataset schemas reference
 ```
 
 ## Note on Analysis Focus
