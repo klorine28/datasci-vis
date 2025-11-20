@@ -73,3 +73,4 @@ data/musicoset_songfeatures/acoustic_features.csv
 # Environment variables
 .env
 .env.local
+data/cleaned/musicoset_lyrics_cleaned.csv
