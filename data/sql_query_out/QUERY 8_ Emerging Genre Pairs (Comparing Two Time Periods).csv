@@ -1,0 +1,715 @@
+genre_1,genre_2,early_count,late_count,absolute_growth,percent_growth
+pop,post-teen pop,42,76,34,80.95
+pop,uk pop,11,42,31,281.82
+dance pop,uk pop,11,36,25,227.27
+pop,tropical house,3,28,25,833.33
+post-teen pop,uk pop,9,32,23,255.56
+dance pop,post-teen pop,47,69,22,46.81
+pop,trap music,14,34,20,142.86
+pop,rap,30,50,20,66.67
+dance pop,tropical house,3,23,20,666.67
+electropop,pop,5,22,17,340
+dance pop,pop,100,115,15,15
+post-teen pop,tropical house,0,15,15,
+tropical house,uk pop,2,15,13,650
+rap,trap music,55,68,13,23.64
+edm,pop,6,19,13,216.67
+edm,tropical house,1,13,12,1200
+electropop,tropical house,0,11,11,
+dance pop,electropop,7,18,11,157.14
+country road,modern country rock,16,26,10,62.5
+contemporary country,modern country rock,16,26,10,62.5
+atl hip hop,pop,5,14,9,180
+indie poptimism,pop,0,9,9,
+metropopolis,pop,0,9,9,
+country,modern country rock,16,25,9,56.25
+pop,southern hip hop,21,30,9,42.86
+dance pop,edm,5,13,8,160
+rap,underground hip hop,0,8,8,
+edm,post-teen pop,0,7,7,
+dance pop,metropopolis,0,7,7,
+trap music,underground hip hop,0,7,7,
+electropop,metropopolis,0,7,7,
+electropop,uk pop,1,8,7,700
+electropop,post-teen pop,5,12,7,140
+dance pop,indie poptimism,0,7,7,
+southern hip hop,underground hip hop,0,6,6,
+contemporary country,country pop,3,9,6,200
+modern rock,pop,4,10,6,150
+hip hop,underground hip hop,0,6,6,
+pop rap,underground hip hop,0,5,5,
+electro house,pop,2,7,5,250
+atl hip hop,rap,17,22,5,29.41
+pop,viral pop,6,11,5,83.33
+indie poptimism,post-teen pop,0,5,5,
+electropop,indie poptimism,0,5,5,
+dance pop,talent show,2,7,5,250
+metropopolis,tropical house,0,5,5,
+edm,electro house,2,7,5,250
+indie poptimism,uk pop,0,5,5,
+trap music,vapor trap,0,5,5,
+pop,talent show,2,7,5,250
+post-teen pop,talent show,2,7,5,250
+southern hip hop,viral trap,0,4,4,
+alternative r&b,rap,0,4,4,
+uk pop,viral pop,1,5,4,400
+edm,uk pop,0,4,4,
+country,country pop,3,7,4,133.33
+metropopolis,post-teen pop,0,4,4,
+rap,viral trap,0,4,4,
+pop rap,viral trap,0,4,4,
+atl trap,trap music,0,4,4,
+dance pop,electro house,1,5,4,400
+trap music,viral trap,0,4,4,
+atl trap,rap,0,4,4,
+modern alternative rock,modern rock,0,4,4,
+rap,vapor trap,0,4,4,
+alternative r&b,pop,0,4,4,
+indie poptimism,tropical house,0,3,3,
+latin,reggaeton,1,4,3,300
+talent show,uk pop,2,5,3,150
+electro house,tropical house,1,4,3,300
+country pop,modern country rock,2,5,3,150
+electropop,swedish electropop,0,3,3,
+dance pop,swedish electropop,0,3,3,
+boy band,post-teen pop,1,4,3,300
+pop,reggaeton,1,4,3,300
+metropopolis,uk pop,0,3,3,
+country pop,country road,3,6,3,100
+edm,electropop,0,3,3,
+folk-pop,stomp and holler,0,3,3,
+alternative r&b,pop rap,0,3,3,
+pop,swedish electropop,0,3,3,
+house,tropical house,1,4,3,300
+big room,edm,1,4,3,300
+indie folk,modern rock,0,3,3,
+folk-pop,modern rock,0,3,3,
+canadian contemporary r&b,pop,0,3,3,
+metropopolis,modern rock,0,3,3,
+big room,pop,1,4,3,300
+pop,pop rap,63,66,3,4.76
+atl hip hop,atl trap,0,3,3,
+modern rock,stomp and holler,0,3,3,
+tropical house,uk dance,0,3,3,
+post-teen pop,viral pop,7,10,3,42.86
+hip hop,viral trap,0,3,3,
+complextro,edm,0,2,2,
+latin,pop,5,7,2,40
+gangster rap,underground hip hop,0,2,2,
+cali rap,trap music,1,3,2,200
+modern alternative rock,stomp pop,0,2,2,
+talent show,tropical house,0,2,2,
+indie folk,pop,0,2,2,
+electropop,swedish pop,0,2,2,
+folk-pop,indie folk,0,2,2,
+boy band,pop,2,4,2,100
+edm,uk dance,1,3,2,200
+latin hip hop,reggaeton,1,3,2,200
+moombahton,pop,0,2,2,
+post-teen pop,swedish pop,0,2,2,
+house,uk dance,1,3,2,200
+canadian hip hop,southern hip hop,0,2,2,
+electro house,post-teen pop,0,2,2,
+pop,swedish pop,0,2,2,
+pop,uk dance,1,3,2,200
+candy pop,metropopolis,0,2,2,
+dance rock,new wave,0,2,2,
+cali rap,hip hop,1,3,2,200
+memphis hip hop,rap,1,3,2,200
+swedish pop,tropical house,0,2,2,
+metropopolis,swedish electropop,0,2,2,
+metropopolis,swedish synthpop,0,2,2,
+canadian hip hop,pop,0,2,2,
+southern hip hop,toronto rap,0,2,2,
+danish pop,pop,0,2,2,
+cali rap,pop rap,1,3,2,200
+toronto rap,trap music,0,2,2,
+canadian hip hop,rap,1,3,2,200
+dance rock,new wave pop,0,2,2,
+pop,swedish synthpop,0,2,2,
+alternative r&b,hip hop,1,3,2,200
+cali rap,rap,1,3,2,200
+atl hip hop,underground hip hop,0,2,2,
+gangster rap,viral trap,0,2,2,
+electropop,swedish synthpop,0,2,2,
+dance pop,swedish synthpop,0,2,2,
+modern rock,stomp pop,0,2,2,
+talent show,viral pop,0,2,2,
+latin hip hop,tropical,1,3,2,200
+alternative r&b,atl hip hop,0,2,2,
+rap,toronto rap,1,3,2,200
+southern hip hop,vapor trap,0,2,2,
+dance pop,viral pop,7,9,2,28.57
+pop,scandipop,0,2,2,
+atl trap,southern hip hop,0,2,2,
+dance pop,swedish pop,0,2,2,
+canadian hip hop,trap music,0,2,2,
+swedish electropop,swedish synthpop,0,2,2,
+underground hip hop,vapor trap,0,2,2,
+edm,moombahton,0,2,2,
+electropop,nz pop,0,2,2,
+indie folk,stomp and holler,0,2,2,
+atl hip hop,trap music,18,20,2,11.11
+new wave,new wave pop,0,2,2,
+emo rap,miami hip hop,0,2,2,
+pop,toronto rap,0,2,2,
+latin hip hop,pop,1,3,2,200
+canadian hip hop,pop rap,1,3,2,200
+canadian hip hop,toronto rap,1,3,2,200
+post-teen pop,swedish electropop,0,2,2,
+modern alternative rock,pop,0,2,2,
+atl trap,pop rap,0,2,2,
+reggaeton,tropical,1,3,2,200
+atl trap,gangster rap,0,2,2,
+cali rap,southern hip hop,1,3,2,200
+tropical house,uk contemporary r&b,0,2,2,
+indie poptimism,pop rock,0,2,2,
+pop,underground hip hop,0,2,2,
+pop,tropical,3,5,2,66.67
+swedish electropop,tropical house,0,2,2,
+cali rap,pop,0,2,2,
+latin,latin hip hop,1,3,2,200
+reggaeton,trap latino,0,2,2,
+swedish electropop,swedish pop,0,2,2,
+uk contemporary r&b,uk pop,0,2,2,
+australian pop,viral pop,0,2,2,
+indie poptimism,modern rock,0,2,2,
+edm,metropopolis,0,1,1,
+tropical house,uk funky,0,1,1,
+album rock,art rock,0,1,1,
+pop,portland hip hop,0,1,1,
+country road,neo mellow,1,2,1,100
+folk-pop,pop,3,4,1,33.33
+pop,west coast trap,0,1,1,
+easy listening,lounge,0,1,1,
+brill building pop,nashville sound,0,1,1,
+art rock,classic rock,0,1,1,
+art pop,dance pop,0,1,1,
+german techno,tropical house,0,1,1,
+conscious hip hop,nc hip hop,0,1,1,
+metropopolis,urban contemporary,0,1,1,
+brostep,vapor twitch,0,1,1,
+cubaton,tropical,0,1,1,
+gauze pop,indietronica,0,1,1,
+metropopolis,r&b,0,1,1,
+dance pop,west coast trap,0,1,1,
+afropop,nigerian pop,0,1,1,
+europop,motown,0,1,1,
+art rock,permanent wave,0,1,1,
+art rock,singer-songwriter,0,1,1,
+candy pop,tropical house,0,1,1,
+german techno,pop,0,1,1,
+pop rap,portland hip hop,0,1,1,
+indie pop,pop rock,1,2,1,100
+disco,europop,0,1,1,
+dance rock,soft rock,0,1,1,
+electro,electronic,0,1,1,
+art rock,rock,0,1,1,
+chicago rap,underground hip hop,0,1,1,
+art rock,lilith,0,1,1,
+dance pop,etherpop,0,1,1,
+electronic trap,vapor twitch,0,1,1,
+latin hip hop,latin pop,0,1,1,
+alternative dance,metropopolis,0,1,1,
+brill building pop,rockabilly,0,1,1,
+new wave,piano rock,0,1,1,
+nigerian hip hop,nigerian pop,0,1,1,
+dance pop,dance rock,0,1,1,
+dance rock,permanent wave,0,1,1,
+chicago drill,pop rap,0,1,1,
+hip hop,portland hip hop,0,1,1,
+bmore,pop,0,1,1,
+atl trap,vapor trap,0,1,1,
+art rock,folk rock,0,1,1,
+azonto,nigerian hip hop,0,1,1,
+glam rock,piano rock,0,1,1,
+post-teen pop,uk funky,0,1,1,
+uk funky,uk pop,0,1,1,
+la indie,rock,0,1,1,
+new jersey rap,rap,0,1,1,
+electro,old school hip hop,0,1,1,
+australian hip hop,dance pop,0,1,1,
+modern alternative rock,modern blues rock,0,1,1,
+brill building pop,vocal jazz,0,1,1,
+scandipop,swedish electropop,0,1,1,
+ninja,pop,0,1,1,
+electro house,moombahton,0,1,1,
+dance pop,uk funky,0,1,1,
+indie pop,stomp and holler,0,1,1,
+disco,new romantic,0,1,1,
+europop,new romantic,0,1,1,
+dance rock,lilith,0,1,1,
+german techno,post-teen pop,0,1,1,
+contemporary country,deep talent show,0,1,1,
+chicago rap,rap,5,6,1,20
+indie poptimism,indietronica,0,1,1,
+stomp pop,uk pop,0,1,1,
+adult standards,american folk revival,0,1,1,
+canadian pop,indie poptimism,0,1,1,
+complextro,electro,0,1,1,
+country,modern uplift,0,1,1,
+dmv rap,hip hop,0,1,1,
+new jersey rap,southern hip hop,0,1,1,
+electropop,escape room,0,1,1,
+alternative r&b,underground hip hop,0,1,1,
+permanent wave,piano rock,0,1,1,
+red dirt,texas country,0,1,1,
+big room,tropical house,1,2,1,100
+mellow gold,rock,1,2,1,100
+chicago drill,drill,0,1,1,
+etherpop,post-teen pop,0,1,1,
+deep groove house,disco house,0,1,1,
+downtempo,pop,0,1,1,
+cubaton,dance pop,0,1,1,
+electronic,filter house,0,1,1,
+australian hip hop,hip pop,0,1,1,
+easy listening,nashville sound,0,1,1,
+art pop,uk pop,0,1,1,
+complextro,dance pop,0,1,1,
+complextro,tropical house,0,1,1,
+k-hop,k-pop,0,1,1,
+chicago rap,southern hip hop,3,4,1,33.33
+electropop,modern rock,0,1,1,
+folk-pop,uk americana,0,1,1,
+la indie,modern rock,0,1,1,
+escape room,neo soul,0,1,1,
+florida rap,hip hop,0,1,1,
+post-teen pop,uk dance,0,1,1,
+pop,pop edm,0,1,1,
+dance pop,scandipop,0,1,1,
+southern hip hop,west coast trap,0,1,1,
+latin viral pop,rap latina,0,1,1,
+australian electropop,downtempo,0,1,1,
+australian hip hop,post-teen pop,0,1,1,
+gangster rap,old school hip hop,0,1,1,
+australian dance,downtempo,0,1,1,
+art pop,piano rock,0,1,1,
+electro,gangster rap,0,1,1,
+nashville sound,rockabilly,0,1,1,
+new wave pop,piano rock,0,1,1,
+electropop,viral pop,0,1,1,
+country road,pop,0,1,1,
+edm,scandipop,0,1,1,
+memphis hip hop,southern hip hop,2,3,1,50
+dmv rap,pop rap,0,1,1,
+album rock,folk rock,0,1,1,
+modern country rock,outlaw country,1,2,1,100
+australian pop,neo mellow,1,2,1,100
+azonto,nigerian pop,0,1,1,
+cubaton,latin,0,1,1,
+conscious hip hop,dmv rap,0,1,1,
+atl hip hop,escape room,0,1,1,
+atl trap,pop,0,1,1,
+bergen indie,electropop,0,1,1,
+drill,southern hip hop,0,1,1,
+australian dance,australian electropop,0,1,1,
+alternative r&b,southern hip hop,0,1,1,
+dance pop,hyphy,0,1,1,
+stomp and holler,uk americana,0,1,1,
+lgbtq+ hip hop,pop,0,1,1,
+complextro,electro house,0,1,1,
+memphis hip hop,trap music,2,3,1,50
+deep groove house,edm,0,1,1,
+dance pop,moombahton,0,1,1,
+alternative dance,modern rock,0,1,1,
+indie r&b,pop rap,0,1,1,
+baroque pop,permanent wave,0,1,1,
+bmore,ninja,0,1,1,
+country road,modern uplift,0,1,1,
+r&b,uk contemporary r&b,0,1,1,
+hip house,rap,0,1,1,
+contemporary country,country road,37,38,1,2.7
+modern blues rock,south african rock,0,1,1,
+australian indie,pop,0,1,1,
+boy band,uk pop,0,1,1,
+indie folk,metropopolis,0,1,1,
+dmv rap,rap,0,1,1,
+baroque pop,singer-songwriter,0,1,1,
+deep pop r&b,metropopolis,0,1,1,
+moombahton,tropical house,0,1,1,
+dance pop,disco,0,1,1,
+adult standards,brill building pop,0,1,1,
+brill building pop,lounge,0,1,1,
+rap,trap soul,0,1,1,
+indietronica,nz pop,0,1,1,
+edm,swedish electropop,0,1,1,
+candy pop,electropop,1,2,1,100
+glam rock,rock,0,1,1,
+big room,progressive house,1,2,1,100
+dirty south rap,memphis hip hop,2,3,1,50
+memphis hip hop,pop rap,2,3,1,50
+bmore,moombahton,0,1,1,
+candy pop,swedish electropop,0,1,1,
+canadian contemporary r&b,dance pop,0,1,1,
+drill,trap music,0,1,1,
+modern country rock,pop,0,1,1,
+etherpop,indie poptimism,0,1,1,
+hip hop,hip house,0,1,1,
+australian dance,pop,1,2,1,100
+brostep,edm,0,1,1,
+dance pop,k-pop,0,1,1,
+indietronica,uk alternative pop,0,1,1,
+canadian hip hop,hip hop,1,2,1,100
+dance pop,reggaeton,0,1,1,
+disco,soft rock,0,1,1,
+indietronica,tropical house,0,1,1,
+new wave,singer-songwriter,0,1,1,
+bergen indie,folk-pop,0,1,1,
+deep pop r&b,electropop,0,1,1,
+electropop,etherpop,0,1,1,
+rap,west coast trap,0,1,1,
+modern country rock,modern uplift,0,1,1,
+europop,new wave,0,1,1,
+adult standards,nashville sound,0,1,1,
+easy listening,vocal jazz,0,1,1,
+canadian contemporary r&b,canadian pop,0,1,1,
+modern country rock,red dirt,0,1,1,
+etherpop,pop,0,1,1,
+hyphy,west coast trap,0,1,1,
+candy pop,swedish synthpop,0,1,1,
+pop,stomp and holler,0,1,1,
+modern rock,uk americana,0,1,1,
+alternative r&b,viral pop,0,1,1,
+broadway,hollywood,0,1,1,
+danish pop,electropop,0,1,1,
+brill building pop,easy listening,0,1,1,
+swedish synthpop,tropical house,0,1,1,
+electro,hardcore hip hop,0,1,1,
+bass trap,vapor twitch,0,1,1,
+classic rock,soft rock,0,1,1,
+art pop,permanent wave,0,1,1,
+hollywood,show tunes,0,1,1,
+pop,progressive house,2,3,1,50
+hip hop,toronto rap,1,2,1,100
+brostep,electro house,0,1,1,
+disco house,tropical house,0,1,1,
+alternative r&b,trap soul,0,1,1,
+baroque pop,new wave pop,0,1,1,
+east coast hip hop,electro,0,1,1,
+metropopolis,stomp and holler,0,1,1,
+memphis hip hop,pop,0,1,1,
+pop,trap soul,0,1,1,
+art rock,piano rock,0,1,1,
+electro house,progressive electro house,1,2,1,100
+canadian pop,rap,1,2,1,100
+modern blues rock,modern rock,0,1,1,
+rap conscient,trap music,0,1,1,
+indie folk,indie pop,0,1,1,
+new wave pop,soft rock,0,1,1,
+outlaw country,red dirt,0,1,1,
+atl hip hop,hip hop,13,14,1,7.69
+pittsburgh rap,rap,1,2,1,100
+conscious hip hop,west coast rap,0,1,1,
+nz pop,pop,0,1,1,
+edm,house,1,2,1,100
+disco,new wave,0,1,1,
+disco,new wave pop,0,1,1,
+easy listening,rockabilly,0,1,1,
+lounge,vocal jazz,0,1,1,
+alternative r&b,trap music,0,1,1,
+art rock,baroque pop,0,1,1,
+electropop,folk-pop,0,1,1,
+crunk,memphis hip hop,1,2,1,100
+disco house,house,0,1,1,
+modern rock,tropical house,0,1,1,
+scorecore,soundtrack,0,1,1,
+art rock,new wave,0,1,1,
+pop,progressive electro house,1,2,1,100
+electro house,electronic trap,0,1,1,
+danish pop,scandipop,0,1,1,
+dirty south rap,viral trap,0,1,1,
+new jersey rap,trap music,0,1,1,
+pop rap,uk contemporary r&b,0,1,1,
+electro,hip hop,0,1,1,
+gangster rap,hip house,0,1,1,
+rap latina,reggaeton,0,1,1,
+conscious hip hop,rap,4,5,1,25
+hyphy,pop rap,1,2,1,100
+cubaton,pop,0,1,1,
+broadway,show tunes,0,1,1,
+canadian contemporary r&b,post-teen pop,0,1,1,
+pop rap,toronto rap,2,3,1,50
+australian electropop,australian indie,0,1,1,
+australian electropop,pop,0,1,1,
+uk dance,uk funky,0,1,1,
+canadian pop,electropop,0,1,1,
+country road,post-teen pop,0,1,1,
+post-teen pop,swedish synthpop,0,1,1,
+indie folk,neo mellow,0,1,1,
+indie r&b,uk alternative pop,0,1,1,
+contemporary country,texas country,1,2,1,100
+electropop,indietronica,1,2,1,100
+colombian pop,pop,1,2,1,100
+indie poptimism,viral pop,0,1,1,
+cubaton,reggaeton,0,1,1,
+la indie,stomp pop,0,1,1,
+motown,soft rock,0,1,1,
+art rock,dance rock,0,1,1,
+electropop,talent show,0,1,1,
+bergen indie,nz pop,0,1,1,
+chicago drill,southern hip hop,0,1,1,
+nc hip hop,rap,0,1,1,
+disco house,uk dance,0,1,1,
+rap conscient,vapor trap,0,1,1,
+nz pop,uk pop,0,1,1,
+folk rock,rock,0,1,1,
+baroque pop,new wave,0,1,1,
+baroque pop,piano rock,0,1,1,
+canadian contemporary r&b,rap,0,1,1,
+hip hop,pop,30,31,1,3.33
+philly rap,trap music,1,2,1,100
+new romantic,new wave,0,1,1,
+europop,tropical house,0,1,1,
+country,pop,1,2,1,100
+art rock,soft rock,0,1,1,
+canadian pop,viral pop,0,1,1,
+metropopolis,swedish pop,0,1,1,
+mellow gold,piano rock,0,1,1,
+house,pop,2,3,1,50
+modern rock,south african rock,0,1,1,
+afro dancehall,azonto,0,1,1,
+alternative r&b,indie r&b,0,1,1,
+dance rock,singer-songwriter,0,1,1,
+dance pop,danish pop,0,1,1,
+scandipop,swedish pop,0,1,1,
+afro dancehall,nigerian pop,0,1,1,
+alternative r&b,lgbtq+ hip hop,0,1,1,
+art rock,new wave pop,0,1,1,
+irish singer-songwriter,pop,0,1,1,
+gangster rap,memphis hip hop,2,3,1,50
+bass trap,electro house,0,1,1,
+australian dance,australian indie,0,1,1,
+gauze pop,shiver pop,0,1,1,
+hip hop,vapor trap,0,1,1,
+edm,swedish pop,0,1,1,
+indie r&b,indietronica,0,1,1,
+pop,rap latina,0,1,1,
+edm,progressive house,2,3,1,50
+contemporary country,outlaw country,1,2,1,100
+country road,outlaw country,1,2,1,100
+k-pop,k-pop boy group,0,1,1,
+new romantic,new wave pop,0,1,1,
+alternative r&b,chicago rap,0,1,1,
+lgbtq+ hip hop,rap,0,1,1,
+art pop,singer-songwriter,0,1,1,
+folk-pop,indietronica,0,1,1,
+adult standards,vocal jazz,0,1,1,
+drill,pop rap,0,1,1,
+electro house,german techno,0,1,1,
+folk-pop,metropopolis,0,1,1,
+new jersey rap,pop,0,1,1,
+bass trap,brostep,0,1,1,
+miami hip hop,viral trap,0,1,1,
+afro dancehall,afropop,0,1,1,
+cubaton,latin pop,0,1,1,
+europop,soft rock,0,1,1,
+indie r&b,southern hip hop,0,1,1,
+dance rock,piano rock,0,1,1,
+hardcore hip hop,hip house,0,1,1,
+florida rap,rap,0,1,1,
+florida rap,southern hip hop,0,1,1,
+hyphy,rap,1,2,1,100
+electro house,uk pop,0,1,1,
+new romantic,soft rock,0,1,1,
+classic rock,mellow gold,0,1,1,
+country road,deep talent show,0,1,1,
+trap music,west coast trap,0,1,1,
+brostep,complextro,0,1,1,
+edm,electro,0,1,1,
+electropop,modern alternative rock,0,1,1,
+motown,new wave,0,1,1,
+adult standards,rockabilly,0,1,1,
+canadian contemporary r&b,uk pop,0,1,1,
+chicago rap,trap music,2,3,1,50
+indie poptimism,neo mellow,0,1,1,
+rock,stomp pop,0,1,1,
+dance pop,new romantic,0,1,1,
+house,indietronica,0,1,1,
+chicago rap,indie r&b,0,1,1,
+neo soul,underground hip hop,0,1,1,
+florida rap,pop rap,0,1,1,
+la indie,modern alternative rock,0,1,1,
+edm,german techno,0,1,1,
+modern country rock,post-teen pop,0,1,1,
+indietronica,modern rock,1,2,1,100
+baroque pop,lilith,0,1,1,
+art pop,metropopolis,0,1,1,
+candy pop,uk pop,0,1,1,
+complextro,german techno,0,1,1,
+electropop,scandipop,0,1,1,
+country road,texas country,1,2,1,100
+deep groove house,house,0,1,1,
+deep groove house,tropical house,0,1,1,
+atl trap,deep southern trap,0,1,1,
+chicago drill,trap music,0,1,1,
+folk-pop,irish singer-songwriter,0,1,1,
+alternative r&b,neo soul,1,2,1,100
+brostep,electronic trap,0,1,1,
+australian indie,downtempo,0,1,1,
+cubaton,latin hip hop,0,1,1,
+new wave,soft rock,0,1,1,
+dfw rap,pop,0,1,1,
+classic rock,folk rock,0,1,1,
+indie r&b,rap,0,1,1,
+art pop,electropop,0,1,1,
+piano rock,rock,0,1,1,
+modern country rock,texas country,1,2,1,100
+indie pop,modern rock,3,4,1,33.33
+hip hop,pittsburgh rap,1,2,1,100
+electro house,vapor twitch,0,1,1,
+brostep,progressive electro house,0,1,1,
+indietronica,pop rock,0,1,1,
+dance rock,motown,0,1,1,
+hip hop,indie pop rap,0,1,1,
+hyphy,pop,0,1,1,
+big room,progressive electro house,1,2,1,100
+afropop,azonto,0,1,1,
+boy band,talent show,0,1,1,
+dance rock,new romantic,0,1,1,
+dance pop,soft rock,0,1,1,
+canadian pop,uk pop,0,1,1,
+portland hip hop,rap,0,1,1,
+house,uk contemporary r&b,0,1,1,
+pop,viral trap,0,1,1,
+pop,stomp pop,0,1,1,
+modern rock,uk pop,0,1,1,
+electro,filter house,0,1,1,
+pop rap,vapor trap,0,1,1,
+deep pop r&b,underground hip hop,0,1,1,
+atl hip hop,viral trap,0,1,1,
+conscious hip hop,pop rap,4,5,1,25
+bass trap,electronic trap,0,1,1,
+pop,uk funky,0,1,1,
+nashville sound,vocal jazz,0,1,1,
+east coast hip hop,hip house,0,1,1,
+electro,new jack swing,0,1,1,
+dance rock,disco,0,1,1,
+australian hip hop,pop,0,1,1,
+hip hop,lgbtq+ hip hop,0,1,1,
+piano rock,singer-songwriter,0,1,1,
+complextro,post-teen pop,0,1,1,
+hip house,new jack swing,0,1,1,
+progressive house,tropical house,1,2,1,100
+brostep,electro,0,1,1,
+girl group,talent show,0,1,1,
+reggae fusion,virgin islands reggae,0,1,1,
+latin viral pop,reggaeton,0,1,1,
+motown,new wave pop,0,1,1,
+memphis hip hop,viral trap,0,1,1,
+baroque pop,dance rock,0,1,1,
+metropopolis,pop rap,0,1,1,
+neo soul,uk pop,0,1,1,
+contemporary country,post-teen pop,1,2,1,100
+country,post-teen pop,1,2,1,100
+uk dance,uk pop,0,1,1,
+australian hip hop,pop rap,0,1,1,
+chicago drill,rap,0,1,1,
+deep groove house,uk dance,0,1,1,
+electro house,electropop,0,1,1,
+new jersey rap,pop rap,0,1,1,
+post-teen pop,scandipop,0,1,1,
+florida rap,miami hip hop,0,1,1,
+latin pop,pop,3,4,1,33.33
+disco house,edm,0,1,1,
+afro dancehall,nigerian hip hop,0,1,1,
+dance pop,uk dance,0,1,1,
+motown,new romantic,0,1,1,
+dfw rap,rap,0,1,1,
+chicago rap,deep pop r&b,0,1,1,
+pop rap,trap soul,0,1,1,
+modern rock,shiver pop,0,1,1,
+dance rock,europop,0,1,1,
+art pop,new wave,0,1,1,
+dance pop,nz pop,0,1,1,
+edm,progressive electro house,1,2,1,100
+moombahton,ninja,0,1,1,
+pop,reggae fusion,0,1,1,
+electropop,house,0,1,1,
+album rock,mellow gold,0,1,1,
+rock,soft rock,0,1,1,
+alternative r&b,electropop,0,1,1,
+art pop,nz pop,0,1,1,
+indie pop,indie poptimism,0,1,1,
+pop edm,uk pop,0,1,1,
+art pop,baroque pop,0,1,1,
+chicago drill,chicago rap,0,1,1,
+chicago rap,drill,0,1,1,
+florida rap,trap music,0,1,1,
+big room,dance pop,1,2,1,100
+edm,electronic trap,0,1,1,
+art pop,lilith,0,1,1,
+lilith,new wave,0,1,1,
+metropopolis,nz pop,0,1,1,
+swedish pop,swedish synthpop,0,1,1,
+electro,rap,0,1,1,
+glam rock,mellow gold,0,1,1,
+gauze pop,modern rock,0,1,1,
+indie pop,pop,2,3,1,50
+electropop,pop rap,1,2,1,100
+folk-pop,indie pop,0,1,1,
+indie poptimism,metropopolis,0,1,1,
+pop rap,west coast trap,0,1,1,
+tropical house,viral pop,0,1,1,
+country,neo mellow,1,2,1,100
+australian dance,australian pop,1,2,1,100
+indie pop,metropopolis,0,1,1,
+art rock,mellow gold,0,1,1,
+hip house,old school hip hop,0,1,1,
+big room,electro house,1,2,1,100
+modern alternative rock,south african rock,0,1,1,
+contemporary country,modern uplift,0,1,1,
+hip hop,indie r&b,0,1,1,
+bergen indie,indietronica,0,1,1,
+drill,hip hop,0,1,1,
+dance pop,progressive electro house,1,2,1,100
+bmore,edm,0,1,1,
+folk-pop,nz pop,0,1,1,
+modern country rock,neo mellow,0,1,1,
+modern alternative rock,uk pop,0,1,1,
+atl hip hop,electropop,0,1,1,
+chicago drill,hip hop,0,1,1,
+danish pop,tropical house,0,1,1,
+electro,hip house,0,1,1,
+atl trap,dirty south rap,0,1,1,
+emo rap,trap music,0,1,1,
+adult standards,easy listening,0,1,1,
+lounge,rockabilly,0,1,1,
+scandipop,tropical house,0,1,1,
+neo-singer-songwriter,pop,0,1,1,
+country pop,modern uplift,0,1,1,
+art pop,dance rock,0,1,1,
+dance pop,k-hop,0,1,1,
+pop,uk contemporary r&b,0,1,1,
+pittsburgh rap,pop rap,1,2,1,100
+atl hip hop,deep southern trap,0,1,1,
+conscious hip hop,underground hip hop,0,1,1,
+art pop,art rock,0,1,1,
+new wave,permanent wave,0,1,1,
+complextro,pop,0,1,1,
+dance pop,uk contemporary r&b,0,1,1,
+latin pop,reggaeton,0,1,1,
+modern alternative rock,rock,0,1,1,
+dance pop,new wave,0,1,1,
+indie pop rap,pop,0,1,1,
+deep pop r&b,indie r&b,0,1,1,
+edm,uk funky,0,1,1,
+indietronica,shiver pop,0,1,1,
+rockabilly,vocal jazz,0,1,1,
+album rock,soft rock,0,1,1,
+indie r&b,underground hip hop,0,1,1,
+art pop,new wave pop,0,1,1,
+neo mellow,uk pop,3,4,1,33.33
+hyphy,trap music,1,2,1,100
+art pop,pop,0,1,1,
+edm,ninja,0,1,1,
+alternative r&b,escape room,0,1,1,
+latin viral pop,pop,0,1,1,
+modern rock,pop rap,0,1,1,
+contemporary country,neo mellow,1,2,1,100
+hyphy,southern hip hop,1,2,1,100
+contemporary country,pop,1,2,1,100
+afropop,nigerian hip hop,0,1,1,
+dance pop,motown,0,1,1,
+atl trap,underground hip hop,0,1,1,
+lounge,nashville sound,0,1,1,
+drill,rap,0,1,1,

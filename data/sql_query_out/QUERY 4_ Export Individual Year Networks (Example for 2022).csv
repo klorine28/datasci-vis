@@ -1,0 +1,345 @@
+genre_1,genre_2,co_occurrence_count
+pop,pop,21
+contemporary country,contemporary country,15
+rap,rap,13
+contemporary country,country road,12
+country road,country road,12
+dance pop,dance pop,11
+dance pop,pop,11
+post-teen pop,post-teen pop,10
+pop rap,pop rap,9
+pop,post-teen pop,9
+contemporary country,country,8
+country,country,8
+country,country road,8
+pop rap,rap,8
+rap,trap music,8
+trap music,trap music,8
+dance pop,post-teen pop,8
+contemporary country,modern country rock,7
+country road,modern country rock,7
+modern country rock,modern country rock,7
+country,modern country rock,6
+pop,rap,6
+pop,pop rap,5
+atl hip hop,atl hip hop,5
+atl hip hop,rap,5
+atl hip hop,trap music,5
+pop rap,trap music,5
+hip hop,hip hop,5
+hip hop,pop rap,5
+hip hop,rap,5
+rap,southern hip hop,5
+southern hip hop,southern hip hop,5
+southern hip hop,trap music,5
+pop rap,southern hip hop,4
+pop,uk pop,4
+uk pop,uk pop,4
+piano rock,piano rock,3
+canadian pop,canadian pop,3
+hip hop,southern hip hop,3
+hip hop,trap music,3
+reggaeton,reggaeton,3
+contemporary country,country pop,2
+country,country pop,2
+country pop,country pop,2
+country pop,country road,2
+country pop,modern country rock,2
+dance pop,pop rap,2
+modern rock,modern rock,2
+rock,rock,2
+atl hip hop,atl trap,2
+atl hip hop,pop,2
+atl hip hop,pop rap,2
+atl trap,atl trap,2
+atl trap,rap,2
+atl trap,trap music,2
+gangster rap,gangster rap,2
+gangster rap,pop rap,2
+gangster rap,rap,2
+gangster rap,trap music,2
+pop,trap music,2
+canadian pop,rap,2
+adult standards,adult standards,2
+atl hip hop,southern hip hop,2
+hip hop,pop,2
+canadian pop,pop,2
+dance pop,uk pop,2
+post-teen pop,uk pop,2
+dance pop,r&b,2
+pop,r&b,2
+r&b,r&b,2
+afro dancehall,afro dancehall,1
+afro dancehall,afropop,1
+afro dancehall,azonto,1
+afro dancehall,nigerian hip hop,1
+afro dancehall,nigerian pop,1
+afropop,afropop,1
+afropop,azonto,1
+afropop,nigerian hip hop,1
+afropop,nigerian pop,1
+azonto,azonto,1
+azonto,nigerian hip hop,1
+azonto,nigerian pop,1
+nigerian hip hop,nigerian hip hop,1
+nigerian hip hop,nigerian pop,1
+nigerian pop,nigerian pop,1
+contemporary country,modern uplift,1
+country,modern uplift,1
+country pop,modern uplift,1
+country road,modern uplift,1
+modern country rock,modern uplift,1
+modern uplift,modern uplift,1
+dance pop,neo mellow,1
+dance pop,piano rock,1
+dance pop,pop rock,1
+neo mellow,neo mellow,1
+neo mellow,piano rock,1
+neo mellow,pop,1
+neo mellow,pop rap,1
+neo mellow,pop rock,1
+piano rock,pop,1
+piano rock,pop rap,1
+piano rock,pop rock,1
+pop,pop rock,1
+pop rap,pop rock,1
+pop rock,pop rock,1
+gauze pop,gauze pop,1
+gauze pop,indietronica,1
+gauze pop,modern rock,1
+gauze pop,shiver pop,1
+indietronica,indietronica,1
+indietronica,modern rock,1
+indietronica,shiver pop,1
+modern rock,shiver pop,1
+shiver pop,shiver pop,1
+modern rock,rock,1
+atl hip hop,gangster rap,1
+atl trap,gangster rap,1
+atl trap,pop,1
+atl trap,pop rap,1
+gangster rap,pop,1
+canadian hip hop,canadian hip hop,1
+canadian hip hop,canadian pop,1
+canadian hip hop,hip hop,1
+canadian hip hop,pop rap,1
+canadian hip hop,rap,1
+canadian hip hop,toronto rap,1
+canadian pop,hip hop,1
+canadian pop,pop rap,1
+canadian pop,toronto rap,1
+hip hop,toronto rap,1
+pop rap,toronto rap,1
+rap,toronto rap,1
+toronto rap,toronto rap,1
+dfw rap,dfw rap,1
+dfw rap,pop,1
+dfw rap,rap,1
+adult standards,american folk revival,1
+american folk revival,american folk revival,1
+adult standards,brill building pop,1
+adult standards,easy listening,1
+adult standards,lounge,1
+adult standards,nashville sound,1
+adult standards,rockabilly,1
+adult standards,vocal jazz,1
+brill building pop,brill building pop,1
+brill building pop,easy listening,1
+brill building pop,lounge,1
+brill building pop,nashville sound,1
+brill building pop,rockabilly,1
+brill building pop,vocal jazz,1
+easy listening,easy listening,1
+easy listening,lounge,1
+easy listening,nashville sound,1
+easy listening,rockabilly,1
+easy listening,vocal jazz,1
+lounge,lounge,1
+lounge,nashville sound,1
+lounge,rockabilly,1
+lounge,vocal jazz,1
+nashville sound,nashville sound,1
+nashville sound,rockabilly,1
+nashville sound,vocal jazz,1
+rockabilly,rockabilly,1
+rockabilly,vocal jazz,1
+vocal jazz,vocal jazz,1
+alternative r&b,alternative r&b,1
+alternative r&b,viral pop,1
+viral pop,viral pop,1
+art pop,art pop,1
+art pop,art rock,1
+art pop,baroque pop,1
+art pop,dance rock,1
+art pop,lilith,1
+art pop,new wave,1
+art pop,new wave pop,1
+art pop,permanent wave,1
+art pop,piano rock,1
+art pop,singer-songwriter,1
+art rock,art rock,1
+art rock,baroque pop,1
+art rock,dance rock,1
+art rock,lilith,1
+art rock,new wave,1
+art rock,new wave pop,1
+art rock,permanent wave,1
+art rock,piano rock,1
+art rock,singer-songwriter,1
+baroque pop,baroque pop,1
+baroque pop,dance rock,1
+baroque pop,lilith,1
+baroque pop,new wave,1
+baroque pop,new wave pop,1
+baroque pop,permanent wave,1
+baroque pop,piano rock,1
+baroque pop,singer-songwriter,1
+dance rock,dance rock,1
+dance rock,lilith,1
+dance rock,new wave,1
+dance rock,new wave pop,1
+dance rock,permanent wave,1
+dance rock,piano rock,1
+dance rock,singer-songwriter,1
+lilith,lilith,1
+lilith,new wave,1
+lilith,new wave pop,1
+lilith,permanent wave,1
+lilith,piano rock,1
+lilith,singer-songwriter,1
+new wave,new wave,1
+new wave,new wave pop,1
+new wave,permanent wave,1
+new wave,piano rock,1
+new wave,singer-songwriter,1
+new wave pop,new wave pop,1
+new wave pop,permanent wave,1
+new wave pop,piano rock,1
+new wave pop,singer-songwriter,1
+permanent wave,permanent wave,1
+permanent wave,piano rock,1
+permanent wave,singer-songwriter,1
+piano rock,singer-songwriter,1
+singer-songwriter,singer-songwriter,1
+atl hip hop,hip hop,1
+pop,southern hip hop,1
+british soul,british soul,1
+british soul,pop,1
+british soul,uk pop,1
+canadian contemporary r&b,canadian contemporary r&b,1
+canadian contemporary r&b,canadian pop,1
+canadian contemporary r&b,pop,1
+canadian contemporary r&b,rap,1
+canadian pop,dance pop,1
+canadian pop,post-teen pop,1
+chicago drill,chicago drill,1
+chicago drill,chicago rap,1
+chicago drill,drill,1
+chicago drill,hip hop,1
+chicago drill,pop rap,1
+chicago drill,rap,1
+chicago drill,southern hip hop,1
+chicago drill,trap music,1
+chicago rap,chicago rap,1
+chicago rap,drill,1
+chicago rap,hip hop,1
+chicago rap,pop rap,1
+chicago rap,rap,1
+chicago rap,southern hip hop,1
+chicago rap,trap music,1
+drill,drill,1
+drill,hip hop,1
+drill,pop rap,1
+drill,rap,1
+drill,southern hip hop,1
+drill,trap music,1
+contemporary country,deep talent show,1
+country road,deep talent show,1
+deep talent show,deep talent show,1
+contemporary country,outlaw country,1
+contemporary country,red dirt,1
+contemporary country,texas country,1
+country road,outlaw country,1
+country road,red dirt,1
+country road,texas country,1
+modern country rock,outlaw country,1
+modern country rock,red dirt,1
+modern country rock,texas country,1
+outlaw country,outlaw country,1
+outlaw country,red dirt,1
+outlaw country,texas country,1
+red dirt,red dirt,1
+red dirt,texas country,1
+texas country,texas country,1
+country rap,country rap,1
+crunk,crunk,1
+crunk,dirty south rap,1
+crunk,gangster rap,1
+crunk,memphis hip hop,1
+crunk,pop rap,1
+crunk,rap,1
+crunk,southern hip hop,1
+crunk,trap music,1
+dirty south rap,dirty south rap,1
+dirty south rap,gangster rap,1
+dirty south rap,memphis hip hop,1
+dirty south rap,pop rap,1
+dirty south rap,rap,1
+dirty south rap,southern hip hop,1
+dirty south rap,trap music,1
+gangster rap,memphis hip hop,1
+gangster rap,southern hip hop,1
+memphis hip hop,memphis hip hop,1
+memphis hip hop,pop rap,1
+memphis hip hop,rap,1
+memphis hip hop,southern hip hop,1
+memphis hip hop,trap music,1
+dance pop,electropop,1
+electropop,electropop,1
+electropop,pop,1
+electropop,post-teen pop,1
+dance pop,hip pop,1
+dance pop,rap,1
+hip pop,hip pop,1
+hip pop,pop,1
+hip pop,pop rap,1
+hip pop,post-teen pop,1
+hip pop,rap,1
+pop rap,post-teen pop,1
+post-teen pop,rap,1
+dance pop,urban contemporary,1
+pop,urban contemporary,1
+r&b,urban contemporary,1
+urban contemporary,urban contemporary,1
+escape room,escape room,1
+florida rap,florida rap,1
+florida rap,hip hop,1
+florida rap,miami hip hop,1
+florida rap,pop rap,1
+florida rap,rap,1
+florida rap,southern hip hop,1
+florida rap,trap music,1
+hip hop,miami hip hop,1
+miami hip hop,miami hip hop,1
+miami hip hop,pop rap,1
+miami hip hop,rap,1
+miami hip hop,southern hip hop,1
+miami hip hop,trap music,1
+glam rock,glam rock,1
+glam rock,mellow gold,1
+glam rock,piano rock,1
+glam rock,rock,1
+mellow gold,mellow gold,1
+mellow gold,piano rock,1
+mellow gold,rock,1
+piano rock,rock,1
+latin viral pop,latin viral pop,1
+latin viral pop,pop,1
+latin viral pop,rap latina,1
+latin viral pop,reggaeton,1
+pop,rap latina,1
+pop,reggaeton,1
+rap latina,rap latina,1
+rap latina,reggaeton,1
+reggaeton,trap latino,1
+trap latino,trap latino,1
