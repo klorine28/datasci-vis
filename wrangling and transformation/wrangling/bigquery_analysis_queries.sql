@@ -1,24 +1,12 @@
--- ============================================================================
 -- BigQuery Analysis Queries for Billboard & MusicoSet Data
--- ============================================================================
--- Project: Billboard Lyrics Analysis (2000-2023)
--- Author: Lorenzo Garduño
--- Purpose: Genre co-occurrence network analysis queries
--- Date: 2025-01-20 (Updated with correct approach: G = A^T × A)
--- ============================================================================
-
--- CONFIGURATION
--- Replace these placeholders with your actual BigQuery project and dataset names:
--- - your-project-id
--- - your-dataset
+-- Genre co-occurrence network analysis
+-- Replace 'your-project-id' and 'your-dataset' with actual values
 
 -- ============================================================================
--- QUERY 1: Billboard with Genre Data (Cleaned)
+-- QUERY 1: Billboard with Genre Data
 -- ============================================================================
--- Purpose: Append genre information from artist data to billboard dataset
---          and remove Spotify audio features (danceability to time_signature)
--- Output: Cleaned billboard dataset with genre data, ready for analysis
--- ============================================================================
+-- Joins Billboard songs with MusicoSet artist genres
+-- Drops Spotify audio feature columns
 
 SELECT
     b.ranking,
@@ -36,25 +24,13 @@ FROM `your-project-id.your-dataset.billboard_24years_lyrics_spotify_bigquery` AS
 LEFT JOIN `your-project-id.your-dataset.musicoset_artists_cleaned` AS a
     ON TRIM(LOWER(b.band_singer)) = TRIM(LOWER(a.name));
 
--- Notes:
--- - Uses LEFT JOIN to preserve all billboard records
--- - TRIM and LOWER for case-insensitive matching
--- - Drops columns: danceability, energy, key, loudness, mode, speechiness,
---   acousticness, instrumentalness, liveness, valence, tempo, type, id,
---   track_href, analysis_url, duration_ms, time_signature
-
 
 -- ============================================================================
 -- QUERY 2: Genre Co-Occurrence Network (All Time)
 -- ============================================================================
--- Purpose: Create genre × genre co-occurrence matrix using G = A^T × A
---          Shows how many artists have BOTH genres in their profile
--- Output: genre_1, genre_2, co_occurrence_count
--- Use case: Network graph with genres as nodes, co-occurrence as edges
--- Matrix: G = A^T × A (see genre_collaboration_network_documentation.md)
--- ============================================================================
+-- Creates genre × genre matrix: G = A^T × A
+-- Output: edge list with co-occurrence counts
 
--- Step 1: Extract artist-genre relationships (Matrix A)
 WITH artist_genres AS (
   SELECT
     a.name AS artist,
@@ -69,8 +45,6 @@ WITH artist_genres AS (
   ) AS genre
 ),
 
--- Step 2: Self-join to create genre pairs (implements A^T × A)
--- For each artist, create all pairs of their genres
 genre_pairs AS (
   SELECT
     ag1.genre AS genre_1,
@@ -79,10 +53,9 @@ genre_pairs AS (
   FROM artist_genres ag1
   INNER JOIN artist_genres ag2
     ON ag1.artist = ag2.artist
-  WHERE ag1.genre <= ag2.genre  -- Avoid duplicate pairs, include diagonal
+  WHERE ag1.genre <= ag2.genre
 )
 
--- Step 3: Count co-occurrences (result is Matrix G)
 SELECT
   genre_1,
   genre_2,
@@ -91,24 +64,12 @@ FROM genre_pairs
 GROUP BY genre_1, genre_2
 ORDER BY co_occurrence_count DESC;
 
--- Notes:
--- - Output is in "edge list" format for network visualization
--- - Each row represents an edge in the genre co-occurrence network
--- - Weight = number of artists who have BOTH genres
--- - Includes diagonal (genre_1 = genre_2) showing total artists per genre
--- - Can be visualized in NetworkX, Gephi, or D3.js
-
 
 -- ============================================================================
--- QUERY 3: Genre Co-Occurrence Network (Yearly Evolution 2000-2023)
+-- QUERY 3: Genre Co-Occurrence Network (Yearly 2000-2023)
 -- ============================================================================
--- Purpose: Create 23 separate genre networks, one per year
---          Track how genre co-occurrence evolves from 2000 to 2023
--- Output: year, genre_1, genre_2, co_occurrence_count
--- Use case: Temporal network analysis, animated visualizations
--- ============================================================================
+-- Creates 23 separate networks filtered by Billboard chart year
 
--- Step 1: Get artists who appeared on Billboard each year
 WITH artists_per_year AS (
   SELECT DISTINCT
     band_singer AS artist,
@@ -116,7 +77,6 @@ WITH artists_per_year AS (
   FROM `your-project-id.your-dataset.billboard_24years_lyrics_spotify_bigquery`
 ),
 
--- Step 2: Extract genre data for all artists
 artist_genres AS (
   SELECT
     a.name AS artist,
@@ -131,7 +91,6 @@ artist_genres AS (
   ) AS genre
 ),
 
--- Step 3: Join to get genres for artists active each year
 artist_genres_by_year AS (
   SELECT
     y.year,
@@ -143,7 +102,6 @@ artist_genres_by_year AS (
     ON TRIM(LOWER(y.artist)) = TRIM(LOWER(ag.artist))
 ),
 
--- Step 4: Create genre pairs per year (implements A^T × A per year)
 genre_pairs_by_year AS (
   SELECT
     ag1.year,
@@ -157,7 +115,6 @@ genre_pairs_by_year AS (
   WHERE ag1.genre <= ag2.genre
 )
 
--- Step 5: Count co-occurrences per year
 SELECT
   year,
   genre_1,
@@ -167,18 +124,9 @@ FROM genre_pairs_by_year
 GROUP BY year, genre_1, genre_2
 ORDER BY year, co_occurrence_count DESC;
 
--- Notes:
--- - Creates 23 separate networks (2000-2023)
--- - Each year shows genres of artists on Billboard that year
--- - Export and filter by year for individual network graphs
--- - Useful for tracking genre emergence, fusion, and decline
-
 
 -- ============================================================================
--- QUERY 4: Export Individual Year Networks (Example for 2023)
--- ============================================================================
--- Purpose: Export a single year's network for focused analysis
--- Output: genre_1, genre_2, co_occurrence_count for specified year
+-- QUERY 4: Single Year Network (change year as needed)
 -- ============================================================================
 
 WITH artists_per_year AS (
@@ -186,7 +134,7 @@ WITH artists_per_year AS (
     band_singer AS artist,
     year
   FROM `your-project-id.your-dataset.billboard_24years_lyrics_spotify_bigquery`
-  WHERE year = 2023  -- Change year as needed
+  WHERE year = 2023
 ),
 
 artist_genres AS (
@@ -232,19 +180,11 @@ FROM genre_pairs
 GROUP BY genre_1, genre_2
 ORDER BY co_occurrence_count DESC;
 
--- Notes:
--- - Modify WHERE year = 2023 to export different years
--- - Save each year as separate CSV for visualization
--- - Recommended: genre_network_2000.csv, genre_network_2001.csv, etc.
-
 
 -- ============================================================================
--- QUERY 5: Genre to Main Genre Mapping (For Node Coloring)
+-- QUERY 5: Genre to Main Genre Mapping
 -- ============================================================================
--- Purpose: Map each sub-genre to its primary main genre for visualization coloring
--- Output: sub_genre, primary_main_genre, artist_count
--- Use case: Assign colors to nodes based on main genre family
--- ============================================================================
+-- Maps each sub-genre to its most common main genre (for node coloring)
 
 WITH artist_genres AS (
   SELECT
@@ -260,7 +200,6 @@ WITH artist_genres AS (
   ) AS genre
 ),
 
--- For each sub-genre, find the most common main genre
 genre_main_genre_mapping AS (
   SELECT
     sub_genre,
@@ -279,7 +218,6 @@ ranked_mappings AS (
   FROM genre_main_genre_mapping
 )
 
--- Get the primary main genre for each sub-genre
 SELECT
   sub_genre,
   main_genre AS primary_main_genre,
@@ -288,20 +226,11 @@ FROM ranked_mappings
 WHERE rank = 1
 ORDER BY sub_genre;
 
--- Notes:
--- - Assigns each sub-genre to its most common main genre
--- - Use this to color nodes in visualization tools
--- - Recommended color palette in documentation
--- - Export as genre_colors.csv
-
 
 -- ============================================================================
 -- QUERY 6: Genre Statistics by Year
 -- ============================================================================
--- Purpose: Track genre popularity and diversity over time
--- Output: year, genre, artist_count, total_appearances
--- Use case: Understand which genres dominated each year
--- ============================================================================
+-- Tracks genre counts per year
 
 WITH artists_per_year AS (
   SELECT
@@ -346,19 +275,11 @@ FROM genre_by_year
 GROUP BY year, genre
 ORDER BY year DESC, artist_count DESC;
 
--- Notes:
--- - artist_count: unique artists with that genre per year
--- - total_appearances: total song appearances (some artists have multiple songs)
--- - Shows genre representation on Billboard charts
-
 
 -- ============================================================================
 -- QUERY 7: Network Metrics - Node Degree
 -- ============================================================================
--- Purpose: Calculate degree centrality for each genre (how many other genres it connects to)
--- Output: genre, degree, total_connections
--- Use case: Identify "hub" genres that connect to many others
--- ============================================================================
+-- Calculates degree centrality per genre
 
 WITH artist_genres AS (
   SELECT
@@ -381,7 +302,7 @@ genre_pairs AS (
   FROM artist_genres ag1
   INNER JOIN artist_genres ag2
     ON ag1.artist = ag2.artist
-  WHERE ag1.genre < ag2.genre  -- Exclude self-loops and duplicates
+  WHERE ag1.genre < ag2.genre
 ),
 
 genre_connections AS (
@@ -393,7 +314,6 @@ genre_connections AS (
   GROUP BY genre_1, genre_2
 )
 
--- Calculate degree (number of connections) per genre
 SELECT
   genre,
   COUNT(DISTINCT connected_genre) AS degree,
@@ -406,30 +326,22 @@ FROM (
 GROUP BY genre
 ORDER BY degree DESC, total_connections DESC;
 
--- Notes:
--- - degree: number of unique genres this genre co-occurs with
--- - total_connections: sum of all co-occurrence counts
--- - High degree = "hub" genre that connects to many others (e.g., "pop")
-
 
 -- ============================================================================
--- QUERY 8: Emerging Genre Pairs (Comparing Two Time Periods)
+-- QUERY 8: Emerging Genre Pairs (2000-2011 vs 2012-2023)
 -- ============================================================================
--- Purpose: Identify genre pairs that became more connected over time
--- Output: genre_1, genre_2, early_count, late_count, growth
--- Use case: Detect genre fusion trends
--- ============================================================================
+-- Compares early and late period co-occurrence counts
 
 WITH artists_early AS (
   SELECT DISTINCT band_singer AS artist
   FROM `your-project-id.your-dataset.billboard_24years_lyrics_spotify_bigquery`
-  WHERE year BETWEEN 2000 AND 2011  -- First half
+  WHERE year BETWEEN 2000 AND 2011
 ),
 
 artists_late AS (
   SELECT DISTINCT band_singer AS artist
   FROM `your-project-id.your-dataset.billboard_24years_lyrics_spotify_bigquery`
-  WHERE year BETWEEN 2012 AND 2023  -- Second half
+  WHERE year BETWEEN 2012 AND 2023
 ),
 
 artist_genres AS (
@@ -445,7 +357,6 @@ artist_genres AS (
   ) AS genre
 ),
 
--- Early period network
 early_pairs AS (
   SELECT
     ag1.genre AS genre_1,
@@ -460,7 +371,6 @@ early_pairs AS (
   GROUP BY genre_1, genre_2
 ),
 
--- Late period network
 late_pairs AS (
   SELECT
     ag1.genre AS genre_1,
@@ -475,7 +385,6 @@ late_pairs AS (
   GROUP BY genre_1, genre_2
 )
 
--- Compare periods
 SELECT
   COALESCE(e.genre_1, l.genre_1) AS genre_1,
   COALESCE(e.genre_2, l.genre_2) AS genre_2,
@@ -489,46 +398,13 @@ SELECT
 FROM early_pairs e
 FULL OUTER JOIN late_pairs l
   ON e.genre_1 = l.genre_1 AND e.genre_2 = l.genre_2
-WHERE COALESCE(l.late_count, 0) - COALESCE(e.early_count, 0) > 0  -- Only growing pairs
+WHERE COALESCE(l.late_count, 0) - COALESCE(e.early_count, 0) > 0
 ORDER BY absolute_growth DESC;
 
--- Notes:
--- - Identifies genre pairs that became more common over time
--- - absolute_growth: raw increase in artist count
--- - percent_growth: percentage increase
--- - New pairs (early_count = 0) show emerging genre combinations
-
 
 -- ============================================================================
--- END OF QUERIES
+-- Notes
 -- ============================================================================
-
--- For detailed documentation on the genre co-occurrence network methodology,
--- see: genre_collaboration_network_documentation.md
-
--- Key Concepts:
--- - G = A^T × A (genre co-occurrence, NOT collaboration)
--- - A = Artist-Genre matrix (binary)
--- - G = Genre-Genre co-occurrence matrix (weighted by artist count)
--- - No collaboration matrix (C) is needed
--- - Edges represent multi-genre artists, not cross-genre collaborations
-
--- Query execution tips:
--- 1. Replace all instances of 'your-project-id' and 'your-dataset'
--- 2. Test queries on small subsets first (e.g., WHERE year = 2023)
--- 3. Use BigQuery's query validator before running expensive queries
--- 4. Export results to CSV for visualization in Gephi/NetworkX/D3.js
--- 5. For yearly evolution, export one CSV per year (2000-2023)
-
--- Visualization workflow:
--- 1. Run QUERY 3 to get all yearly networks
--- 2. Run QUERY 5 to get genre-to-color mapping
--- 3. Export 23 separate CSVs (one per year)
--- 4. Load into Gephi/NetworkX for visualization
--- 5. Apply colors based on main genre
--- 6. Create animated visualization showing evolution
-
--- Recommended file naming:
--- - genre_network_2000.csv, genre_network_2001.csv, ..., genre_network_2023.csv
--- - genre_colors.csv (for node coloring)
--- - genre_stats_by_year.csv (for context)
+-- Matrix formula: G = A^T × A (genre co-occurrence via artist-genre matrix)
+-- See genre_collaboration_network_documentation.md for methodology
+-- Export results to CSV for visualization in Gephi/NetworkX

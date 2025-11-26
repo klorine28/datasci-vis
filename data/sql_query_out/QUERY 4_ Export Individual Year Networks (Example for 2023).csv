@@ -1,0 +1,264 @@
+genre_1,genre_2,co_occurrence_count
+pop,pop,27
+dance pop,dance pop,20
+rap,rap,18
+dance pop,pop,17
+pop rap,pop rap,11
+pop rap,rap,11
+dance pop,post-teen pop,10
+pop,post-teen pop,10
+post-teen pop,post-teen pop,10
+pop,rap,10
+rap,trap music,8
+trap music,trap music,8
+contemporary country,contemporary country,7
+pop,pop rap,7
+hip hop,hip hop,6
+hip hop,pop rap,6
+hip hop,rap,6
+rap,southern hip hop,6
+southern hip hop,southern hip hop,6
+southern hip hop,trap music,6
+contemporary country,country road,5
+country road,country road,5
+pop,uk pop,5
+uk pop,uk pop,5
+dance pop,r&b,5
+pop,r&b,5
+r&b,r&b,5
+dance pop,uk pop,4
+post-teen pop,uk pop,4
+hip hop,southern hip hop,4
+pop rap,southern hip hop,4
+hip hop,trap music,4
+pop rap,trap music,4
+hip hop,pop,3
+atl hip hop,atl hip hop,3
+atl hip hop,rap,3
+atl hip hop,trap music,3
+dance pop,pop rap,3
+dance pop,rap,3
+dance pop,urban contemporary,3
+pop,urban contemporary,3
+r&b,urban contemporary,3
+urban contemporary,urban contemporary,3
+canadian pop,canadian pop,2
+canadian pop,rap,2
+pop rap,r&b,2
+r&b,rap,2
+atl hip hop,southern hip hop,2
+pop,southern hip hop,2
+pop,trap music,2
+dance pop,hip pop,2
+hip pop,hip pop,2
+hip pop,pop,2
+hip pop,post-teen pop,2
+dance pop,europop,2
+europop,europop,2
+reggaeton,reggaeton,2
+adult standards,adult standards,2
+contemporary country,deep talent show,1
+country road,deep talent show,1
+deep talent show,deep talent show,1
+canadian contemporary r&b,canadian contemporary r&b,1
+canadian contemporary r&b,canadian pop,1
+canadian contemporary r&b,pop,1
+canadian pop,pop,1
+canadian contemporary r&b,rap,1
+dance pop,edm,1
+edm,edm,1
+edm,pop,1
+canadian hip hop,canadian hip hop,1
+canadian hip hop,canadian pop,1
+canadian hip hop,hip hop,1
+canadian pop,hip hop,1
+canadian hip hop,pop rap,1
+canadian pop,pop rap,1
+canadian hip hop,rap,1
+canadian hip hop,toronto rap,1
+canadian pop,toronto rap,1
+hip hop,toronto rap,1
+pop rap,toronto rap,1
+rap,toronto rap,1
+toronto rap,toronto rap,1
+pop rap,urban contemporary,1
+rap,urban contemporary,1
+chicago drill,chicago drill,1
+chicago drill,chicago rap,1
+chicago rap,chicago rap,1
+chicago drill,drill,1
+chicago rap,drill,1
+drill,drill,1
+chicago drill,hip hop,1
+chicago rap,hip hop,1
+drill,hip hop,1
+chicago drill,pop rap,1
+chicago rap,pop rap,1
+drill,pop rap,1
+chicago drill,rap,1
+chicago rap,rap,1
+drill,rap,1
+chicago drill,southern hip hop,1
+chicago rap,southern hip hop,1
+drill,southern hip hop,1
+chicago drill,trap music,1
+chicago rap,trap music,1
+drill,trap music,1
+conscious hip hop,conscious hip hop,1
+conscious hip hop,nc hip hop,1
+nc hip hop,nc hip hop,1
+conscious hip hop,pop rap,1
+nc hip hop,pop rap,1
+conscious hip hop,rap,1
+nc hip hop,rap,1
+philly rap,philly rap,1
+philly rap,rap,1
+philly rap,trap music,1
+atl hip hop,hip hop,1
+atl hip hop,pop,1
+atl hip hop,pop rap,1
+hip pop,pop rap,1
+pop rap,post-teen pop,1
+hip pop,rap,1
+post-teen pop,rap,1
+bubblegum dance,bubblegum dance,1
+bubblegum dance,dance pop,1
+bubblegum dance,eurodance,1
+dance pop,eurodance,1
+eurodance,eurodance,1
+bubblegum dance,europop,1
+eurodance,europop,1
+reggaeton,trap latino,1
+trap latino,trap latino,1
+hip pop,uk pop,1
+dfw rap,dfw rap,1
+dfw rap,pop,1
+dfw rap,rap,1
+adult standards,brill building pop,1
+brill building pop,brill building pop,1
+adult standards,easy listening,1
+brill building pop,easy listening,1
+easy listening,easy listening,1
+adult standards,lounge,1
+brill building pop,lounge,1
+easy listening,lounge,1
+lounge,lounge,1
+adult standards,nashville sound,1
+brill building pop,nashville sound,1
+easy listening,nashville sound,1
+lounge,nashville sound,1
+nashville sound,nashville sound,1
+adult standards,rockabilly,1
+brill building pop,rockabilly,1
+easy listening,rockabilly,1
+lounge,rockabilly,1
+nashville sound,rockabilly,1
+rockabilly,rockabilly,1
+adult standards,vocal jazz,1
+brill building pop,vocal jazz,1
+easy listening,vocal jazz,1
+lounge,vocal jazz,1
+nashville sound,vocal jazz,1
+rockabilly,vocal jazz,1
+vocal jazz,vocal jazz,1
+post-teen pop,r&b,1
+post-teen pop,urban contemporary,1
+colombian pop,colombian pop,1
+colombian pop,dance pop,1
+colombian pop,latin,1
+dance pop,latin,1
+latin,latin,1
+colombian pop,latin pop,1
+dance pop,latin pop,1
+latin,latin pop,1
+latin pop,latin pop,1
+colombian pop,mexican pop,1
+dance pop,mexican pop,1
+latin,mexican pop,1
+latin pop,mexican pop,1
+mexican pop,mexican pop,1
+colombian pop,pop,1
+latin,pop,1
+latin pop,pop,1
+mexican pop,pop,1
+contemporary country,country,1
+country,country,1
+country,country road,1
+adult standards,american folk revival,1
+american folk revival,american folk revival,1
+contemporary country,country dawn,1
+country dawn,country dawn,1
+contemporary country,dance pop,1
+country dawn,dance pop,1
+florida rap,florida rap,1
+florida rap,hip hop,1
+florida rap,miami hip hop,1
+hip hop,miami hip hop,1
+miami hip hop,miami hip hop,1
+florida rap,pop rap,1
+miami hip hop,pop rap,1
+florida rap,rap,1
+miami hip hop,rap,1
+florida rap,southern hip hop,1
+miami hip hop,southern hip hop,1
+florida rap,trap music,1
+miami hip hop,trap music,1
+electropop,electropop,1
+electropop,pop,1
+dance pop,dance rock,1
+dance rock,dance rock,1
+dance pop,disco,1
+dance rock,disco,1
+disco,disco,1
+dance rock,europop,1
+disco,europop,1
+dance pop,motown,1
+dance rock,motown,1
+disco,motown,1
+europop,motown,1
+motown,motown,1
+dance pop,new romantic,1
+dance rock,new romantic,1
+disco,new romantic,1
+europop,new romantic,1
+motown,new romantic,1
+new romantic,new romantic,1
+dance pop,new wave,1
+dance rock,new wave,1
+disco,new wave,1
+europop,new wave,1
+motown,new wave,1
+new romantic,new wave,1
+new wave,new wave,1
+dance pop,new wave pop,1
+dance rock,new wave pop,1
+disco,new wave pop,1
+europop,new wave pop,1
+motown,new wave pop,1
+new romantic,new wave pop,1
+new wave,new wave pop,1
+new wave pop,new wave pop,1
+dance pop,soft rock,1
+dance rock,soft rock,1
+disco,soft rock,1
+europop,soft rock,1
+motown,soft rock,1
+new romantic,soft rock,1
+new wave,soft rock,1
+new wave pop,soft rock,1
+soft rock,soft rock,1
+atl trap,atl trap,1
+atl trap,rap,1
+atl trap,southern hip hop,1
+atl trap,trap music,1
+atl trap,underground hip hop,1
+rap,underground hip hop,1
+southern hip hop,underground hip hop,1
+trap music,underground hip hop,1
+underground hip hop,underground hip hop,1
+atl trap,vapor trap,1
+rap,vapor trap,1
+southern hip hop,vapor trap,1
+trap music,vapor trap,1
+underground hip hop,vapor trap,1
+vapor trap,vapor trap,1

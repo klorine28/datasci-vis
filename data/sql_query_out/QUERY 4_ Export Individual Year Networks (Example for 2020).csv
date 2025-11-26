@@ -1,0 +1,224 @@
+genre_1,genre_2,co_occurrence_count
+pop,pop,35
+rap,rap,23
+trap music,trap music,17
+dance pop,dance pop,16
+dance pop,pop,16
+pop rap,pop rap,16
+pop rap,rap,15
+contemporary country,contemporary country,15
+pop,rap,14
+rap,trap music,14
+dance pop,post-teen pop,12
+pop,post-teen pop,12
+post-teen pop,post-teen pop,12
+hip hop,hip hop,12
+hip hop,rap,12
+pop,pop rap,12
+hip hop,pop rap,11
+rap,southern hip hop,10
+southern hip hop,southern hip hop,10
+southern hip hop,trap music,10
+pop rap,trap music,10
+contemporary country,country road,10
+country road,country road,10
+pop,trap music,9
+hip hop,trap music,8
+hip hop,pop,7
+hip hop,southern hip hop,7
+pop rap,southern hip hop,7
+contemporary country,country,7
+country,country,7
+pop,southern hip hop,6
+country,country road,6
+atl hip hop,atl hip hop,5
+atl hip hop,rap,5
+atl hip hop,trap music,5
+canadian pop,canadian pop,4
+canadian pop,pop,3
+dance pop,uk pop,3
+pop,uk pop,3
+post-teen pop,uk pop,3
+uk pop,uk pop,3
+atl hip hop,pop,3
+atl hip hop,pop rap,3
+atl hip hop,southern hip hop,3
+dance pop,r&b,3
+pop,r&b,3
+r&b,r&b,3
+contemporary country,country pop,3
+country pop,country pop,3
+contemporary country,modern country rock,3
+country,modern country rock,3
+country road,modern country rock,3
+modern country rock,modern country rock,3
+canadian pop,rap,2
+atl hip hop,hip hop,2
+canadian hip hop,canadian hip hop,2
+canadian hip hop,hip hop,2
+canadian hip hop,pop rap,2
+canadian hip hop,rap,2
+canadian hip hop,toronto rap,2
+hip hop,toronto rap,2
+pop rap,toronto rap,2
+rap,toronto rap,2
+toronto rap,toronto rap,2
+pop,viral pop,2
+viral pop,viral pop,2
+electropop,electropop,2
+electropop,pop,2
+cali rap,cali rap,2
+cali rap,hip hop,2
+cali rap,pop,2
+cali rap,pop rap,2
+cali rap,rap,2
+cali rap,southern hip hop,2
+cali rap,trap music,2
+dance pop,pop rap,2
+atl hip hop,atl trap,2
+atl trap,atl trap,2
+atl trap,rap,2
+atl trap,trap music,2
+gangster rap,gangster rap,2
+gangster rap,pop rap,2
+gangster rap,rap,2
+chicago rap,chicago rap,2
+canadian contemporary r&b,canadian contemporary r&b,1
+canadian contemporary r&b,canadian pop,1
+canadian contemporary r&b,pop,1
+canadian contemporary r&b,rap,1
+dfw rap,dfw rap,1
+dfw rap,pop,1
+dfw rap,rap,1
+canadian hip hop,canadian pop,1
+canadian pop,hip hop,1
+canadian pop,pop rap,1
+canadian pop,toronto rap,1
+dance pop,viral pop,1
+post-teen pop,viral pop,1
+uk pop,viral pop,1
+canadian hip hop,pop,1
+canadian hip hop,southern hip hop,1
+canadian hip hop,trap music,1
+pop,toronto rap,1
+southern hip hop,toronto rap,1
+toronto rap,trap music,1
+hip hop,new orleans rap,1
+new orleans rap,new orleans rap,1
+new orleans rap,pop,1
+new orleans rap,pop rap,1
+new orleans rap,rap,1
+new orleans rap,trap music,1
+canadian pop,dance pop,1
+canadian pop,post-teen pop,1
+rap conscient,rap conscient,1
+rap conscient,trap music,1
+rap conscient,vapor trap,1
+trap music,vapor trap,1
+vapor trap,vapor trap,1
+contemporary country,deep talent show,1
+country road,deep talent show,1
+deep talent show,deep talent show,1
+pop rap,post-teen pop,1
+dance pop,rap,1
+pop rap,r&b,1
+r&b,rap,1
+k-pop,k-pop,1
+k-pop,k-pop boy group,1
+k-pop boy group,k-pop boy group,1
+atl hip hop,gangster rap,1
+atl trap,gangster rap,1
+atl trap,pop,1
+atl trap,pop rap,1
+gangster rap,pop,1
+gangster rap,trap music,1
+chicago drill,chicago drill,1
+chicago drill,chicago rap,1
+chicago drill,drill,1
+chicago drill,hip hop,1
+chicago drill,pop rap,1
+chicago drill,rap,1
+chicago drill,southern hip hop,1
+chicago drill,trap music,1
+chicago rap,drill,1
+chicago rap,hip hop,1
+chicago rap,pop rap,1
+chicago rap,rap,1
+chicago rap,southern hip hop,1
+chicago rap,trap music,1
+drill,drill,1
+drill,hip hop,1
+drill,pop rap,1
+drill,rap,1
+drill,southern hip hop,1
+drill,trap music,1
+canadian pop,viral pop,1
+latin,latin,1
+latin,reggaeton,1
+reggaeton,reggaeton,1
+dance pop,europop,1
+dance pop,hip pop,1
+dance pop,pop rock,1
+europop,europop,1
+europop,hip pop,1
+europop,pop,1
+europop,pop rock,1
+europop,post-teen pop,1
+hip pop,hip pop,1
+hip pop,pop,1
+hip pop,pop rock,1
+hip pop,post-teen pop,1
+pop,pop rock,1
+pop rock,pop rock,1
+pop rock,post-teen pop,1
+brostep,brostep,1
+brostep,progressive electro house,1
+progressive electro house,progressive electro house,1
+detroit hip hop,detroit hip hop,1
+detroit hip hop,g funk,1
+detroit hip hop,hip hop,1
+detroit hip hop,rap,1
+g funk,g funk,1
+g funk,hip hop,1
+g funk,rap,1
+country,country pop,1
+hip hop,miami hip hop,1
+miami hip hop,miami hip hop,1
+miami hip hop,pop,1
+miami hip hop,pop rap,1
+miami hip hop,rap,1
+miami hip hop,southern hip hop,1
+miami hip hop,trap music,1
+dance pop,urban contemporary,1
+pop,urban contemporary,1
+r&b,urban contemporary,1
+urban contemporary,urban contemporary,1
+country rap,country rap,1
+boy band,boy band,1
+boy band,dance pop,1
+boy band,pop,1
+boy band,post-teen pop,1
+east coast hip hop,east coast hip hop,1
+east coast hip hop,gangster rap,1
+east coast hip hop,hip hop,1
+east coast hip hop,pop rap,1
+east coast hip hop,rap,1
+gangster rap,hip hop,1
+dance pop,electropop,1
+dance pop,etherpop,1
+dance pop,indie poptimism,1
+electropop,etherpop,1
+electropop,indie poptimism,1
+electropop,post-teen pop,1
+etherpop,etherpop,1
+etherpop,indie poptimism,1
+etherpop,pop,1
+etherpop,post-teen pop,1
+indie poptimism,indie poptimism,1
+indie poptimism,pop,1
+indie poptimism,post-teen pop,1
+contemporary country,country dawn,1
+country,country dawn,1
+country dawn,country dawn,1
+country dawn,country road,1
+country dawn,modern country rock,1

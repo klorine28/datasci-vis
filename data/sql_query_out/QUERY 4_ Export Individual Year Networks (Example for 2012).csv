@@ -1,0 +1,421 @@
+genre_1,genre_2,co_occurrence_count
+pop,pop,50
+dance pop,dance pop,34
+dance pop,pop,33
+pop rap,pop rap,25
+pop,post-teen pop,23
+post-teen pop,post-teen pop,23
+dance pop,post-teen pop,19
+pop,pop rap,19
+pop rap,rap,16
+rap,rap,16
+dance pop,pop rap,14
+contemporary country,contemporary country,11
+contemporary country,country,11
+country,country,11
+contemporary country,country road,10
+country,country road,10
+country road,country road,10
+pop rock,pop rock,10
+hip hop,hip hop,10
+hip hop,pop rap,10
+hip hop,rap,10
+pop,rap,10
+pop rap,trap music,9
+trap music,trap music,9
+pop,uk pop,8
+uk pop,uk pop,8
+neo mellow,neo mellow,8
+pop,pop rock,8
+pop rap,southern hip hop,8
+rap,trap music,8
+southern hip hop,southern hip hop,8
+dance pop,r&b,8
+electropop,electropop,8
+pop,r&b,8
+r&b,r&b,8
+dance pop,uk pop,7
+post-teen pop,uk pop,7
+neo mellow,pop,7
+neo mellow,pop rock,7
+pop,trap music,7
+rap,southern hip hop,7
+southern hip hop,trap music,7
+contemporary country,modern country rock,6
+country,modern country rock,6
+country road,modern country rock,6
+modern country rock,modern country rock,6
+hip hop,pop,6
+hip hop,southern hip hop,6
+hip hop,trap music,6
+pop,southern hip hop,6
+dance pop,urban contemporary,6
+pop,urban contemporary,6
+pop rap,r&b,6
+r&b,urban contemporary,6
+urban contemporary,urban contemporary,6
+australian pop,australian pop,6
+dance pop,electropop,5
+electropop,pop,5
+dance pop,rap,5
+pop rap,urban contemporary,5
+edm,edm,4
+edm,pop,4
+dance pop,viral pop,4
+pop,viral pop,4
+post-teen pop,viral pop,4
+viral pop,viral pop,4
+folk-pop,folk-pop,4
+neo mellow,post-teen pop,4
+pop rock,post-teen pop,4
+atl hip hop,atl hip hop,4
+atl hip hop,pop,4
+australian pop,pop,4
+electropop,post-teen pop,4
+dance pop,edm,3
+dance pop,talent show,3
+pop,talent show,3
+post-teen pop,talent show,3
+talent show,talent show,3
+modern rock,modern rock,3
+atl hip hop,pop rap,3
+canadian pop,canadian pop,3
+atl hip hop,dance pop,3
+dance pop,southern hip hop,3
+australian pop,dance pop,3
+australian pop,post-teen pop,3
+australian pop,uk pop,3
+dance pop,pop rock,3
+pop rap,post-teen pop,3
+r&b,rap,3
+boy band,boy band,2
+boy band,dance pop,2
+boy band,pop,2
+boy band,post-teen pop,2
+contemporary country,country dawn,2
+country,country dawn,2
+country dawn,country dawn,2
+pop,pop punk,2
+pop punk,pop punk,2
+atl hip hop,hip hop,2
+atl hip hop,rap,2
+atl hip hop,southern hip hop,2
+dance pop,miami hip hop,2
+miami hip hop,miami hip hop,2
+miami hip hop,pop,2
+miami hip hop,pop rap,2
+gangster rap,gangster rap,2
+gangster rap,hip hop,2
+gangster rap,pop rap,2
+gangster rap,rap,2
+acoustic pop,acoustic pop,2
+acoustic pop,neo mellow,2
+acoustic pop,pop,2
+acoustic pop,pop rock,2
+atl hip hop,r&b,2
+dance pop,hip hop,2
+australian dance,australian dance,2
+australian dance,australian pop,2
+australian pop,electropop,2
+australian pop,talent show,2
+electropop,uk pop,2
+talent show,uk pop,2
+dance pop,neo mellow,2
+canadian pop,dance pop,2
+canadian pop,pop,2
+canadian pop,post-teen pop,2
+contemporary country,pop,2
+contemporary country,post-teen pop,2
+country,pop,2
+country,post-teen pop,2
+dance pop,europop,2
+europop,europop,2
+europop,pop,2
+folk-pop,pop rock,2
+dance pop,trap music,2
+r&b,southern hip hop,2
+r&b,trap music,2
+rap,urban contemporary,2
+southern hip hop,urban contemporary,2
+trap music,urban contemporary,2
+edm,electro house,1
+edm,house,1
+edm,progressive house,1
+edm,uk dance,1
+electro house,electro house,1
+electro house,house,1
+electro house,pop,1
+electro house,progressive house,1
+electro house,uk dance,1
+house,house,1
+house,pop,1
+house,progressive house,1
+house,uk dance,1
+pop,progressive house,1
+pop,uk dance,1
+progressive house,progressive house,1
+progressive house,uk dance,1
+uk dance,uk dance,1
+alternative metal,alternative metal,1
+alternative metal,nu metal,1
+alternative metal,post-grunge,1
+alternative metal,rap metal,1
+nu metal,nu metal,1
+nu metal,post-grunge,1
+nu metal,rap metal,1
+post-grunge,post-grunge,1
+post-grunge,rap metal,1
+rap metal,rap metal,1
+boy band,talent show,1
+boy band,uk pop,1
+country dawn,country road,1
+country dawn,modern country rock,1
+contemporary country,heartland rock,1
+contemporary country,outlaw country,1
+contemporary country,texas country,1
+country,heartland rock,1
+country,outlaw country,1
+country,texas country,1
+country road,heartland rock,1
+country road,outlaw country,1
+country road,texas country,1
+heartland rock,heartland rock,1
+heartland rock,modern country rock,1
+heartland rock,outlaw country,1
+heartland rock,texas country,1
+modern country rock,outlaw country,1
+modern country rock,texas country,1
+outlaw country,outlaw country,1
+outlaw country,texas country,1
+texas country,texas country,1
+dance pop,emo,1
+dance pop,pop punk,1
+emo,emo,1
+emo,pop,1
+emo,pop punk,1
+emo,pop rap,1
+pop punk,pop rap,1
+folk-pop,indie folk,1
+folk-pop,modern rock,1
+folk-pop,stomp and holler,1
+indie folk,indie folk,1
+indie folk,modern rock,1
+indie folk,stomp and holler,1
+modern rock,stomp and holler,1
+stomp and holler,stomp and holler,1
+indie pop,indie pop,1
+indie pop,modern rock,1
+indie pop,neo mellow,1
+indie pop,pop,1
+indie pop,pop punk,1
+indie pop,pop rock,1
+indie pop,post-teen pop,1
+modern rock,neo mellow,1
+modern rock,pop,1
+modern rock,pop punk,1
+modern rock,pop rock,1
+modern rock,post-teen pop,1
+neo mellow,pop punk,1
+pop punk,pop rock,1
+pop punk,post-teen pop,1
+modern rock,rock,1
+rock,rock,1
+permanent wave,permanent wave,1
+permanent wave,pop,1
+atl hip hop,trap music,1
+canadian hip hop,canadian hip hop,1
+canadian hip hop,canadian pop,1
+canadian hip hop,hip hop,1
+canadian hip hop,pop rap,1
+canadian hip hop,rap,1
+canadian hip hop,toronto rap,1
+canadian pop,hip hop,1
+canadian pop,pop rap,1
+canadian pop,rap,1
+canadian pop,toronto rap,1
+hip hop,toronto rap,1
+pop rap,toronto rap,1
+rap,toronto rap,1
+toronto rap,toronto rap,1
+dance pop,latin,1
+latin,latin,1
+latin,miami hip hop,1
+latin,pop,1
+latin,pop rap,1
+detroit hip hop,detroit hip hop,1
+detroit hip hop,hip hop,1
+detroit hip hop,pop,1
+detroit hip hop,pop rap,1
+detroit hip hop,rap,1
+detroit hip hop,southern hip hop,1
+detroit hip hop,trap music,1
+g funk,g funk,1
+g funk,gangster rap,1
+g funk,hip hop,1
+g funk,pop rap,1
+g funk,rap,1
+g funk,west coast rap,1
+gangster rap,west coast rap,1
+hip hop,west coast rap,1
+pop rap,west coast rap,1
+rap,west coast rap,1
+west coast rap,west coast rap,1
+gangster rap,southern hip hop,1
+gangster rap,trap music,1
+gangster rap,underground hip hop,1
+hip hop,underground hip hop,1
+pop rap,underground hip hop,1
+rap,underground hip hop,1
+southern hip hop,underground hip hop,1
+trap music,underground hip hop,1
+underground hip hop,underground hip hop,1
+hip hop,pittsburgh rap,1
+pittsburgh rap,pittsburgh rap,1
+pittsburgh rap,pop,1
+pittsburgh rap,pop rap,1
+pittsburgh rap,rap,1
+pittsburgh rap,southern hip hop,1
+pittsburgh rap,trap music,1
+alternative r&b,alternative r&b,1
+alternative r&b,atl hip hop,1
+alternative r&b,dance pop,1
+alternative r&b,electropop,1
+alternative r&b,escape room,1
+alternative r&b,neo soul,1
+alternative r&b,pop,1
+alternative r&b,r&b,1
+atl hip hop,electropop,1
+atl hip hop,escape room,1
+atl hip hop,neo soul,1
+dance pop,escape room,1
+dance pop,neo soul,1
+electropop,escape room,1
+electropop,neo soul,1
+electropop,r&b,1
+escape room,escape room,1
+escape room,neo soul,1
+escape room,pop,1
+escape room,r&b,1
+neo soul,neo soul,1
+neo soul,pop,1
+neo soul,r&b,1
+atl hip hop,urban contemporary,1
+australian dance,electropop,1
+australian dance,pop,1
+australian pop,viral pop,1
+electropop,talent show,1
+electropop,viral pop,1
+talent show,viral pop,1
+uk pop,viral pop,1
+australian pop,neo mellow,1
+australian pop,pop rock,1
+neo mellow,talent show,1
+neo mellow,uk pop,1
+pop rock,talent show,1
+pop rock,uk pop,1
+australian pop,pop rap,1
+pop rap,uk pop,1
+bergen indie,bergen indie,1
+bergen indie,electropop,1
+bergen indie,folk-pop,1
+bergen indie,indietronica,1
+bergen indie,nz pop,1
+electropop,folk-pop,1
+electropop,indietronica,1
+electropop,nz pop,1
+folk-pop,indietronica,1
+folk-pop,nz pop,1
+indietronica,indietronica,1
+indietronica,nz pop,1
+nz pop,nz pop,1
+british soul,british soul,1
+british soul,pop,1
+british soul,uk pop,1
+canadian pop,electropop,1
+canadian pop,indie poptimism,1
+canadian pop,uk pop,1
+dance pop,indie poptimism,1
+electropop,indie poptimism,1
+indie poptimism,indie poptimism,1
+indie poptimism,pop,1
+indie poptimism,post-teen pop,1
+indie poptimism,uk pop,1
+chicago rap,chicago rap,1
+chicago rap,hip hop,1
+chicago rap,pop rap,1
+chicago rap,rap,1
+conscious hip hop,conscious hip hop,1
+conscious hip hop,nc hip hop,1
+conscious hip hop,pop rap,1
+conscious hip hop,rap,1
+nc hip hop,nc hip hop,1
+nc hip hop,pop rap,1
+nc hip hop,rap,1
+contemporary country,dance pop,1
+country,dance pop,1
+country dawn,dance pop,1
+country dawn,pop,1
+country dawn,post-teen pop,1
+contemporary country,neo mellow,1
+country,neo mellow,1
+country road,neo mellow,1
+country road,pop,1
+country road,post-teen pop,1
+modern country rock,neo mellow,1
+modern country rock,pop,1
+modern country rock,post-teen pop,1
+dance pop,metropopolis,1
+dance pop,tropical house,1
+edm,electropop,1
+edm,metropopolis,1
+edm,post-teen pop,1
+edm,tropical house,1
+electropop,metropopolis,1
+electropop,tropical house,1
+metropopolis,metropopolis,1
+metropopolis,pop,1
+metropopolis,post-teen pop,1
+metropopolis,tropical house,1
+pop,tropical house,1
+post-teen pop,tropical house,1
+tropical house,tropical house,1
+edm,miami hip hop,1
+edm,pop rap,1
+electropop,pop rap,1
+dance pop,folk-pop,1
+europop,folk-pop,1
+europop,pop rock,1
+folk-pop,pop,1
+europop,post-teen pop,1
+europop,uk pop,1
+hip hop,r&b,1
+hip hop,urban contemporary,1
+dance pop,hip pop,1
+hip pop,hip pop,1
+hip pop,pop,1
+hip pop,pop rap,1
+hip pop,post-teen pop,1
+hip pop,rap,1
+post-teen pop,rap,1
+dance pop,k-hop,1
+dance pop,k-pop,1
+k-hop,k-hop,1
+k-hop,k-pop,1
+k-pop,k-pop,1
+neo mellow,viral pop,1
+pop rock,viral pop,1
+post-teen pop,r&b,1
+post-teen pop,urban contemporary,1
+deep pop r&b,deep pop r&b,1
+deep pop r&b,pop rap,1
+deep pop r&b,rap,1
+deep pop r&b,southern hip hop,1
+deep pop r&b,trap music,1
+folk-pop,neo mellow,1
+hip hop,new orleans rap,1
+new orleans rap,new orleans rap,1
+new orleans rap,pop,1
+new orleans rap,pop rap,1
+new orleans rap,rap,1
+new orleans rap,trap music,1
+modern alternative rock,modern alternative rock,1

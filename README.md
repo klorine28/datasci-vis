@@ -1,308 +1,352 @@
 # Billboard Lyrics Analysis (2000-2023)
 
-Data science and visualization project analyzing Billboard Top 100 songs over 24 years, with a primary focus on lyrical characteristics and secondary exploration of musical features.
+Analysis of Billboard Hot 100 songs focusing on lexical diversity and genre network evolution.
 
-## Overview
+## Research Questions
 
-This project provides an exploratory overview of Billboard hit songs with a **lyrical lean**, as lyrical analysis was the main area of interest.
+### 1. How does lexical diversity in song lyrics relate to chart performance and vary across genres in Billboard Hot 100 songs (2000-2023)?
 
-**Research Question:** How does lexical diversity in song lyrics relate to chart performance and vary across genres in Billboard Hot 100 songs (2000-2023)?
+| Analysis Type | Method |
+|---------------|--------|
+| Descriptive statistics | Mean, median, distribution of TTR/density by genre |
+| Correlation analysis | Spearman's rho (lexical metrics vs chart position) |
+| Comparative analysis | Cross-genre metric comparisons |
+| Time series analysis | Temporal trends across 24 years |
+| Text mining | Tokenization, word frequency, Jaccard similarity |
 
-The analysis includes:
-- Lexical diversity and complexity metrics (Type-Token Ratio, lexical density, hapax legomena)
-- Word frequency analysis and vocabulary richness
-- Relationship between chart performance and lyrical characteristics
-- Cross-genre comparisons (Pop, Hip Hop, Country, Rock, R&B, Electronic)
-- Temporal trends in lyrics complexity (2000-2023)
-- Year-by-year and genre-normalized diversity metrics
-- Supplementary audio features analysis (Spotify data)
-- **Network analysis** of genre collaborations and artist relationships (BigQuery)
+### 2. How do genre relationships evolve over time in the Billboard Top 100?
+
+| Analysis Type | Method |
+|---------------|--------|
+| Network analysis | Co-occurrence matrix via one-mode projection (G = AᵀA) |
+| Graph metrics | Degree centrality, strength, betweenness |
+| Temporal analysis | 24 yearly network snapshots |
+| Visualization | Force-directed layout (Fruchterman-Reingold algorithm) |
+| Clustering | Macro genre grouping (16 categories) |
 
 ## Dataset
 
-- **Billboard Top 100 songs** (2000-2023): 3,397 songs (basic) / 3,649 songs (improved with MusicoSet)
-- **Complete lyrics data**: 100% coverage
-- **Lyrics quality**: 80.1% normal-length after MusicoSet improvement (up from 69.2%)
-- **Spotify audio features**: ~14% coverage (486 songs)
+| Source | Records | Description |
+|--------|---------|-------------|
+| Billboard Hot 100 (Kaggle) | 3,397 songs | Chart rankings, lyrics, Spotify features |
+| MusicoSet (DSW 2019) | 11,518 artists | Genre classifications, metadata |
 
-### Data Cleaning & Quality
+**Coverage:**
+- Lyrics: 100%
+- Genre data: 85.6%
+- Spotify features: 14%
 
-R-based cleaning pipeline produces BigQuery-ready datasets:
+### Sampling Method
 
-**Billboard Dataset (Two-Stage Cleaning):**
+**Purposive/criterion sampling** (non-probability)
 
-*Stage 1: Basic Text Cleaning*
-- Converted multi-line lyrics to single-line format
-- Normalized whitespace and removed newlines/carriage returns
-- Preserved all 26 columns including Spotify features
-- Output: `billboard_24years_lyrics_spotify_bigquery.csv` (3,398 lines: 1 header + 3,397 songs)
+- **Population**: All music released 2000-2023
+- **Sample**: Songs appearing on Billboard Hot 100
+- **Criterion**: Commercial chart success
 
-*Stage 2: Lyrics Quality Improvement*
-- Analyzed word counts: identified 1,045 outliers (too short <100 words or too long >600 words)
-- Matched outliers with MusicoSet dataset using **both song name and artist** for accuracy
-- Replaced 564 problematic lyrics (16.6% of dataset) with cleaner MusicoSet versions
-- Quality improvements:
-  - Too-short songs: 26 → 3 (88% reduction)
-  - Too-long songs: 1,019 → 724 (29% reduction)
-  - Normal-length songs: 69.2% → 80.1% coverage
-- Output: `billboard_24years_lyrics_spotify_bigquery_improved.csv` (3,649 songs with improved lyrics)
+**Represents**: Mainstream/popular music, commercial hits, radio/streaming promoted content
 
-*Matching Strategy:*
-- Normalized song titles and artist names (lowercase, trimmed)
-- Inner join on both `song_clean` AND `artist_clean` to prevent mismatches
-- Filtered to only accept MusicoSet versions with normal length (100-600 words)
-- Prevents false matches (e.g., "Beautiful" by different artists)
+**Does not represent**: Underground/indie music, album deep cuts, regional/niche genres, non-charting music
 
-**MusicoSet Metadata:**
-- Converted standalone `-` and empty `[]` to proper NA values
-- Tab-separated format cleaned to standard CSV
-- Trimmed whitespace from all text fields
-- Artists: 11,518 records, Songs: 20,405 records
+## Data Pipeline
 
-**Missing Data:**
-- Spotify features: 85.7% missing (2,911/3,397 songs)
-- Artist genres: ~27% missing
-- Core data (lyrics, rankings, years): 100% complete
+### Source Datasets
 
-**Notebooks:**
+```
+BILLBOARD (Kaggle)                         MUSICOSET (DSW 2019)
+billboard_24years_lyrics_spotify.csv       musicoset_metadata/artists.csv
+─────────────────────────────────────      ────────────────────────────────
+Columns:                                   Columns:
+• ranking (1-100)                          • artist_id
+• song                                     • name
+• band_singer                              • followers
+• year (2000-2023)                         • popularity
+• lyrics                                   • artist_type
+• uri                                      • main_genre        ◄── GENRE SOURCE
+• danceability, energy, etc (Spotify)      • genres (array)    ◄── SUB-GENRES
+                                           • image_url
+Records: 3,397 songs                       Records: 11,518 artists
+```
 
-*Data Cleaning:*
-- `wrangling and transformation/cleaning/billboard_cleaning.ipynb` - Two-stage Billboard cleaning pipeline:
-  - Stage 1: Text normalization (newlines, whitespace)
-  - Stage 2: Lyrics quality improvement via MusicoSet matching
-  - Produces both basic and improved output files
-  - Includes word count analysis and before/after visualizations
-- `wrangling and transformation/cleaning/musicoset_cleaning.ipynb` - MusicoSet metadata cleaning
-- `wrangling and transformation/cleaning/missing_data_analysis.ipynb` - Missing data visualization
+### Data Joins
 
-*Data Transformation:*
-- `wrangling and transformation/wrangling/lexical_diversity_transformation.ipynb` - Lexical analysis transformation pipeline:
-  - Joins Billboard with MusicoSet genre data (85.6% coverage)
-  - Maps 159 micro-genres to 6 macro-genres (POP, HIP HOP, COUNTRY, ROCK, R&B, ELECTRONIC)
-  - Tokenizes lyrics and calculates lexical diversity metrics (TTR, lexical density, hapax ratio)
-  - Creates chart performance and temporal features
-  - Generates genre and year-normalized scores
-  - Output: `billboard_lexical_analysis_ready.csv` (analysis-ready dataset)
+```
+═══════════════════════════════════════════════════════════════════════════════════════
 
-**Documentation:**
-- `wrangling and transformation/cleaning/BILLBOARD_CSV_CLEANING_DOCUMENTATION.md` - Complete cleaning methodology
+LEXICAL ANALYSIS (lexical_diversity_transformation.ipynb)
 
-### Data Sources
+  billboard_improved.csv        musicoset_artists_cleaned.csv
+  ┌─────────────────────┐       ┌─────────────────────────────┐
+  │ song                │       │ name                        │
+  │ band_singer    ─────┼──JOIN─┼─► main_genre                │
+  │ year                │  ON   │   genres (array)            │
+  │ lyrics              │ artist│                             │
+  │ ranking             │       │                             │
+  └─────────────────────┘       └─────────────────────────────┘
+            │
+            ▼
+  ┌─────────────────────────────────────────────────────────────┐
+  │ billboard_lexical_analysis_ready.csv                        │
+  ├─────────────────────────────────────────────────────────────┤
+  │ FROM BILLBOARD:        │ FROM MUSICOSET:  │ CALCULATED:     │
+  │ • song                 │ • main_genre     │ • ttr           │
+  │ • band_singer          │                  │ • lexical_density│
+  │ • year                 │ MAPPED:          │ • hapax_ratio   │
+  │ • ranking              │ • macro_genre    │ • rare_word_ratio│
+  │ • lyrics               │   (via mapping)  │ • jaccard_*     │
+  └─────────────────────────────────────────────────────────────┘
 
-1. **Musicoset Dataset** - [DSW 2019 Project](https://marianaossilva.github.io/DSW2019)
-   - Artist and song metadata
-   - Additional song features
+═══════════════════════════════════════════════════════════════════════════════════════
 
-2. **Billboard Hot 100 (2000-2023) with Spotify Features** - [Kaggle Dataset](https://www.kaggle.com/datasets/suparnabiswas/billboard-hot-1002000-2023-data-with-features/code)
-   - Billboard chart data with rankings
-   - Lyrics and Spotify audio features
+BIGQUERY (bigquery_analysis_queries.sql)
 
-## Notebooks
+  billboard_bigquery.csv        musicoset_artists_cleaned.csv
+  ┌─────────────────────┐       ┌─────────────────────────────┐
+  │ band_singer    ─────┼──JOIN─┼─► name                      │
+  │ year                │  ON   │   main_genre                │
+  │                     │ artist│   genres (array unpacked)   │
+  └─────────────────────┘       └─────────────────────────────┘
+            │
+            ▼
+  ┌─────────────────────────────────────────────────────────────┐
+  │ QUERY 2: Genre Co-Occurrence Network                        │
+  │ Self-join on artist to create genre pairs:                  │
+  │ Artist "Post Malone" has genres: [pop, hip hop, rap]        │
+  │   → Creates edges: pop↔hip hop, pop↔rap, hip hop↔rap        │
+  │                                                             │
+  │ Output: genre_1, genre_2, co_occurrence_count               │
+  └─────────────────────────────────────────────────────────────┘
 
-Located in the `exploration/` folder:
+═══════════════════════════════════════════════════════════════════════════════════════
 
-### `exploration/data_exploration_focused.ipynb`
-Main analysis notebook with:
-- Word frequency and lexical metrics
-- Lexical density analysis
-- Chart position analysis (groups of 5 songs)
-- Temporal trends and statistical tests
-- Complete year-by-year rankings
-- Extreme examples (most/least complex songs)
+GENRE NETWORK (genre_analysis.ipynb)
 
-### `exploration/data_exploration_R.ipynb`
-R-based exploratory analysis with:
-- Audio feature correlations and relationships
-- Audio features vs chart performance
-- Bigrams and phrase analysis
-- Energy-valence emotional quadrant analysis
-- Lexical diversity and repetition analysis
+  QUERY 2 output              QUERY 5 output           genre_macro_mapping.csv
+  ┌───────────────────┐       ┌─────────────────┐      ┌──────────────────────┐
+  │ genre_1           │       │ sub_genre       │      │ micro_genre          │
+  │ genre_2           │       │ primary_main_   │      │ macro_genre          │
+  │ co_occurrence_    │       │ genre           │      │ (16 categories)      │
+  │ count             │       │ artist_count    │      │                      │
+  └─────────┬─────────┘       └────────┬────────┘      └──────────┬───────────┘
+            │                          │                          │
+            └──────────────────────────┴──────────────────────────┘
+                                       │
+                                       ▼
+                    ┌──────────────────────────────────────┐
+                    │ Network graph with:                  │
+                    │ • Nodes = sub-genres (957)           │
+                    │ • Node color = macro_genre           │
+                    │ • Node size = artist_count           │
+                    │ • Edges = co_occurrence_count        │
+                    └──────────────────────────────────────┘
 
-## Key Findings
+═══════════════════════════════════════════════════════════════════════════════════════
+```
 
-- Lexical diversity shows significant temporal trends
-- Top-charting songs show measurably different lyrical complexity
-- Decade-by-decade analysis reveals evolving patterns
-- Year-over-year rankings provide granular insights
+### Processing Pipeline
 
-## Network Analysis & BigQuery Queries
+```
+┌─────────────────────────────────────────────────────────────────────────────────────┐
+│                                 RAW DATA SOURCES                                     │
+│                                                                                      │
+│   Billboard Hot 100 (Kaggle)              MusicoSet (DSW 2019)                       │
+│   ┌─────────────────────────┐             ┌─────────────────────────┐               │
+│   │ billboard_24years_      │             │ musicoset_metadata/     │               │
+│   │ lyrics_spotify.csv      │             │ ├── artists.csv         │               │
+│   │ • 3,397 songs           │             │ └── songs.csv           │               │
+│   │ • Lyrics, rankings      │             │                         │               │
+│   │ • Spotify features      │             │ musicoset_songfeatures/ │               │
+│   └───────────┬─────────────┘             │ └── lyrics.csv          │               │
+│               │                           └───────────┬─────────────┘               │
+└───────────────┼───────────────────────────────────────┼─────────────────────────────┘
+                │                                       │
+                ▼                                       ▼
+┌─────────────────────────────────────────────────────────────────────────────────────┐
+│                              STAGE 1: CLEANING (R)                                   │
+│                                                                                      │
+│   billboard_cleaning.ipynb                musicoset_cleaning.ipynb                   │
+│   • Normalize whitespace                  • Convert "-" to NA                        │
+│   • Single-line lyrics                    • Tab → CSV format                         │
+│               │                                       │                              │
+│               ▼                                       ▼                              │
+│   ┌─────────────────────────┐             ┌─────────────────────────┐               │
+│   │ billboard_bigquery.csv  │             │ musicoset_artists_      │               │
+│   │ (3,397 songs)           │             │ cleaned.csv (11,518)    │               │
+│   └───────────┬─────────────┘             └───────────┬─────────────┘               │
+└───────────────┼───────────────────────────────────────┼─────────────────────────────┘
+                │                                       │
+                ▼                                       │
+┌─────────────────────────────────────────────────────────────────────────────────────┐
+│                         STAGE 2: LYRICS IMPROVEMENT (R)                              │
+│                                                                                      │
+│   billboard_cleaning.ipynb (Stage 2)     ◄────────────┘                              │
+│   • Match outliers with MusicoSet by song+artist                                     │
+│   • Replace 564 problematic lyrics                                                   │
+│               │                                                                      │
+│               ▼                                                                      │
+│   ┌─────────────────────────┐                                                       │
+│   │ billboard_improved.csv  │                                                       │
+│   │ (3,649 songs)           │                                                       │
+│   └───────────┬─────────────┘                                                       │
+└───────────────┼─────────────────────────────────────────────────────────────────────┘
+                │
+      ┌─────────┴─────────────────────────────┐
+      │                                       │
+      ▼                                       ▼
+┌─────────────────────────┐     ┌─────────────────────────────────────────────────────┐
+│    BIGQUERY PATH        │     │              LEXICAL ANALYSIS PATH                   │
+│                         │     │                                                      │
+│  Upload:                │     │  lexical_diversity_transformation.ipynb              │
+│  • Billboard            │     │  + musicoset_artists_cleaned.csv                     │
+│  • MusicoSet            │     │  + common_english_words_10k.csv                      │
+│          │              │     │              │                                       │
+│          ▼              │     │              ▼                                       │
+│  bigquery_queries.sql   │     │  ┌─────────────────────────────┐                    │
+│          │              │     │  │ billboard_lexical_analysis_ │                    │
+│          ▼              │     │  │ ready.csv                   │                    │
+│  sql_query_out/         │     │  │ • 37 columns                │                    │
+│  ├── QUERY 2 (network)  │     │  │ • Lexical metrics           │                    │
+│  ├── QUERY 4 (yearly)   │     │  │ • Genre data                │                    │
+│  └── QUERY 5 (mapping)  │     │  └─────────────┬───────────────┘                    │
+│          │              │     │                │                                     │
+└──────────┼──────────────┘     │                ▼                                     │
+           │                    │  lexical_analysis.ipynb → outputs/lexical_analysis/ │
+           │                    └─────────────────────────────────────────────────────┘
+           │
+           ▼
+┌─────────────────────────────────────────────────────────────────────────────────────┐
+│                         STAGE 3: GENRE NETWORK (R)                                   │
+│                                                                                      │
+│   genre_analysis.ipynb                                                               │
+│   + QUERY 2 output (edges)                                                           │
+│   + QUERY 5 output (node metadata)                                                   │
+│   + genre_macro_mapping.csv (manual 16-category mapping)                             │
+│               │                                                                      │
+│               ▼                                                                      │
+│   outputs/genre_network/                                                             │
+│   ├── genre_network_full.png                                                         │
+│   ├── genre_network_evolution_key_years.png                                          │
+│   ├── genre_hubs.png                                                                 │
+│   └── genre_snapshots_yearly/ (24 files)                                             │
+└─────────────────────────────────────────────────────────────────────────────────────┘
+```
 
-### Genre Co-Occurrence Network
+### Sub-Genre Extraction
 
-This project includes advanced network analysis using BigQuery to understand how music genres are related through multi-genre artists.
+```
+musicoset_artists_cleaned.csv contains:
+  genres column = array of sub-genres per artist
+  Example: "['dance pop', 'pop', 'post-teen pop']"
 
-**Key Components:**
+BigQuery UNNEST() unpacks this array:
+  Artist: "Ariana Grande"
+  genres: "['dance pop', 'pop', 'post-teen pop']"
+    ↓ UNNEST
+  Row 1: artist="Ariana Grande", genre="dance pop"
+  Row 2: artist="Ariana Grande", genre="pop"
+  Row 3: artist="Ariana Grande", genre="post-teen pop"
+```
 
-1. **Network Structure**
-   - **Nodes**: Music sub-genres (e.g., "pop", "hip hop", "dance pop", "trap")
-   - **Edges**: Weighted by number of artists who have BOTH genres in their profile
-   - **Time Series**: 23 separate networks showing evolution from 2000-2023 (yearly snapshots)
-   - **Node Coloring**: Genres colored by main genre family for visual clustering
+### Macro Genre Mapping
 
-2. **Mathematical Framework**
-   - Uses matrix multiplication approach: **G = A^T × A**
-   - A: Artist-Genre binary matrix (artists × genres)
-   - G: Genre-Genre co-occurrence matrix (genres × genres)
-   - **Note**: No collaboration matrix needed—measures genre co-occurrence within artists, not cross-artist collaborations
+1,560 micro-genres mapped to 16 categories:
 
-3. **Temporal Approach**
-   - Creates 23 independent yearly snapshots (2000-2023)
-   - Each year shows genres of artists on Billboard charts that year
-   - Enables tracking of genre emergence, fusion, and decline over time
-   - Billboard data provides temporal filter; artist genre data provides relationships
+POP, HIP HOP, ROCK, METAL, JAZZ, BLUES, FOLK, R&B, COUNTRY, LATIN, ELECTRONIC, CLASSICAL, REGGAE, NEW AGE, AVANT-GARDE, OTHER
 
-4. **Color Coding by Main Genre**
-   - Each sub-genre mapped to primary main genre (e.g., "dance pop" → "pop")
-   - Mapping determined by most common main_genre among artists with that sub-genre
-   - Visual clusters show genre families and cross-genre influences
-   - Color palette recommendations provided in documentation
+## Installation
 
-5. **Query Types**
-   - Billboard data with genre enrichment
-   - Genre co-occurrence networks (all-time and yearly)
-   - Genre-to-main-genre mapping (for color coding)
-   - Network metrics (degree centrality, emerging genre pairs)
-   - Genre statistics by year
+### R Packages
 
-**Files:**
-- `wrangling and transformation/wrangling/bigquery_analysis_queries.sql` - Complete SQL queries for BigQuery
-- `wrangling and transformation/wrangling/genre_collaboration_network_documentation.md` - Detailed methodology and graph theory background
-
-**Applications:**
-- Identify genre fusion trends over time (e.g., country-rap, emo rap emergence)
-- Track genre hybridization patterns (multi-genre artists)
-- Understand cultural shifts in mainstream music (2000-2023)
-- Create network visualizations with temporal evolution (NetworkX, Gephi, D3.js)
-- Analyze genre families and cross-genre influences through color-coded clusters
-
-## Libraries & Dependencies
-
-### R Libraries
-
-| Library | Purpose | Covered in Practicals? |
-|---------|---------|----------------------|
-| **tidyverse** | Core data manipulation (dplyr, tidyr, purrr); modern R workflow | ✓ Yes |
-| **readr** | Fast CSV reading with proper type inference | ✓ Yes |
-| **stringr** | String manipulation; cleaning lyrics and text fields | ✓ Yes (part of tidyverse) |
-| **ggplot2** | Advanced data visualization; publication-quality plots | ✓ Yes (part of tidyverse) |
-| **naniar** | Missing data analysis and summary statistics | ✗ **No** - Self-learned |
-| **visdat** | Missing data visualization; exploratory data quality checks | ✗ **No** - Self-learned |
-| **tidytext** | Text mining and NLP; word frequency, bigrams, lexical analysis | ✗ **No** - Self-learned |
-| **gridExtra** | Multi-panel plot layouts; arranging complex visualizations | ✗ **No** - Self-learned |
-
-**Note**: Libraries marked "Self-learned" represent techniques acquired independently beyond course materials, particularly for missing data analysis and text mining workflows. Some library choices (e.g., readr, gridExtra) also accommodate working in Jupyter notebooks rather than RStudio.
-
-## Setup
-
-### R Environment
-
-Required packages:
 ```r
-install.packages(c("tidyverse", "readr", "stringr", "naniar", "visdat",
-                   "ggplot2", "tidytext", "gridExtra"))
+# Core
+install.packages(c("tidyverse", "readr", "stringr", "ggplot2"))
+
+# Missing data
+install.packages(c("naniar", "visdat"))
+
+# Text mining
+install.packages("tidytext")
+
+# Network analysis
+install.packages(c("igraph", "GGally", "network", "sna", "intergraph", "patchwork"))
 ```
 
-### BigQuery Setup (Optional)
+### BigQuery (Optional)
 
-For network analysis queries:
+1. Create BigQuery project and dataset
+2. Upload cleaned CSVs
+3. Update table references in `bigquery_analysis_queries.sql`
 
-1. Create a BigQuery project and dataset
-2. Upload cleaned CSV files to BigQuery:
-   - `billboard_24years_lyrics_spotify_bigquery.csv`
-   - `musicoset_artists_cleaned.csv`
-   - `musicoset_songs_cleaned.csv`
-3. Update table references in `bigquery_analysis_queries.sql`:
-   - Replace `your-project-id` with your GCP project ID
-   - Replace `your-dataset` with your BigQuery dataset name
-4. Run queries in BigQuery Console or via `bq` CLI
-
-## Usage
-
-```bash
-# Start Jupyter for R notebooks
-jupyter notebook
-
-# Run BigQuery queries (after setup)
-bq query --use_legacy_sql=false < bigquery_analysis_queries.sql
-```
-
-## Data Structure
+## Project Structure
 
 ```
 data/
-├── cleaned/                                        # Cleaned datasets (BigQuery-ready)
-│   ├── billboard_24years_lyrics_spotify_bigquery.csv           # 3,397 songs, basic cleaning
-│   ├── billboard_24years_lyrics_spotify_bigquery_improved.csv  # 3,649 songs, improved lyrics
-│   ├── billboard_lexical_analysis_ready.csv                    # Analysis-ready dataset with lexical metrics
-│   ├── genre_macro_mapping.csv                                 # Micro to macro genre mapping
-│   ├── musicoset_artists_cleaned.csv                           # 11,518 artists
-│   ├── musicoset_songs_cleaned.csv                             # 20,405 songs
-│   └── musicoset_lyrics_cleaned.csv                            # 20,404 song lyrics
-├── billboard_24years_lyrics_spotify.csv            # Source: Billboard data (raw)
-├── musicoset_metadata/                             # Source: Artist and song metadata
-│   ├── artists.csv                                 # Tab-separated, raw
-│   ├── songs.csv                                   # Tab-separated, raw
-│   └── ReadMe.txt
-└── musicoset_songfeatures/                         # Source: Additional features
-    ├── lyrics.csv
-    ├── acoustic_features.csv
-    └── ReadMe.txt
+├── cleaned/                              # Processed datasets
+│   ├── billboard_lexical_analysis_ready.csv
+│   ├── genre_macro_mapping.csv
+│   ├── musicoset_artists_cleaned.csv
+│   └── musicoset_songs_cleaned.csv
+├── sql_query_out/                        # BigQuery results
+└── [raw data files]
 
 wrangling and transformation/
-├── cleaning/                                       # R cleaning notebooks
-│   ├── billboard_cleaning.ipynb                    # Billboard data cleaning
-│   ├── musicoset_cleaning.ipynb                    # MusicoSet metadata cleaning
-│   ├── missing_data_analysis.ipynb                 # Missing data visualization
-│   └── BILLBOARD_CSV_CLEANING_DOCUMENTATION.md     # Cleaning methodology
-└── wrangling/                                      # Data transformation and analysis prep
-    ├── lexical_diversity_transformation.ipynb      # Lexical metrics calculation
-    ├── lexical_diversity_analysis_feasibility.md   # Research question feasibility assessment
-    ├── bigquery_analysis_queries.sql               # BigQuery SQL queries
-    └── genre_collaboration_network_documentation.md # Network analysis methodology
+├── cleaning/                             # Data cleaning notebooks
+│   ├── billboard_cleaning.ipynb
+│   ├── musicoset_cleaning.ipynb
+│   └── BILLBOARD_CSV_CLEANING_DOCUMENTATION.md
+└── wrangling/                            # Transformation notebooks
+    ├── lexical_diversity_transformation.ipynb
+    ├── bigquery_analysis_queries.sql
+    └── genre_collaboration_network_documentation.md
 
-exploration/                                        # Analysis notebooks
-├── data_exploration_focused.ipynb                  # Main Python analysis
-└── data_exploration_R.ipynb                        # R-based exploration
+analysis and vizualisation/
+└── analysis/
+    ├── lexical_analysis.ipynb
+    ├── genre_analysis.ipynb
+    └── ANALYSIS_GUIDE.md
+
+outputs/
+├── genre_network/                        # Network visualizations
+│   ├── genre_network_full.png
+│   ├── genre_network_evolution_key_years.png
+│   ├── genre_hubs.png
+│   └── genre_snapshots_yearly/
+└── lexical_analysis/                     # Lexical analysis outputs
 ```
 
-## Analysis Focus
+## Outputs
 
-This project centers on **lexical diversity analysis** to answer the research question: *How does lexical diversity in song lyrics relate to chart performance and vary across genres in Billboard Hot 100 songs (2000-2023)?*
+### Lexical Analysis
 
-**Primary Analysis:**
-- Lexical diversity metrics (TTR, lexical density, hapax ratio) across 3,397 songs
-- Cross-genre comparisons (6 macro-genres with 85.6% coverage)
-- Chart performance correlations (Top 10 vs. lower rankings)
-- Temporal trends over 24 years (2000-2023)
-- Genre and year-normalized diversity scores
+Metrics calculated:
+- Type-Token Ratio (TTR)
+- Lexical density
+- Hapax ratio
+- Rare word ratio
+- Jaccard similarity (genre, corpus, common words)
 
-**Supplementary Components:**
-- Audio feature analysis (Spotify data, 14% coverage) as context
-- Network analysis of genre relationships using BigQuery and graph theory
-- Artist-level patterns and genre fusion trends
+### Genre Network
 
-## Development Notes
+- **957 nodes** (sub-genres)
+- **8,597 edges** (co-occurrence connections)
+- **24 yearly snapshots** (2000-2023)
+- Force-directed layout (Fruchterman-Reingold)
 
-This project was primarily developed by Lorenzo Garduño. AI assistance (Claude Code) was used to help write and debug portions of the code, particularly for data wrangling and processing tasks. Some git commits were automated through Claude Code for convenience.
+## Data Sources
+
+1. **Billboard Hot 100 (2000-2023)** - [Kaggle](https://www.kaggle.com/datasets/suparnabiswas/billboard-hot-1002000-2023-data-with-features)
+2. **MusicoSet** - [DSW 2019](https://marianaossilva.github.io/DSW2019)
 
 ## References
 
-### Network Analysis Methodology
+- Park, M., et al. (2019). Global music streaming data reveal cross-cultural correlations. *Frontiers in Psychology*, 10, 1873.
+- Newman, M. E. J. (2001). Scientific collaboration networks. *Physical Review E*, 64(1).
+- Barabási, A. L. (2016). *Network Science*. Cambridge University Press.
 
-Park, M., Thom, J., Mennicken, S., Cramer, H., & Macy, M. (2019). Global music streaming data reveal cross-cultural correlations. *Frontiers in Psychology*, 10, 1873. https://doi.org/10.3389/fpsyg.2019.01873
-
-### Additional References
-
-See `wrangling and transformation/wrangling/genre_collaboration_network_documentation.md` for complete bibliography including:
-- Newman, M. E. J. (2001) - Collaboration networks
-- Borgatti & Everett (1997) - Network analysis of 2-mode data
-- Latapy et al. (2008) - Two-mode network analysis
-- Barabási (2016) - Network Science textbook
-
-## License
-
-Data sourced from publicly available Billboard charts and Spotify API. See data sources section for attribution.
+See `genre_collaboration_network_documentation.md` for complete bibliography.
 
 ## Author
 
-Lorenzo Garduño
+**Lorenzo Garduño**
+
+All analysis logic, methodology, and bulk of the code written by Lorenzo Garduño. Claude Code was used to assist with coding implementation and debugging.
