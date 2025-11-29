@@ -206,13 +206,22 @@ These tags are assigned by Spotify's algorithm based on music characteristics an
 
 **Nodes:** 957 subgenres
 - Size = artist count
-- Color = macro genre (POP, HIP HOP, COUNTRY, ROCK, R&B, ELECTRONIC, LATIN, OTHER)
+- Color = macro genre (16 categories)
+- Labels = top 15% nodes by artist count (with text wrapping for multi-word genres)
 
 **Edges:** 8,597 connections
 - Weight = number of artists working in both genres
 
 **Layout:** Force-directed (Fruchterman-Reingold)
 - Inverted weights: strong connections attract
+- 3.5x center scaling to spread dense center
+- Collision detection (factor 0.4) to prevent node overlap
+
+**Yearly Snapshots:**
+- Same FR layout algorithm per year
+- "pop" genre anchored at center (0, 0) for stable focal point
+- All coordinates shifted so pop remains fixed across years
+- Designed for flipbook-style animation to show evolution
 
 ## Methodology
 
@@ -282,6 +291,27 @@ Where A is artist-genre binary matrix.
 - 2010-2015: Hip hop cluster grows, electronic emerges
 - 2020-2023: More cross-genre connections
 
+### Visualization Approach
+
+**Full Network (genre_network_full.png):**
+- All 957 nodes displayed
+- FR layout with 3.5x center scaling
+- Collision detection prevents node overlap
+- Top 15% nodes labeled with wrapped text
+- Dark gray labels (#333333) for readability
+
+**Yearly Snapshots (genre_snapshots_yearly/):**
+- FR layout calculated per year
+- "pop" always anchored at center (coordinates shifted post-layout)
+- Top 30% nodes labeled per year
+- Consistent seed (42) for reproducible layouts
+- Square output (12x12) optimized for flipbook animation
+
+**Key Years Panel (genre_network_evolution_key_years.png):**
+- 6 panels: 2000, 2005, 2010, 2015, 2020, 2023
+- Same pop-centered layout as yearly snapshots
+- 3x2 grid layout for comparison
+
 ---
 
 ## Limitations
@@ -299,8 +329,8 @@ Where A is artist-genre binary matrix.
 
 | File | Description |
 |------|-------------|
-| genre_network_full.png | Main network (957 nodes) |
-| genre_network_evolution_key_years.png | 6-panel evolution |
-| genre_hubs.png | Top 25 hub genres |
-| genre_network_metrics.csv | Centrality metrics |
-| genre_snapshots_yearly/ | 24 individual year networks |
+| genre_network_full.png | Main network (957 nodes, FR layout with collision detection, top 15% labeled) |
+| genre_network_evolution_key_years.png | 6-panel evolution (2000, 2005, 2010, 2015, 2020, 2023) |
+| genre_hubs.png | Top 25 hub genres by connection strength |
+| genre_network_metrics.csv | Centrality metrics (degree, strength, betweenness) |
+| genre_snapshots_yearly/ | 24 individual year networks (pop-centered, flipbook-ready) |
