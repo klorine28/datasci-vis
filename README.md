@@ -20,9 +20,10 @@ Analysis of Billboard Hot 100 songs focusing on lexical diversity and genre netw
 |---------------|--------|
 | Network analysis | Co-occurrence matrix via one-mode projection (G = AᵀA) |
 | Graph metrics | Degree centrality, strength, betweenness |
-| Temporal analysis | 24 yearly network snapshots |
-| Visualization | Force-directed layout (Fruchterman-Reingold algorithm) |
+| Temporal analysis | 24 yearly network snapshots with "pop" anchored at center |
+| Visualization | Force-directed layout (Fruchterman-Reingold) with collision detection |
 | Clustering | Macro genre grouping (16 categories) |
+| Animation | Flipbook-style yearly snapshots for temporal evolution |
 
 ## Dataset
 
@@ -329,8 +330,10 @@ Metrics calculated:
 
 - **957 nodes** (sub-genres)
 - **8,597 edges** (co-occurrence connections)
-- **24 yearly snapshots** (2000-2023)
-- Force-directed layout (Fruchterman-Reingold)
+- **24 yearly snapshots** (2000-2023) with "pop" anchored at center
+- Force-directed layout (Fruchterman-Reingold) with collision detection
+- Full network visualization with top 15% labels and text wrapping
+- Flipbook-ready yearly exports for animation
 
 ## Data Sources
 
