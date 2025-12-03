@@ -270,6 +270,12 @@ install.packages("tidytext")
 
 # Network analysis
 install.packages(c("igraph", "GGally", "network", "sna", "intergraph", "patchwork"))
+
+# Interactive visualization (Force Atlas 2)
+install.packages("sigmajs")
+
+# GEXF export for Gephi
+install.packages("xml2")
 ```
 
 ### BigQuery (Optional)
@@ -331,9 +337,11 @@ Metrics calculated:
 - **957 nodes** (sub-genres)
 - **8,597 edges** (co-occurrence connections)
 - **24 yearly snapshots** (2000-2023) with "pop" anchored at center
-- Force-directed layout (Fruchterman-Reingold) with collision detection
+- Graphopt layout (Force Atlas 2 equivalent) with collision detection
+- Interactive visualization using sigmajs with real Force Atlas 2
 - Full network visualization with top 15% labels and text wrapping
 - Flipbook-ready yearly exports for animation
+- GEXF export for Gephi dynamic timeline
 
 ## Data Sources
 
@@ -342,11 +350,27 @@ Metrics calculated:
 
 ## References
 
+### Academic
+
 - Park, M., et al. (2019). Global music streaming data reveal cross-cultural correlations. *Frontiers in Psychology*, 10, 1873.
 - Newman, M. E. J. (2001). Scientific collaboration networks. *Physical Review E*, 64(1).
 - Barabási, A. L. (2016). *Network Science*. Cambridge University Press.
 
 See `genre_collaboration_network_documentation.md` for complete bibliography.
+
+### R Packages & Tools
+
+- **sigmajs** - R interface to Sigma.js with Force Atlas 2: [Documentation](https://sigmajs.john-coene.com/) | [CRAN](https://cran.r-project.org/web/packages/sigmajs/)
+- **rgexf** - Create, read and write GEXF graph files: [GitHub](https://github.com/gvegayon/rgexf) | [CRAN](https://cran.r-project.org/web/packages/rgexf/)
+- **igraph** - Network analysis in R: [Documentation](https://igraph.org/r/)
+- **ggraph** - Grammar of graphics for networks: [Documentation](https://ggraph.data-imaginist.com/)
+- **Gephi** - Network visualization software: [gephi.org](https://gephi.org/)
+
+### Visualization Resources
+
+- [Force Atlas 2 in sigmajs](https://sigmajs.john-coene.com/reference/force.html)
+- [GEXF file format for Gephi](https://gexf.net/)
+- [Gephi dynamic graph tutorial](https://seinecle.github.io/gephi-tutorials/generated-html/converting-a-network-with-dates-into-dynamic.html)
 
 ## Author
 

@@ -212,16 +212,28 @@ These tags are assigned by Spotify's algorithm based on music characteristics an
 **Edges:** 8,597 connections
 - Weight = number of artists working in both genres
 
-**Layout:** Force-directed (Fruchterman-Reingold)
-- Inverted weights: strong connections attract
+**Layout:** Fruchterman-Reingold
+- Force-directed algorithm with inverted weights (strong connections = closer)
 - 3.5x center scaling to spread dense center
 - Collision detection (factor 0.4) to prevent node overlap
 
+**Animated Network (GIF):**
+- Top 300 nodes by artist count
+- Fresh Fruchterman-Reingold layout calculated for filtered nodes
+- 5.5x spread scaling + collision detection (factor 0.55)
+- Opacity filtering: active nodes bright (0.9), inactive faded (0.15)
+- Labels on all nodes (shown only when active)
+- 3 seconds per year, 2400x2000 resolution
+
 **Yearly Snapshots:**
-- Same FR layout algorithm per year
-- "pop" genre anchored at center (0, 0) for stable focal point
-- All coordinates shifted so pop remains fixed across years
-- Designed for flipbook-style animation to show evolution
+- Key years: 2000, 2005, 2010, 2015, 2020, 2023
+- Fruchterman-Reingold layout per year
+- "pop" genre anchored at center for stable focal point
+
+**Gephi Export:**
+- GEXF file with dynamic edges (appear/disappear by year)
+- Nodes have fixed positions from R layout
+- Timeline feature for temporal animation
 
 ## Methodology
 
@@ -295,22 +307,43 @@ Where A is artist-genre binary matrix.
 
 **Full Network (genre_network_full.png):**
 - All 957 nodes displayed
-- FR layout with 3.5x center scaling
-- Collision detection prevents node overlap
-- Top 15% nodes labeled with wrapped text
-- Dark gray labels (#333333) for readability
+- Fruchterman-Reingold layout with 3.5x center scaling
+- Collision detection (factor 0.4) prevents node overlap
+- Top 25% nodes labeled with wrapped text
+- White labels for readability on colored nodes
 
-**Yearly Snapshots (genre_snapshots_yearly/):**
-- FR layout calculated per year
-- "pop" always anchored at center (coordinates shifted post-layout)
-- Top 30% nodes labeled per year
-- Consistent seed (42) for reproducible layouts
-- Square output (12x12) optimized for flipbook animation
+**Animated GIF (genre_network_animated.gif):**
+- Top 300 nodes by artist count (reduces clutter)
+- Fresh layout calculated specifically for filtered nodes
+- Opacity-based activity highlighting:
+  - Bright (alpha 0.9): Node has collaborations that year
+  - Faded (alpha 0.15): Node inactive that year
+- All nodes labeled (labels only shown when active)
+- 3 seconds per frame, 24 frames (2000-2023)
+- Resolution: 2400x2000 pixels
 
 **Key Years Panel (genre_network_evolution_key_years.png):**
 - 6 panels: 2000, 2005, 2010, 2015, 2020, 2023
-- Same pop-centered layout as yearly snapshots
-- 3x2 grid layout for comparison
+- Fruchterman-Reingold layout per year
+- "pop" anchored at center for comparison
+- 3x2 grid layout
+
+### Genre Collaboration Analysis
+
+**Total Collaborations (2000-2023):**
+- Sum of all edge weights per genre across all 24 years
+- No arbitrary period segmentation - complete picture
+- Measures overall genre connectivity in Billboard ecosystem
+
+**Top Genres by Category (top_genres_by_category.png):**
+- Top 5 genres per macro genre by total collaborations
+- Faceted bar chart for easy comparison across categories
+- Shows which subgenres dominate within each macro genre
+
+**Top 25 Overall (top_25_collaborative_genres.png):**
+- Single ranked bar chart like hub genres
+- Shows the most connected genres regardless of category
+- Colored by macro genre for context
 
 ---
 
@@ -327,10 +360,95 @@ Where A is artist-genre binary matrix.
 
 ## Output Files
 
+### Images
 | File | Description |
 |------|-------------|
-| genre_network_full.png | Main network (957 nodes, FR layout with collision detection, top 15% labeled) |
+| genre_network_full.png | Main network (957 nodes, FR layout, collision detection) |
+| genre_network_animated.gif | Animated network (300 nodes, opacity filtering, 3 sec/year) |
 | genre_network_evolution_key_years.png | 6-panel evolution (2000, 2005, 2010, 2015, 2020, 2023) |
 | genre_hubs.png | Top 25 hub genres by connection strength |
-| genre_network_metrics.csv | Centrality metrics (degree, strength, betweenness) |
-| genre_snapshots_yearly/ | 24 individual year networks (pop-centered, flipbook-ready) |
+| top_genres_by_category.png | Top 5 genres per macro genre by total collaborations |
+| top_25_collaborative_genres.png | Top 25 most collaborative genres overall |
+
+### Data (non_image/)
+| File | Description |
+|------|-------------|
+| genre_network_dynamic.gexf | Gephi file with dynamic edges for timeline animation |
+| genre_network_nodes_gephi.csv | Node data for Gephi import |
+| genre_network_edges_gephi.csv | Edge data (all-time) for Gephi import |
+| genre_network_edges_temporal_gephi.csv | Edge data with year column (sparse format) |
+
+---
+
+## Using Gephi for Dynamic Visualization
+
+The notebook exports a GEXF file that enables dynamic edge visualization in Gephi. Here's how to use it:
+
+### Step 1: Install Gephi
+
+Download from [gephi.org](https://gephi.org/) (available for Windows, Mac, Linux).
+
+### Step 2: Open the Dynamic Graph
+
+1. Launch Gephi
+2. **File > Open** → select `outputs/genre_network/genre_network_dynamic.gexf`
+3. In the import dialog:
+   - Graph Type: **Undirected**
+   - Time Representation: **Interval**
+   - Click **OK**
+
+### Step 3: Enable the Timeline
+
+1. Look at the **bottom toolbar** - you'll see a timeline panel
+2. If not visible, go to **Window > Timeline**
+3. Click the **Enable Timeline** button (clock icon)
+
+### Step 4: Configure the View
+
+1. **Overview tab** (left panel):
+   - Nodes should already be positioned and colored from the R layout
+   - If not, run **Layout > ForceAtlas 2** briefly, then stop
+
+2. **Appearance panel** (right side):
+   - Nodes > Color > Partition > `macro_genre` (should be pre-set)
+   - Nodes > Size > Ranking > `artist_count`
+
+### Step 5: Animate the Timeline
+
+1. **Adjust the time window**: Drag the edges of the timeline slider to set a 1-year window
+2. **Scrub through years**: Drag the slider from 2000 to 2023
+3. **Watch edges appear/disappear**: Only edges active in that year will show
+4. **Play animation**: Click the play button for automatic animation
+
+### Step 6: Export Animation
+
+Gephi doesn't export video directly. Options:
+1. **Screen recording**: Use QuickTime (Mac) or OBS to record the animation
+2. **Export frames**: Use the Timeline's frame export feature
+3. **Sigma.js export**: File > Export > Sigma.js template (creates interactive web page)
+
+### Tips
+
+- **Lock node positions**: Right-click on graph > "Settle" to prevent nodes from moving
+- **Filter by weight**: Use Filters > Edges > Edge Weight to show only strong connections
+- **Adjust animation speed**: In Timeline settings, change the playback speed
+- **Custom time window**: Set window size to 1 year for year-by-year view, or 5 years for smoother transitions
+
+### Alternative: CSV Import
+
+If you prefer to build the graph from scratch in Gephi:
+
+1. **File > Import Spreadsheet**
+2. Import `genre_network_nodes_gephi.csv` as **Nodes table**
+3. Import `genre_network_edges_temporal_gephi.csv` as **Edges table**
+4. Set `year` column as time interval
+5. Merge into workspace
+
+---
+
+## References
+
+- [Gephi documentation](https://gephi.org/users/)
+- [GEXF file format](https://gexf.net/)
+- [Gephi dynamic graph tutorial](https://seinecle.github.io/gephi-tutorials/generated-html/converting-a-network-with-dates-into-dynamic.html)
+- [gganimate package](https://gganimate.com/) - Animated ggplot2 visualizations
