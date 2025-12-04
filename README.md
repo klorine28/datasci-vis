@@ -254,6 +254,88 @@ BigQuery UNNEST() unpacks this array:
 
 POP, HIP HOP, ROCK, METAL, JAZZ, BLUES, FOLK, R&B, COUNTRY, LATIN, ELECTRONIC, CLASSICAL, REGGAE, NEW AGE, AVANT-GARDE, OTHER
 
+### How Genre Relationships Are Derived
+
+The genre network edges represent **how many artists share both genres**, not collaborations between artists. This is a one-mode projection of a bipartite network (artist-genre → genre-genre).
+
+#### Source Data
+
+| Dataset | Key Fields | Purpose |
+|---------|------------|---------|
+| **Billboard** | `band_singer`, `year` | Which artists charted in which year (temporal filter) |
+| **MusicoSet Artists** | `name`, `main_genre`, `genres` | Genre tags per artist (from Spotify API) |
+
+**Important**: The `songs.csv` is NOT used for the genre network. Relationships are based on genre co-occurrence within artists, not song collaborations.
+
+#### Transformation Steps (BigQuery Query 2)
+
+```
+Step 1: Explode artist genres
+─────────────────────────────
+Artist "112" has genres: ['atl hip hop', 'boy band', 'dance pop', 'hip hop', ...]
+
+This becomes multiple rows:
+  112 → atl hip hop
+  112 → boy band
+  112 → dance pop
+  112 → hip hop
+  ...
+
+Step 2: Self-join on artist (G = Aᵀ × A)
+────────────────────────────────────────
+For artist "112", create ALL genre pairs:
+  (atl hip hop, boy band)      ← same artist has both
+  (atl hip hop, dance pop)     ← same artist has both
+  (atl hip hop, hip hop)       ← same artist has both
+  (boy band, dance pop)        ← same artist has both
+  ...
+
+Step 3: Count distinct artists per genre pair
+─────────────────────────────────────────────
+  hip hop ↔ rap: 287 artists have BOTH tags
+  pop rap ↔ rap: 273 artists have BOTH tags
+  dance pop ↔ pop: 268 artists have BOTH tags
+```
+
+#### Temporal Filtering (Query 3/4)
+
+For yearly networks, Billboard adds the time component:
+
+```
+Billboard (year=2023) → Filter to artists who charted in 2023
+                      → Join with MusicoSet genres
+                      → Run same genre-pair algorithm
+                      → Result: Genre network for 2023 only
+```
+
+#### Key Insight
+
+Two genres are connected if many artists are tagged with **both** genre labels by Spotify. Example: "hip hop" and "rap" are strongly connected because 287 artists have both tags.
+
+### Co-occurrence Decline Over Time
+
+The genre network analysis reveals a significant **67% decline in total co-occurrences** from 2000 to 2023. This decline is NOT due to fewer artists on Billboard, but rather to data coverage limitations.
+
+#### Root Causes
+
+| Factor | Explanation | Impact |
+|--------|-------------|--------|
+| **MusicoSet Coverage Gap** | MusicoSet dataset is from 2019, so artists who became popular after 2019 have no genre data | ~40% of recent artists unmatched |
+| **Fewer Genre Tags Per Artist** | Even matched artists in recent years tend to have fewer genre tags on average | Reduces possible co-occurrence pairs |
+| **Spotify API Genre Sparsity** | Newer/smaller artists often have fewer genre tags in Spotify's database | Compounds the coverage issue |
+
+#### Data Enhancement
+
+To mitigate this issue, supplementary genre data was added:
+- **Spotify API**: Fetched genres for unmatched Billboard artists
+- **Manual Assignment**: Added genres for remaining high-frequency artists
+
+This enhancement improved coverage but the structural limitation remains: the MusicoSet snapshot from 2019 will always underrepresent post-2019 music trends.
+
+#### Interpretation Note
+
+When analyzing temporal trends in the genre network, the declining co-occurrences should be interpreted as a **data artifact** rather than a real decrease in genre diversity or cross-genre collaboration. The early period (2000-2011) has more complete data coverage than the later period (2012-2023).
+
 ## Installation
 
 ### R Packages

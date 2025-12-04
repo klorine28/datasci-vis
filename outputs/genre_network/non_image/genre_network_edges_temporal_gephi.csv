@@ -1,4 +1,5 @@
 from,to,weight,year
+", ",children,1,2019
 acoustic pop,folk-pop,1,2006
 acoustic pop,folk-pop,1,2008
 acoustic pop,folk-pop,1,2010
@@ -79,9 +80,86 @@ afro dancehall,afropop,1,2022
 afro dancehall,azonto,1,2016
 afro dancehall,azonto,1,2021
 afro dancehall,azonto,1,2022
-afropop,azonto,1,2016
-afropop,azonto,1,2021
-afropop,azonto,1,2022
+afro r&b,afrobeat,1,2016
+afro r&b,afrobeat,2,2021
+afro r&b,afrobeat,3,2022
+afro r&b,afrobeat,1,2023
+afro r&b,afrobeats,1,2016
+afro r&b,afrobeats,2,2021
+afro r&b,afrobeats,3,2022
+afro r&b,afrobeats,1,2023
+afro r&b,afropiano,1,2016
+afro r&b,afropiano,1,2021
+afro r&b,afropiano,1,2022
+afro r&b,afropop,1,2016
+afro r&b,afropop,1,2021
+afro r&b,afropop,2,2022
+afro r&b,afroswing,1,2016
+afro r&b,afroswing,1,2021
+afro r&b,afroswing,1,2022
+afro r&b,alté,1,2021
+afro r&b,alté,1,2022
+afro r&b,alté,1,2023
+afro r&b,azonto,1,2016
+afro r&b,azonto,1,2021
+afro r&b,azonto,1,2022
+afrobeat,afrobeats,1,2016
+afrobeat,afrobeats,2,2021
+afrobeat,afrobeats,3,2022
+afrobeat,afrobeats,2,2023
+afrobeat,afropiano,1,2016
+afrobeat,afropiano,1,2021
+afrobeat,afropiano,1,2022
+afrobeat,afropiano,1,2023
+afrobeat,afropop,1,2016
+afrobeat,afropop,1,2021
+afrobeat,afropop,2,2022
+afrobeat,afropop,1,2023
+afrobeat,afroswing,1,2016
+afrobeat,afroswing,1,2021
+afrobeat,afroswing,1,2022
+afrobeat,alté,1,2021
+afrobeat,alté,1,2022
+afrobeat,alté,1,2023
+afrobeat,azonto,1,2016
+afrobeat,azonto,1,2021
+afrobeat,azonto,1,2022
+afrobeats,afropiano,1,2016
+afrobeats,afropiano,1,2021
+afrobeats,afropiano,1,2022
+afrobeats,afropiano,1,2023
+afrobeats,afropop,1,2016
+afrobeats,afropop,1,2021
+afrobeats,afropop,2,2022
+afrobeats,afropop,1,2023
+afrobeats,afroswing,1,2016
+afrobeats,afroswing,1,2021
+afrobeats,afroswing,1,2022
+afrobeats,alté,1,2021
+afrobeats,alté,1,2022
+afrobeats,alté,1,2023
+afrobeats,azonto,1,2016
+afrobeats,azonto,1,2021
+afrobeats,azonto,1,2022
+afropiano,afropop,1,2016
+afropiano,afropop,1,2021
+afropiano,afropop,1,2022
+afropiano,afropop,1,2023
+afropiano,afroswing,1,2016
+afropiano,afroswing,1,2021
+afropiano,afroswing,1,2022
+afropiano,azonto,1,2016
+afropiano,azonto,1,2021
+afropiano,azonto,1,2022
+afropop,afroswing,1,2016
+afropop,afroswing,1,2021
+afropop,afroswing,1,2022
+afropop,azonto,2,2016
+afropop,azonto,2,2021
+afropop,azonto,2,2022
+afroswing,azonto,1,2016
+afroswing,azonto,1,2021
+afroswing,azonto,1,2022
 alabama rap,dirty south rap,1,2007
 alabama rap,gangster rap,1,2007
 alabama rap,pop rap,1,2007
@@ -97,6 +175,10 @@ album rock,mellow gold,1,2015
 album rock,rock,1,2001
 album rock,rock,1,2015
 album rock,soft rock,1,2015
+algerian chaabi,gnawa,1,2000
+algerian chaabi,moroccan chaabi,1,2000
+algerian chaabi,moroccan pop,1,2000
+algerian chaabi,raï,1,2000
 alternative dance,dance pop,1,2010
 alternative dance,electropop,1,2010
 alternative dance,indietronica,1,2010
@@ -161,7 +243,7 @@ alternative metal,neo mellow,1,2010
 alternative metal,nu metal,4,2000
 alternative metal,nu metal,7,2001
 alternative metal,nu metal,5,2002
-alternative metal,nu metal,5,2003
+alternative metal,nu metal,6,2003
 alternative metal,nu metal,5,2004
 alternative metal,nu metal,4,2005
 alternative metal,nu metal,2,2006
@@ -223,12 +305,18 @@ alternative metal,rap rock,1,2009
 alternative metal,rock,4,2000
 alternative metal,rock,3,2001
 alternative metal,rock,2,2002
-alternative metal,rock,3,2003
+alternative metal,rock,4,2003
 alternative metal,rock,1,2005
 alternative metal,rock,2,2008
 alternative metal,wrestling,1,2004
 alternative metal,wrestling,1,2007
 alternative metal,wrestling,1,2008
+alternative pop,pop,1,2021
+alternative pop,pop,1,2022
+alternative pop,pop,1,2023
+alternative pop,pop rock,1,2021
+alternative pop,pop rock,1,2022
+alternative pop,pop rock,1,2023
 alternative r&b,atl hip hop,1,2012
 alternative r&b,atl hip hop,1,2021
 alternative r&b,dance pop,1,2005
@@ -237,11 +325,14 @@ alternative r&b,deep pop r&b,1,2005
 alternative r&b,deep pop r&b,1,2014
 alternative r&b,electropop,1,2012
 alternative r&b,escape room,1,2012
+alternative r&b,experimental,1,2023
 alternative r&b,hip hop,1,2005
 alternative r&b,hip hop,1,2014
 alternative r&b,hip hop,1,2017
 alternative r&b,hip hop,1,2021
+alternative r&b,hip hop,1,2023
 alternative r&b,hip pop,1,2005
+alternative r&b,indie,1,2022
 alternative r&b,indie r&b,1,2014
 alternative r&b,lgbtq+ hip hop,1,2017
 alternative r&b,neo soul,1,2005
@@ -251,6 +342,7 @@ alternative r&b,pop,1,2012
 alternative r&b,pop,1,2013
 alternative r&b,pop,1,2014
 alternative r&b,pop,1,2017
+alternative r&b,pop,1,2020
 alternative r&b,pop,1,2021
 alternative r&b,pop rap,1,2013
 alternative r&b,pop rap,2,2014
@@ -266,6 +358,7 @@ alternative r&b,trap soul,1,2013
 alternative r&b,trap soul,1,2014
 alternative r&b,underground hip hop,1,2014
 alternative r&b,urban contemporary,1,2005
+alternative rock,emo,1,2019
 alternative rock,folk-pop,1,2002
 alternative rock,funk metal,1,2000
 alternative rock,funk metal,2,2001
@@ -275,7 +368,10 @@ alternative rock,funk rock,1,2000
 alternative rock,funk rock,1,2001
 alternative rock,funk rock,1,2006
 alternative rock,funk rock,1,2007
+alternative rock,glam rock,1,2021
 alternative rock,grunge,1,2000
+alternative rock,indie pop,1,2012
+alternative rock,indie pop,1,2013
 alternative rock,industrial metal,1,2000
 alternative rock,industrial rock,1,2000
 alternative rock,lilith,1,2002
@@ -303,10 +399,15 @@ alternative rock,pop rock,5,2001
 alternative rock,pop rock,3,2002
 alternative rock,pop rock,1,2003
 alternative rock,pop rock,1,2005
+alternative rock,pop rock,1,2011
+alternative rock,pop rock,1,2012
+alternative rock,pop rock,1,2013
+alternative rock,pop rock,1,2019
 alternative rock,post-grunge,6,2000
 alternative rock,post-grunge,5,2001
 alternative rock,post-grunge,2,2002
-alternative rock,post-grunge,2,2003
+alternative rock,post-grunge,3,2003
+alternative rock,post-grunge,1,2004
 alternative rock,post-grunge,2,2005
 alternative rock,post-grunge,1,2006
 alternative rock,post-grunge,1,2007
@@ -317,11 +418,15 @@ alternative rock,rap rock,1,2003
 alternative rock,rock,5,2000
 alternative rock,rock,2,2001
 alternative rock,rock,2,2002
-alternative rock,rock,2,2003
+alternative rock,rock,3,2003
+alternative rock,rock,1,2004
 alternative rock,rock,2,2005
 alternative rock,rock,1,2006
 alternative rock,rock,1,2007
+alternative rock,rock,1,2021
 alternative rock,singer-songwriter,1,2002
+argentine trap,trap latino,1,2023
+argentine trap,urbano latino,1,2023
 art pop,art rock,1,2022
 art pop,baroque pop,1,2022
 art pop,dance pop,1,2013
@@ -840,6 +945,18 @@ australian pop,urban contemporary,1,2009
 australian pop,urban contemporary,1,2010
 australian pop,viral pop,1,2012
 australian pop,viral pop,1,2014
+banda,corrido,4,2023
+banda,corridos bélicos,4,2023
+banda,corridos tumbados,4,2023
+banda,cumbia norteña,1,2023
+banda,electro corridos,2,2023
+banda,grupera,1,2023
+banda,música mexicana,4,2023
+banda,norteño,1,2023
+banda,ranchera,1,2023
+banda,sad sierreño,3,2023
+banda,sierreño,2,2023
+banda,tejano,1,2023
 baroque pop,dance rock,1,2022
 baroque pop,modern rock,1,2006
 baroque pop,modern rock,1,2019
@@ -898,6 +1015,8 @@ big room,progressive house,1,2015
 big room,tropical house,1,2011
 big room,tropical house,1,2014
 big room,tropical house,1,2015
+blues rock,rock,1,2004
+blues rock,tex-mex,1,2004
 blues-rock,classic rock,1,2000
 blues-rock,classic rock,1,2003
 blues-rock,classic rock,1,2004
@@ -919,7 +1038,7 @@ bounce,pop rap,1,2004
 bounce,rap,1,2004
 bounce,southern hip hop,2,2004
 bounce,trap music,2,2004
-boy band,dance pop,5,2000
+boy band,dance pop,6,2000
 boy band,dance pop,2,2001
 boy band,dance pop,1,2002
 boy band,dance pop,1,2003
@@ -952,6 +1071,7 @@ boy band,neo soul,1,2000
 boy band,new jack swing,1,2000
 boy band,new jack swing,1,2001
 boy band,new jack swing,1,2005
+boy band,pop,1,2000
 boy band,pop,1,2001
 boy band,pop,1,2005
 boy band,pop,1,2008
@@ -1049,6 +1169,15 @@ british soul,urban contemporary,1,2002
 british soul,urban contemporary,1,2003
 broadway,hollywood,1,2014
 broadway,show tunes,1,2014
+bronx drill,hip hop,1,2023
+bronx drill,rap,1,2023
+brooklyn drill,drill,1,2020
+brooklyn drill,drill,1,2021
+brooklyn drill,melodic rap,1,2019
+brooklyn drill,melodic rap,1,2020
+brooklyn drill,melodic rap,1,2021
+brooklyn drill,new york drill,1,2020
+brooklyn drill,new york drill,1,2021
 brostep,complextro,1,2015
 brostep,edm,1,2015
 brostep,electro house,1,2013
@@ -1622,6 +1751,8 @@ christian rock,neo mellow,1,2004
 christian rock,pop rock,1,2004
 christian rock,post-grunge,1,2004
 christian rock,worship,1,2004
+christmas,villancicos,1,2022
+christmas,villancicos,1,2023
 classic rock,folk rock,1,2015
 classic rock,hard rock,1,2001
 classic rock,mellow gold,1,2015
@@ -1944,6 +2075,36 @@ contemporary country,texas country,1,2011
 contemporary country,texas country,1,2012
 contemporary country,texas country,1,2022
 contemporary country,traditional country,1,2001
+corrido,corridos bélicos,5,2023
+corrido,corridos tumbados,5,2023
+corrido,cumbia norteña,1,2023
+corrido,electro corridos,2,2023
+corrido,grupera,1,2023
+corrido,música mexicana,5,2023
+corrido,norteño,1,2023
+corrido,ranchera,1,2023
+corrido,sad sierreño,4,2023
+corrido,sierreño,3,2023
+corrido,tejano,1,2023
+corridos bélicos,corridos tumbados,5,2023
+corridos bélicos,cumbia norteña,1,2023
+corridos bélicos,electro corridos,2,2023
+corridos bélicos,grupera,1,2023
+corridos bélicos,música mexicana,5,2023
+corridos bélicos,norteño,1,2023
+corridos bélicos,ranchera,1,2023
+corridos bélicos,sad sierreño,4,2023
+corridos bélicos,sierreño,3,2023
+corridos bélicos,tejano,1,2023
+corridos tumbados,cumbia norteña,1,2023
+corridos tumbados,electro corridos,2,2023
+corridos tumbados,grupera,1,2023
+corridos tumbados,música mexicana,5,2023
+corridos tumbados,norteño,1,2023
+corridos tumbados,ranchera,1,2023
+corridos tumbados,sad sierreño,4,2023
+corridos tumbados,sierreño,3,2023
+corridos tumbados,tejano,1,2023
 country,country dawn,5,2000
 country,country dawn,3,2001
 country,country dawn,2,2002
@@ -1964,6 +2125,9 @@ country,country dawn,1,2020
 country,country dawn,1,2021
 country,country gospel,1,2001
 country,country gospel,1,2004
+country,country hip hop,1,2019
+country,country hip hop,1,2021
+country,country hip hop,1,2023
 country,country pop,1,2009
 country,country pop,2,2010
 country,country pop,2,2011
@@ -2003,6 +2167,7 @@ country,country rock,3,2001
 country,country rock,1,2003
 country,country rock,1,2004
 country,country rock,1,2008
+country,country rock,1,2023
 country,dance pop,1,2000
 country,dance pop,1,2002
 country,dance pop,1,2003
@@ -2076,6 +2241,8 @@ country,post-teen pop,1,2017
 country,post-teen pop,1,2021
 country,red dirt,1,2001
 country,red dirt,1,2003
+country,red dirt,1,2022
+country,red dirt,2,2023
 country,redneck,1,2008
 country,redneck,1,2010
 country,redneck,1,2011
@@ -2086,6 +2253,7 @@ country,singer-songwriter,1,2003
 country,texas country,1,2003
 country,texas country,1,2011
 country,texas country,1,2012
+country,texas country,2,2023
 country,traditional country,1,2001
 country,traditional country,1,2003
 country dawn,country pop,1,2009
@@ -2252,10 +2420,10 @@ crunk,gangster rap,2,2001
 crunk,gangster rap,2,2002
 crunk,gangster rap,4,2003
 crunk,gangster rap,7,2004
-crunk,gangster rap,5,2005
-crunk,gangster rap,10,2006
-crunk,gangster rap,2,2007
-crunk,gangster rap,4,2008
+crunk,gangster rap,6,2005
+crunk,gangster rap,11,2006
+crunk,gangster rap,3,2007
+crunk,gangster rap,5,2008
 crunk,gangster rap,1,2010
 crunk,gangster rap,2,2014
 crunk,gangster rap,1,2015
@@ -2267,7 +2435,7 @@ crunk,hip hop,1,2002
 crunk,hip hop,2,2003
 crunk,hip hop,3,2004
 crunk,hip hop,4,2005
-crunk,hip hop,6,2006
+crunk,hip hop,7,2006
 crunk,hip hop,3,2008
 crunk,hip hop,1,2010
 crunk,hip hop,2,2014
@@ -2310,10 +2478,10 @@ crunk,rap,1,2001
 crunk,rap,1,2002
 crunk,rap,3,2003
 crunk,rap,4,2004
-crunk,rap,5,2005
-crunk,rap,9,2006
-crunk,rap,2,2007
-crunk,rap,4,2008
+crunk,rap,6,2005
+crunk,rap,10,2006
+crunk,rap,3,2007
+crunk,rap,5,2008
 crunk,rap,1,2010
 crunk,rap,2,2014
 crunk,rap,1,2015
@@ -2323,11 +2491,11 @@ crunk,rap,1,2022
 crunk,southern hip hop,1,2001
 crunk,southern hip hop,1,2002
 crunk,southern hip hop,5,2003
-crunk,southern hip hop,8,2004
-crunk,southern hip hop,6,2005
-crunk,southern hip hop,11,2006
-crunk,southern hip hop,2,2007
-crunk,southern hip hop,4,2008
+crunk,southern hip hop,9,2004
+crunk,southern hip hop,7,2005
+crunk,southern hip hop,14,2006
+crunk,southern hip hop,4,2007
+crunk,southern hip hop,5,2008
 crunk,southern hip hop,2,2010
 crunk,southern hip hop,3,2014
 crunk,southern hip hop,1,2015
@@ -2348,6 +2516,25 @@ crunk,trap music,1,2015
 crunk,trap music,1,2018
 crunk,trap music,1,2021
 crunk,trap music,1,2022
+cumbia norteña,grupera,1,2023
+cumbia norteña,música mexicana,1,2023
+cumbia norteña,norteño,1,2023
+cumbia norteña,ranchera,1,2023
+cumbia norteña,tejano,1,2023
+dance,electro house,1,2011
+dance,electro house,1,2012
+dance,electronic,1,2000
+dance,electronic,1,2005
+dance,electronic,1,2010
+dance,electronic,3,2011
+dance,electronic,1,2012
+dance,electronic,1,2020
+dance,electropop,1,2010
+dance,electropop,1,2011
+dance,eurodance,1,2005
+dance,hip hop,1,2011
+dance,house,1,2000
+dance,house,1,2020
 dance pop,dance rock,1,2023
 dance pop,deep big room,1,2011
 dance pop,deep big room,1,2015
@@ -2409,12 +2596,14 @@ dance pop,electro house,2,2015
 dance pop,electro house,2,2016
 dance pop,electro house,2,2017
 dance pop,electro house,1,2018
+dance pop,electronic,1,2011
+dance pop,electronic,1,2012
 dance pop,electropop,1,2002
 dance pop,electropop,2,2004
 dance pop,electropop,2,2006
 dance pop,electropop,1,2009
-dance pop,electropop,3,2010
-dance pop,electropop,2,2011
+dance pop,electropop,4,2010
+dance pop,electropop,4,2011
 dance pop,electropop,5,2012
 dance pop,electropop,6,2013
 dance pop,electropop,6,2014
@@ -2424,7 +2613,8 @@ dance pop,electropop,3,2017
 dance pop,electropop,1,2018
 dance pop,electropop,2,2019
 dance pop,electropop,1,2020
-dance pop,electropop,1,2022
+dance pop,electropop,2,2022
+dance pop,electropop,1,2023
 dance pop,electropowerpop,1,2009
 dance pop,electropowerpop,1,2010
 dance pop,emo,1,2007
@@ -2700,30 +2890,30 @@ dance pop,piano rock,1,2011
 dance pop,piano rock,1,2013
 dance pop,piano rock,1,2014
 dance pop,piano rock,1,2022
-dance pop,pop,13,2000
-dance pop,pop,19,2001
-dance pop,pop,21,2002
+dance pop,pop,15,2000
+dance pop,pop,21,2001
+dance pop,pop,22,2002
 dance pop,pop,17,2003
 dance pop,pop,14,2004
 dance pop,pop,27,2005
-dance pop,pop,25,2006
-dance pop,pop,34,2007
-dance pop,pop,31,2008
-dance pop,pop,31,2009
+dance pop,pop,26,2006
+dance pop,pop,35,2007
+dance pop,pop,32,2008
+dance pop,pop,32,2009
 dance pop,pop,41,2010
-dance pop,pop,45,2011
-dance pop,pop,33,2012
-dance pop,pop,41,2013
+dance pop,pop,47,2011
+dance pop,pop,35,2012
+dance pop,pop,42,2013
 dance pop,pop,41,2014
-dance pop,pop,38,2015
+dance pop,pop,39,2015
 dance pop,pop,35,2016
-dance pop,pop,29,2017
+dance pop,pop,30,2017
 dance pop,pop,26,2018
-dance pop,pop,18,2019
+dance pop,pop,19,2019
 dance pop,pop,16,2020
-dance pop,pop,12,2021
-dance pop,pop,11,2022
-dance pop,pop,17,2023
+dance pop,pop,14,2021
+dance pop,pop,13,2022
+dance pop,pop,18,2023
 dance pop,pop punk,1,2007
 dance pop,pop punk,2,2009
 dance pop,pop punk,1,2010
@@ -2753,23 +2943,26 @@ dance pop,pop rap,2,2020
 dance pop,pop rap,2,2021
 dance pop,pop rap,2,2022
 dance pop,pop rap,3,2023
-dance pop,pop rock,2,2000
-dance pop,pop rock,3,2001
-dance pop,pop rock,7,2002
+dance pop,pop rock,3,2000
+dance pop,pop rock,4,2001
+dance pop,pop rock,8,2002
 dance pop,pop rock,3,2003
 dance pop,pop rock,4,2004
 dance pop,pop rock,4,2005
-dance pop,pop rock,3,2006
-dance pop,pop rock,5,2007
-dance pop,pop rock,6,2008
-dance pop,pop rock,4,2009
+dance pop,pop rock,4,2006
+dance pop,pop rock,6,2007
+dance pop,pop rock,7,2008
+dance pop,pop rock,5,2009
 dance pop,pop rock,4,2010
-dance pop,pop rock,5,2011
-dance pop,pop rock,3,2012
-dance pop,pop rock,4,2013
+dance pop,pop rock,6,2011
+dance pop,pop rock,4,2012
+dance pop,pop rock,5,2013
 dance pop,pop rock,3,2014
 dance pop,pop rock,1,2015
+dance pop,pop rock,1,2017
+dance pop,pop rock,1,2019
 dance pop,pop rock,1,2020
+dance pop,pop rock,1,2021
 dance pop,pop rock,1,2022
 dance pop,post-teen pop,4,2000
 dance pop,post-teen pop,5,2001
@@ -2823,7 +3016,7 @@ dance pop,r&b,11,2011
 dance pop,r&b,8,2012
 dance pop,r&b,7,2013
 dance pop,r&b,8,2014
-dance pop,r&b,8,2015
+dance pop,r&b,9,2015
 dance pop,r&b,5,2016
 dance pop,r&b,2,2017
 dance pop,r&b,6,2018
@@ -3022,17 +3215,32 @@ dance rock,new wave pop,1,2023
 dance rock,permanent wave,1,2022
 dance rock,singer-songwriter,1,2022
 dance rock,soft rock,1,2023
+dancehall,lovers rock,1,2001
 dancehall,lovers rock,1,2002
 dancehall,lovers rock,1,2003
+dancehall,lovers rock,1,2009
 dancehall,old school dancehall,1,2002
 dancehall,old school dancehall,1,2003
+dancehall,ragga,1,2001
+dancehall,ragga,1,2002
+dancehall,ragga,1,2003
+dancehall,ragga,2,2004
+dancehall,reggae,1,2002
+dancehall,reggae,1,2003
+dancehall,reggae,2,2004
+dancehall,reggae,1,2009
 dancehall,reggae fusion,1,2002
 dancehall,reggae fusion,1,2003
 dancehall,reggae fusion,1,2004
-dancehall,riddim,1,2002
+dancehall,riddim,1,2001
+dancehall,riddim,2,2002
+dancehall,riddim,1,2003
+dancehall,riddim,1,2004
+dancehall,riddim,1,2009
 dancehall,roots reggae,1,2002
 dancehall,roots reggae,1,2003
-dancehall,soca,1,2003
+dancehall,soca,1,2002
+dancehall,soca,2,2003
 dancehall,soca,1,2004
 danish pop,pop,1,2015
 danish pop,pop,2,2016
@@ -3224,6 +3432,12 @@ deep southern trap,trap music,1,2005
 deep southern trap,trap music,1,2007
 deep southern trap,trap music,2,2008
 deep southern trap,trap music,1,2013
+dembow,reggaeton,1,2018
+dembow,trap latino,1,2018
+dembow,urbano latino,1,2018
+dembow belico,electro corridos,1,2023
+dembow belico,reggaeton,1,2023
+dembow belico,reggaeton mexa,1,2023
 detroit hip hop,g funk,1,2000
 detroit hip hop,g funk,1,2002
 detroit hip hop,g funk,1,2003
@@ -3296,6 +3510,8 @@ detroit hip hop,trap music,1,2012
 detroit hip hop,trap music,1,2015
 detroit hip hop,trap music,1,2017
 detroit hip hop,trap music,1,2018
+detroit rap,hip hop,1,2020
+detroit rap,trap,1,2020
 dfw rap,rap,1,2016
 dfw rap,rap,1,2017
 dfw rap,rap,1,2018
@@ -3507,15 +3723,17 @@ dmv rap,rap,1,2018
 downtempo,electronic,1,2001
 downtempo,pop,1,2016
 drill,hip hop,1,2020
-drill,hip hop,1,2021
+drill,hip hop,2,2021
 drill,hip hop,1,2022
 drill,hip hop,1,2023
+drill,new york drill,1,2020
+drill,new york drill,1,2021
 drill,pop rap,1,2020
 drill,pop rap,1,2021
 drill,pop rap,1,2022
 drill,pop rap,1,2023
 drill,rap,1,2020
-drill,rap,1,2021
+drill,rap,2,2021
 drill,rap,1,2022
 drill,rap,1,2023
 drill,southern hip hop,1,2020
@@ -3526,6 +3744,10 @@ drill,trap music,1,2020
 drill,trap music,1,2021
 drill,trap music,1,2022
 drill,trap music,1,2023
+drum and bass,liquid funk,1,2022
+dub,reggae,1,2022
+dub,rocksteady,1,2022
+dub,roots reggae,1,2022
 dutch house,edm,1,2011
 dutch house,edm,1,2015
 dutch house,electro house,1,2011
@@ -3562,18 +3784,22 @@ east coast hip hop,hardcore hip hop,1,2007
 east coast hip hop,hardcore hip hop,1,2011
 east coast hip hop,hardcore hip hop,1,2015
 east coast hip hop,hardcore hip hop,1,2016
-east coast hip hop,hip hop,3,2000
-east coast hip hop,hip hop,3,2001
-east coast hip hop,hip hop,6,2002
-east coast hip hop,hip hop,9,2003
-east coast hip hop,hip hop,4,2004
-east coast hip hop,hip hop,7,2005
-east coast hip hop,hip hop,1,2006
-east coast hip hop,hip hop,4,2007
-east coast hip hop,hip hop,1,2009
+east coast hip hop,hip hop,4,2000
+east coast hip hop,hip hop,5,2001
+east coast hip hop,hip hop,7,2002
+east coast hip hop,hip hop,11,2003
+east coast hip hop,hip hop,6,2004
+east coast hip hop,hip hop,8,2005
+east coast hip hop,hip hop,2,2006
+east coast hip hop,hip hop,5,2007
+east coast hip hop,hip hop,2,2009
+east coast hip hop,hip hop,1,2010
 east coast hip hop,hip hop,2,2011
+east coast hip hop,hip hop,1,2012
+east coast hip hop,hip hop,1,2013
+east coast hip hop,hip hop,1,2014
 east coast hip hop,hip hop,1,2015
-east coast hip hop,hip hop,1,2016
+east coast hip hop,hip hop,2,2016
 east coast hip hop,hip hop,1,2020
 east coast hip hop,hip house,1,2015
 east coast hip hop,hip pop,2,2001
@@ -3618,18 +3844,22 @@ east coast hip hop,r&b,1,2001
 east coast hip hop,r&b,1,2003
 east coast hip hop,r&b,2,2005
 east coast hip hop,r&b,2,2007
-east coast hip hop,rap,2,2000
-east coast hip hop,rap,3,2001
+east coast hip hop,rap,3,2000
+east coast hip hop,rap,5,2001
 east coast hip hop,rap,6,2002
-east coast hip hop,rap,9,2003
-east coast hip hop,rap,4,2004
-east coast hip hop,rap,7,2005
-east coast hip hop,rap,1,2006
-east coast hip hop,rap,4,2007
-east coast hip hop,rap,1,2009
+east coast hip hop,rap,10,2003
+east coast hip hop,rap,5,2004
+east coast hip hop,rap,8,2005
+east coast hip hop,rap,2,2006
+east coast hip hop,rap,5,2007
+east coast hip hop,rap,2,2009
+east coast hip hop,rap,1,2010
 east coast hip hop,rap,2,2011
+east coast hip hop,rap,1,2012
+east coast hip hop,rap,1,2013
+east coast hip hop,rap,1,2014
 east coast hip hop,rap,1,2015
-east coast hip hop,rap,1,2016
+east coast hip hop,rap,2,2016
 east coast hip hop,rap,1,2020
 east coast hip hop,southern hip hop,1,2000
 east coast hip hop,southern hip hop,1,2001
@@ -3756,9 +3986,15 @@ edm,uk funky,1,2014
 edm,uk funky,1,2017
 edm,uk pop,2,2014
 edm,uk pop,3,2017
+electro,electroclash,1,2001
+electro,electroclash,1,2002
 electro,electronic,1,2013
 electro,electronic,1,2016
 electro,electronic,1,2017
+electro,electronica,1,2001
+electro,electronica,1,2002
+electro,french house,1,2001
+electro,french house,1,2002
 electro,gangster rap,1,2015
 electro,hardcore hip hop,1,2015
 electro,hip hop,1,2015
@@ -3766,6 +4002,13 @@ electro,hip house,1,2015
 electro,new jack swing,1,2015
 electro,old school hip hop,1,2015
 electro,rap,1,2015
+electro corridos,música mexicana,2,2023
+electro corridos,reggaeton,1,2023
+electro corridos,reggaeton mexa,1,2023
+electro corridos,sad sierreño,2,2023
+electro corridos,sierreño,2,2023
+electro house,electronic,1,2011
+electro house,electronic,1,2012
 electro house,electronic trap,1,2013
 electro house,electropop,1,2017
 electro house,house,1,2011
@@ -3819,10 +4062,30 @@ electro house,uk dance,1,2017
 electro house,uk dance,1,2018
 electro house,uk pop,1,2017
 electro house,vapor twitch,1,2013
+electroclash,electronica,1,2001
+electroclash,electronica,1,2002
+electroclash,french house,1,2001
+electroclash,french house,1,2002
+electrocumbia,latin alternative,1,2022
+electronic,electropop,1,2010
+electronic,electropop,1,2011
+electronic,eurodance,1,2005
 electronic,filter house,1,2013
 electronic,filter house,1,2016
 electronic,filter house,1,2017
+electronic,hip hop,1,2003
+electronic,hip hop,1,2011
+electronic,hip hop,1,2020
+electronic,house,1,2000
+electronic,house,1,2020
+electronic,indie pop,1,2016
+electronic,pop,1,2003
+electronic,pop,1,2011
+electronic,pop,1,2012
+electronic,pop,1,2020
 electronic trap,vapor twitch,1,2013
+electronica,french house,1,2001
+electronica,french house,1,2002
 electropop,escape room,1,2012
 electropop,etherpop,1,2016
 electropop,etherpop,1,2017
@@ -3835,6 +4098,9 @@ electropop,folk-pop,1,2012
 electropop,girl group,1,2009
 electropop,hip pop,2,2004
 electropop,hip pop,2,2006
+electropop,indie pop,1,2016
+electropop,indie pop,1,2019
+electropop,indie pop,1,2020
 electropop,indie poptimism,1,2012
 electropop,indie poptimism,1,2013
 electropop,indie poptimism,3,2016
@@ -3878,8 +4144,8 @@ electropop,pop,1,2018
 electropop,pop,3,2019
 electropop,pop,2,2020
 electropop,pop,1,2021
-electropop,pop,1,2022
-electropop,pop,1,2023
+electropop,pop,3,2022
+electropop,pop,2,2023
 electropop,pop rap,1,2010
 electropop,pop rap,1,2011
 electropop,pop rap,1,2012
@@ -3970,6 +4236,7 @@ emo,pop emo,1,2007
 emo,pop emo,1,2010
 emo,pop emo,1,2013
 emo,pop emo,1,2014
+emo,pop punk,1,2000
 emo,pop punk,1,2005
 emo,pop punk,2,2006
 emo,pop punk,6,2007
@@ -3989,12 +4256,21 @@ emo,pop rap,1,2012
 emo,pop rock,2,2007
 emo,pop rock,1,2009
 emo,pop rock,1,2010
+emo,pop rock,1,2019
 emo,post-grunge,1,2007
 emo,post-teen pop,1,2007
 emo,post-teen pop,2,2009
 emo,post-teen pop,1,2010
 emo,post-teen pop,1,2011
+emo,punk,1,2000
+emo,rock,1,2000
 emo,screamo,1,2007
+emo,skate punk,1,2000
+emo rap,hip hop,1,2020
+emo rap,lo-fi hip hop,1,2020
+emo rap,melodic rap,1,2018
+emo rap,melodic rap,1,2019
+emo rap,melodic rap,1,2020
 emo rap,miami hip hop,1,2017
 emo rap,miami hip hop,2,2018
 escape room,hip hop,1,2001
@@ -4120,6 +4396,11 @@ europop,uk pop,1,2011
 europop,uk pop,1,2012
 europop,uk pop,2,2013
 europop,uk pop,1,2014
+experimental,hip hop,1,2023
+florida rap,hip hop,1,2021
+florida rap,rap,1,2021
+folk pop,indie folk,1,2023
+folk pop,singer-songwriter,1,2023
 folk rock,mellow gold,1,2003
 folk rock,mellow gold,1,2011
 folk rock,mellow gold,1,2015
@@ -4210,9 +4491,13 @@ folk-pop,viral pop,1,2009
 funk,hip hop,1,2000
 funk,hip hop,1,2003
 funk,hip hop,1,2004
+funk,hip hop,1,2016
+funk,hip hop,1,2017
 funk,hip pop,1,2000
 funk,hip pop,1,2003
 funk,hip pop,1,2004
+funk,indie pop,1,2022
+funk,indie pop,1,2023
 funk,motown,3,2001
 funk,neo soul,1,2000
 funk,neo soul,1,2003
@@ -4226,10 +4511,17 @@ funk,quiet storm,1,2004
 funk,r&b,1,2000
 funk,r&b,1,2003
 funk,r&b,1,2004
+funk,r&b,1,2016
+funk,r&b,1,2017
+funk,r&b,1,2021
+funk,r&b,2,2022
+funk,r&b,1,2023
 funk,soul,1,2000
 funk,soul,3,2001
 funk,soul,1,2003
 funk,soul,1,2004
+funk,soul,1,2021
+funk,soul,1,2022
 funk,southern soul,1,2001
 funk,urban contemporary,1,2000
 funk,urban contemporary,1,2001
@@ -4268,6 +4560,7 @@ funk metal,rock,1,2007
 funk metal,wrestling,1,2004
 funk metal,wrestling,1,2007
 funk metal,wrestling,1,2008
+funk pop,indie pop,1,2020
 funk rock,modern rock,1,2001
 funk rock,nu metal,1,2001
 funk rock,permanent wave,1,2000
@@ -4347,6 +4640,12 @@ g funk,west coast rap,1,2010
 g funk,west coast rap,1,2011
 g funk,west coast rap,1,2012
 g funk,west coast rap,1,2014
+g-funk,gangster rap,1,2007
+g-funk,hip hop,1,2006
+g-funk,hip hop,1,2014
+g-funk,old school hip hop,1,2007
+g-funk,west coast rap,1,2006
+g-funk,west coast rap,1,2014
 gangster rap,hardcore hip hop,2,2000
 gangster rap,hardcore hip hop,3,2001
 gangster rap,hardcore hip hop,5,2002
@@ -4429,6 +4728,7 @@ gangster rap,nyc rap,1,2002
 gangster rap,nyc rap,1,2005
 gangster rap,nyc rap,1,2006
 gangster rap,nyc rap,1,2009
+gangster rap,old school hip hop,1,2007
 gangster rap,old school hip hop,1,2015
 gangster rap,pop,3,2001
 gangster rap,pop,1,2002
@@ -4477,10 +4777,10 @@ gangster rap,rap,6,2001
 gangster rap,rap,7,2002
 gangster rap,rap,15,2003
 gangster rap,rap,14,2004
-gangster rap,rap,17,2005
-gangster rap,rap,16,2006
-gangster rap,rap,14,2007
-gangster rap,rap,11,2008
+gangster rap,rap,18,2005
+gangster rap,rap,17,2006
+gangster rap,rap,15,2007
+gangster rap,rap,12,2008
 gangster rap,rap,7,2009
 gangster rap,rap,7,2010
 gangster rap,rap,7,2011
@@ -4500,10 +4800,10 @@ gangster rap,southern hip hop,2,2001
 gangster rap,southern hip hop,2,2002
 gangster rap,southern hip hop,8,2003
 gangster rap,southern hip hop,12,2004
-gangster rap,southern hip hop,11,2005
-gangster rap,southern hip hop,16,2006
-gangster rap,southern hip hop,9,2007
-gangster rap,southern hip hop,10,2008
+gangster rap,southern hip hop,12,2005
+gangster rap,southern hip hop,17,2006
+gangster rap,southern hip hop,10,2007
+gangster rap,southern hip hop,11,2008
 gangster rap,southern hip hop,2,2009
 gangster rap,southern hip hop,5,2010
 gangster rap,southern hip hop,4,2011
@@ -4630,7 +4930,11 @@ glam metal,rock,1,2008
 glam metal,sleaze rock,1,2008
 glam rock,mellow gold,1,2022
 glam rock,piano rock,1,2022
+glam rock,rock,1,2021
 glam rock,rock,1,2022
+gnawa,moroccan chaabi,1,2000
+gnawa,moroccan pop,1,2000
+gnawa,raï,1,2000
 gospel,gospel r&b,1,2000
 gospel,r&b,1,2000
 gospel,urban contemporary,1,2000
@@ -4643,14 +4947,22 @@ gospel r&b,r&b,1,2004
 gospel r&b,urban contemporary,1,2000
 gospel r&b,urban contemporary,1,2003
 gospel r&b,urban contemporary,1,2004
+grindcore,sludge metal,1,2016
+grindcore,sludge metal,1,2018
 grunge,industrial metal,1,2000
 grunge,industrial rock,1,2000
 grunge,modern rock,1,2000
 grunge,nu metal,1,2000
 grunge,pop rock,1,2000
 grunge,post-grunge,1,2000
+grunge,post-grunge,1,2003
+grunge,post-grunge,1,2008
 grunge,rap rock,1,2000
 grunge,rock,1,2000
+grupera,música mexicana,1,2023
+grupera,norteño,1,2023
+grupera,ranchera,1,2023
+grupera,tejano,1,2023
 hard rock,nu metal,1,2008
 hard rock,post-grunge,1,2008
 hard rock,rock,1,2001
@@ -4777,6 +5089,12 @@ hip hop,hyphy,1,2015
 hip hop,indie pop rap,1,2016
 hip hop,indie pop rap,1,2018
 hip hop,indie r&b,1,2014
+hip hop,lo-fi hip hop,1,2020
+hip hop,melodic rap,1,2019
+hip hop,melodic rap,2,2020
+hip hop,melodic rap,4,2021
+hip hop,melodic rap,1,2022
+hip hop,melodic rap,1,2023
 hip hop,memphis hip hop,2,2006
 hip hop,memphis hip hop,1,2008
 hip hop,memphis hip hop,1,2014
@@ -4784,6 +5102,9 @@ hip hop,memphis hip hop,1,2015
 hip hop,memphis hip hop,1,2016
 hip hop,memphis hip hop,1,2017
 hip hop,memphis hip hop,1,2018
+hip hop,memphis rap,1,2019
+hip hop,memphis rap,1,2020
+hip hop,memphis rap,1,2021
 hip hop,miami hip hop,1,2001
 hip hop,miami hip hop,2,2005
 hip hop,miami hip hop,2,2007
@@ -4799,6 +5120,8 @@ hip hop,miami hip hop,1,2020
 hip hop,miami hip hop,1,2021
 hip hop,miami hip hop,1,2022
 hip hop,miami hip hop,1,2023
+hip hop,midwest rap,1,2001
+hip hop,midwest rap,1,2003
 hip hop,neo soul,8,2000
 hip hop,neo soul,5,2001
 hip hop,neo soul,7,2002
@@ -4841,7 +5164,7 @@ hip hop,nyc rap,1,2009
 hip hop,old school hip hop,1,2002
 hip hop,old school hip hop,1,2003
 hip hop,old school hip hop,1,2004
-hip hop,old school hip hop,1,2015
+hip hop,old school hip hop,2,2015
 hip hop,philly rap,1,2000
 hip hop,philly rap,1,2001
 hip hop,philly rap,1,2002
@@ -4858,7 +5181,7 @@ hip hop,pittsburgh rap,1,2016
 hip hop,pop,4,2000
 hip hop,pop,9,2001
 hip hop,pop,11,2002
-hip hop,pop,11,2003
+hip hop,pop,12,2003
 hip hop,pop,5,2004
 hip hop,pop,11,2005
 hip hop,pop,7,2006
@@ -4874,10 +5197,10 @@ hip hop,pop,7,2015
 hip hop,pop,9,2016
 hip hop,pop,14,2017
 hip hop,pop,12,2018
-hip hop,pop,3,2019
-hip hop,pop,7,2020
+hip hop,pop,4,2019
+hip hop,pop,9,2020
 hip hop,pop,5,2021
-hip hop,pop,2,2022
+hip hop,pop,3,2022
 hip hop,pop,3,2023
 hip hop,pop rap,9,2000
 hip hop,pop rap,13,2001
@@ -4899,10 +5222,10 @@ hip hop,pop rap,17,2016
 hip hop,pop rap,20,2017
 hip hop,pop rap,20,2018
 hip hop,pop rap,6,2019
-hip hop,pop rap,11,2020
-hip hop,pop rap,9,2021
-hip hop,pop rap,5,2022
-hip hop,pop rap,6,2023
+hip hop,pop rap,15,2020
+hip hop,pop rap,12,2021
+hip hop,pop rap,7,2022
+hip hop,pop rap,7,2023
 hip hop,quiet storm,5,2000
 hip hop,quiet storm,2,2001
 hip hop,quiet storm,2,2002
@@ -4911,71 +5234,81 @@ hip hop,quiet storm,3,2004
 hip hop,quiet storm,1,2006
 hip hop,r&b,11,2000
 hip hop,r&b,9,2001
-hip hop,r&b,11,2002
+hip hop,r&b,12,2002
 hip hop,r&b,11,2003
 hip hop,r&b,6,2004
 hip hop,r&b,11,2005
 hip hop,r&b,6,2006
 hip hop,r&b,8,2007
 hip hop,r&b,3,2008
-hip hop,r&b,4,2009
-hip hop,r&b,2,2010
+hip hop,r&b,5,2009
+hip hop,r&b,3,2010
 hip hop,r&b,2,2011
 hip hop,r&b,1,2012
+hip hop,r&b,2,2013
 hip hop,r&b,1,2014
 hip hop,r&b,1,2015
-hip hop,r&b,1,2016
-hip hop,rap,8,2000
-hip hop,rap,13,2001
+hip hop,r&b,2,2016
+hip hop,r&b,1,2017
+hip hop,r&b,1,2018
+hip hop,r&b,2,2019
+hip hop,r&b,3,2020
+hip hop,r&b,4,2021
+hip hop,r&b,2,2022
+hip hop,r&b,2,2023
+hip hop,rap,9,2000
+hip hop,rap,17,2001
 hip hop,rap,16,2002
-hip hop,rap,21,2003
-hip hop,rap,21,2004
-hip hop,rap,29,2005
-hip hop,rap,23,2006
-hip hop,rap,20,2007
+hip hop,rap,23,2003
+hip hop,rap,22,2004
+hip hop,rap,30,2005
+hip hop,rap,24,2006
+hip hop,rap,22,2007
 hip hop,rap,15,2008
-hip hop,rap,17,2009
-hip hop,rap,18,2010
+hip hop,rap,18,2009
+hip hop,rap,19,2010
 hip hop,rap,20,2011
-hip hop,rap,10,2012
-hip hop,rap,12,2013
-hip hop,rap,18,2014
+hip hop,rap,11,2012
+hip hop,rap,13,2013
+hip hop,rap,19,2014
 hip hop,rap,14,2015
-hip hop,rap,17,2016
+hip hop,rap,19,2016
 hip hop,rap,22,2017
 hip hop,rap,21,2018
-hip hop,rap,6,2019
-hip hop,rap,12,2020
-hip hop,rap,9,2021
-hip hop,rap,5,2022
-hip hop,rap,6,2023
+hip hop,rap,11,2019
+hip hop,rap,16,2020
+hip hop,rap,19,2021
+hip hop,rap,9,2022
+hip hop,rap,10,2023
 hip hop,soul,1,2000
 hip hop,soul,1,2003
 hip hop,soul,1,2004
+hip hop,soul,1,2010
+hip hop,soul,1,2013
 hip hop,southern hip hop,7,2000
-hip hop,southern hip hop,10,2001
-hip hop,southern hip hop,11,2002
+hip hop,southern hip hop,11,2001
+hip hop,southern hip hop,12,2002
 hip hop,southern hip hop,14,2003
 hip hop,southern hip hop,17,2004
 hip hop,southern hip hop,22,2005
-hip hop,southern hip hop,18,2006
+hip hop,southern hip hop,19,2006
 hip hop,southern hip hop,10,2007
 hip hop,southern hip hop,11,2008
 hip hop,southern hip hop,8,2009
 hip hop,southern hip hop,11,2010
 hip hop,southern hip hop,12,2011
-hip hop,southern hip hop,6,2012
+hip hop,southern hip hop,7,2012
 hip hop,southern hip hop,7,2013
 hip hop,southern hip hop,14,2014
 hip hop,southern hip hop,9,2015
 hip hop,southern hip hop,11,2016
 hip hop,southern hip hop,11,2017
 hip hop,southern hip hop,12,2018
-hip hop,southern hip hop,5,2019
-hip hop,southern hip hop,7,2020
-hip hop,southern hip hop,4,2021
-hip hop,southern hip hop,3,2022
-hip hop,southern hip hop,4,2023
+hip hop,southern hip hop,6,2019
+hip hop,southern hip hop,8,2020
+hip hop,southern hip hop,6,2021
+hip hop,southern hip hop,5,2022
+hip hop,southern hip hop,5,2023
 hip hop,toronto rap,1,2009
 hip hop,toronto rap,1,2010
 hip hop,toronto rap,1,2011
@@ -4991,6 +5324,11 @@ hip hop,toronto rap,2,2020
 hip hop,toronto rap,1,2021
 hip hop,toronto rap,1,2022
 hip hop,toronto rap,1,2023
+hip hop,trap,1,2012
+hip hop,trap,1,2016
+hip hop,trap,1,2019
+hip hop,trap,2,2020
+hip hop,trap,3,2021
 hip hop,trap music,1,2000
 hip hop,trap music,3,2001
 hip hop,trap music,4,2002
@@ -5051,7 +5389,7 @@ hip hop,west coast rap,2,2000
 hip hop,west coast rap,3,2003
 hip hop,west coast rap,2,2004
 hip hop,west coast rap,1,2005
-hip hop,west coast rap,3,2006
+hip hop,west coast rap,4,2006
 hip hop,west coast rap,1,2007
 hip hop,west coast rap,1,2008
 hip hop,west coast rap,1,2009
@@ -5059,10 +5397,11 @@ hip hop,west coast rap,1,2010
 hip hop,west coast rap,1,2011
 hip hop,west coast rap,1,2012
 hip hop,west coast rap,1,2013
-hip hop,west coast rap,1,2014
+hip hop,west coast rap,2,2014
 hip hop,west coast rap,2,2015
 hip hop,west coast rap,1,2017
 hip hop,west coast rap,1,2018
+hip hop,west coast rap,1,2019
 hip house,new jack swing,1,2015
 hip house,old school hip hop,1,2015
 hip house,rap,1,2015
@@ -5341,6 +5680,7 @@ indie folk,modern rock,1,2015
 indie folk,neo mellow,1,2015
 indie folk,pop,1,2013
 indie folk,pop,1,2015
+indie folk,singer-songwriter,1,2023
 indie folk,stomp and holler,1,2012
 indie folk,stomp and holler,2,2013
 indie pop,indie poptimism,1,2015
@@ -5363,15 +5703,22 @@ indie pop,pop,2,2011
 indie pop,pop,1,2012
 indie pop,pop,1,2013
 indie pop,pop,1,2015
+indie pop,pop,1,2022
+indie pop,pop,1,2023
 indie pop,pop punk,1,2007
 indie pop,pop punk,1,2010
 indie pop,pop punk,1,2011
 indie pop,pop punk,1,2012
 indie pop,pop rock,1,2010
 indie pop,pop rock,1,2011
-indie pop,pop rock,1,2012
+indie pop,pop rock,2,2012
+indie pop,pop rock,1,2013
 indie pop,pop rock,1,2015
+indie pop,r&b,1,2022
+indie pop,r&b,1,2023
 indie pop,rock,1,2011
+indie pop,singer-songwriter,1,2013
+indie pop,soft rock,1,2023
 indie pop,stomp and holler,1,2013
 indie pop rap,pop,1,2016
 indie pop rap,pop,1,2018
@@ -5474,6 +5821,7 @@ la indie,modern alternative rock,1,2013
 la indie,modern rock,1,2013
 la indie,rock,1,2013
 latin,latin arena pop,1,2005
+latin,latin dance,1,2014
 latin,latin hip hop,1,2006
 latin,latin hip hop,1,2014
 latin,latin hip hop,1,2015
@@ -5533,9 +5881,14 @@ latin,reggaeton,2,2017
 latin,reggaeton,3,2018
 latin,reggaeton,2,2019
 latin,reggaeton,1,2020
+latin,reggaeton,1,2021
+latin,reggaeton,2,2022
+latin,reggaeton,1,2023
 latin,rock en espanol,1,2005
 latin,salsa,1,2000
 latin,spanish pop,1,2005
+latin,trap latino,1,2021
+latin,trap latino,1,2022
 latin,tropical,3,2000
 latin,tropical,2,2001
 latin,tropical,1,2002
@@ -5549,6 +5902,9 @@ latin,tropical,2,2015
 latin,tropical,2,2017
 latin,tropical,2,2018
 latin,tropical,1,2019
+latin,urbano latino,1,2021
+latin,urbano latino,2,2022
+latin,urbano latino,1,2023
 latin arena pop,latin pop,1,2005
 latin arena pop,mexican pop,1,2005
 latin arena pop,rock en espanol,1,2005
@@ -5561,6 +5917,7 @@ latin hip hop,pop,1,2015
 latin hip hop,pop,1,2017
 latin hip hop,pop,2,2018
 latin hip hop,pop,1,2019
+latin hip hop,r&b,1,2007
 latin hip hop,reggaeton,1,2006
 latin hip hop,reggaeton,1,2014
 latin hip hop,reggaeton,1,2015
@@ -5602,6 +5959,7 @@ latin pop,pop,1,2015
 latin pop,pop,1,2017
 latin pop,pop,1,2023
 latin pop,reggaeton,1,2014
+latin pop,reggaeton,1,2022
 latin pop,rock en espanol,1,2005
 latin pop,salsa,1,2000
 latin pop,spanish pop,1,2005
@@ -5615,6 +5973,7 @@ latin pop,tropical,1,2011
 latin pop,tropical,2,2014
 latin pop,tropical,1,2015
 latin pop,tropical,1,2017
+latin soul,r&b,1,2000
 lds youth,neo mellow,1,2008
 lgbtq+ hip hop,pop,1,2017
 lgbtq+ hip hop,rap,1,2017
@@ -5670,8 +6029,12 @@ lounge,vocal jazz,1,2022
 lounge,vocal jazz,1,2023
 lovers rock,old school dancehall,1,2002
 lovers rock,old school dancehall,1,2003
+lovers rock,ragga,1,2001
+lovers rock,reggae,1,2009
 lovers rock,reggae fusion,1,2002
 lovers rock,reggae fusion,1,2003
+lovers rock,riddim,1,2001
+lovers rock,riddim,1,2009
 lovers rock,roots reggae,1,2002
 lovers rock,roots reggae,1,2003
 mellow gold,neo mellow,1,2002
@@ -5699,6 +6062,12 @@ mellow gold,singer-songwriter,1,2011
 mellow gold,soft rock,1,2003
 mellow gold,soft rock,1,2011
 mellow gold,soft rock,1,2015
+melodic rap,r&b,1,2020
+melodic rap,r&b,2,2021
+melodic rap,r&b,1,2023
+melodic rap,rap,2,2019
+melodic rap,rap,1,2021
+melodic rap,rap,1,2022
 memphis hip hop,pop rap,2,2006
 memphis hip hop,pop rap,1,2008
 memphis hip hop,pop rap,1,2014
@@ -5735,6 +6104,9 @@ memphis hip hop,trap music,1,2017
 memphis hip hop,trap music,1,2018
 memphis hip hop,trap music,1,2021
 memphis hip hop,trap music,1,2022
+memphis rap,rap,1,2019
+memphis rap,rap,1,2020
+memphis rap,trap,1,2021
 metropopolis,modern rock,2,2013
 metropopolis,modern rock,1,2014
 metropopolis,modern rock,1,2018
@@ -5882,6 +6254,8 @@ miami hip hop,urban contemporary,2,2007
 miami hip hop,urban contemporary,1,2008
 miami hip hop,urban contemporary,1,2009
 miami hip hop,urban contemporary,1,2010
+midwest rap,rap,1,2001
+midwest rap,rap,1,2003
 minneapolis sound,neo soul,1,2000
 minneapolis sound,new jack swing,1,2000
 minneapolis sound,quiet storm,1,2000
@@ -6019,6 +6393,9 @@ moombahton,pop,1,2016
 moombahton,pop,1,2019
 moombahton,tropical house,1,2015
 moombahton,tropical house,1,2016
+moroccan chaabi,moroccan pop,1,2000
+moroccan chaabi,raï,1,2000
+moroccan pop,raï,1,2000
 motown,new jack swing,1,2001
 motown,new romantic,1,2023
 motown,new wave pop,1,2023
@@ -6031,6 +6408,12 @@ motown,soft rock,1,2023
 motown,soul,3,2001
 motown,southern soul,1,2001
 motown,urban contemporary,1,2001
+musical theatre,soundtrack,3,2022
+música mexicana,norteño,1,2023
+música mexicana,ranchera,1,2023
+música mexicana,sad sierreño,4,2023
+música mexicana,sierreño,3,2023
+música mexicana,tejano,1,2023
 nashville sound,outlaw country,1,2003
 nashville sound,rockabilly,1,2021
 nashville sound,rockabilly,1,2022
@@ -6493,6 +6876,8 @@ new wave pop,singer-songwriter,1,2003
 new wave pop,singer-songwriter,1,2004
 new wave pop,singer-songwriter,1,2022
 new wave pop,soft rock,1,2023
+norteño,ranchera,1,2023
+norteño,tejano,1,2023
 northern soul,quiet storm,1,2001
 northern soul,soul,1,2001
 nu metal,permanent wave,1,2003
@@ -6546,7 +6931,7 @@ nu metal,rap rock,1,2009
 nu metal,rock,3,2000
 nu metal,rock,3,2001
 nu metal,rock,2,2002
-nu metal,rock,3,2003
+nu metal,rock,4,2003
 nu metal,rock,2,2008
 nu metal,wrestling,1,2004
 nu metal,wrestling,1,2007
@@ -6744,24 +7129,28 @@ pop,pop rap,12,2020
 pop,pop rap,8,2021
 pop,pop rap,5,2022
 pop,pop rap,7,2023
-pop,pop rock,1,2000
-pop,pop rock,3,2001
-pop,pop rock,4,2002
+pop,pop rock,2,2000
+pop,pop rock,4,2001
+pop,pop rock,5,2002
 pop,pop rock,4,2003
 pop,pop rock,1,2004
 pop,pop rock,6,2005
-pop,pop rock,7,2006
-pop,pop rock,9,2007
-pop,pop rock,9,2008
-pop,pop rock,8,2009
+pop,pop rock,8,2006
+pop,pop rock,10,2007
+pop,pop rock,10,2008
+pop,pop rock,9,2009
 pop,pop rock,7,2010
-pop,pop rock,6,2011
-pop,pop rock,8,2012
-pop,pop rock,4,2013
+pop,pop rock,7,2011
+pop,pop rock,9,2012
+pop,pop rock,5,2013
 pop,pop rock,4,2014
 pop,pop rock,3,2015
+pop,pop rock,1,2017
+pop,pop rock,1,2019
 pop,pop rock,1,2020
-pop,pop rock,1,2022
+pop,pop rock,2,2021
+pop,pop rock,2,2022
+pop,pop rock,1,2023
 pop,post-teen pop,3,2000
 pop,post-teen pop,3,2001
 pop,post-teen pop,4,2002
@@ -6800,7 +7189,7 @@ pop,progressive house,1,2018
 pop,quiet storm,1,2000
 pop,quiet storm,1,2003
 pop,quiet storm,1,2004
-pop,r&b,7,2000
+pop,r&b,8,2000
 pop,r&b,11,2001
 pop,r&b,11,2002
 pop,r&b,8,2003
@@ -6808,21 +7197,21 @@ pop,r&b,9,2004
 pop,r&b,18,2005
 pop,r&b,12,2006
 pop,r&b,18,2007
-pop,r&b,13,2008
-pop,r&b,12,2009
+pop,r&b,14,2008
+pop,r&b,14,2009
 pop,r&b,8,2010
 pop,r&b,11,2011
 pop,r&b,8,2012
 pop,r&b,8,2013
 pop,r&b,9,2014
-pop,r&b,9,2015
+pop,r&b,10,2015
 pop,r&b,6,2016
 pop,r&b,2,2017
 pop,r&b,6,2018
-pop,r&b,3,2019
-pop,r&b,3,2020
+pop,r&b,5,2019
+pop,r&b,4,2020
 pop,r&b,2,2021
-pop,r&b,2,2022
+pop,r&b,3,2022
 pop,r&b,5,2023
 pop,rap,2,2000
 pop,rap,7,2001
@@ -6857,6 +7246,7 @@ pop,reggaeton,1,2017
 pop,reggaeton,2,2018
 pop,reggaeton,1,2019
 pop,reggaeton,1,2022
+pop,retro pop,1,2023
 pop,scandipop,2,2016
 pop,singer-songwriter,1,2002
 pop,singer-songwriter,1,2003
@@ -6864,6 +7254,7 @@ pop,singer-songwriter,1,2005
 pop,singer-songwriter,1,2006
 pop,singer-songwriter,1,2007
 pop,singer-songwriter,1,2008
+pop,soft rock,2,2023
 pop,southern hip hop,2,2000
 pop,southern hip hop,5,2001
 pop,southern hip hop,5,2002
@@ -7092,6 +7483,7 @@ pop punk,post-teen pop,3,2009
 pop punk,post-teen pop,3,2010
 pop punk,post-teen pop,3,2011
 pop punk,post-teen pop,1,2012
+pop punk,punk,1,2000
 pop punk,punk,1,2005
 pop punk,punk,1,2009
 pop punk,rap metal,1,2005
@@ -7099,7 +7491,7 @@ pop punk,rap rock,1,2002
 pop punk,rap rock,1,2003
 pop punk,rap rock,1,2004
 pop punk,rap rock,1,2005
-pop punk,rock,2,2000
+pop punk,rock,3,2000
 pop punk,rock,1,2002
 pop punk,rock,1,2003
 pop punk,rock,2,2005
@@ -7107,6 +7499,7 @@ pop punk,rock,1,2009
 pop punk,rock,1,2016
 pop punk,rock,1,2017
 pop punk,screamo,1,2007
+pop punk,skate punk,1,2000
 pop punk,viral pop,1,2011
 pop rap,pop rock,1,2007
 pop rap,pop rock,2,2008
@@ -7163,9 +7556,10 @@ pop rap,r&b,6,2015
 pop rap,r&b,3,2016
 pop rap,r&b,3,2018
 pop rap,r&b,2,2019
-pop rap,r&b,1,2020
-pop rap,r&b,1,2021
-pop rap,r&b,2,2023
+pop rap,r&b,2,2020
+pop rap,r&b,2,2021
+pop rap,r&b,1,2022
+pop rap,r&b,3,2023
 pop rap,rap,6,2000
 pop rap,rap,11,2001
 pop rap,rap,14,2002
@@ -7186,9 +7580,9 @@ pop rap,rap,24,2016
 pop rap,rap,27,2017
 pop rap,rap,29,2018
 pop rap,rap,13,2019
-pop rap,rap,15,2020
-pop rap,rap,13,2021
-pop rap,rap,8,2022
+pop rap,rap,16,2020
+pop rap,rap,14,2021
+pop rap,rap,9,2022
 pop rap,rap,11,2023
 pop rap,redneck,1,2006
 pop rap,reggae fusion,1,2001
@@ -7426,7 +7820,8 @@ post-grunge,rap rock,1,2009
 post-grunge,rock,6,2000
 post-grunge,rock,3,2001
 post-grunge,rock,2,2002
-post-grunge,rock,3,2003
+post-grunge,rock,4,2003
+post-grunge,rock,1,2004
 post-grunge,rock,2,2005
 post-grunge,rock,1,2006
 post-grunge,rock,1,2007
@@ -7568,8 +7963,10 @@ progressive house,uk dance,1,2015
 progressive house,uk dance,1,2016
 progressive house,uk dance,1,2017
 progressive house,uk dance,1,2018
+punk,rock,1,2000
 punk,rock,1,2005
 punk,rock,1,2009
+punk,skate punk,1,2000
 quiet storm,r&b,9,2000
 quiet storm,r&b,5,2001
 quiet storm,r&b,2,2002
@@ -7623,7 +8020,12 @@ r&b,rap,2,2023
 r&b,soul,1,2000
 r&b,soul,1,2003
 r&b,soul,1,2004
+r&b,soul,2,2008
 r&b,soul,1,2009
+r&b,soul,1,2010
+r&b,soul,1,2013
+r&b,soul,1,2021
+r&b,soul,2,2022
 r&b,southern hip hop,6,2000
 r&b,southern hip hop,7,2001
 r&b,southern hip hop,5,2002
@@ -7640,6 +8042,7 @@ r&b,southern hip hop,2,2012
 r&b,southern hip hop,2,2014
 r&b,southern hip hop,3,2015
 r&b,southern hip hop,1,2016
+r&b,trap,1,2021
 r&b,trap music,1,2004
 r&b,trap music,2,2005
 r&b,trap music,1,2006
@@ -7687,15 +8090,25 @@ r&b,urban contemporary,1,2020
 r&b,urban contemporary,1,2021
 r&b,urban contemporary,1,2022
 r&b,urban contemporary,3,2023
+ragga,reggae,1,2002
+ragga,reggae,1,2003
+ragga,reggae,2,2004
+ragga,riddim,1,2001
+ragga,riddim,1,2002
+ragga,riddim,1,2003
+ragga,riddim,1,2004
+ragga,soca,1,2002
+ragga,soca,1,2003
+ranchera,tejano,1,2023
 rap,southern hip hop,4,2000
 rap,southern hip hop,9,2001
 rap,southern hip hop,9,2002
 rap,southern hip hop,11,2003
 rap,southern hip hop,14,2004
-rap,southern hip hop,21,2005
-rap,southern hip hop,18,2006
-rap,southern hip hop,16,2007
-rap,southern hip hop,12,2008
+rap,southern hip hop,22,2005
+rap,southern hip hop,19,2006
+rap,southern hip hop,17,2007
+rap,southern hip hop,13,2008
 rap,southern hip hop,7,2009
 rap,southern hip hop,11,2010
 rap,southern hip hop,12,2011
@@ -7706,11 +8119,11 @@ rap,southern hip hop,13,2015
 rap,southern hip hop,13,2016
 rap,southern hip hop,12,2017
 rap,southern hip hop,15,2018
-rap,southern hip hop,9,2019
-rap,southern hip hop,10,2020
-rap,southern hip hop,9,2021
-rap,southern hip hop,5,2022
-rap,southern hip hop,6,2023
+rap,southern hip hop,10,2019
+rap,southern hip hop,11,2020
+rap,southern hip hop,11,2021
+rap,southern hip hop,7,2022
+rap,southern hip hop,7,2023
 rap,toronto rap,1,2009
 rap,toronto rap,1,2010
 rap,toronto rap,1,2011
@@ -7726,6 +8139,10 @@ rap,toronto rap,2,2020
 rap,toronto rap,2,2021
 rap,toronto rap,1,2022
 rap,toronto rap,1,2023
+rap,trap,1,2016
+rap,trap,1,2019
+rap,trap,1,2020
+rap,trap,1,2021
 rap,trap music,1,2000
 rap,trap music,3,2001
 rap,trap music,4,2002
@@ -7818,16 +8235,26 @@ rap rock,wrestling,1,2004
 rap rock,wrestling,1,2007
 rap rock,wrestling,1,2008
 red dirt,texas country,1,2022
+red dirt,texas country,1,2023
 redneck,southern hip hop,1,2006
+reggae,riddim,1,2002
+reggae,riddim,1,2003
+reggae,riddim,1,2004
+reggae,riddim,1,2009
+reggae,rocksteady,1,2022
+reggae,roots reggae,1,2022
+reggae,soca,1,2002
+reggae,soca,1,2003
 reggae fusion,riddim,1,2002
 reggae fusion,roots reggae,1,2002
 reggae fusion,roots reggae,1,2003
 reggae fusion,soca,1,2003
 reggae fusion,soca,1,2004
-reggaeton,trap latino,2,2018
+reggaeton,reggaeton mexa,1,2023
+reggaeton,trap latino,3,2018
 reggaeton,trap latino,2,2019
-reggaeton,trap latino,1,2021
-reggaeton,trap latino,1,2022
+reggaeton,trap latino,3,2021
+reggaeton,trap latino,2,2022
 reggaeton,trap latino,1,2023
 reggaeton,tropical,1,2006
 reggaeton,tropical,1,2014
@@ -7835,17 +8262,28 @@ reggaeton,tropical,1,2015
 reggaeton,tropical,1,2017
 reggaeton,tropical,2,2018
 reggaeton,tropical,1,2019
+reggaeton,urbano latino,1,2018
+reggaeton,urbano latino,2,2021
+reggaeton,urbano latino,2,2022
+reggaeton,urbano latino,1,2023
+retro pop,soft rock,1,2023
+riddim,soca,1,2002
+riddim,soca,1,2003
 rock,singer-songwriter,1,2002
 rock,singer-songwriter,1,2003
 rock,singer-songwriter,1,2004
+rock,skate punk,1,2000
 rock,sleaze rock,1,2008
 rock,soft rock,1,2015
 rock,stomp pop,1,2013
+rock,tex-mex,1,2004
 rock en espanol,spanish pop,1,2005
 rock en espanol,tropical,1,2005
 rockabilly,vocal jazz,1,2021
 rockabilly,vocal jazz,1,2022
 rockabilly,vocal jazz,1,2023
+rocksteady,roots reggae,1,2022
+sad sierreño,sierreño,3,2023
 salsa,tropical,1,2000
 scandipop,swedish electropop,1,2016
 scandipop,swedish pop,1,2016
@@ -7864,6 +8302,7 @@ soul,urban contemporary,1,2009
 southern hip hop,toronto rap,1,2016
 southern hip hop,toronto rap,1,2020
 southern hip hop,toronto rap,1,2021
+southern hip hop,trap,1,2012
 southern hip hop,trap music,1,2000
 southern hip hop,trap music,2,2001
 southern hip hop,trap music,3,2002
@@ -7960,6 +8399,10 @@ texas country,traditional country,1,2003
 toronto rap,trap music,1,2016
 toronto rap,trap music,1,2020
 toronto rap,trap music,1,2021
+trap latino,urbano latino,1,2018
+trap latino,urbano latino,2,2021
+trap latino,urbano latino,1,2022
+trap latino,urbano latino,1,2023
 trap music,underground hip hop,1,2012
 trap music,underground hip hop,1,2014
 trap music,underground hip hop,1,2016

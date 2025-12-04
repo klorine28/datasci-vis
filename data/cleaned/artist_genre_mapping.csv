@@ -1,0 +1,272 @@
+billboard_name,spotify_name,spotify_id,genres_original,genres_musicoset_format,needs_review,song_count,years_active,sample_songs
+Jay-Z,JAY-Z,3nFkdlSjzX9mRTtwJOzDYB,"hip hop, east coast hip hop, rap","['hip hop', 'east coast hip hop', 'rap']",NAME_MISMATCH - verify correct artist,22,"2000, 2001, 2003, 2004, 2005, 2006, 2007, 2009, 2010, 2012, 2013, 2014, 2016",Big Pimpin' | Fiesta | Izzo (H.O.V.A.)
+Pink,Pink Floyd,0k17h0D3J5VfsdmQ1iZtE9,"progressive rock, psychedelic rock, classic rock, art rock, rock","['progressive rock', 'psychedelic rock', 'classic rock', 'art rock', 'rock']",NAME_MISMATCH - verify correct artist,21,"2000, 2001, 2002, 2006, 2007, 2008, 2009, 2011, 2012, 2013, 2017, 2019, 2021",There You Go | Most Girls | Lady Marmalade
+Doja Cat,Doja Cat,5cj0lLjcoR7YOSnhnX0Po5,,NA,NO_GENRES - artist has no genre tags,17,"2020, 2021, 2022, 2023",Say So | Juicy | Kiss Me More
+R. Kelly,R. Kelly,2mxe0TnaNL039ysAj51xPQ,r&b,['r&b'],OK,17,"2001, 2002, 2003, 2004, 2005, 2007, 2014",Fiesta | Contagious | I Wish
+DaBaby,DaBaby,4r63FhuTkUYltbVAg5TQnk,,NA,NO_GENRES - artist has no genre tags,11,"2019, 2020, 2021",Suge | Baby | Cash Shit
+Megan Thee Stallion,Megan Thee Stallion,181bsRPaVXVlUKXrxwZfHK,,NA,NO_GENRES - artist has no genre tags,10,"2019, 2020, 2021, 2022",Cash Shit | Hot Girl Summer | Savage
+Juice Wrld,Juice WRLD,4MCBfE4596Uoi2O4DtmEMz,"melodic rap, emo rap","['melodic rap', 'emo rap']",NAME_MISMATCH - verify correct artist,8,"2018, 2019, 2020",Lucid Dreams | Robbery | Come & Go
+Pharrell,Pharrell Williams,2RdwBSPQiwcmiDo9kixcl8,,NA,NAME_MISMATCH - verify correct artist,7,"2002, 2003, 2004, 2005, 2006, 2007","Pass the Courvoisier, Part II | Frontin' | Beautiful"
+Olivia Rodrigo,Olivia Rodrigo,1McMsnEElThX1knmY4oliG,,NA,NO_GENRES - artist has no genre tags,6,"2021, 2022, 2023",Good 4 U | Drivers License | Deja Vu
+P. Diddy,Diddy,59wfkuBoNyhDMQGCljbUbA,"hip hop, east coast hip hop","['hip hop', 'east coast hip hop']",NAME_MISMATCH - verify correct artist,6,"2002, 2003, 2004","I Need a Girl (Part One) | I Need a Girl (Part Two) | Pass the Courvoisier, Part II"
+Pop Smoke,Pop Smoke,0eDvMgVFoNV3TpwtrVCoTj,"brooklyn drill, new york drill, drill","['brooklyn drill', 'new york drill', 'drill']",OK,6,"2020, 2021",For the Night | The Woo | Mood Swings
+Lainey Wilson,Lainey Wilson,6tPHARSq45lQ8BSALCfkFC,country,['country'],OK,5,"2021, 2022, 2023",Things a Man Oughta Know | Never Say Never | Wait in the Truck
+Pussycat Dolls,The Pussycat Dolls,6wPhSqRtPu1UhRCDX5yaDJ,,NA,NAME_MISMATCH - verify correct artist,5,"2006, 2008, 2009",Buttons | Stickwitu | Beep
+Ty Dolla Sign,Ty Dolla $ign,7c0XG5cIJTrrAgEC3ULPiq,trap soul,['trap soul'],NAME_MISMATCH - verify correct artist,5,"2016, 2017, 2018, 2019",Work from Home | Sucker for Pain | Swalla
+Young Jeezy,Jeezy,4yBK75WVCQXej1p04GWqxH,"southern hip hop, crunk, rap, gangster rap","['southern hip hop', 'crunk', 'rap', 'gangster rap']",NAME_MISMATCH - verify correct artist,5,"2005, 2006, 2007, 2008",Soul Survivor | Go Getta | Love in This Club
+Bailey Zimmerman,Bailey Zimmerman,3win9vGIxFfBRag9S63wwf,country,['country'],OK,4,"2022, 2023",Fall in Love | Rock and a Hard Place | Religiously
+Dev,Devlin,7Ks3elJhSP20mD04lgiA68,"grime, uk grime","['grime', 'uk grime']",NAME_MISMATCH - verify correct artist,4,"2010, 2011",Like a G6 | In the Dark | Backseat
+Fun,The Fun Squad,7GlhBPosLYBE0z2Ft3drxl,children's music,['children's music'],NAME_MISMATCH - verify correct artist,4,"2012, 2013",We Are Young | Some Nights | Carry On
+Ice Spice,Ice Spice,3LZZPxNDGDFVSIPqf4JuEf,,NA,NO_GENRES - artist has no genre tags,4,2023,Boy's a Liar Pt. 2 | Karma | Barbie World
+Jack Harlow,Jack Harlow,2LIk90788K0zvyj2JJVwkJ,,NA,NO_GENRES - artist has no genre tags,4,"2020, 2021, 2022",Whats Poppin | Industry Baby | First Class
+Lizzo,Lizzo,56oDRnqbIiwx4mymNEv7dS,,NA,NO_GENRES - artist has no genre tags,4,"2019, 2020, 2022",Truth Hurts | Good as Hell | About Damn Time
+NSYNC,*NSYNC,6Ff53KvcvAj5U7Z1vojB5o,,NA,NAME_MISMATCH - verify correct artist,4,"2000, 2001, 2002",Bye Bye Bye | This I Promise You | Girlfriend
+Peso Pluma,Peso Pluma,12GqGscKJx3aE4t07u7eVZ,"corrido, corridos tumbados, corridos bélicos, música mexicana, sad sierreño, banda","['corrido', 'corridos tumbados', 'corridos bélicos', 'música mexicana', 'sad sierreño', 'banda']",OK,4,2023,Ella Baila Sola | La Bebé | Por Las Noches
+Soulja Boy Tell 'Em,Soulja Boy,6GMYJwaziB4ekv1Y6wCDWS,,NA,NAME_MISMATCH - verify correct artist,4,"2007, 2008, 2009",Crank That (Soulja Boy) | Kiss Me thru the Phone | Turn My Swag On
+Tems,Tems,687cZJR45JO7jhk1LHIbgq,"afrobeats, afro r&b, alté, afrobeat","['afrobeats', 'afro r&b', 'alté', 'afrobeat']",OK,4,"2021, 2022, 2023",Essence | Wait for U
+XXXTentacion,XXXTENTACION,15UsOTVnJzReFVN1VCnxy4,emo rap,['emo rap'],NAME_MISMATCH - verify correct artist,4,"2017, 2018",Look at Me! | Sad! | Moonlight
+A Boogie wit da Hoodie,A Boogie Wit da Hoodie,31W5EY0aAly4Qieq6OFu6I,melodic rap,['melodic rap'],NAME_MISMATCH - verify correct artist,3,"2017, 2019",Drowning | Look Back at It | Swervin
+ASAP Rocky,A$AP Rocky,13ubrt8QOOCPljQ2FL1Kca,rap,['rap'],NAME_MISMATCH - verify correct artist,3,"2013, 2015, 2018",Fuckin' Problems | Good for You | No Limit
+Benny Blanco,benny blanco,5CiGnKThu5ctn9pBxv7DGa,,NA,NAME_MISMATCH - verify correct artist,3,"2018, 2019, 2021",Eastside | Lonely
+Blackbear,blackbear,2cFrymmkijnjDg9SS92EPM,,NA,NAME_MISMATCH - verify correct artist,3,"2017, 2020, 2021",Do Re Mi | Hot Girl Bummer | My Ex's Best Friend
+Bobby Valentino,Bobby V.,4HgF4KnohByNElYid7iCNb,r&b,['r&b'],NAME_MISMATCH - verify correct artist,3,"2005, 2008",Slow Down | Pimpin' All Over the World | Mrs. Officer
+Colby O'Donis,Colby O'Donis,7fObcBw9VM3x7ntWKCYl0z,,NA,NO_GENRES - artist has no genre tags,3,"2008, 2009",What You Got | Just Dance | Beautiful
+Gabby Barrett,Gabby Barrett,6Iz3eq2aQGFf7TbGT2iahL,country,['country'],OK,3,"2020, 2021",I Hope | The Good Ones
+Karol G,KAROL G,790FomKkXshlbRYZFtlgla,"reggaeton, latin, urbano latino","['reggaeton', 'latin', 'urbano latino']",NAME_MISMATCH - verify correct artist,3,"2022, 2023",Mamiii | Provenza | TQG
+Latto,Latto,3MdXrJWsbVzdn6fe5JYkSQ,,NA,NO_GENRES - artist has no genre tags,3,"2022, 2023",Big Energy | Seven | Put It on da Floor Again
+Lewis Capaldi,Lewis Capaldi,4GNC7GD6oZMSxPGyXy4MNB,soft pop,['soft pop'],OK,3,"2019, 2020",Someone You Loved | Before You Go
+Lil Tjay,Lil Tjay,6jGMq4yGs7aQzuGsMgVgZR,"brooklyn drill, melodic rap","['brooklyn drill', 'melodic rap']",OK,3,"2019, 2020, 2021",Pop Out | Mood Swings | Calling My Phone
+Outkast,Outkast,1G9G7WwrXka3Z1r7aIDjI7,"southern hip hop, hip hop","['southern hip hop', 'hip hop']",OK,3,"2001, 2002","Ms. Jackson | So Fresh, So Clean | The Whole World"
+Panic! at the Disco,Panic! At The Disco,20JZFwl6HVl6yg8a4H3ZqK,emo,['emo'],NAME_MISMATCH - verify correct artist,3,"2006, 2019","I Write Sins Not Tragedies | High Hopes | Hey Look Ma, I Made It"
+Polo G,Polo G,6AgTAQt8XS6jRWi4sX7w49,,NA,NO_GENRES - artist has no genre tags,3,"2019, 2021, 2022",Pop Out | Rapstar | Better Days
+Rod Wave,Rod Wave,45TgXXqMDdF8BkjA83OM7z,,NA,NO_GENRES - artist has no genre tags,3,"2020, 2021",Heart on Ice | Rags2Riches | Tombstone
+Selena Gomez & the Scene,Selena Gomez & The Scene,6dJeKm76NjfXBNTpHmOhfO,,NA,NAME_MISMATCH - verify correct artist,3,"2010, 2011, 2012",Naturally | Who Says | Love You Like a Love Song
+The Cataracs,The Cataracs,7C64wNX3howEFZjAYRKsfP,,NA,NO_GENRES - artist has no genre tags,3,"2010, 2011",Like a G6 | Backseat
+The Kid Laroi,The Kid LAROI,2tIP7SsRs7vjIcLrU85W8J,,NA,NAME_MISMATCH - verify correct artist,3,"2021, 2022",Stay | Without You
+Wizkid,Wizkid,3tVQdUvClmAT7URs9V3rsp,"afrobeats, afrobeat, afropop, azonto, afroswing, afro r&b, afropiano","['afrobeats', 'afrobeat', 'afropop', 'azonto', 'afroswing', 'afro r&b', 'afropiano']",OK,3,"2016, 2021, 2022",One Dance | Essence
+Zach Bryan,Zach Bryan,40ZNYROS4zLfyyBSs2PGe2,"country, red dirt","['country', 'red dirt']",OK,3,"2022, 2023",Something in the Orange | I Remember Everything
+the Weeknd,The Weeknd,1Xyo4u8uXC1ZmMpatF05PJ,,NA,NAME_MISMATCH - verify correct artist,3,"2021, 2022",You Right | One Right Now
+24kGoldn,24kGoldn,6fWVd57NKTalqvmjRd2t8Z,,NA,NO_GENRES - artist has no genre tags,2,"2020, 2021",Mood
+98 Degrees,98º,6V03b3Y36lolYP2orXn8mV,,NA,NAME_MISMATCH - verify correct artist,2,2000,Thank God I Found You | Give Me Just One Night (Una Noche)
+Alex Band,Alex Band,6QEAuf6FEo9WJ3sm2vpJ5m,,NA,NO_GENRES - artist has no genre tags,2,"2003, 2004",Why Don't You & I
+Black Eyed Peas,Black Eyed Peas,1yxSLGMDHlW21z4YXirZDS,,NA,NO_GENRES - artist has no genre tags,2,"2003, 2020",Where Is the Love? | Ritmo (Bad Boys for Life)
+Blanco Brown,Blanco Brown,3yzRiNMZdTsSUgplcyYZ4i,"country hip hop, country","['country hip hop', 'country']",OK,2,"2019, 2021",The Git Up | Just the Way
+Bobby Helms,Bobby Helms,38EmEgXkgK51MT2tPY0EoC,"christmas, villancicos","['christmas', 'villancicos']",OK,2,"2022, 2023",Jingle Bell Rock
+Cam'ron,Cam'ron,7iMvwE8qANp3aIfAGKEAwS,east coast hip hop,['east coast hip hop'],OK,2,2002,Oh Boy | Hey Ma
+Celine Dion,Céline Dion,4S9EykWXhStSc15wEx8QFK,variété française,['variété française'],NAME_MISMATCH - verify correct artist,2,"2000, 2002",That's the Way It Is | A New Day Has Come
+Coi Leray,Coi Leray,6AMd49uBDJfhf30Ak2QR5s,,NA,NO_GENRES - artist has no genre tags,2,"2021, 2023",No More Parties | Players
+DRAM,DRAM,5M0lbkGluOPXLeFjApw8r8,,NA,NO_GENRES - artist has no genre tags,2,"2016, 2017",Broccoli
+Debelah Morgan,Debelah Morgan,0tRRrNLQY5rejEDVSjy4w3,cha cha cha,['cha cha cha'],OK,2,"2000, 2001",Dance with Me
+Five for Fighting,Five For Fighting,7FgMLbnZVrEnir95O0YujA,,NA,NAME_MISMATCH - verify correct artist,2,"2002, 2004",Superman (It's Not Easy) | 100 Years
+Giveon,GIVĒON,4fxd5Ee7UefO4CUXgwJ7IP,r&b,['r&b'],NAME_MISMATCH - verify correct artist,2,2021,Peaches | Heartbreak Anniversary
+Gnash,Gnash,5pBwZ6lMHJ5JLioRtpz8Mf,"sludge metal, grindcore","['sludge metal', 'grindcore']",OK,2,"2016, 2018","I Hate U, I Love U | Lights Down Low"
+Goo Goo Dolls,The Goo Goo Dolls,2sil8z5kiy4r76CRTXxBCA,,NA,NAME_MISMATCH - verify correct artist,2,"2000, 2002",Broadway | Here Is Gone
+GoonRock,GoonRock,53sIBaVjXQhfH89Vu6nEGh,,NA,NO_GENRES - artist has no genre tags,2,"2011, 2012",Party Rock Anthem
+Grupo Frontera,Grupo Frontera,6XkjpgcEsYab502Vr1bBeW,"cumbia norteña, banda, norteño, música mexicana, corrido, corridos tumbados, grupera, tejano, ranchera, corridos bélicos","['cumbia norteña', 'banda', 'norteño', 'música mexicana', 'corrido', 'corridos tumbados', 'grupera', 'tejano', 'ranchera', 'corridos bélicos']",OK,2,2023,Un x100to | Bebe Dame
+Hayley Williams,Hayley Williams,6Rx1JKzBrSzoKQtmbVmBnM,art pop,['art pop'],OK,2,"2010, 2014",Airplanes | Stay the Night
+Iann Dior,iann dior,6ASri4ePR7RlsvIQgWPJpS,melodic rap,['melodic rap'],NAME_MISMATCH - verify correct artist,2,"2020, 2021",Mood
+Johntá Austin,Johnta Austin,0DRTDBGl9fBAzVdF1IFA75,,NA,NAME_MISMATCH - verify correct artist,2,2007,Shortie Like Mine | Outta My System
+Kim Petras,Kim Petras,3Xt3RrJMFv5SZkCfUE8C1J,,NA,NO_GENRES - artist has no genre tags,2,"2022, 2023",Unholy
+Lady Saw,Lady Saw,2X1VgNqQOiSbkyel3a9rjK,"dancehall, ragga, reggae, soca, riddim","['dancehall', 'ragga', 'reggae', 'soca', 'riddim']",OK,2,"2002, 2003",Underneath It All
+Lauren Bennett,Lauren Bennett,2jLE4BoXHriQ96JagEtiDP,,NA,NO_GENRES - artist has no genre tags,2,"2011, 2012",Party Rock Anthem
+Lil Jon & the East Side Boyz,Lil Jon & The East Side Boyz,3ciRvbBIVz9fBoPbtSYq4x,"crunk, southern hip hop","['crunk', 'southern hip hop']",NAME_MISMATCH - verify correct artist,2,2004,Salt Shaker | Get Low
+Mr Probz,Mr. Probz,33W1pnW9zScZtYTnAoWnOT,,NA,NAME_MISMATCH - verify correct artist,2,2015,Waves | Robin Schulz
+NLE Choppa,NLE Choppa,0ErzCpIMyLcjPiwT4elrtZ,,NA,NO_GENRES - artist has no genre tags,2,"2019, 2020",Shotta Flow | Walk Em Down
+Pooh Shiesty,Pooh Shiesty,5F1aAS1duwlzExnPs3l2Xe,,NA,NO_GENRES - artist has no genre tags,2,2021,Back in Blood | Beat Box
+Psy,PSY,2dd5mrQZvg6SmahdgVKDzh,k-pop,['k-pop'],NAME_MISMATCH - verify correct artist,2,"2012, 2013",Gangnam Style
+Puddle of Mudd,Puddle Of Mudd,3dXaa6jwM7B52GZpaJEIr5,post-grunge,['post-grunge'],NAME_MISMATCH - verify correct artist,2,"2002, 2003",Blurry | She Hates Me
+Rauw Alejandro,Rauw Alejandro,1mcTU81TzQhprhouKaTkpq,"reggaeton, urbano latino, trap latino, latin","['reggaeton', 'urbano latino', 'trap latino', 'latin']",OK,2,"2021, 2022",Todo de Ti | Party
+Saweetie,Saweetie,6cK3NBO6uP7hh0oyuVELFl,,NA,NO_GENRES - artist has no genre tags,2,"2019, 2021",My Type | Best Friend
+Shaed,Shaed,62hlGp8kKJMHLMY6EsHKeQ,,NA,NO_GENRES - artist has no genre tags,2,"2019, 2020",Trampoline
+Silk Sonic,Silk Sonic,6PvvGcCY2XtUcSRld1Wilr,,NA,NO_GENRES - artist has no genre tags,2,"2021, 2022",Leave the Door Open | Smokin out the Window
+Sisqó,Sisqó,3b3Y10Oso9so2J5JZNyh3u,,NA,NO_GENRES - artist has no genre tags,2,2000,Thong Song | Incomplete
+Steve Lacy,Steve Lacy,57vWImR43h4CaDao012Ofp,,NA,NO_GENRES - artist has no genre tags,2,"2022, 2023",Bad Habit
+Tate McRae,Tate McRae,45dkTj5sMRSjrmBSBeiHym,,NA,NO_GENRES - artist has no genre tags,2,"2021, 2022",You Broke Me First | She's All I Wanna Be
+Too Short,Too Short,3B1hEK4xKbJVNEhB6qTScQ,,NA,NO_GENRES - artist has no genre tags,2,"2006, 2014",Bossy | Loyal
+Tyler Hubbard,Tyler Hubbard,3BEV5FcxOtkQJ7lLRKMh3V,country,['country'],OK,2,"2022, 2023",5 Foot 9 | Dancin' in the Country
+Vita,Vitalic,4M84umUNRbZy1mJleyyRM9,"electroclash, french house, electro, electronica","['electroclash', 'french house', 'electro', 'electronica']",NAME_MISMATCH - verify correct artist,2,"2001, 2002",Put It on Me | Down 4 U
+YNW Melly,YNW Melly,1cNDP5yjU5vjeR8qMf4grg,melodic rap,['melodic rap'],OK,2,"2019, 2020",Murder on My Mind | Suicidal
+YoungBloodZ,Sean Paul,2ZVEnkCKF0ytNHpj9cLxte,,NA,NAME_MISMATCH - verify correct artist,2,"2003, 2004",Damn!
+Zayn,ZAYN,5ZsFI1h6hIdQRw2ti0hz81,,NA,NAME_MISMATCH - verify correct artist,2,"2016, 2017",Pillowtalk | I Don't Wanna Live Forever
+'N Sync,'N Sync,7b2BqxGdAQcsRqNYhhvvJZ,,NA,NO_GENRES - artist has no genre tags,1,2000,It's Gonna Be Me
+070 Shake,070 Shake,12Zk1DFhCbHY6v3xep2ZjI,,NA,NO_GENRES - artist has no genre tags,1,2023,Escapism
+42 Dugg,42 Dugg,45gHcnDnMC15sgx3VL7ROG,,NA,NO_GENRES - artist has no genre tags,1,2020,We Paid
+6lack,6LACK,4IVAbR2w4JJNJDDRFP3E83,,NA,NAME_MISMATCH - verify correct artist,1,2021,Calling My Phone
+ASAP Ferg,A$AP Ferg,5dHt1vcEm9qb8fCyLcB3HL,rap,['rap'],NAME_MISMATCH - verify correct artist,1,2018,Plain Jane
+Adassa,Adassa,72kqSqk124Vnl1wtT6q9Fh,,NA,NO_GENRES - artist has no genre tags,1,2022,We Don't Talk About Bruno
+Ali,Alice In Chains,64tNsm6TnZe2zpcMVMOoHL,"grunge, post-grunge","['grunge', 'post-grunge']",NAME_MISMATCH - verify correct artist,1,2003,Air Force Ones
+Arizona Zervas,Arizona Zervas,0vRvGUQVUjytro0xpb26bs,,NA,NO_GENRES - artist has no genre tags,1,2020,Roxanne
+Awolnation,AWOLNATION,4njdEjTnLfcGImKZu1iSrz,,NA,NAME_MISMATCH - verify correct artist,1,2013,Sail
+BJ the Chicago Kid,BJ The Chicago Kid,07d5etnpjriczFBB8pxmRe,,NA,NAME_MISMATCH - verify correct artist,1,2014,Studio
+BRS Kash,BRS Kash,5jJjvmEwRr8epuGZq4eUUa,,NA,NO_GENRES - artist has no genre tags,1,2021,Throat Baby (Go Baby)
+Baby,BABYMONSTER,1SIocsqdEefUTE6XKGUiVS,k-pop,['k-pop'],NAME_MISMATCH - verify correct artist,1,2003,Hell Yeah
+Baby Boy da Prince,Baby Boy Da Prince,15Y1yUEchPPl4w20CLvFyb,,NA,NAME_MISMATCH - verify correct artist,1,2007,The Way I Live
+Beabadoobee,beabadoobee,35l9BRT7MXmM8bv2WDQiyB,bedroom pop,['bedroom pop'],NAME_MISMATCH - verify correct artist,1,2020,Death Bed
+Benee,BENEE,0Cp8WN4V8Tu4QJQwCN5Md4,,NA,NAME_MISMATCH - verify correct artist,1,2020,Supalonely
+Bipolar Sunshine,Bipolar Sunshine,0CjWKoS55T7DOt0HJuwF1H,,NA,NO_GENRES - artist has no genre tags,1,2016,Middle
+Bizarrap,Bizarrap,716NhGYqD1jl2wI1Qkgq36,"argentine trap, trap latino, urbano latino","['argentine trap', 'trap latino', 'urbano latino']",OK,1,2023,"Bzrp Music Sessions, Vol. 53"
+Blink 182,blink-182,6FBDaR13swtiWwGhX1WQsP,"pop punk, punk, rock, skate punk, emo","['pop punk', 'punk', 'rock', 'skate punk', 'emo']",NAME_MISMATCH - verify correct artist,1,2000,All the Small Things
+Blueface,Blueface,3Fl1V19tmjt57oBdxXKAjJ,,NA,NO_GENRES - artist has no genre tags,1,2019,Thotiana
+Bomba Estéreo,Bomba Estéreo,5n9bMYfz9qss2VOW89EVs2,"latin alternative, electrocumbia","['latin alternative', 'electrocumbia']",OK,1,2022,Ojitos Lindos
+Bone Thugs-n-Harmony,Bone Thugs-N-Harmony,5spEJXLwD1sKUdC2bnOHPg,"gangster rap, old school hip hop, g-funk","['gangster rap', 'old school hip hop', 'g-funk']",NAME_MISMATCH - verify correct artist,1,2007,I Tried
+Brendon Urie,Brendon Urie,6eYFryfcEu3QSq59D62wZQ,,NA,NO_GENRES - artist has no genre tags,1,2019,Me!
+CJ,CJ,02GmR27EYUG8oYH3oHpOCO,,NA,NO_GENRES - artist has no genre tags,1,2021,Whoopty
+CKay,CKay,048LktY5zMnakWq7PTtFrz,"afrobeats, afrobeat, afro r&b, afropop","['afrobeats', 'afrobeat', 'afro r&b', 'afropop']",OK,1,2022,Love Nwantiti (Ah Ah Ah)
+Carolina Gaitán,Carolina Gaitán - La Gaita,29PgYEggDV3cDP9QYTogwv,,NA,NAME_MISMATCH - verify correct artist,1,2022,We Don't Talk About Bruno
+Cash Out,Cash Out,1GUUilbHrYtNuHToDI73gn,,NA,NO_GENRES - artist has no genre tags,1,2012,Cashin' Out
+Cee Lo Green,CeeLo Green,5nLYd9ST4Cnwy6NHaCxbj8,,NA,NAME_MISMATCH - verify correct artist,1,2005,Sugar (Gimme Some)
+Cheb Mami,Cheb Mami,6vZXamchcIOKzC1c3Elp4J,"raï, gnawa, moroccan pop, moroccan chaabi, algerian chaabi","['raï', 'gnawa', 'moroccan pop', 'moroccan chaabi', 'algerian chaabi']",OK,1,2000,Desert Rose
+Chencho Corleone,Chencho Corleone,37230BxxYs9ksS7OkZw3IU,reggaeton,['reggaeton'],OK,1,2022,Me Porto Bonito
+Cherine Anderson,Cherine Anderson,1d5nqaOa3PXgjrHv7hEQg4,"lovers rock, reggae, riddim, dancehall","['lovers rock', 'reggae', 'riddim', 'dancehall']",OK,1,2009,Say Hey (I Love You)
+City Spud,City Spud,3L2SIGZah4QZSvN4wC8rHl,,NA,NO_GENRES - artist has no genre tags,1,2001,Ride wit Me
+Corey Kent,Corey Kent,3sUpZrkehiGBaMzs2h9Mmc,"country, texas country","['country', 'texas country']",OK,1,2023,Wild as Her
+Cédric Gervais,Cedric Gervais,4Wjf8diP59VmPG7fi4y724,edm,['edm'],NAME_MISMATCH - verify correct artist,1,2013,Summertime Sadness
+DHT,DHT,7lVtH5UmhLGyfN9iS2FFk7,,NA,NO_GENRES - artist has no genre tags,1,2005,Listen to Your Heart
+DJ Frank E,DJ Frank E,4yt2wdqvcHygghx9iNUb6i,,NA,NO_GENRES - artist has no genre tags,1,2011,Tonight (I'm Lovin' You)
+Darell,Darell,1TtXnWcUs0FCkaZDPGYHdf,"reggaeton, trap latino, dembow, urbano latino","['reggaeton', 'trap latino', 'dembow', 'urbano latino']",OK,1,2018,Te Boté
+David Kushner,David Kushner,33NVpKoXjItPwUJTMZIOiY,,NA,NO_GENRES - artist has no genre tags,1,2023,Daylight
+Diane Guerrero,Diane Guerrero,18MFcGBHtyW0mU3ufcm0X1,,NA,NO_GENRES - artist has no genre tags,1,2022,We Don't Talk About Bruno
+Diddy – Dirty Money,Diddy - Dirty Money,2QYEvpsWUOjqaYuxDPTCmV,,NA,NAME_MISMATCH - verify correct artist,1,2011,Coming Home
+Do,Doja Cat,5cj0lLjcoR7YOSnhnX0Po5,,NA,NAME_MISMATCH - verify correct artist,1,2002,Heaven
+Doechii,Doechii,4E2rKHVDssGJm2SCDOMMJB,,NA,NO_GENRES - artist has no genre tags,1,2023,What It Is (Block Boy)
+Don Toliver,Don Toliver,4Gso3d4CscCijv0lmajZWs,,NA,NO_GENRES - artist has no genre tags,1,2021,Lemonade
+Eden's Crush,Eden's Crush,48VMsTwTzdzKc1aKcMnIbH,,NA,NO_GENRES - artist has no genre tags,1,2001,Get Over Yourself
+Edmee,Edmee,2Bn9Kf2NC3mJfExuN9DMdE,,NA,NO_GENRES - artist has no genre tags,1,2005,Listen to Your Heart
+Elliott Yamin,Elliott Yamin,4am1I89OWXUzFh4ctRLkdd,,NA,NO_GENRES - artist has no genre tags,1,2007,Wait for You
+Em Beihold,Em Beihold,7o2ZQYM7nTsaVdkXY38UAA,,NA,NO_GENRES - artist has no genre tags,1,2022,Numb Little Bug
+Encanto,Urbandawn,4Kjl91bg9I6TuhrEC0NQgX,"drum and bass, liquid funk","['drum and bass', 'liquid funk']",NAME_MISMATCH - verify correct artist,1,2022,We Don't Talk About Bruno
+Eric Nally,Eric Nally,3NoeRIxHApi6qe4yan2Vnn,,NA,NO_GENRES - artist has no genre tags,1,2015,Downtown
+Eric Turner,Eric Turner,79DOwuMzV2h4es3em0t002,,NA,NO_GENRES - artist has no genre tags,1,2011,Written in the Stars
+Ernest,Ernest Ranglin,6RTCb5pWKinqlUyG2qacit,"rocksteady, dub, reggae, roots reggae","['rocksteady', 'dub', 'reggae', 'roots reggae']",NAME_MISMATCH - verify correct artist,1,2022,Flower Shops
+Eslabon Armado,Eslabon Armado,0XeEobZplHxzM9QzFQWLiR,"corridos tumbados, sad sierreño, corrido, sierreño, música mexicana, corridos bélicos","['corridos tumbados', 'sad sierreño', 'corrido', 'sierreño', 'música mexicana', 'corridos bélicos']",OK,1,2023,Ella Baila Sola
+Evan and Jaron,Evan And Jaron,1xeZcY93inQY14LWwnxd5G,,NA,NAME_MISMATCH - verify correct artist,1,2001,Crazy for This Girl
+Fifty Fifty,FIFTY FIFTY,4GJ6xDCF5jaUqD6avOuQT6,k-pop,['k-pop'],NAME_MISMATCH - verify correct artist,1,2023,Cupid
+Foster the People,Foster The People,7gP3bB2nilZXLfPHJhMdvc,,NA,NAME_MISMATCH - verify correct artist,1,2011,Pumped Up Kicks
+Freekey Zekey,Freekey Zeekey,6EjZmcZTs67OVOG511gGn3,,NA,NAME_MISMATCH - verify correct artist,1,2002,Hey Ma
+Fuerza Regida,Fuerza Regida,0ys2OFYzWYB5hRDLCsBqxt,"corrido, corridos tumbados, corridos bélicos, música mexicana, sierreño, banda, sad sierreño, electro corridos","['corrido', 'corridos tumbados', 'corridos bélicos', 'música mexicana', 'sierreño', 'banda', 'sad sierreño', 'electro corridos']",OK,1,2023,Bebe Dame
+Gavin Rossdale,Bush,78SHxLdtysAXgywQ4vE0Oa,"grunge, post-grunge","['grunge', 'post-grunge']",NAME_MISMATCH - verify correct artist,1,2008,Love Remains the Same
+Gayle,GAYLE,2VSHKHBTiXWplO8lxcnUC9,,NA,NAME_MISMATCH - verify correct artist,1,2022,ABCDEFU
+Gente de Zona,Gente De Zona,2cy1zPcrFcXAJTP0APWewL,"latin, latin dance","['latin', 'latin dance']",NAME_MISMATCH - verify correct artist,1,2014,Bailando
+GloRilla,GloRilla,2qoQgPAilErOKCwE2Y8wOG,,NA,NO_GENRES - artist has no genre tags,1,2023,Tomorrow 2
+Grace Potter,Grace Potter,1PJVVIeS5Wu0wbZDhtC0Ht,,NA,NO_GENRES - artist has no genre tags,1,2011,You and Tequila
+Grandmaster Caz,Grandmaster Caz,6QeZTS8BrU3r2TYJdA68j9,old school hip hop,['old school hip hop'],OK,1,2015,Downtown
+Gus Dapperton,Gus Dapperton,6sHCvZe1PHrOAuYlwTLNH4,bedroom pop,['bedroom pop'],OK,1,2020,Supalonely
+Hardy,HARDY,5QNm7E7RU2m64l6Gliu8Oy,"country, country rock","['country', 'country rock']",NAME_MISMATCH - verify correct artist,1,2023,Wait in the Truck
+Hollis,Hollis,28KOnhhvUnyvgRNXEQ41WL,,NA,NO_GENRES - artist has no genre tags,1,2014,White Walls
+Houston,Whitney Houston,6XpaIBNiVzIetEPCWDvAFP,,NA,NAME_MISMATCH - verify correct artist,1,2004,I Like That
+ILoveMakonnen,ILOVEMAKONNEN,3aGFCoR8xGN6DKwvdzeSja,,NA,NAME_MISMATCH - verify correct artist,1,2015,Tuesday
+Internet Money,Internet Money,6MPCFvOQv5cIGfw3jODMF0,,NA,NO_GENRES - artist has no genre tags,1,2021,Lemonade
+J-Weav,Jason Weaver,5UdPkKWd8YNR5xGcmqH9QJ,,NA,NAME_MISMATCH - verify correct artist,1,2004,One Call Away
+JID,JID,6U3ybJ9UHNKEdsH7ktGBZ7,,NA,NO_GENRES - artist has no genre tags,1,2022,Enemy
+JP Saxe,JP Saxe,66W9LaWS0DPdL7Sz8iYGYe,,NA,NO_GENRES - artist has no genre tags,1,2020,If the World Was Ending
+Jake Scott,Jake Scott,0DxPHf2flBAcV2SnZPg3SV,,NA,NO_GENRES - artist has no genre tags,1,2022,She Likes It
+Jawsh 685,Jawsh 685,56mfhUDKa1vec6rSLZV5Eg,,NA,NO_GENRES - artist has no genre tags,1,2020,Savage Love (Laxed – Siren Beat)
+Jelly Roll,Jelly Roll,19k8AgwwTSxeaxkOuCQEJs,"country hip hop, country","['country hip hop', 'country']",OK,1,2023,Need a Favor
+Jennifer Lawrence,Jennifer Lawrence,3oCIYpmkFw8KGWwMNPKgXh,,NA,NO_GENRES - artist has no genre tags,1,2015,The Hanging Tree
+Jessica Darrow,Jessica Darrow,4vdAAzZBUKbsrvHi6UR7B7,,NA,NO_GENRES - artist has no genre tags,1,2022,Surface Pressure
+Jhay Cortez,JHAYCO,6nVcHLIgY5pE2YCl8ubca1,"reggaeton, trap latino, urbano latino","['reggaeton', 'trap latino', 'urbano latino']",NAME_MISMATCH - verify correct artist,1,2021,Dakiti
+Jhené Aiko,Jhené Aiko,5ZS223C6JyBfXasXxrRqOk,r&b,['r&b'],OK,1,2015,Post to Be
+Jnr Choi,JNR CHOI,1Z25ZlGHqqlr3o1UGQOfNn,,NA,NAME_MISMATCH - verify correct artist,1,2022,To the Moon
+Jonah Matranga,Jonah Matranga,3Ztgr9y1L9ZfoIOEsCrZEb,,NA,NO_GENRES - artist has no genre tags,1,2006,Where'd You Go
+Josey Scott,Josey Scott,5mNloTgSaf5qCyk48t9NSP,,NA,NO_GENRES - artist has no genre tags,1,2002,Hero
+Jvke,JVKE,164Uj4eKjl6zTBKfJLFKKK,,NA,NAME_MISMATCH - verify correct artist,1,2023,Golden Hour
+Kai,Kaiser Chiefs,0LbLWjaweRbO4FDKYlbfNt,britpop,['britpop'],NAME_MISMATCH - verify correct artist,1,2016,Never Be Like You
+Kaliii,Kaliii,1YRqgFNXqRyMDRr8ClS1NL,,NA,NO_GENRES - artist has no genre tags,1,2023,Area Codes
+Kandi Girl,Kandi Girl,41TccBHnkaVhhgCgl83JU8,,NA,NO_GENRES - artist has no genre tags,1,2006,U and Dat
+Katelyn Brown,Katelyn Brown,2GB8NPGTvSHk3KwmxtVvaB,country,['country'],OK,1,2023,Thank God
+Kevin McCall,Kevin McCall,2teIxF2qgr0rYmTTMKiZ7s,,NA,NO_GENRES - artist has no genre tags,1,2010,Deuces
+Kyjuan,Kyjuan,6kD993mKIytiN9sE6VyRfa,,NA,NO_GENRES - artist has no genre tags,1,2003,Air Force Ones
+Kyle,Kyle Hume,0p3tzEAt0XWrBqbrwBoN1I,,NA,NAME_MISMATCH - verify correct artist,1,2017,iSpy
+Lauren Spencer-Smith,Lauren Spencer Smith,79AyR6ATpj2LTPxfb6FX50,,NA,NAME_MISMATCH - verify correct artist,1,2022,Fingers Crossed
+Lil Boosie,Lil Boosie,1dZj9MWXyeVTdP1ezinAwa,southern hip hop,['southern hip hop'],OK,1,2008,Independent
+Lil Tecca,Lil Tecca,4Ga1P7PMIsmqEZqhYZQgDo,"melodic rap, rap","['melodic rap', 'rap']",OK,1,2019,Ransom
+Lil' Bow Wow,Bow Wow,7352aRY2mqSxBZwzUb6LmA,r&b,['r&b'],NAME_MISMATCH - verify correct artist,1,2000,Bounce with Me
+Lil' Romeo,Lil' Romeo,2AXQzJRDvlJrq0fiVAnRy8,,NA,NO_GENRES - artist has no genre tags,1,2001,My Baby
+Lil' Scrappy,Lil Scrappy,5einkgXXrjhfYCyac1FANB,"crunk, southern hip hop","['crunk', 'southern hip hop']",NAME_MISMATCH - verify correct artist,1,2007,Rock Yo Hips
+Lookas,Lookas,27fy6rHPC58Eo2VUu0iJSG,edm trap,['edm trap'],OK,1,2015,G.D.F.R.
+Los Lonely Boys,Los Lonely Boys,4aSEmLLxLX9wR5aLMllOKj,,NA,NO_GENRES - artist has no genre tags,1,2004,Heaven
+Mae Muller,Mae Muller,1BEUkE2CSUgHTLSBMZdnFB,,NA,NO_GENRES - artist has no genre tags,1,2022,Better Days
+Magic!,MAGIC!,0DxeaLnv6SyYk2DOqkLO8c,,NA,NAME_MISMATCH - verify correct artist,1,2014,Rude
+Mary Lambert,Mary Lambert,5Z2NUZiY3FA00HKu5WTMhA,,NA,NO_GENRES - artist has no genre tags,1,2013,Same Love
+Masked Wolf,Masked Wolf,1uU7g3DNSbsu0QjSEqZtEd,,NA,NO_GENRES - artist has no genre tags,1,2021,Astronaut in the Ocean
+Matthew Santos,Matthew Santos,5t2P9w0qT2I9y0DrNhykSj,,NA,NO_GENRES - artist has no genre tags,1,2008,Superstar
+Max,Max McNown,340PS4ZcZ4UCBgyrXzEjcp,,NA,NAME_MISMATCH - verify correct artist,1,2018,Lights Down Low
+Megan Moroney,Megan Moroney,5Ppie0uPnbnvGBYRwYmlt0,country,['country'],OK,1,2023,Tennessee Orange
+Melle Mel,Melle Mel,2vFI46txKvL9Gde572uNTz,,NA,NO_GENRES - artist has no genre tags,1,2015,Downtown
+Mims,Mims,6RRYjswZrDD1U2lL9FFEPU,,NA,NO_GENRES - artist has no genre tags,1,2007,This Is Why I'm Hot
+Mooski,Mooski,4NqH3V7GS0Igs1VyGMXEi8,,NA,NO_GENRES - artist has no genre tags,1,2021,Track Star
+Mr Hudson,Mr Hudson,1zV9UjTUevjp5VUddqIUUn,,NA,NO_GENRES - artist has no genre tags,1,2010,Young Forever
+Ms. Thing,Ms. Thing,72cbi5bA8U2sMttAnKIaen,"dancehall, ragga, reggae","['dancehall', 'ragga', 'reggae']",OK,1,2004,Dude
+Muni Long,Muni Long,7tjVFCxJdwT4NdrTmjyjQ6,,NA,NO_GENRES - artist has no genre tags,1,2022,Hrs and Hrs
+Måneskin,Måneskin,0lAWpj5szCSwM4rUMHYmrr,,NA,NO_GENRES - artist has no genre tags,1,2021,Beggin'
+Natalie,Natalie Jane,5bfglVyGJppmmNoC2rhBUG,,NA,NAME_MISMATCH - verify correct artist,1,2005,Goin' Crazy
+Natalie La Rose,Natalie La Rose,2qdONMCoDngQk0eV4Avs1i,,NA,NO_GENRES - artist has no genre tags,1,2015,Somebody
+Natanael Cano,Natanael Cano,0elWFr7TW8piilVRYJUe4P,"corridos tumbados, corrido, corridos bélicos, sierreño, sad sierreño, electro corridos, música mexicana, banda","['corridos tumbados', 'corrido', 'corridos bélicos', 'sierreño', 'sad sierreño', 'electro corridos', 'música mexicana', 'banda']",OK,1,2023,PRC
+Nav,NAV,7rkW85dBwwrJtlHRDkJDAC,melodic rap,['melodic rap'],NAME_MISMATCH - verify correct artist,1,2021,Lemonade
+Neiked,NEIKED,5H6xmHXjsq98NLbEjuE29f,,NA,NAME_MISMATCH - verify correct artist,1,2022,Better Days
+Nick Lachey,Nick Lachey,6ewMqjrF31lC8ywRsvm073,lullaby,['lullaby'],OK,1,2006,What's Left of Me
+Nicky Youre,Nicky Youre,7qmpXeNz2ojlMl2EEfkeLs,,NA,NO_GENRES - artist has no genre tags,1,2022,Sunroof
+Niia,Niia,1KlUwB6uFECMC3zzvFvykx,,NA,NO_GENRES - artist has no genre tags,1,2008,Sweetest Girl (Dollar Bill)
+Niko Moon,Niko Moon,6Rw7DRa1dzChBvxGPCpOxU,country,['country'],OK,1,2021,Good Time
+Nitti,Nitti,72NU0FPsKjpO730t9vbW0a,,NA,NO_GENRES - artist has no genre tags,1,2006,It's Goin' Down
+Noah Kahan,Noah Kahan,2RQXRUsr4IW1f3mKyKsy4B,,NA,NO_GENRES - artist has no genre tags,1,2023,Dial Drunk
+Oliver Anthony Music,Oliver Anthony Music,6IkfE2JyVoKwBZXvuytKX3,country,['country'],OK,1,2023,Rich Men North of Richmond
+Olivia,Olivia Dean,00x1fYSGhdqScXBRpSj3DW,pop soul,['pop soul'],NAME_MISMATCH - verify correct artist,1,2005,Candy Shop
+Parker McCollum,Parker McCollum,0Z8XVUAOBPM4x12wKnFHEQ,"texas country, red dirt, country","['texas country', 'red dirt', 'country']",OK,1,2023,Handle on You
+Paul McCoy,Paul McCoy,48Mb31TcOhPFjwacZPbiU9,,NA,NO_GENRES - artist has no genre tags,1,2003,Bring Me to Life
+PinkPantheress,PinkPantheress,78rUTD7y6Cy67W1RVzYs7t,bedroom pop,['bedroom pop'],OK,1,2023,Boy's a Liar Pt. 2
+Pinkfong,Pinkfong,7cTXfwpe9peK0UE1bZyIWZ,"children's music, lullaby","['children's music', 'lullaby']",OK,1,2019,Baby Shark
+Polow da Don,Polow Da Don,0gcDAjaKZIKMdYJoIdrIfR,,NA,NAME_MISMATCH - verify correct artist,1,2007,Throw Some D's
+Powfu,Powfu,6bmlMHgSheBauioMgKv2tn,,NA,NO_GENRES - artist has no genre tags,1,2020,Death Bed
+QB Finest,QB Finest,06X9ub06B2zsqDpmHUqh3K,,NA,NO_GENRES - artist has no genre tags,1,2001,Oochie Wally
+Ray Dalton,Ray Dalton,4e0nWw2r4BoQSKPQ2zpU13,,NA,NO_GENRES - artist has no genre tags,1,2013,Can't Hold Us
+Raye,RAYE,5KKpBU5eC2tJDzf0wmlRp2,,NA,NAME_MISMATCH - verify correct artist,1,2023,Escapism
+Rema,Rema,46pWGuE3dSwY3bMMXGBvVS,"afrobeats, afrobeat, afropop, afropiano","['afrobeats', 'afrobeat', 'afropop', 'afropiano']",OK,1,2023,Calm Down
+Remy Boyz,Remy Boyz,2s0yxtiHiyGe6CY4mbDYFi,,NA,NO_GENRES - artist has no genre tags,1,2016,679
+Rhenzy Feliz,Rhenzy Feliz,2as15AH2BTrPk8v4gyElmr,,NA,NO_GENRES - artist has no genre tags,1,2022,We Don't Talk About Bruno
+Rich the Kid,Rich The Kid,1pPmIToKXyGdsCF6LmqLmI,trap,['trap'],NAME_MISMATCH - verify correct artist,1,2018,Plug Walk
+Rikrok,Rik Rok,67wCYxOq4A1ohAs7jWYaOJ,"dancehall, riddim, lovers rock, ragga","['dancehall', 'riddim', 'lovers rock', 'ragga']",NAME_MISMATCH - verify correct artist,1,2001,It Wasn't Me
+Ritt Momney,Ritt Momney,7MPGCB854Qo4alYMOPkBka,bedroom pop,['bedroom pop'],OK,1,2021,Put Your Records On
+Roman GianArthur,Roman GianArthur,7hgRzsQGjlm1zifNoigyB9,neo soul,['neo soul'],OK,1,2015,Classic Man
+Rozes,Rozes,6tARJVc2sZDHgAHOYJhRp8,,NA,NO_GENRES - artist has no genre tags,1,2016,Roses
+Ruth B,Ruth B.,2WzaAvm2bBCf4pEhyuDgCY,,NA,NAME_MISMATCH - verify correct artist,1,2016,Lost Boy
+Ryan Hurd,Ryan Hurd,7lDVEkjIURPMyUYwoQRrpw,country,['country'],OK,1,2021,Chasing After You
+Ryan Tedder,Ryan Tedder,4we5S2VLjgY9KzIzApL1KI,,NA,NO_GENRES - artist has no genre tags,1,2011,Rocketeer
+Sabi,Sabi,3tB8VKd0rtEnc9x8l78ymo,,NA,NO_GENRES - artist has no genre tags,1,2011,You Make Me Feel...
+Sacario,Sacario,7bbJOUpJk7Y8Pkr2fCtDsc,,NA,NO_GENRES - artist has no genre tags,1,2002,If I Could Go!
+Sage the Gemini,Sage The Gemini,6d47Z08T4snK50HgTEHo5Z,hyphy,['hyphy'],NAME_MISMATCH - verify correct artist,1,2015,G.D.F.R.
+Saint Jhn,SAINt JHN,0H39MdGGX6dbnnQPt6NQkZ,,NA,NAME_MISMATCH - verify correct artist,1,2020,Roses (Imanbek remix)
+Sean Garrett,Sean Garrett,4aWpJudn4ljEWahx6cPEGu,,NA,NO_GENRES - artist has no genre tags,1,2009,Break Up
+Sean P,Sean Paul,3Isy6kedDrgPYoTS1dazA9,dancehall,['dancehall'],NAME_MISMATCH - verify correct artist,1,2006,Do It to It
+Social House,Social House,5UjifI1TYefXWn9GdqDOHl,,NA,NO_GENRES - artist has no genre tags,1,2019,Boyfriend
+Son by Four,Son By Four,1qyAl8T6GTcaOViaI7fs1j,salsa,['salsa'],NAME_MISMATCH - verify correct artist,1,2000,Purest of Pain (A Puro Dolor)
+Sonique,Sonique,5xtqw2B8z8JGfDYi2eAZHI,,NA,NO_GENRES - artist has no genre tags,1,2000,It Feels So Good
+Sons of the Desert,Sons Of The Desert,11CLs6bp5aUHnVdkfqq3rV,,NA,NAME_MISMATCH - verify correct artist,1,2000,I Hope You Dance
+SpotemGottem,SpotemGottem,3Y2MLcrD3ZQXRXmtn4fZQx,,NA,NO_GENRES - artist has no genre tags,1,2021,Beat Box
+Spragga Benz,Spragga Benz,2RUW6D53228zMHAXjaQI8f,"dancehall, ragga, reggae, riddim","['dancehall', 'ragga', 'reggae', 'riddim']",OK,1,2004,Turn Me On
+StaySolidRocky,StaySolidRocky,1XLWox9w1Yvbodui0SRhUQ,,NA,NO_GENRES - artist has no genre tags,1,2020,Party Girl
+Stephanie Beatriz,Stephanie Beatriz,5PYToRCsrnvikZg3yl2JMr,,NA,NO_GENRES - artist has no genre tags,1,2022,We Don't Talk About Bruno
+Stephen Sanchez,Stephen Sanchez,5XKFrudbV4IiuE5WuTPRmT,,NA,NO_GENRES - artist has no genre tags,1,2023,Until I Found You
+Surf Mesa,Surf Mesa,1lmU3giNF3CSbkVSQmLpHQ,,NA,NO_GENRES - artist has no genre tags,1,2020,ILY (I Love You Baby)
+Surfaces,Surfaces,4ETSs924pXMzjIeD6E9b4u,,NA,NO_GENRES - artist has no genre tags,1,2020,Sunday Best
+The Anxiety,THE ANXIETY,64H8UqGLbJFHwKtGxiV8OP,,NA,NAME_MISMATCH - verify correct artist,1,2022,Meet Me at Our Spot
+The D.E.Y.,London Symphony Orchestra,5yxyJsFanEAuwSM5kOuZKc,"classical, orchestral, opera","['classical', 'orchestral', 'opera']",NAME_MISMATCH - verify correct artist,1,2007,Walk Away (Remember Me)
+The Product G&B,The Product G&B,782IpIScTpnDhYb9hyxOu1,,NA,NO_GENRES - artist has no genre tags,1,2000,Maria Maria
+Thrust,Thrust,6Dq408AS2fr8nlo85Rb5OD,underground hip hop,['underground hip hop'],OK,1,2000,Faded
+Tiara Thomas,Tiara Thomas,69FykkhiqpzqeSNYRxc8BI,,NA,NO_GENRES - artist has no genre tags,1,2013,Bad
+Tones and I,Tones And I,2NjfBq1NflQcKSeiDooVjY,,NA,NAME_MISMATCH - verify correct artist,1,2020,Dance Monkey
+Toosii,Toosii,6BH1xcDkwbbyrLMUKECsW1,,NA,NO_GENRES - artist has no genre tags,1,2023,Favorite Song
+Trevor Daniel,Trevor Daniel,7uaIm6Pw7xplS8Dy06V6pT,,NA,NO_GENRES - artist has no genre tags,1,2020,Falling
+Tyler Cole,Tyler Cole,1xoxekeb8jUVHKJB7m6bfg,,NA,NO_GENRES - artist has no genre tags,1,2022,Meet Me at Our Spot
+Walk the Moon,WALK THE MOON,6DIS6PRrLS3wbnZsf7vYic,,NA,NAME_MISMATCH - verify correct artist,1,2015,Shut Up and Dance
+Wanz,Wanz,56xTxG4nQMAs1GW9kvn0uA,g-funk,['g-funk'],OK,1,2013,Thrift Shop
+Willa Ford,Willa Ford,0kuEP1E9k3WBEwMKwEmp9u,,NA,NO_GENRES - artist has no genre tags,1,2001,I Wanna Be Bad
+Willow,WILLOW,3rWZHrfrsPBxVy692yAIxF,,NA,NAME_MISMATCH - verify correct artist,1,2022,Meet Me at Our Spot
+Wynter,Wynter,3DPBVk2CE9Tr0AAEEq19iB,,NA,NO_GENRES - artist has no genre tags,1,2009,Sugar
+YK Osiris,YK Osiris,7meyrw7Or5DwteYxDJrkCM,,NA,NO_GENRES - artist has no genre tags,1,2019,Worth It
+Yng Lvcas,Yng Lvcas,1NNRWkhwmcXRimFYSBpB1y,"reggaeton mexa, reggaeton, electro corridos, dembow belico","['reggaeton mexa', 'reggaeton', 'electro corridos', 'dembow belico']",OK,1,2023,La Bebé
+Yung Bleu,Yung Bleu,3KNIG74xSTc3dj0TRy7pGX,,NA,NO_GENRES - artist has no genre tags,1,2021,You're Mines Still
+Zacari,Zacari,3qBKjEOanahMxlRojwCzhI,,NA,NO_GENRES - artist has no genre tags,1,2018,Love
+Zay Hilfigerrr & Zayion McCall,Zion Foster,7z5nU71I7KTEdTHiPMfwL6,uk r&b,['uk r&b'],NAME_MISMATCH - verify correct artist,1,2017,Juju on That Beat (TZ Anthem)
+[a],Ariana Grande,66CXWjxzNUsdJxJ2JdwvnR,pop,['pop'],NAME_MISMATCH - verify correct artist,1,2016,Pop Style
+soulDecision,SoulDecision,6hYrBYtoVGArYJcqvYxN4r,,NA,NAME_MISMATCH - verify correct artist,1,2000,Faded

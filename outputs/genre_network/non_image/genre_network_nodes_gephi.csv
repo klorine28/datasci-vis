@@ -789,6 +789,20 @@ schlager,classic schlager,3,POP
 scandipop,dance pop,2,POP
 latin talent show,latin pop,2,LATIN
 neo-rockabilly,neo-rockabilly,3,ROCK
+afro r&b,NA,1,OTHER
+afrobeats,NA,1,OTHER
+afropiano,NA,1,OTHER
+corrido,NA,1,OTHER
+corridos bélicos,NA,1,OTHER
+corridos tumbados,NA,1,OTHER
+dance,NA,1,OTHER
+electro corridos,NA,1,OTHER
+melodic rap,NA,1,OTHER
+midwest rap,NA,1,OTHER
+musical theatre,NA,1,OTHER
+música mexicana,NA,1,OTHER
+ragga,NA,1,OTHER
+sad sierreño,NA,1,OTHER
 worship,anthem worship,61,R&B
 traditional folk,alternative country,31,FOLK
 tropical,latin,45,LATIN
@@ -956,3 +970,8 @@ pop nacional,pop nacional,1,POP
 italian pop,classic italian pop,2,POP
 vintage swedish pop,classic swedish pop,2,POP
 deep talent show,deep talent show,13,POP
+sierreño,NA,1,OTHER
+country hip hop,NA,1,OTHER
+memphis rap,NA,1,OTHER
+trap,NA,1,OTHER
+urbano latino,NA,1,OTHER

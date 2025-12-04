@@ -1,25 +1,25 @@
 from,to,weight
-hip hop,rap,287
-pop rap,rap,273
-dance pop,pop,268
+hip hop,rap,308
+dance pop,pop,275
+pop rap,rap,274
 mellow gold,soft rock,243
 album rock,rock,239
 pop rap,southern hip hop,237
 r&b,urban contemporary,224
-hip hop,pop rap,218
-rap,southern hip hop,213
+hip hop,pop rap,222
+rap,southern hip hop,217
 indie rock,modern rock,212
 classic rock,rock,211
-alternative metal,nu metal,200
+alternative metal,nu metal,201
 hard rock,rock,197
 southern hip hop,trap music,189
+hip hop,southern hip hop,187
 folk rock,mellow gold,182
 rap,trap music,182
 contemporary country,country,182
 indie pop,modern rock,181
-hip hop,southern hip hop,181
 pop rap,trap music,179
-gangster rap,rap,178
+gangster rap,rap,179
 dance rock,new wave,177
 album rock,classic rock,176
 mellow gold,rock,174
@@ -35,7 +35,7 @@ funk,quiet storm,157
 indie pop,indie rock,155
 hardcore hip hop,hip hop,155
 country,country road,154
-funk,soul,152
+funk,soul,153
 album rock,mellow gold,152
 dance rock,new romantic,152
 quiet storm,urban contemporary,152
@@ -48,9 +48,9 @@ classic rock,folk rock,146
 pop,post-teen pop,145
 dance pop,post-teen pop,145
 blues-rock,classic rock,144
+gangster rap,southern hip hop,144
 album rock,soft rock,143
 new romantic,new wave,143
-gangster rap,southern hip hop,143
 classic rock,mellow gold,142
 rock,soft rock,142
 nu metal,post-grunge,142
@@ -73,7 +73,7 @@ quiet storm,soul,123
 art rock,rock,123
 disco,quiet storm,122
 dirty south rap,southern hip hop,122
-alternative rock,rock,120
+alternative rock,rock,122
 classic soul,motown,120
 roots rock,singer-songwriter,119
 christian music,worship,119
@@ -104,6 +104,7 @@ classic rock,psychedelic rock,106
 gangster rap,hardcore hip hop,106
 gangster rap,trap music,106
 disco,post-disco,106
+east coast hip hop,hip hop,106
 blues-rock,rock,105
 funk,motown,105
 dance pop,urban contemporary,104
@@ -112,12 +113,11 @@ country road,modern country rock,104
 folk,mellow gold,103
 folk-pop,indie rock,103
 alternative rock,modern rock,103
-east coast hip hop,hip hop,103
+dance pop,r&b,103
 country rock,roots rock,102
 nashville sound,traditional country,102
-dance pop,r&b,102
+emo,pop punk,102
 indietronica,modern rock,101
-emo,pop punk,101
 folk-pop,modern rock,100
 brill building pop,bubblegum pop,100
 indie pop,indietronica,100
@@ -164,8 +164,8 @@ adult standards,brill building pop,89
 pop,rap,89
 post-disco,quiet storm,89
 art rock,symphonic rock,88
+post-grunge,rock,88
 chamber pop,indie rock,87
-post-grunge,rock,87
 alternative metal,groove metal,87
 dance pop,hip pop,87
 quiet storm,r&b,87
@@ -177,10 +177,10 @@ indie rock,stomp and holler,85
 country rock,outlaw country,85
 outlaw country,traditional country,85
 neo soul,new jack swing,84
+alternative rock,post-grunge,84
 classic rock,roots rock,83
 classic rock,singer-songwriter,83
 new romantic,synthpop,83
-alternative rock,post-grunge,83
 country gospel,traditional country,83
 psychedelic rock,rock,82
 pop rock,post-grunge,82
@@ -204,8 +204,9 @@ art rock,folk rock,77
 alternative country,roots rock,77
 indie rock,indietronica,77
 funk,urban contemporary,77
+alternative metal,rock,77
+alternative rock,pop rock,77
 album rock,blues-rock,76
-alternative metal,rock,76
 folk rock,traditional folk,75
 folk-pop,pop rock,75
 rock-and-roll,rockabilly,75
@@ -213,22 +214,22 @@ indie folk,new americana,74
 folk,soft rock,74
 metal,rock,74
 blues-rock,psychedelic rock,74
-alternative rock,pop rock,74
 permanent wave,rock,74
 hip hop,hip pop,74
 art rock,progressive rock,73
 pop rock,rock,73
 new wave pop,synthpop,73
 alternative rock,garage rock,73
+country,country rock,73
+east coast hip hop,rap,73
+pop,r&b,73
 art rock,mellow gold,72
 progressive rock,symphonic rock,72
 mellow gold,new wave pop,72
 indietronica,new rave,72
-country,country rock,72
 country,traditional country,72
 art rock,psychedelic rock,71
 art rock,dance rock,71
-east coast hip hop,rap,71
 classic soul,disco,71
 anthem worship,ccm,70
 blues-rock,hard rock,70
@@ -249,7 +250,6 @@ indie rock,new rave,67
 indie rock,noise pop,67
 dance-punk,indie rock,67
 pop,tropical house,67
-pop,r&b,67
 atl hip hop,southern hip hop,67
 hip pop,new jack swing,67
 dirty south rap,rap,67
@@ -257,6 +257,7 @@ alternative dance,indietronica,66
 dance-punk,new rave,66
 alternative hip hop,hardcore hip hop,66
 indie rock,rock,66
+electropop,pop,66
 blues-rock,roots rock,65
 acoustic pop,neo mellow,65
 folk,folk-pop,65
@@ -266,12 +267,13 @@ groove metal,metal,65
 art rock,new wave,65
 new americana,stomp and holler,64
 modern rock,new rave,64
-electropop,pop,64
 pop,urban contemporary,64
 new wave,rock,64
+hip hop,r&b,64
 folk rock,merseybeat,63
 merseybeat,rock-and-roll,63
 atl hip hop,pop rap,63
+hip hop,pop,63
 anthem worship,worship,62
 adult standards,mellow gold,62
 art rock,singer-songwriter,62
@@ -282,7 +284,6 @@ album rock,singer-songwriter,61
 country rock,traditional folk,61
 dance-punk,modern rock,61
 east coast hip hop,gangster rap,61
-hip hop,pop,61
 lilith,singer-songwriter,60
 adult standards,bubblegum pop,60
 adult standards,soft rock,60
@@ -318,13 +319,13 @@ deep pop r&b,r&b,56
 edm,electro house,56
 country,country gospel,56
 latin,latin pop,56
+nu metal,rock,56
 album rock,psychedelic rock,55
 folk,rock,55
 chamber pop,freak folk,55
 freak folk,modern rock,55
 cowboy western,traditional country,55
 art pop,indie pop,55
-nu metal,rock,55
 hip hop,urban contemporary,55
 dance pop,europop,55
 funk,jazz funk,54
@@ -342,6 +343,7 @@ alternative dance,dance-punk,54
 neon pop punk,pop punk,54
 atl hip hop,rap,54
 post-disco,urban contemporary,54
+dance pop,electropop,54
 bubblegum pop,soft rock,53
 new wave pop,pop rock,53
 folk-pop,freak folk,53
@@ -369,7 +371,6 @@ alternative dance,modern rock,51
 art pop,indie rock,51
 hardcore hip hop,southern hip hop,51
 alternative metal,industrial metal,51
-dance pop,electropop,51
 dance pop,hip hop,51
 hip pop,pop,51
 hip pop,quiet storm,51
@@ -378,30 +379,29 @@ dance rock,mellow gold,50
 alternative rock,noise pop,50
 chillwave,indietronica,50
 deep pop r&b,urban contemporary,50
-hip hop,r&b,50
 brill building pop,motown,50
 country gospel,cowboy western,50
+alternative rock,indie pop,50
 alternative country,folk,49
 alternative country,new americana,49
 roots rock,soft rock,49
 heartland rock,mellow gold,49
-alternative rock,indie pop,49
 art pop,chamber pop,49
 lo-fi,noise pop,49
 pop,southern hip hop,49
 post-disco,soul,49
 gangster rap,west coast rap,49
 country gospel,outlaw country,49
+pop rap,r&b,49
 hard rock,soft rock,48
 art rock,new wave pop,48
 new romantic,soft rock,48
 jangle pop,power pop,48
 alternative dance,indie rock,48
 electropop,indietronica,48
-pop rap,r&b,48
 anthem worship,christian alternative rock,48
 classic rock,electric blues,48
-indie folk,singer-songwriter,47
+indie folk,singer-songwriter,48
 heartland rock,rock,47
 freak folk,noise pop,47
 lo-fi,modern rock,47
@@ -441,6 +441,7 @@ conscious hip hop,hip hop,44
 industrial metal,rap rock,44
 christian music,world worship,44
 edm,tropical house,44
+punk,skate punk,44
 art rock,hard rock,43
 art rock,roots rock,43
 pop rock,singer-songwriter,43
@@ -451,7 +452,6 @@ indietronica,shimmer pop,43
 emo,screamo,43
 edm,pop,43
 new wave,soft rock,43
-punk,skate punk,43
 g funk,west coast rap,43
 dirty south rap,hip hop,43
 acoustic pop,folk-pop,42
@@ -480,6 +480,9 @@ alternative metal,metal,41
 crunk,dirty south rap,41
 banda,regional mexican,41
 g funk,gangster rap,41
+crunk,gangster rap,41
+dance pop,pop rock,41
+crunk,southern hip hop,41
 lounge,vocal jazz,40
 classic uk pop,merseybeat,40
 adult standards,rockabilly,40
@@ -489,12 +492,10 @@ hard rock,psychedelic rock,40
 industrial metal,industrial rock,40
 dance pop,rap,40
 atl hip hop,dirty south rap,40
-crunk,gangster rap,40
 norteno,regional mexican,40
 new jack swing,post-disco,40
 scorecore,soundtrack,40
 dance pop,edm,40
-dance pop,pop rock,40
 blues-rock,soft rock,39
 folk rock,hard rock,39
 album rock,progressive rock,39
@@ -511,6 +512,7 @@ indie pop,lo-fi,39
 protopunk,psychedelic rock,39
 dance pop,southern hip hop,39
 grupera,regional mexican,39
+hip hop,old school hip hop,39
 bebop,jazz,38
 cool jazz,jazz,38
 doo-wop,rock-and-roll,38
@@ -524,7 +526,6 @@ alternative rock,dance-punk,38
 dance pop,new jack swing,38
 groove metal,speed metal,38
 post-hardcore,screamo,38
-hip hop,old school hip hop,38
 jazz funk,soul,37
 jazz funk,quiet storm,37
 alternative country,indie folk,37
@@ -545,6 +546,8 @@ banda,norteno,37
 brill building pop,soul,37
 classic soul,post-disco,37
 hard rock,speed metal,37
+pop punk,skate punk,37
+hip hop,west coast rap,37
 bebop,cool jazz,36
 disco,jazz funk,36
 folk rock,heartland rock,36
@@ -561,12 +564,10 @@ power pop,pub rock,36
 alternative rock,grunge,36
 art rock,classic uk pop,36
 dance rock,permanent wave,36
-crunk,southern hip hop,36
 speed metal,thrash metal,36
 mellow gold,traditional folk,36
 eurodance,europop,36
 funk,neo soul,36
-pop punk,skate punk,36
 pop punk,post-grunge,36
 contemporary post-bop,jazz,35
 alternative country,folk-pop,35
@@ -586,7 +587,6 @@ chamber pop,indietronica,35
 alternative hip hop,gangster rap,35
 hardcore hip hop,turntablism,35
 alternative hip hop,southern hip hop,35
-hip hop,west coast rap,35
 alternative hip hop,rap,35
 alternative metal,rap metal,35
 indie poptimism,pop,35
@@ -596,12 +596,14 @@ garage rock,punk blues,35
 death metal,groove metal,35
 metal,thrash metal,35
 latin pop,tropical,35
+red dirt,texas country,35
+banda,grupera,35
+pop punk,punk,35
 classic uk pop,folk,34
 album rock,dance rock,34
 indie rock,singer-songwriter,34
 alternative country,outlaw country,34
 outlaw country,red dirt,34
-red dirt,texas country,34
 folk-pop,roots rock,34
 chillwave,indie rock,34
 chillwave,modern rock,34
@@ -612,7 +614,6 @@ noise pop,noise rock,34
 post-screamo,screamo,34
 southern hip hop,urban contemporary,34
 crunk,trap music,34
-banda,grupera,34
 grupera,norteno,34
 east coast hip hop,pop rap,34
 death metal,metal,34
@@ -620,7 +621,7 @@ british blues,classic rock,34
 jazz funk,post-disco,34
 contemporary country,country rock,34
 neo soul,soul,34
-pop punk,punk,34
+funk,r&b,34
 blues,modern blues,33
 blues-rock,singer-songwriter,33
 post-teen pop,viral pop,33
@@ -650,6 +651,9 @@ bubblegum dance,europop,33
 dance pop,deep pop r&b,33
 garage rock,new rave,33
 big room,edm,33
+pop,pop rock,33
+grunge,post-grunge,33
+latin,reggaeton,33
 alternative country,traditional folk,32
 adult standards,merseybeat,32
 brill building pop,folk,32
@@ -662,7 +666,6 @@ memphis soul,southern soul,32
 australian pop,dance pop,32
 bebop,contemporary post-bop,31
 blues,classic rock,31
-pop,pop rock,31
 bubblegum pop,classic rock,31
 bubblegum pop,folk,31
 psychedelic rock,soft rock,31
@@ -681,8 +684,6 @@ alternative rock,art rock,31
 alternative metal,pop rock,31
 tropical house,uk pop,31
 alternative rock,dance rock,31
-grunge,post-grunge,31
-funk,r&b,31
 brill building pop,classic soul,31
 motown,urban contemporary,31
 new jack swing,soul,31
@@ -691,7 +692,6 @@ lilith,new wave pop,31
 country road,country rock,31
 deep pop r&b,pop,31
 metal,progressive metal,31
-latin,reggaeton,31
 trap music,underground hip hop,31
 contemporary post-bop,cool jazz,30
 british invasion,bubblegum pop,30
@@ -748,6 +748,7 @@ classic soul,rhythm and blues,29
 classic soul,jazz funk,29
 classic soul,philly soul,29
 adult standards,soul,29
+indie pop,singer-songwriter,29
 jam band,roots rock,28
 indie folk,neo mellow,28
 ccm,christian pop,28
@@ -755,7 +756,6 @@ merseybeat,rockabilly,28
 bubblegum pop,classic garage rock,28
 folk,psychedelic rock,28
 hard rock,roots rock,28
-indie pop,singer-songwriter,28
 roots rock,stomp and holler,28
 art pop,singer-songwriter,28
 dream pop,freak folk,28
@@ -809,6 +809,8 @@ latin hip hop,tropical,27
 neo mellow,post-grunge,27
 disco,new wave pop,27
 post-grunge,rap metal,27
+indie pop,pop rock,27
+electropop,indie pop,27
 folk,indie folk,26
 folk rock,folk-pop,26
 acoustic pop,indiecoustica,26
@@ -822,7 +824,6 @@ folk rock,yacht rock,26
 indie pop,slow core,26
 anti-folk,chamber pop,26
 indie folk,pop rock,26
-indie pop,pop rock,26
 indie rock,pop rock,26
 modern rock,nu gaze,26
 electronic,new rave,26
@@ -847,6 +848,8 @@ progressive post-hardcore,screamo,26
 metal,power metal,26
 classic uk pop,rock,26
 melodic metalcore,nu metal,26
+boy band,dance pop,26
+r&b,soul,26
 bebop,hard bop,25
 contemporary post-bop,jazz funk,25
 contemporary post-bop,jazz fusion,25
@@ -865,7 +868,6 @@ dream pop,folk-pop,25
 indietronica,noise pop,25
 indietronica,stomp and holler,25
 indie rock,shimmer pop,25
-electropop,indie pop,25
 electropop,metropopolis,25
 alternative emo,pop punk,25
 conscious hip hop,gangster rap,25
@@ -874,7 +876,6 @@ dance pop,indie poptimism,25
 dance-punk,noise pop,25
 modern rock,pop,25
 classic uk pop,new wave pop,25
-boy band,dance pop,25
 electro house,tropical house,25
 rhythm and blues,southern soul,25
 classic soul,memphis soul,25
@@ -886,6 +887,8 @@ alternative metal,pop punk,25
 dance pop,new wave pop,25
 australian pop,pop,25
 pop rap,post-teen pop,25
+crunk,rap,25
+reggae,roots reggae,25
 contemporary post-bop,hard bop,24
 cool jazz,hard bop,24
 blues,traditional blues,24
@@ -917,7 +920,6 @@ folk-pop,permanent wave,24
 permanent wave,singer-songwriter,24
 classic rock,progressive rock,24
 protopunk,rock,24
-crunk,rap,24
 east coast hip hop,southern hip hop,24
 garage rock,modern blues rock,24
 classic garage rock,protopunk,24
@@ -925,7 +927,6 @@ britpop,rock,24
 motown,philly soul,24
 deep pop r&b,pop rap,24
 dance pop,viral pop,24
-reggae,roots reggae,24
 east coast hip hop,old school hip hop,24
 hard rock,thrash metal,24
 latin hip hop,reggaeton,24
@@ -981,6 +982,8 @@ electro house,pop,23
 adult standards,motown,23
 power pop,singer-songwriter,23
 progressive metal,speed metal,23
+glam rock,rock,23
+gangster rap,old school hip hop,23
 bebop,jazz funk,22
 bebop,soul jazz,22
 cool jazz,jazz funk,22
@@ -993,7 +996,6 @@ soft rock,symphonic rock,22
 classic rock,dance rock,22
 album rock,southern rock,22
 album rock,classic uk pop,22
-glam rock,rock,22
 chamber pop,new americana,22
 anti-folk,stomp and holler,22
 chamber pop,melancholia,22
@@ -1011,7 +1013,6 @@ art rock,protopunk,22
 brostep,edm,22
 hardcore hip hop,hip pop,22
 motown,northern soul,22
-gangster rap,old school hip hop,22
 deep pop r&b,neo soul,22
 deep southern trap,dirty south rap,22
 jazz funk,smooth jazz,22
@@ -1019,6 +1020,7 @@ edm,progressive house,22
 punk,ska punk,22
 ska punk,skate punk,22
 west coast rap,west coast trap,22
+emo,pop rock,22
 contemporary post-bop,soul jazz,21
 ccm,roots worship,21
 christian pop,worship,21
@@ -1061,7 +1063,6 @@ electro,hip hop,21
 electric blues,rock,21
 brill building pop,rock,21
 alternative dance,garage rock,21
-emo,pop rock,21
 australian pop,post-teen pop,21
 dance pop,neo mellow,21
 latin,pop,21
@@ -1113,7 +1114,6 @@ europop,soft rock,20
 deep southern trap,gangster rap,20
 deep southern trap,southern hip hop,20
 motown,new jack swing,20
-r&b,soul,20
 electro,hip house,20
 power metal,progressive metal,20
 latin,reggaeton flow,20
@@ -1180,6 +1180,7 @@ edm,progressive electro house,19
 electro house,progressive electro house,19
 post-teen pop,tropical house,19
 alternative metal,speed metal,19
+punk,rock,19
 bebop,jazz fusion,18
 cool jazz,jazz fusion,18
 brill building pop,classic rock,18
@@ -1215,7 +1216,6 @@ garage rock,post-punk,18
 garage rock,punk,18
 art rock,synthpop,18
 art rock,zolo,18
-punk,rock,18
 dance-punk,lo-fi,18
 classic uk pop,new romantic,18
 mellow gold,power pop,18
@@ -1253,6 +1253,7 @@ soul,vocal jazz,18
 dance pop,trap music,18
 latin,latin arena pop,18
 latin arena pop,latin pop,18
+country,texas country,18
 electric blues,traditional blues,17
 alternative country,lilith,17
 folk-pop,indiecoustica,17
@@ -1330,6 +1331,7 @@ metalcore,nu metal,17
 latin pop,pop,17
 deep pop r&b,rap,17
 gangster rap,west coast trap,17
+alternative r&b,pop,17
 blues-rock,traditional blues,16
 deep ccm,worship,16
 neo mellow,piano rock,16
@@ -1363,7 +1365,6 @@ alternative hip hop,boom bap,16
 progressive metal,rock,16
 sludge metal,stoner metal,16
 industrial metal,rap metal,16
-alternative r&b,pop,16
 garage rock,permanent wave,16
 lilith,permanent wave,16
 new wave,noise pop,16
@@ -1388,7 +1389,6 @@ funk,memphis soul,16
 melodic metalcore,post-screamo,16
 classic soul,northern soul,16
 ska,ska punk,16
-country,texas country,16
 country dawn,modern country rock,16
 contemporary country,nashville sound,16
 folk-pop,mellow gold,16
@@ -1409,6 +1409,8 @@ neo mellow,rock,16
 pop,tropical,16
 pop punk,ska punk,16
 pop rap,west coast rap,16
+dub,reggae,16
+funk,hip hop,16
 jazz fusion,soul jazz,15
 folk rock,jam band,15
 acoustic pop,lilith,15
@@ -1481,8 +1483,6 @@ lilith,roots rock,15
 industrial,industrial rock,15
 melodic death metal,metal,15
 dirty south rap,memphis hip hop,15
-dub,reggae,15
-funk,hip hop,15
 girl group,r&b,15
 metal,neo classical metal,15
 pop rock,power pop,15
@@ -1503,6 +1503,8 @@ modern blues rock,rock,15
 grunge,nu metal,15
 neo mellow,pop punk,15
 europop,pop,15
+grupera,ranchera,15
+emo,skate punk,15
 hard bop,jazz fusion,14
 blues,roots rock,14
 indiecoustica,pop rock,14
@@ -1554,7 +1556,6 @@ art pop,metropopolis,14
 blues-rock,classic uk pop,14
 dance rock,protopunk,14
 atl hip hop,hip pop,14
-grupera,ranchera,14
 duranguense,grupera,14
 brostep,electronic trap,14
 electro house,electronic trap,14
@@ -1582,7 +1583,6 @@ dance pop,metropopolis,14
 gangster rap,memphis hip hop,14
 disco house,vocal house,14
 post-hardcore,progressive post-hardcore,14
-emo,skate punk,14
 power pop,underground power pop,14
 album rock,speed metal,14
 mellow gold,permanent wave,14
@@ -1596,6 +1596,8 @@ dirty south rap,hip pop,14
 post-teen pop,urban contemporary,14
 melodic hardcore,punk,14
 gangster rap,houston rap,14
+dub,roots reggae,14
+crunk,hip hop,14
 classic rock,jam band,13
 jam band,modern blues,13
 anthem worship,deep ccm,13
@@ -1665,7 +1667,6 @@ europop,new wave,13
 edm,house,13
 dirty south rap,new orleans rap,13
 funk,minneapolis sound,13
-dub,roots reggae,13
 modern blues rock,punk blues,13
 jazz fusion,smooth jazz,13
 screamo,trancecore,13
@@ -1685,7 +1686,8 @@ britpop,garage rock,13
 uk pop,viral pop,13
 g funk,pop rap,13
 east coast hip hop,electro,13
-crunk,hip hop,13
+boy band,pop,13
+indie pop,pop,13
 classic rock,traditional blues,12
 ectofolk,folk,12
 folk rock,new americana,12
@@ -1757,7 +1759,6 @@ classic uk pop,symphonic rock,12
 glam rock,protopunk,12
 new wave pop,pub rock,12
 boy band,hip pop,12
-boy band,pop,12
 boy band,quiet storm,12
 contemporary jazz,jazz fusion,12
 dancehall,reggae fusion,12
@@ -1892,7 +1893,6 @@ garage psych,lo-fi,11
 indie punk,modern rock,11
 art pop,dance rock,11
 art pop,electronic,11
-indie pop,pop,11
 classic rock,permanent wave,11
 new wave pop,zolo,11
 atl hip hop,r&b,11
@@ -1976,6 +1976,8 @@ dance pop,dance rock,11
 trap music,urban contemporary,11
 hip hop,west coast trap,11
 latin arena pop,tropical,11
+alternative r&b,hip hop,11
+banda,ranchera,11
 blues,folk rock,10
 folk rock,soul,10
 funk,modern blues,10
@@ -2017,7 +2019,6 @@ brooklyn indie,indie rock,10
 chillwave,dance-punk,10
 alternative dance,metropopolis,10
 anthem emo,easycore,10
-alternative r&b,hip hop,10
 southern hip hop,west coast rap,10
 alternative hip hop,jazz rap,10
 hardcore hip hop,jazz rap,10
@@ -2070,7 +2071,6 @@ cool jazz,jazz saxophone,10
 jazz funk,jazz saxophone,10
 jazz funk,jazz piano,10
 jazz funk,jazz guitar,10
-banda,ranchera,10
 norteno,ranchera,10
 regional mexican,regional mexican pop,10
 crossover thrash,death metal,10
@@ -2165,6 +2165,9 @@ houston rap,pop rap,10
 dance pop,latin,10
 dance pop,latin pop,10
 detroit hip hop,rap,10
+lovers rock,reggae,10
+electronic,electropop,10
+emo,punk,10
 hollywood,post-teen pop,9
 acoustic blues,blues,9
 acoustic blues,traditional blues,9
@@ -2305,7 +2308,6 @@ metropopolis,tropical house,9
 europop,synthpop,9
 lovers rock,reggae fusion,9
 reggae fusion,roots reggae,9
-lovers rock,reggae,9
 groove metal,swedish metal,9
 dirty south rap,dirty texas rap,9
 post-disco,r&b,9
@@ -2348,7 +2350,6 @@ indie folk,texas country,9
 mellow gold,outlaw country,9
 canadian indie,modern rock,9
 modern blues rock,roots rock,9
-electronic,electropop,9
 dance-punk,stomp and holler,9
 indie pop,neo-psychedelic,9
 dance pop,new rave,9
@@ -2361,7 +2362,6 @@ alternative metal,funk rock,9
 post-grunge,wrestling,9
 alternative rock,pop punk,9
 christian alternative rock,post-grunge,9
-emo,punk,9
 punk,socal pop punk,9
 escape room,indietronica,9
 new wave pop,punk,9
@@ -2384,6 +2384,11 @@ pop rap,west coast trap,9
 latin arena pop,mexican pop,9
 rock en espanol,tropical,9
 folk rock,traditional country,9
+dancehall,soca,9
+pop punk,rock,9
+latin pop,reggaeton,9
+dancehall,lovers rock,9
+dancehall,riddim,9
 soul,soul jazz,8
 country blues,traditional blues,8
 folk rock,funk,8
@@ -2513,7 +2518,6 @@ contemporary post-bop,vocal jazz,8
 soul jazz,vocal jazz,8
 hard bop,jazz saxophone,8
 jazz fusion,jazz piano,8
-dancehall,soca,8
 banda,regional mexican pop,8
 battle rap,hip hop,8
 battle rap,rap,8
@@ -2622,7 +2626,6 @@ industrial rock,rock,8
 alternative metal,punk,8
 rap rock,wrestling,8
 pop rock,rap rock,8
-pop punk,rock,8
 death metal,nu metal,8
 post-grunge,punk,8
 melodic metalcore,post-grunge,8
@@ -2643,7 +2646,6 @@ europop,post-teen pop,8
 latin pop,ranchera,8
 mellow gold,nashville sound,8
 post-teen pop,teen pop,8
-latin pop,reggaeton,8
 pop emo,pop rock,8
 celtic,celtic rock,8
 dance pop,soft rock,8
@@ -2658,6 +2660,10 @@ escape room,pop,8
 dance pop,dirty south rap,8
 cali rap,west coast rap,8
 canadian pop,pop,8
+drill,rap,8
+alternative pop,pop rock,8
+country,red dirt,8
+afrobeat,afropop,8
 abstract hip hop,underground rap,7
 afrobeat,funk,7
 bebop,jazz trumpet,7
@@ -2826,7 +2832,6 @@ canadian singer-songwriter,roots rock,7
 opera,operatic pop,7
 indie folk,la indie,7
 conscious hip hop,underground hip hop,7
-drill,rap,7
 christian alternative rock,dreamo,7
 christian music,deep christian rock,7
 nu-metalcore,screamo,7
@@ -2853,7 +2858,6 @@ crossover thrash,punk,7
 dance rock,gothic rock,7
 dance rock,hi-nrg,7
 freak folk,post-punk,7
-dancehall,lovers rock,7
 death metal,swedish metal,7
 deathcore,groove metal,7
 hard rock,modern hard rock,7
@@ -2913,7 +2917,6 @@ new wave pop,uk post-punk,7
 hard rock,new wave pop,7
 jangle pop,new wave pop,7
 neo classical metal,rock,7
-alternative pop,pop rock,7
 dance rock,modern rock,7
 modern rock,post-punk,7
 alternative pop,boston rock,7
@@ -3006,6 +3009,10 @@ arkansas country,traditional country,7
 lounge,merseybeat,7
 arkansas country,country gospel,7
 metropopolis,post-teen pop,7
+electronic,indie pop,7
+hip hop,soul,7
+reggaeton,trap latino,7
+dancehall,reggae,7
 afrobeat,soul,6
 contemporary post-bop,jazz trumpet,6
 hard bop,jazz trumpet,6
@@ -3071,7 +3078,6 @@ brooklyn indie,freak folk,6
 brooklyn indie,shimmer pop,6
 electropop,nu gaze,6
 nu gaze,shimmer pop,6
-electronic,indie pop,6
 intelligent dance music,trip hop,6
 chillwave,neo-synthpop,6
 indietronica,vapor soul,6
@@ -3225,7 +3231,6 @@ classical soprano,opera,6
 gangster rap,new jersey rap,6
 conscious hip hop,west coast rap,6
 contemporary country,red dirt,6
-country,red dirt,6
 country dawn,country pop,6
 modern country rock,red dirt,6
 country rock,modern country rock,6
@@ -3433,6 +3438,10 @@ canadian singer-songwriter,folk rock,6
 arkansas country,country,6
 british soul,uk pop,6
 dance pop,mexican pop,6
+drill,hip hop,6
+dance,electronic,6
+hip hop,melodic rap,6
+hip hop,trap,6
 abstract hip hop,minnesota hip hop,5
 acid house,hip house,5
 chicago house,hip house,5
@@ -3460,7 +3469,6 @@ deep adult standards,easy listening,5
 deep adult standards,lounge,5
 easy listening,mellow gold,5
 classic soundtrack,lounge,5
-afrobeat,afropop,5
 alabama metal,melodic metalcore,5
 deathcore,melodic hardcore,5
 nintendocore,screamo,5
@@ -3682,7 +3690,6 @@ chamber pop,indiecoustica,5
 portland indie,stomp and holler,5
 chicago house,post-disco,5
 chicago punk,pop punk,5
-drill,hip hop,5
 chicago soul,northern soul,5
 chicano rap,west coast rap,5
 christian alternative rock,christian metal,5
@@ -3703,7 +3710,6 @@ industrial,post-punk,5
 industrial rock,new romantic,5
 hi-nrg,synthpop,5
 new rave,noise rock,5
-dancehall,riddim,5
 old school dancehall,riddim,5
 dark trap,underground hip hop,5
 emo rap,underground hip hop,5
@@ -3938,7 +3944,6 @@ r&b,trap queen,5
 electropowerpop,pop punk,5
 emo,post-teen pop,5
 dance pop,swedish pop,5
-hip hop,soul,5
 hip pop,soul,5
 deathcore,melodic deathcore,5
 melodic deathcore,melodic metalcore,5
@@ -3980,6 +3985,14 @@ swedish electropop,swedish pop,5
 australian dance,australian pop,5
 british soul,pop,5
 pop,reggaeton flow,5
+grupera,tejano,5
+alternative rock,emo,5
+corrido,corridos bélicos,5
+corrido,corridos tumbados,5
+corrido,música mexicana,5
+corridos bélicos,corridos tumbados,5
+corridos bélicos,música mexicana,5
+corridos tumbados,música mexicana,5
 acid jazz,funk,4
 acid jazz,soul,4
 funk,indie jazz,4
@@ -4206,7 +4219,6 @@ mpb,samba,4
 deep regional mexican,grupera,4
 deep regional mexican,regional mexican pop,4
 grupera,regional mexican pop,4
-grupera,tejano,4
 norteno,tejano,4
 regional mexican,tejano,4
 catstep,edm,4
@@ -4366,7 +4378,6 @@ jazz saxophone,smooth saxophone,4
 smooth jazz,soul jazz,4
 k-pop,k-pop boy group,4
 latin rock,rock en espanol,4
-reggaeton,trap latino,4
 reggaeton flow,trap latino,4
 rock en espanol,spanish pop,4
 melodic thrash,old school thrash,4
@@ -4522,7 +4533,6 @@ grunge,industrial rock,4
 hard rock,industrial metal,4
 alternative metal,industrial,4
 alternative rock,industrial,4
-alternative rock,emo,4
 dance-punk,emo,4
 grunge,stoner rock,4
 industrial rock,noise rock,4
@@ -4769,6 +4779,23 @@ colombian pop,latin,4
 latin pop,reggaeton flow,4
 dancehall,modern reggae,4
 neo r&b,r&b,4
+banda,tejano,4
+latin,trap latino,4
+dance pop,electronic,4
+rock,skate punk,4
+electronic,hip hop,4
+afrobeat,afrobeats,4
+banda,corrido,4
+banda,corridos bélicos,4
+banda,corridos tumbados,4
+banda,música mexicana,4
+corrido,sad sierreño,4
+corridos bélicos,sad sierreño,4
+corridos tumbados,sad sierreño,4
+dancehall,ragga,4
+música mexicana,sad sierreño,4
+reggaeton,urbano latino,4
+trap latino,urbano latino,4
 a cappella,college a cappella,3
 alternative hip hop,wonky,3
 minnesota hip hop,underground rap,3
@@ -5103,7 +5130,6 @@ mpb,pagode,3
 brazilian hip hop,trap brasileiro,3
 mpb,nova mpb,3
 baltimore indie,noise pop,3
-banda,tejano,3
 bay area indie,indie pop,3
 bay area indie,stomp and holler,3
 jazz trumpet,new orleans jazz,3
@@ -5260,7 +5286,6 @@ industrial,new wave,3
 industrial,uk post-punk,3
 garage psych,new rave,3
 reggae fusion,riddim,3
-dancehall,reggae,3
 old school dancehall,reggae,3
 dark trap,emo rap,3
 dark trap,vapor trap,3
@@ -5331,7 +5356,6 @@ jazz trumpet,smooth jazz,3
 jump blues,southern soul,3
 k-indie,korean pop,3
 latin alternative,rock en espanol,3
-latin,trap latino,3
 trap latino,tropical,3
 mexican pop,spanish pop,3
 latin,modern salsa,3
@@ -5600,7 +5624,6 @@ dance-punk,modern blues rock,3
 art pop,la indie,3
 chillwave,la indie,3
 dance pop,dance-punk,3
-dance pop,electronic,3
 art pop,electroclash,3
 electroclash,electropop,3
 electroclash,indietronica,3
@@ -5721,7 +5744,6 @@ groove metal,viking metal,3
 metalcore,post-grunge,3
 alternative metal,grunge pop,3
 pop punk,rap metal,3
-rock,skate punk,3
 electropowerpop,pixie,3
 neo mellow,pixie,3
 alternative pop,indie punk,3
@@ -6113,6 +6135,24 @@ country,pop,3
 latin pop,latin talent show,3
 rap latina,reggaeton,3
 neo r&b,urban contemporary,3
+afropop,azonto,3
+drum and bass,liquid funk,3
+alternative rock,glam rock,3
+ranchera,tejano,3
+afro r&b,afrobeat,3
+afro r&b,afrobeats,3
+afrobeats,afropop,3
+banda,sad sierreño,3
+corrido,sierreño,3
+corridos bélicos,sierreño,3
+corridos tumbados,sierreño,3
+melodic rap,r&b,3
+musical theatre,soundtrack,3
+música mexicana,sierreño,3
+ragga,reggae,3
+ragga,riddim,3
+reggae,riddim,3
+sad sierreño,sierreño,3
 a cappella,hollywood,2
 alternative hip hop,chillhop,2
 abstract hip hop,indie pop rap,2
@@ -6186,7 +6226,6 @@ operatic pop,vocal jazz,2
 bubblegum pop,quiet storm,2
 afro dancehall,afropop,2
 afro dancehall,azonto,2
-afropop,azonto,2
 afrobeat,new orleans funk,2
 alabama metal,deathcore,2
 alabama metal,metalcore,2
@@ -6578,7 +6617,6 @@ swing,vintage jazz,2
 big beat,intelligent dance music,2
 downtempo,intelligent dance music,2
 big beat,hip hop,2
-electronic,hip hop,2
 electronic,jazztronica,2
 electronic,turntablism,2
 hip hop,jazztronica,2
@@ -7011,7 +7049,6 @@ edm,melbourne bounce,2
 electro house,melbourne bounce,2
 edm,glitch hop,2
 electro house,glitch hop,2
-drum and bass,liquid funk,2
 complextro,moombahton,2
 complextro,progressive electro house,2
 moombahton,progressive electro house,2
@@ -7769,7 +7806,6 @@ garage rock,oxford indie,2
 indie rock,oxford indie,2
 modern blues rock,permanent wave,2
 blues-rock,post-punk,2
-alternative rock,glam rock,2
 britpop,glam rock,2
 brooklyn indie,lo-fi,2
 chamber pop,philly indie,2
@@ -7906,7 +7942,6 @@ banda,latin,2
 banda,latin pop,2
 latin,norteno,2
 latin pop,norteno,2
-ranchera,tejano,2
 banjo,stomp and holler,2
 jamgrass,new americana,2
 baroque ensemble,classical performance,2
@@ -8596,3 +8631,27 @@ latin talent show,spanish pop,2
 latin,rap latina,2
 rap latina,tropical,2
 neo-rockabilly,rockabilly,2
+afro r&b,afropop,2
+afrobeat,afropiano,2
+afrobeats,afropiano,2
+afropiano,afropop,2
+banda,electro corridos,2
+banda,sierreño,2
+corrido,electro corridos,2
+corridos bélicos,electro corridos,2
+corridos tumbados,electro corridos,2
+country,country hip hop,2
+dance,house,2
+electro corridos,música mexicana,2
+electro corridos,sad sierreño,2
+electro corridos,sierreño,2
+electronic,house,2
+electronic,pop,2
+hip hop,memphis rap,2
+hip hop,midwest rap,2
+latin,urbano latino,2
+lovers rock,riddim,2
+melodic rap,rap,2
+midwest rap,rap,2
+pop,soft rock,2
+rap,trap,2
