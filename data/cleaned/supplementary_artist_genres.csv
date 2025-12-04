@@ -1,0 +1,107 @@
+name,genres,source
+Jay-Z,"['hip hop', 'east coast hip hop', 'rap']",spotify_api_2024
+Pink,"['progressive rock', 'psychedelic rock', 'classic rock', 'art rock', 'rock']",spotify_api_2024
+R. Kelly,['r&b'],spotify_api_2024
+Juice Wrld,"['melodic rap', 'emo rap']",spotify_api_2024
+P. Diddy,"['hip hop', 'east coast hip hop']",spotify_api_2024
+Pop Smoke,"['brooklyn drill', 'new york drill', 'drill']",spotify_api_2024
+Lainey Wilson,['country'],spotify_api_2024
+Ty Dolla Sign,['trap soul'],spotify_api_2024
+Young Jeezy,"['southern hip hop', 'crunk', 'rap', 'gangster rap']",spotify_api_2024
+Bailey Zimmerman,['country'],spotify_api_2024
+Dev,"['grime', 'uk grime']",spotify_api_2024
+Fun,['children's music'],spotify_api_2024
+Peso Pluma,"['corrido', 'corridos tumbados', 'corridos bélicos', 'música mexicana', 'sad sierreño', 'banda']",spotify_api_2024
+Tems,"['afrobeats', 'afro r&b', 'alté', 'afrobeat']",spotify_api_2024
+XXXTentacion,['emo rap'],spotify_api_2024
+A Boogie wit da Hoodie,['melodic rap'],spotify_api_2024
+ASAP Rocky,['rap'],spotify_api_2024
+Bobby Valentino,['r&b'],spotify_api_2024
+Gabby Barrett,['country'],spotify_api_2024
+Karol G,"['reggaeton', 'latin', 'urbano latino']",spotify_api_2024
+Lewis Capaldi,['soft pop'],spotify_api_2024
+Lil Tjay,"['brooklyn drill', 'melodic rap']",spotify_api_2024
+Outkast,"['southern hip hop', 'hip hop']",spotify_api_2024
+Panic! at the Disco,['emo'],spotify_api_2024
+Wizkid,"['afrobeats', 'afrobeat', 'afropop', 'azonto', 'afroswing', 'afro r&b', 'afropiano']",spotify_api_2024
+Zach Bryan,"['country', 'red dirt']",spotify_api_2024
+Blanco Brown,"['country hip hop', 'country']",spotify_api_2024
+Bobby Helms,"['christmas', 'villancicos']",spotify_api_2024
+Cam'ron,['east coast hip hop'],spotify_api_2024
+Celine Dion,['variété française'],spotify_api_2024
+Debelah Morgan,['cha cha cha'],spotify_api_2024
+Giveon,['r&b'],spotify_api_2024
+Gnash,"['sludge metal', 'grindcore']",spotify_api_2024
+Grupo Frontera,"['cumbia norteña', 'banda', 'norteño', 'música mexicana', 'corrido', 'corridos tumbados', 'grupera', 'tejano', 'ranchera', 'corridos bélicos']",spotify_api_2024
+Hayley Williams,['art pop'],spotify_api_2024
+Iann Dior,['melodic rap'],spotify_api_2024
+Lady Saw,"['dancehall', 'ragga', 'reggae', 'soca', 'riddim']",spotify_api_2024
+Lil Jon & the East Side Boyz,"['crunk', 'southern hip hop']",spotify_api_2024
+Psy,['k-pop'],spotify_api_2024
+Puddle of Mudd,['post-grunge'],spotify_api_2024
+Rauw Alejandro,"['reggaeton', 'urbano latino', 'trap latino', 'latin']",spotify_api_2024
+Tyler Hubbard,['country'],spotify_api_2024
+Vita,"['electroclash', 'french house', 'electro', 'electronica']",spotify_api_2024
+YNW Melly,['melodic rap'],spotify_api_2024
+ASAP Ferg,['rap'],spotify_api_2024
+Ali,"['grunge', 'post-grunge']",spotify_api_2024
+Baby,['k-pop'],spotify_api_2024
+Beabadoobee,['bedroom pop'],spotify_api_2024
+Bizarrap,"['argentine trap', 'trap latino', 'urbano latino']",spotify_api_2024
+Blink 182,"['pop punk', 'punk', 'rock', 'skate punk', 'emo']",spotify_api_2024
+Bomba Estéreo,"['latin alternative', 'electrocumbia']",spotify_api_2024
+Bone Thugs-n-Harmony,"['gangster rap', 'old school hip hop', 'g-funk']",spotify_api_2024
+CKay,"['afrobeats', 'afrobeat', 'afro r&b', 'afropop']",spotify_api_2024
+Cheb Mami,"['raï', 'gnawa', 'moroccan pop', 'moroccan chaabi', 'algerian chaabi']",spotify_api_2024
+Chencho Corleone,['reggaeton'],spotify_api_2024
+Cherine Anderson,"['lovers rock', 'reggae', 'riddim', 'dancehall']",spotify_api_2024
+Corey Kent,"['country', 'texas country']",spotify_api_2024
+Cédric Gervais,['edm'],spotify_api_2024
+Darell,"['reggaeton', 'trap latino', 'dembow', 'urbano latino']",spotify_api_2024
+Encanto,"['drum and bass', 'liquid funk']",spotify_api_2024
+Ernest,"['rocksteady', 'dub', 'reggae', 'roots reggae']",spotify_api_2024
+Eslabon Armado,"['corridos tumbados', 'sad sierreño', 'corrido', 'sierreño', 'música mexicana', 'corridos bélicos']",spotify_api_2024
+Fifty Fifty,['k-pop'],spotify_api_2024
+Fuerza Regida,"['corrido', 'corridos tumbados', 'corridos bélicos', 'música mexicana', 'sierreño', 'banda', 'sad sierreño', 'electro corridos']",spotify_api_2024
+Gavin Rossdale,"['grunge', 'post-grunge']",spotify_api_2024
+Gente de Zona,"['latin', 'latin dance']",spotify_api_2024
+Grandmaster Caz,['old school hip hop'],spotify_api_2024
+Gus Dapperton,['bedroom pop'],spotify_api_2024
+Hardy,"['country', 'country rock']",spotify_api_2024
+Jelly Roll,"['country hip hop', 'country']",spotify_api_2024
+Jhay Cortez,"['reggaeton', 'trap latino', 'urbano latino']",spotify_api_2024
+Jhené Aiko,['r&b'],spotify_api_2024
+Kai,['britpop'],spotify_api_2024
+Katelyn Brown,['country'],spotify_api_2024
+Lil Boosie,['southern hip hop'],spotify_api_2024
+Lil Tecca,"['melodic rap', 'rap']",spotify_api_2024
+Lil' Bow Wow,['r&b'],spotify_api_2024
+Lil' Scrappy,"['crunk', 'southern hip hop']",spotify_api_2024
+Lookas,['edm trap'],spotify_api_2024
+Megan Moroney,['country'],spotify_api_2024
+Ms. Thing,"['dancehall', 'ragga', 'reggae']",spotify_api_2024
+Natanael Cano,"['corridos tumbados', 'corrido', 'corridos bélicos', 'sierreño', 'sad sierreño', 'electro corridos', 'música mexicana', 'banda']",spotify_api_2024
+Nav,['melodic rap'],spotify_api_2024
+Nick Lachey,['lullaby'],spotify_api_2024
+Niko Moon,['country'],spotify_api_2024
+Oliver Anthony Music,['country'],spotify_api_2024
+Olivia,['pop soul'],spotify_api_2024
+Parker McCollum,"['texas country', 'red dirt', 'country']",spotify_api_2024
+PinkPantheress,['bedroom pop'],spotify_api_2024
+Pinkfong,"['children's music', 'lullaby']",spotify_api_2024
+Rema,"['afrobeats', 'afrobeat', 'afropop', 'afropiano']",spotify_api_2024
+Rich the Kid,['trap'],spotify_api_2024
+Rikrok,"['dancehall', 'riddim', 'lovers rock', 'ragga']",spotify_api_2024
+Ritt Momney,['bedroom pop'],spotify_api_2024
+Roman GianArthur,['neo soul'],spotify_api_2024
+Ryan Hurd,['country'],spotify_api_2024
+Sage the Gemini,['hyphy'],spotify_api_2024
+Sean P,['dancehall'],spotify_api_2024
+Son by Four,['salsa'],spotify_api_2024
+Spragga Benz,"['dancehall', 'ragga', 'reggae', 'riddim']",spotify_api_2024
+The D.E.Y.,"['classical', 'orchestral', 'opera']",spotify_api_2024
+Thrust,['underground hip hop'],spotify_api_2024
+Wanz,['g-funk'],spotify_api_2024
+Yng Lvcas,"['reggaeton mexa', 'reggaeton', 'electro corridos', 'dembow belico']",spotify_api_2024
+Zay Hilfigerrr & Zayion McCall,['uk r&b'],spotify_api_2024
+[a],['pop'],spotify_api_2024

@@ -1,0 +1,200 @@
+name,genres,source
+Doja Cat,"['pop rap', 'r&b', 'hip hop']",manual
+DaBaby,"['hip hop', 'rap', 'trap']",manual
+Megan Thee Stallion,"['hip hop', 'rap', 'southern hip hop']",manual
+Olivia Rodrigo,"['pop', 'pop rock', 'alternative pop']",manual
+Ice Spice,"['hip hop', 'bronx drill', 'rap']",manual
+Jack Harlow,"['hip hop', 'rap', 'pop rap']",manual
+Lizzo,"['pop', 'r&b', 'hip hop']",manual
+Colby O'Donis,"['pop', 'r&b']",manual
+Latto,"['hip hop', 'rap', 'southern hip hop']",manual
+Polo G,"['hip hop', 'rap', 'melodic rap']",manual
+Rod Wave,"['hip hop', 'melodic rap', 'r&b']",manual
+The Cataracs,"['electronic', 'electropop', 'dance']",manual
+24kGoldn,"['hip hop', 'pop rap']",manual
+Alex Band,"['rock', 'post-grunge', 'alternative rock']",manual
+Black Eyed Peas,"['hip hop', 'pop', 'electronic']",manual
+Coi Leray,"['hip hop', 'rap']",manual
+DRAM,"['r&b', 'hip hop', 'funk']",manual
+GoonRock,"['electronic', 'electro house', 'dance']",manual
+Kim Petras,"['pop', 'dance pop', 'electropop']",manual
+Lauren Bennett,"['dance pop', 'electronic', 'pop']",manual
+NLE Choppa,"['hip hop', 'rap', 'memphis rap']",manual
+Pooh Shiesty,"['hip hop', 'trap', 'memphis rap']",manual
+Saweetie,"['hip hop', 'rap']",manual
+Shaed,"['indie pop', 'electropop']",manual
+Silk Sonic,"['r&b', 'soul', 'funk']",manual
+Sisqó,"['r&b', 'pop']",manual
+Steve Lacy,"['r&b', 'funk', 'indie pop']",manual
+Tate McRae,"['pop', 'dance pop']",manual
+Too Short,"['hip hop', 'west coast rap', 'g-funk']",manual
+'N Sync,"['pop', 'boy band', 'dance pop']",manual
+070 Shake,"['alternative r&b', 'hip hop', 'experimental']",manual
+42 Dugg,"['hip hop', 'detroit rap', 'trap']",manual
+Adassa,"['latin pop', 'reggaeton']",manual
+Arizona Zervas,"['hip hop', 'pop rap']",manual
+BRS Kash,"['hip hop', 'rap', 'southern hip hop']",manual
+Bipolar Sunshine,"['indie pop', 'electronic']",manual
+Blueface,"['hip hop', 'west coast rap']",manual
+Brendon Urie,"['pop rock', 'emo', 'alternative rock']",manual
+CJ,"['hip hop', 'drill', 'rap']",manual
+Cash Out,"['hip hop', 'trap', 'southern hip hop']",manual
+City Spud,"['hip hop', 'rap', 'midwest rap']",manual
+DHT,"['eurodance', 'electronic', 'dance']",manual
+DJ Frank E,"['electronic', 'dance', 'hip hop']",manual
+David Kushner,"['pop', 'indie pop', 'soft rock']",manual
+Diane Guerrero,"['musical theatre', 'soundtrack']",manual
+Doechii,"['hip hop', 'rap']",manual
+Don Toliver,"['hip hop', 'trap', 'r&b']",manual
+Kyjuan,"['hip hop', 'rap', 'midwest rap']",manual
+Lil' Romeo,"['hip hop', 'rap']",manual
+Los Lonely Boys,"['rock', 'tex-mex', 'blues rock']",manual
+Mae Muller,"['pop', 'electropop']",manual
+Mary Lambert,"['indie pop', 'singer-songwriter']",manual
+Masked Wolf,"['hip hop', 'rap']",manual
+Matthew Santos,"['soul', 'r&b']",manual
+Melle Mel,"['hip hop', 'old school hip hop']",manual
+Mims,"['hip hop', 'rap']",manual
+Mooski,"['hip hop', 'melodic rap']",manual
+Mr Hudson,"['r&b', 'hip hop', 'soul']",manual
+Muni Long,"['r&b', 'soul']",manual
+Måneskin,"['rock', 'glam rock', 'alternative rock']",manual
+Natalie La Rose,"['pop', 'dance pop', 'r&b']",manual
+Nicky Youre,"['pop', 'indie pop']",manual
+Niia,"['r&b', 'soul']",manual
+Nitti,"['hip hop', 'crunk', 'southern hip hop']",manual
+Noah Kahan,"['folk pop', 'indie folk', 'singer-songwriter']",manual
+Paul McCoy,"['rock', 'nu metal', 'alternative metal']",manual
+Powfu,"['hip hop', 'lo-fi hip hop', 'emo rap']",manual
+QB Finest,"['hip hop', 'east coast hip hop', 'rap']",manual
+Ray Dalton,"['r&b', 'soul', 'hip hop']",manual
+Remy Boyz,"['hip hop', 'trap', 'rap']",manual
+Rhenzy Feliz,"['musical theatre', 'soundtrack']",manual
+Rozes,"['electropop', 'indie pop']",manual
+Ryan Tedder,"['pop rock', 'alternative rock']",manual
+Sabi,"['electropop', 'dance pop']",manual
+Sacario,"['r&b', 'hip hop']",manual
+Sean Garrett,"['r&b', 'hip hop']",manual
+Social House,"['pop', 'r&b']",manual
+Sonique,"['electronic', 'dance', 'house']",manual
+SpotemGottem,"['hip hop', 'rap', 'florida rap']",manual
+StaySolidRocky,"['hip hop', 'melodic rap']",manual
+Stephanie Beatriz,"['musical theatre', 'soundtrack']",manual
+Stephen Sanchez,"['pop', 'retro pop', 'soft rock']",manual
+Surf Mesa,"['electronic', 'house', 'dance']",manual
+Surfaces,"['indie pop', 'funk pop']",manual
+The Product G&B,"['r&b', 'latin soul']",manual
+Tiara Thomas,"['r&b', 'hip hop']",manual
+Toosii,"['hip hop', 'melodic rap', 'r&b']",manual
+Trevor Daniel,"['pop', 'alternative r&b']",manual
+Tyler Cole,"['alternative r&b', 'indie']",manual
+Willa Ford,"['pop', 'dance pop']",manual
+Wynter,"['r&b', 'pop']",manual
+YK Osiris,"['r&b', 'hip hop']",manual
+Yung Bleu,"['hip hop', 'melodic rap', 'r&b']",manual
+Zacari,"['r&b', 'hip hop']",manual
+Jay-Z,"['hip hop', 'east coast hip hop', 'rap']",spotify_api
+Pink,"['pop', 'dance pop', 'pop rock']",spotify_api
+R. Kelly,['r&b'],spotify_api
+Juice Wrld,"['melodic rap', 'emo rap']",spotify_api
+P. Diddy,"['hip hop', 'east coast hip hop']",spotify_api
+Pop Smoke,"['brooklyn drill', 'new york drill', 'drill']",spotify_api
+Lainey Wilson,['country'],spotify_api
+Ty Dolla Sign,['trap soul'],spotify_api
+Young Jeezy,"['southern hip hop', 'crunk', 'rap', 'gangster rap']",spotify_api
+Bailey Zimmerman,['country'],spotify_api
+Dev,"['electropop', 'dance pop']",spotify_api
+Fun,"['indie pop', 'pop rock', 'alternative rock']",spotify_api
+Peso Pluma,"['corrido', 'corridos tumbados', 'corridos bélicos', 'música mexicana', 'sad sierreño', 'banda']",spotify_api
+Tems,"['afrobeats', 'afro r&b', 'alté', 'afrobeat']",spotify_api
+XXXTentacion,['emo rap'],spotify_api
+A Boogie wit da Hoodie,['melodic rap'],spotify_api
+ASAP Rocky,['rap'],spotify_api
+Bobby Valentino,['r&b'],spotify_api
+Gabby Barrett,['country'],spotify_api
+Karol G,"['reggaeton', 'latin', 'urbano latino']",spotify_api
+Lewis Capaldi,['soft pop'],spotify_api
+Lil Tjay,"['brooklyn drill', 'melodic rap']",spotify_api
+Outkast,"['southern hip hop', 'hip hop']",spotify_api
+Panic! at the Disco,['emo'],spotify_api
+Wizkid,"['afrobeats', 'afrobeat', 'afropop', 'azonto', 'afroswing', 'afro r&b', 'afropiano']",spotify_api
+Zach Bryan,"['country', 'red dirt']",spotify_api
+Blanco Brown,"['country hip hop', 'country']",spotify_api
+Bobby Helms,"['christmas', 'villancicos']",spotify_api
+Cam'ron,['east coast hip hop'],spotify_api
+Celine Dion,['variété française'],spotify_api
+Debelah Morgan,['cha cha cha'],spotify_api
+Giveon,['r&b'],spotify_api
+Gnash,"['sludge metal', 'grindcore']",spotify_api
+Grupo Frontera,"['cumbia norteña', 'banda', 'norteño', 'música mexicana', 'corrido', 'corridos tumbados', 'grupera', 'tejano', 'ranchera', 'corridos bélicos']",spotify_api
+Hayley Williams,['art pop'],spotify_api
+Iann Dior,['melodic rap'],spotify_api
+Lady Saw,"['dancehall', 'ragga', 'reggae', 'soca', 'riddim']",spotify_api
+Lil Jon & the East Side Boyz,"['crunk', 'southern hip hop']",spotify_api
+Psy,['k-pop'],spotify_api
+Puddle of Mudd,['post-grunge'],spotify_api
+Rauw Alejandro,"['reggaeton', 'urbano latino', 'trap latino', 'latin']",spotify_api
+Tyler Hubbard,['country'],spotify_api
+Vita,"['electroclash', 'french house', 'electro', 'electronica']",spotify_api
+YNW Melly,['melodic rap'],spotify_api
+ASAP Ferg,['rap'],spotify_api
+Ali,"['grunge', 'post-grunge']",spotify_api
+Baby,['k-pop'],spotify_api
+Beabadoobee,['bedroom pop'],spotify_api
+Bizarrap,"['argentine trap', 'trap latino', 'urbano latino']",spotify_api
+Blink 182,"['pop punk', 'punk', 'rock', 'skate punk', 'emo']",spotify_api
+Bomba Estéreo,"['latin alternative', 'electrocumbia']",spotify_api
+Bone Thugs-n-Harmony,"['gangster rap', 'old school hip hop', 'g-funk']",spotify_api
+CKay,"['afrobeats', 'afrobeat', 'afro r&b', 'afropop']",spotify_api
+Cheb Mami,"['raï', 'gnawa', 'moroccan pop', 'moroccan chaabi', 'algerian chaabi']",spotify_api
+Chencho Corleone,['reggaeton'],spotify_api
+Cherine Anderson,"['lovers rock', 'reggae', 'riddim', 'dancehall']",spotify_api
+Corey Kent,"['country', 'texas country']",spotify_api
+Cédric Gervais,['edm'],spotify_api
+Darell,"['reggaeton', 'trap latino', 'dembow', 'urbano latino']",spotify_api
+Encanto,"['drum and bass', 'liquid funk']",spotify_api
+Ernest,"['rocksteady', 'dub', 'reggae', 'roots reggae']",spotify_api
+Eslabon Armado,"['corridos tumbados', 'sad sierreño', 'corrido', 'sierreño', 'música mexicana', 'corridos bélicos']",spotify_api
+Fifty Fifty,['k-pop'],spotify_api
+Fuerza Regida,"['corrido', 'corridos tumbados', 'corridos bélicos', 'música mexicana', 'sierreño', 'banda', 'sad sierreño', 'electro corridos']",spotify_api
+Gavin Rossdale,"['grunge', 'post-grunge']",spotify_api
+Gente de Zona,"['latin', 'latin dance']",spotify_api
+Grandmaster Caz,['old school hip hop'],spotify_api
+Gus Dapperton,['bedroom pop'],spotify_api
+Hardy,"['country', 'country rock']",spotify_api
+Jelly Roll,"['country hip hop', 'country']",spotify_api
+Jhay Cortez,"['reggaeton', 'trap latino', 'urbano latino']",spotify_api
+Jhené Aiko,['r&b'],spotify_api
+Kai,['britpop'],spotify_api
+Katelyn Brown,['country'],spotify_api
+Lil Boosie,['southern hip hop'],spotify_api
+Lil Tecca,"['melodic rap', 'rap']",spotify_api
+Lil' Bow Wow,['r&b'],spotify_api
+Lil' Scrappy,"['crunk', 'southern hip hop']",spotify_api
+Lookas,['edm trap'],spotify_api
+Megan Moroney,['country'],spotify_api
+Ms. Thing,"['dancehall', 'ragga', 'reggae']",spotify_api
+Natanael Cano,"['corridos tumbados', 'corrido', 'corridos bélicos', 'sierreño', 'sad sierreño', 'electro corridos', 'música mexicana', 'banda']",spotify_api
+Nav,['melodic rap'],spotify_api
+Nick Lachey,['lullaby'],spotify_api
+Niko Moon,['country'],spotify_api
+Oliver Anthony Music,['country'],spotify_api
+Olivia,['pop soul'],spotify_api
+Parker McCollum,"['texas country', 'red dirt', 'country']",spotify_api
+PinkPantheress,['bedroom pop'],spotify_api
+Pinkfong,"['children's music', 'lullaby']",spotify_api
+Rema,"['afrobeats', 'afrobeat', 'afropop', 'afropiano']",spotify_api
+Rich the Kid,['trap'],spotify_api
+Rikrok,"['dancehall', 'riddim', 'lovers rock', 'ragga']",spotify_api
+Ritt Momney,['bedroom pop'],spotify_api
+Roman GianArthur,['neo soul'],spotify_api
+Ryan Hurd,['country'],spotify_api
+Sage the Gemini,['hyphy'],spotify_api
+Sean P,"['southern hip hop', 'crunk']",spotify_api
+Son by Four,['salsa'],spotify_api
+Spragga Benz,"['dancehall', 'ragga', 'reggae', 'riddim']",spotify_api
+The D.E.Y.,"['latin hip hop', 'r&b']",spotify_api
+Thrust,['underground hip hop'],spotify_api
+Wanz,['g-funk'],spotify_api
+Yng Lvcas,"['reggaeton mexa', 'reggaeton', 'electro corridos', 'dembow belico']",spotify_api
+[a],['pop'],spotify_api
