@@ -324,17 +324,49 @@ The genre network analysis reveals a significant **67% decline in total co-occur
 | **Fewer Genre Tags Per Artist** | Even matched artists in recent years tend to have fewer genre tags on average | Reduces possible co-occurrence pairs |
 | **Spotify API Genre Sparsity** | Newer/smaller artists often have fewer genre tags in Spotify's database | Compounds the coverage issue |
 
-#### Data Enhancement
-
-To mitigate this issue, supplementary genre data was added:
-- **Spotify API**: Fetched genres for unmatched Billboard artists
-- **Manual Assignment**: Added genres for remaining high-frequency artists
-
-This enhancement improved coverage but the structural limitation remains: the MusicoSet snapshot from 2019 will always underrepresent post-2019 music trends.
-
 #### Interpretation Note
 
 When analyzing temporal trends in the genre network, the declining co-occurrences should be interpreted as a **data artifact** rather than a real decrease in genre diversity or cross-genre collaboration. The early period (2000-2011) has more complete data coverage than the later period (2012-2023).
+
+### Data Enhancement Pipeline
+
+To mitigate the MusicoSet coverage gap, a supplementary data pipeline was implemented:
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                     DATA ENHANCEMENT PIPELINE                                │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  Step 1: Identify Coverage Gap                                               │
+│  ─────────────────────────────                                               │
+│  • Compare Billboard artists with MusicoSet                                  │
+│  • Found: ~600 artists with no genre data (mostly post-2019)                 │
+│                                                                              │
+│  Step 2: Spotify API Fetch                                                   │
+│  ─────────────────────────                                                   │
+│  • Used spotifyr R package with client credentials                           │
+│  • Fetched genres for unmatched artists                                      │
+│  • Result: ~400 artists matched via Spotify                                  │
+│                                                                              │
+│  Step 3: Manual Assignment                                                   │
+│  ────────────────────────                                                    │
+│  • High-frequency artists with no Spotify genres                             │
+│  • Manually assigned based on known artist style                             │
+│  • Result: ~50 additional artists with genres                                │
+│                                                                              │
+│  Step 4: Merge & Recalculate                                                 │
+│  ───────────────────────────                                                 │
+│  • Priority: Manual > Spotify > MusicoSet                                    │
+│  • Recalculate co-occurrences with enhanced data                             │
+│  • Result: Improved coverage for 2019-2023 period                            │
+│                                                                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+**Files created:**
+- `supplementary_artist_genres_final.csv` - Combined Spotify + manual genres
+- `edges_enhanced.csv` - Co-occurrence network with enhanced data
+- `temporal_edges_enhanced.csv` - Yearly co-occurrences with enhanced data
 
 ## Installation
 
@@ -351,13 +383,13 @@ install.packages(c("naniar", "visdat"))
 install.packages("tidytext")
 
 # Network analysis
-install.packages(c("igraph", "GGally", "network", "sna", "intergraph", "patchwork"))
+install.packages(c("igraph", "ggraph", "GGally", "network", "sna", "intergraph", "patchwork"))
 
-# Interactive visualization (Force Atlas 2)
-install.packages("sigmajs")
+# Animation
+install.packages("gganimate")
 
-# GEXF export for Gephi
-install.packages("xml2")
+# Sankey/alluvial diagrams
+install.packages("ggalluvial")
 ```
 
 ### BigQuery (Optional)
@@ -374,7 +406,10 @@ data/
 │   ├── billboard_lexical_analysis_ready.csv
 │   ├── genre_macro_mapping.csv
 │   ├── musicoset_artists_cleaned.csv
-│   └── musicoset_songs_cleaned.csv
+│   ├── musicoset_songs_cleaned.csv
+│   ├── supplementary_artist_genres_final.csv  # Enhanced genre data
+│   ├── edges_enhanced.csv                     # Enhanced co-occurrence network
+│   └── temporal_edges_enhanced.csv            # Enhanced yearly co-occurrences
 ├── sql_query_out/                        # BigQuery results
 └── [raw data files]
 
@@ -398,7 +433,13 @@ outputs/
 ├── genre_network/                        # Network visualizations
 │   ├── genre_network_full.png
 │   ├── genre_network_evolution_key_years.png
+│   ├── genre_network_animated.gif
 │   ├── genre_hubs.png
+│   ├── genre_dominance_over_time.png
+│   ├── genre_flow_sankey.png
+│   ├── genre_cooccurrence_change.png
+│   ├── unique_artists_over_time.png
+│   ├── cooccurrence_drop_investigation.png
 │   └── genre_snapshots_yearly/
 └── lexical_analysis/                     # Lexical analysis outputs
 ```
@@ -407,23 +448,77 @@ outputs/
 
 ### Lexical Analysis
 
-Metrics calculated:
-- Type-Token Ratio (TTR)
-- Lexical density
-- Hapax ratio
-- Rare word ratio
-- Jaccard similarity (genre, corpus, common words)
+**Metrics calculated:**
+
+| Metric | Formula | What It Measures |
+|--------|---------|------------------|
+| **Type-Token Ratio (TTR)** | unique words / total words | Vocabulary variety within a song |
+| **Lexical Density** | content words / total words | Information density (nouns, verbs vs filler) |
+| **Rare Word Ratio** | words not in top 10k / unique words | Creative/unusual vocabulary usage |
+| **Compression Ratio** | gzip size / original size | Algorithmic repetitiveness measure |
+| **Jaccard Genre** | song ∩ genre / song ∪ genre | How typical for its genre |
+| **Jaccard Corpus** | song ∩ Billboard / song ∪ Billboard | How mainstream the vocabulary is |
+| **Jaccard Common** | song ∩ common / song ∪ common | Everyday language usage |
+
+**Visualizations:**
+
+| Output | Description |
+|--------|-------------|
+| `01_ttr_by_genre.png` | TTR distribution boxplots by macro-genre |
+| `02_avg_ttr_by_genre.png` | Average TTR ranking by genre |
+| `03_ttr_vs_chart_position.png` | Scatter plot of TTR vs Billboard ranking |
+| `04_creative_vocab_vs_chart.png` | Rare word ratio vs chart position |
+| `05_compression_by_genre.png` | Compression ratio by genre |
+| `06_compression_over_time.png` | Temporal trend of compression ratio |
+| `07_rare_words_by_genre.png` | Rare word usage by genre |
+| `09_ttr_over_time.png` | Overall TTR trends 2000-2023 |
+| `10_ttr_over_time_by_genre.png` | TTR trends by genre |
+| `14_lexical_density_by_genre.png` | Lexical density by genre |
+| `16_genre_vs_mainstream.png` | 2D space: genre-typical vs mainstream |
+| `17_vocab_homogeneity_over_time.png` | Vocabulary convergence trends |
+
+#### Issues Encountered
+
+| Issue | Description | Solution |
+|-------|-------------|----------|
+| **Latin genre inflation** | Spanish words flagged as "rare" since they're not in English word list | Acknowledged as limitation; Latin scores artificially high on rare word metrics |
+| **Stop word filtering** | Code-switching lyrics (Spanish/English) don't filter properly | Used English stop words only; noted in limitations |
+| **Song length bias** | Longer songs have lower TTR due to word repetition | TTR normalizes by design, but noted for interpretation |
+| **Pre-2010 lyrics quality** | Some older lyrics had formatting/encoding issues | 564 problematic lyrics replaced from MusicoSet |
+| **Genre assignment level** | Genres assigned at artist level, not song level | A pop artist's ballad still labeled as "pop" |
 
 ### Genre Network
 
+**Network Statistics:**
 - **957 nodes** (sub-genres)
 - **8,597 edges** (co-occurrence connections)
 - **24 yearly snapshots** (2000-2023) with "pop" anchored at center
-- Graphopt layout (Force Atlas 2 equivalent) with collision detection
-- Interactive visualization using sigmajs with real Force Atlas 2
-- Full network visualization with top 15% labels and text wrapping
-- Flipbook-ready yearly exports for animation
-- GEXF export for Gephi dynamic timeline
+
+**Visualizations:**
+| Output | Description |
+|--------|-------------|
+| `genre_network_full.png` | Complete network with Fruchterman-Reingold layout |
+| `genre_network_evolution_key_years.png` | 4-panel comparison (2000, 2008, 2016, 2023) |
+| `genre_network_animated.gif` | Animated evolution across all years |
+| `genre_hubs.png` | Central connector genres by betweenness centrality |
+| `genre_dominance_over_time.png` | Stacked area chart of macro-genre presence |
+| `genre_flow_sankey.png` | Sankey diagram comparing early vs late Billboard eras |
+| `genre_cooccurrence_change.png` | Biggest rise/drop in co-occurrence |
+| `unique_artists_over_time.png` | Billboard artist count by year |
+| `avg_genre_tags_per_artist.png` | Genre tag coverage over time |
+| `cooccurrence_drop_investigation.png` | Root cause analysis of co-occurrence decline |
+| `data_enhancement_impact.png` | Original vs enhanced data comparison |
+
+## Limitations
+
+| Limitation | Description | Impact |
+|------------|-------------|--------|
+| **Sampling Bias** | Only Billboard Hot 100 songs included | Results represent mainstream/commercial music only, not the full music landscape |
+| **MusicoSet Temporal Gap** | Dataset from 2019 | Artists popular after 2019 have limited/no genre coverage despite data enhancement |
+| **Genre Tag Inconsistency** | Spotify genre tags vary in granularity | Some artists have 10+ tags, others have 1-2, affecting co-occurrence calculations |
+| **Single Chart Focus** | Only US Billboard Hot 100 | Does not capture regional charts, international trends, or genre-specific charts |
+| **Lyrics Availability** | Some songs have incomplete/missing lyrics | May affect lexical diversity metrics for certain songs |
+| **Feature Artist Handling** | Collaborations credited to primary artist | May undercount cross-genre collaborations |
 
 ## Data Sources
 
@@ -442,17 +537,35 @@ See `genre_collaboration_network_documentation.md` for complete bibliography.
 
 ### R Packages & Tools
 
-- **sigmajs** - R interface to Sigma.js with Force Atlas 2: [Documentation](https://sigmajs.john-coene.com/) | [CRAN](https://cran.r-project.org/web/packages/sigmajs/)
-- **rgexf** - Create, read and write GEXF graph files: [GitHub](https://github.com/gvegayon/rgexf) | [CRAN](https://cran.r-project.org/web/packages/rgexf/)
 - **igraph** - Network analysis in R: [Documentation](https://igraph.org/r/)
 - **ggraph** - Grammar of graphics for networks: [Documentation](https://ggraph.data-imaginist.com/)
-- **Gephi** - Network visualization software: [gephi.org](https://gephi.org/)
+- **gganimate** - Animation framework for ggplot2: [Documentation](https://gganimate.com/)
+- **ggalluvial** - Alluvial/Sankey diagrams: [Documentation](https://corybrunson.github.io/ggalluvial/)
+- **tidyverse** - Data manipulation and visualization: [Documentation](https://www.tidyverse.org/)
 
-### Visualization Resources
+## Visualization Gallery
 
-- [Force Atlas 2 in sigmajs](https://sigmajs.john-coene.com/reference/force.html)
-- [GEXF file format for Gephi](https://gexf.net/)
-- [Gephi dynamic graph tutorial](https://seinecle.github.io/gephi-tutorials/generated-html/converting-a-network-with-dates-into-dynamic.html)
+### Genre Network
+
+![Genre Network Key Years](outputs/genre_network/genre_network_evolution_key_years.png)
+*Genre co-occurrence network at key years (2000, 2008, 2016, 2023)*
+
+![Genre Dominance](outputs/genre_network/genre_dominance_over_time.png)
+*Macro-genre presence on Billboard across 24 years*
+
+![Genre Flow Sankey](outputs/genre_network/genre_flow_sankey.png)
+*Genre flow between early (2000-2011) and late (2012-2023) Billboard eras*
+
+### Lexical Analysis
+
+![TTR by Genre](outputs/lexical_analysis/02_avg_ttr_by_genre.png)
+*Vocabulary variety by genre - Country and Hip-Hop highest, Pop and Electronic lowest*
+
+![TTR vs Chart](outputs/lexical_analysis/03_ttr_vs_chart_position.png)
+*No correlation between vocabulary diversity and chart success*
+
+![TTR Over Time](outputs/lexical_analysis/09_ttr_over_time.png)
+*Vocabulary variety trends 2000-2023*
 
 ## Author
 
