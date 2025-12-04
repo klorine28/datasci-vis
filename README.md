@@ -547,8 +547,8 @@ See `genre_collaboration_network_documentation.md` for complete bibliography.
 
 ### Genre Network
 
-![Genre Network Key Years](outputs/genre_network/genre_network_evolution_key_years.png)
-*Genre co-occurrence network at key years (2000, 2008, 2016, 2023)*
+![Genre Network Animation](outputs/genre_network/genre_network_animated.gif)
+*Genre co-occurrence network evolution (2000-2023)*
 
 ![Genre Dominance](outputs/genre_network/genre_dominance_over_time.png)
 *Macro-genre presence on Billboard across 24 years*
