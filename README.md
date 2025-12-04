@@ -166,7 +166,7 @@ GENRE NETWORK (genre_analysis.ipynb)
 │                              STAGE 1: CLEANING (R)                                   │
 │                                                                                      │
 │   billboard_cleaning.ipynb                musicoset_cleaning.ipynb                   │
-│   • Normalize whitespace                  • Convert "-" to NA                        │
+│   • Normalize whitespace                  • Convert "-" & "[]" to NA                 │
 │   • Single-line lyrics                    • Tab → CSV format                         │
 │               │                                       │                              │
 │               ▼                                       ▼                              │
@@ -377,3 +377,4 @@ See `genre_collaboration_network_documentation.md` for complete bibliography.
 **Lorenzo Garduño**
 
 All analysis logic, methodology, and bulk of the code written by Lorenzo Garduño. Claude Code was used to assist with coding implementation and debugging.
+
