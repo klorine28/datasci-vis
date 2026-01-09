@@ -417,17 +417,24 @@ wrangling and transformation/
 ├── cleaning/                             # Data cleaning notebooks
 │   ├── billboard_cleaning.ipynb
 │   ├── musicoset_cleaning.ipynb
-│   └── BILLBOARD_CSV_CLEANING_DOCUMENTATION.md
+│   └── missing_data_analysis.ipynb
 └── wrangling/                            # Transformation notebooks
     ├── lexical_diversity_transformation.ipynb
     ├── bigquery_analysis_queries.sql
-    └── genre_collaboration_network_documentation.md
+    └── DATA_CLEANING_GUIDE.md
 
 analysis and vizualisation/
 └── analysis/
     ├── lexical_analysis.ipynb
     ├── genre_analysis.ipynb
     └── ANALYSIS_GUIDE.md
+
+exploration/
+├── data_exploration_R.ipynb
+└── data_exploration_focused.ipynb
+
+compiled_analysis.R                       # All notebooks compiled into one R script
+                                          # (for running the full pipeline without notebooks)
 
 outputs/
 ├── genre_network/                        # Network visualizations

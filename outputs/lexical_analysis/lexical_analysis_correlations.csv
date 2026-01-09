@@ -1,0 +1,10 @@
+Variables,Spearman_rho
+TTR vs Chart Position,0.0902
+Rare Word Ratio vs Chart Position,-0.003
+Lexical Density vs Chart Position,0.0095
+Jaccard Genre vs Chart Position,-0.0187
+Jaccard Corpus vs Chart Position,-0.0171
+TTR vs Year,0.0641
+Rare Word Ratio vs Year,0.1277
+Compression Ratio vs Year,0.0268
+TTR vs Rare Word Ratio,0.2296
