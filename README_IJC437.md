@@ -44,7 +44,7 @@ This project analyzes the vocabulary characteristics of Billboard Hot 100 songs 
 
 ## Research Question
 
-**How does lexical diversity in song lyrics relate to chart performance and vary across genres in Billboard Hot 100 songs (2000-2023)?**
+**How does lexical diversity in Billboard Hot 100 songs (2000-2023) vary by genre, relate to chart performance, and change over time?**
 
 | Analysis Type | Method |
 |---------------|--------|
@@ -56,31 +56,39 @@ This project analyzes the vocabulary characteristics of Billboard Hot 100 songs 
 
 ## Key Findings
 
-### 1. No Correlation Between Vocabulary and Chart Success
+### 1. Temporal Trends Vary by Genre
 
-Lexical diversity (TTR) shows **no significant correlation** with Billboard chart position (Spearman's ρ ≈ 0). Songs with simple, repetitive lyrics perform just as well as those with varied vocabulary.
+Rather than a uniform trend across all genres, the data reveal divergent patterns. Hip Hop and Electronic show increasing vocabulary diversity over time, while R&B and Rock trend negatively. Pop shows a slight increase, and Country remains stable. This partially contradicts the "dumbing down" narrative reported in prior literature (Parada-Cabaleiro et al., 2024; Varnum et al., 2021). The correlation between TTR and time across all genres is weak (ρ = 0.064), though rare word ratio shows a stronger relationship (ρ = 0.128), suggesting artists may be incorporating more unusual vocabulary over time.
 
-![TTR vs Chart](outputs/lexical_analysis/03_ttr_vs_chart_position.png)
+![TTR Over Time](outputs/lexical_analysis/09_ttr_over_time.png)
 
-### 2. Genre Differences in Vocabulary
+### 2. Substantial Genre Differences
 
-Genres show distinct vocabulary patterns:
+| Genre | n | TTR (mean) | TTR (SD) | Lex. Density | Rare Word | Avg Words |
+|-------|---|------------|----------|--------------|-----------|-----------|
+| Pop | 1,333 | 0.292 | 0.088 | 0.367 | 0.154 | 500 |
+| Hip Hop | 706 | 0.330 | 0.076 | 0.396 | 0.204 | 612 |
+| Country | 267 | 0.354 | 0.070 | 0.357 | 0.127 | 334 |
+| Rock | 166 | 0.314 | 0.060 | 0.324 | 0.117 | 341 |
+| R&B | 107 | 0.307 | 0.078 | 0.329 | 0.124 | 420 |
+| Electronic | 58 | 0.280 | 0.101 | 0.363 | 0.129 | 346 |
+| Latin | 51 | 0.349 | 0.074 | 0.605 | 0.449 | 473 |
 
-| Genre | TTR Level | Characteristics |
-|-------|-----------|-----------------|
-| **Country** | Highest | Storytelling, narrative lyrics |
-| **Hip-Hop** | High | Wordplay, varied vocabulary |
-| **Rock** | Medium | Balance of verse and chorus |
-| **Pop** | Low | Repetitive hooks, simple lyrics |
-| **Electronic** | Lowest | Minimal lyrics, heavy repetition |
+Hip Hop is particularly interesting: despite having the longest average song length (612 words), which would typically lower TTR, it maintains the third-highest mean TTR (0.330) and the highest rare word ratio (0.204). This points to genuinely diverse and creative vocabulary use. Latin shows anomalously high lexical density (0.605) and rare word ratio (0.449)—a methodological artefact where Spanish function words are not captured by the English stop word list.
 
 ![TTR by Genre](outputs/lexical_analysis/02_avg_ttr_by_genre.png)
 
-### 3. Temporal Trends
+### 3. No Relationship Between Lexical Complexity and Chart Success
 
-Vocabulary variety has remained relatively stable over 24 years, with slight homogenization in recent years as streaming has influenced song structure.
+| Metric | ρ | Interpretation |
+|--------|---|----------------|
+| TTR | 0.090 | Very weak positive |
+| Lexical Density | 0.010 | No relationship |
+| Rare Word Ratio | -0.003 | No relationship |
 
-![TTR Over Time](outputs/lexical_analysis/09_ttr_over_time.png)
+All correlations are near zero (|ρ| < 0.1), indicating that lexical complexity metrics do not predict chart success. Songs with simple, repetitive lyrics perform equally as well as those with diverse, creative vocabulary. This suggests commercial success is driven primarily by non-lyrical factors such as melody, production quality, marketing, artist recognition, and playlist placement.
+
+![TTR vs Chart](outputs/lexical_analysis/03_ttr_vs_chart_position.png)
 
 ### Metrics Used
 
