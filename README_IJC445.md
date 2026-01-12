@@ -78,6 +78,12 @@ The stacked area chart reveals:
 
 ![Genre Dominance](outputs/genre_network/genre_dominance_over_time.png)
 
+### 4. Composite Overview
+
+The composite figure below combines the four key visualizations: genre dominance over time, network evolution across key years, co-occurrence changes, and the Sankey flow diagram.
+
+![Genre Evolution Composite](outputs/genre_network/genre_evolution_composite.png)
+
 ### Network Statistics
 
 | Metric | Value |
@@ -186,6 +192,9 @@ install.packages("gganimate")
 
 # Sankey diagrams
 install.packages("ggalluvial")
+
+# Image composition
+install.packages(c("cowplot", "png"))
 ```
 
 ### Step 3: Run the Analysis
@@ -211,6 +220,7 @@ Results are saved to `outputs/genre_network/`:
 - Yearly snapshots
 - Sankey diagrams
 - Hub genre analysis
+- Composite figure (A4, 300 DPI)
 
 ## Dataset
 
