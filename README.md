@@ -539,21 +539,33 @@ outputs/
 
 ## References
 
+### Data Sources
+
+- Biswas, S. (2023). Billboard Hot 100 (2000-2023) data with features [Data set]. Kaggle. https://www.kaggle.com/datasets/suparnabiswas/billboard-hot-1002000-2023-data-with-features
+- Kaufman, J. (n.d.). Google-10000-english: 10,000 most common English words from Google's Trillion Word Corpus [Data set]. GitHub. https://github.com/first20hours/google-10000-english
+- Silva, M. O., Rocha, L. M., & Moro, M. M. (2019). MusicOSet: An enhanced open dataset for music data mining. In XXXIV Simpósio Brasileiro de Banco de Dados: Dataset Showcase Workshop (DSW 2019) (pp. 408-417). Fortaleza, Brazil. https://marianaossilva.github.io/DSW2019/
+
 ### Academic
 
-- Park, M., et al. (2019). Global music streaming data reveal cross-cultural correlations. *Frontiers in Psychology*, 10, 1873.
-- Newman, M. E. J. (2001). Scientific collaboration networks. *Physical Review E*, 64(1).
-- Barabási, A. L. (2016). *Network Science*. Cambridge University Press.
-
-See `genre_collaboration_network_documentation.md` for complete bibliography.
+- Manning, C. D., Raghavan, P., & Schütze, H. (2008). *Introduction to Information Retrieval*. Cambridge University Press.
+- McCarthy, P. M., & Jarvis, S. (2010). MTLD, vocd-D, and HD-D: A validation study of sophisticated approaches to lexical diversity assessment. *Behavior Research Methods*, 42(2), 381-392. https://doi.org/10.3758/BRM.42.2.381
+- Parada-Cabaleiro, E., Mayerl, M., Brandl, S., Skowron, M., Schedl, M., Lex, E., & Zangerle, E. (2024). Song lyrics have become simpler and more repetitive over the last five decades. *Scientific Reports*, 14(1), 5531. https://doi.org/10.1038/s41598-024-55742-x
+- Ure, J. (1971). Lexical density and register differentiation. In G. Perren & J. L. M. Trim (Eds.), *Applications of linguistics* (pp. 443-452). Cambridge University Press.
+- Varnum, M. E. W., Krems, J. A., Morris, C., Wormley, A., & Grossmann, I. (2021). Why are song lyrics becoming simpler? A time series analysis of lyrical complexity in six decades of American popular music. *PLOS ONE*, 16(1), e0244576. https://doi.org/10.1371/journal.pone.0244576
 
 ### R Packages & Tools
 
+- Silge, J., & Robinson, D. (2017). *Text mining with R: A tidy approach*. O'Reilly Media. https://www.tidytextmining.com/
+- Wickham, H. (2016). *ggplot2: Elegant graphics for data analysis* (2nd ed.). Springer-Verlag. https://doi.org/10.1007/978-3-319-24277-4
 - **igraph** - Network analysis in R: [Documentation](https://igraph.org/r/)
 - **ggraph** - Grammar of graphics for networks: [Documentation](https://ggraph.data-imaginist.com/)
 - **gganimate** - Animation framework for ggplot2: [Documentation](https://gganimate.com/)
 - **ggalluvial** - Alluvial/Sankey diagrams: [Documentation](https://corybrunson.github.io/ggalluvial/)
 - **tidyverse** - Data manipulation and visualization: [Documentation](https://www.tidyverse.org/)
+
+### Other
+
+- Daniels, M. (2019). The largest vocabulary in hip hop. *The Pudding*. https://pudding.cool/projects/vocabulary/
 
 ## Visualization Gallery
 
