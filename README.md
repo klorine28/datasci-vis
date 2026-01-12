@@ -385,6 +385,9 @@ install.packages("tidytext")
 # Network analysis
 install.packages(c("igraph", "ggraph", "GGally", "network", "sna", "intergraph", "patchwork"))
 
+# Image composition
+install.packages(c("cowplot", "png"))
+
 # Animation
 install.packages("gganimate")
 
@@ -445,6 +448,7 @@ outputs/
 │   ├── genre_dominance_over_time.png
 │   ├── genre_flow_sankey.png
 │   ├── genre_cooccurrence_change.png
+│   ├── genre_evolution_composite.png     # Combined 4-panel figure (A4, 300 DPI)
 │   ├── unique_artists_over_time.png
 │   ├── cooccurrence_drop_investigation.png
 │   └── genre_snapshots_yearly/
@@ -515,6 +519,7 @@ outputs/
 | `avg_genre_tags_per_artist.png` | Genre tag coverage over time |
 | `cooccurrence_drop_investigation.png` | Root cause analysis of co-occurrence decline |
 | `data_enhancement_impact.png` | Original vs enhanced data comparison |
+| `genre_evolution_composite.png` | 2x2 composite combining 4 key visualizations (A4 landscape, 300 DPI) |
 
 ## Limitations
 

@@ -656,6 +656,7 @@ musicoset_enhanced <- bind_rows(
 | genre_dominance_over_time.png | Stacked area chart showing macro-genre % share per year |
 | genre_dominance_over_time_absolute.png | Stacked area chart showing absolute co-occurrence counts |
 | genre_flow_sankey.png | Alluvial/Sankey diagram comparing 2000-2011 vs 2012-2023 |
+| genre_evolution_composite.png | 2x2 composite figure combining 4 key visualizations (A4 landscape, 300 DPI) |
 
 ### Data (non_image/)
 | File | Description |
