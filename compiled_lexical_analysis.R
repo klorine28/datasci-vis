@@ -1,24 +1,11 @@
-# =============================================================================
 # Compiled Lexical Analysis
 # Billboard Hot 100 Lyrics (2000-2023)
-# =============================================================================
-# 
-# This script combines:
-#   - Lexical diversity transformation (metric calculations)
-#   - Lexical analysis (visualizations and statistical analysis)
-#
-# Outputs saved to: outputs/lexical_analysis/
-# =============================================================================
+# Outputs: outputs/lexical_analysis/
 
-# =============================================================================
 # Packages
-# =============================================================================
-
 packages <- c(
-  "tidyverse", "readr", "stringr",
-  "tidytext",
-  "ggplot2", "scales", "viridis", "patchwork",
-  "corrplot"
+  "tidyverse", "readr", "stringr", "tidytext",
+  "ggplot2", "scales", "viridis", "patchwork", "corrplot"
 )
 
 for (pkg in packages) {
@@ -30,14 +17,8 @@ for (pkg in packages) {
 
 theme_set(theme_minimal())
 
-# =============================================================================
-# PART 1: Lexical Transformation
-# =============================================================================
+# --- Transformation ---
 
-
-# --- Transformation Code ---
-
-# Block 1
 library(tidyverse)
 library(tidytext)
 library(stringr)
@@ -45,7 +26,6 @@ library(readr)
 
 options(scipen = 999)
 
-# Block 2
 # load billboard (using improved/cleaned version from bigquery cleaning)
 billboard <- read_csv('../../data/cleaned/billboard_24years_lyrics_spotify_bigquery.csv',
                       show_col_types = F)
@@ -56,7 +36,6 @@ artists <- read_csv('../../data/cleaned/musicoset_artists_cleaned.csv',
 
 sprintf("loaded %d songs, %d artists", nrow(billboard), nrow(artists))
 
-# Block 3
 # normalize names for matching
 df <- billboard %>%
   mutate(artist_clean = str_to_lower(str_trim(band_singer))) %>%
@@ -75,7 +54,6 @@ cat(sprintf("genre coverage: %d/%d songs (%.1f%%)\n",
 # top genres
 df %>% count(main_genre, sort=T) %>% head(10)
 
-# Block 4
 # --- NA Diagnostic ---
 cat("=== NA Analysis ===\n\n")
 
@@ -106,7 +84,6 @@ cat("\n\n=== This explains the NA sources ===\n")
 cat("- main_genre NA: Artist name not found in MusicoSet\n")
 cat("- Duplicates: Same artist name matches multiple MusicoSet entries\n")
 
-# Block 5
 # === DYNAMIC GENRE MAPPING ===
 # Extract all unique genres from MusicoSet and classify using regex patterns
 
@@ -227,7 +204,6 @@ df <- df %>%
 cat("\n\nSongs per macro genre:\n")
 df %>% count(macro_genre, sort = TRUE)
 
-# Block 6
 # tokenize into words
 tokens <- df %>%
   filter(!is.na(lyrics)) %>%
@@ -242,7 +218,6 @@ tokens <- df %>%
 
 sprintf("%s words total", format(nrow(tokens), big.mark=","))
 
-# Block 7
 # tag stop words
 data(stop_words)
 tokens <- tokens %>%
@@ -250,7 +225,6 @@ tokens <- tokens %>%
 
 sprintf("stop words: %.1f%%", mean(tokens$is_stop)*100)
 
-# Block 8
 # basic metrics
 metrics <- tokens %>%
   group_by(song, band_singer, year) %>%
@@ -409,7 +383,6 @@ metrics %>%
          jaccard_genre, jaccard_corpus, rare_word_ratio, jaccard_common, vocab_uniqueness) %>% 
   summary()
 
-# Block 9
 # join back with main data
 df_final <- df %>%
   left_join(metrics) %>%
@@ -446,7 +419,6 @@ df_final <- df %>%
     has_complete_data = !is.na(macro_genre) & is_normal_length & !is.na(ttr)
   )
 
-# Block 10
 # genre norms
 genre_stats <- df_final %>%
   filter(!is.na(macro_genre) & !is.na(ttr)) %>%
@@ -476,7 +448,6 @@ df_final <- df_final %>%
     log_unique = log(unique_words + 1)
   )
 
-# Block 11
 cat(sprintf("total: %d\n", nrow(df_final)))
 cat(sprintf("complete data: %d (%.1f%%)\n", 
             sum(df_final$has_complete_data, na.rm=T),
@@ -487,7 +458,6 @@ cat(sprintf("  short: %d\n", sum(df_final$is_short, na.rm=T)))
 cat(sprintf("  normal: %d\n", sum(df_final$is_normal_length, na.rm=T)))
 cat(sprintf("  long: %d\n", sum(df_final$is_long, na.rm=T)))
 
-# Block 12
 # select final columns (including repetitiveness and vocabulary uniqueness metrics)
 final <- df_final %>%
   select(
@@ -524,19 +494,14 @@ tibble(
   )
 )
 
-# Block 13
 # preview
 final %>% 
   filter(has_complete_data) %>%
   select(song, band_singer, macro_genre, ranking, ttr, total_words) %>%
   head(10)
 
+# --- Analysis & Visualization ---
 
-# =============================================================================
-# PART 2: Lexical Analysis & Visualization
-# =============================================================================
-
-# Block 1
 # Libraries and setup
 library(tidyverse)
 library(ggplot2)
@@ -558,7 +523,6 @@ genre_colors <- c(
   "OTHER" = "#C8C8C8"
 )
 
-# Block 2
 # Load data
 df <- read_csv('../../data/cleaned/billboard_lexical_analysis_ready.csv',
                show_col_types = FALSE)
@@ -571,7 +535,6 @@ cat(sprintf("Total: %d songs, Analysis set: %d (%.1f%%)\n",
 cat(sprintf("Years: %d-%d, Genres: %d\n", 
             min(df$year), max(df$year), n_distinct(df_analysis$macro_genre)))
 
-# Block 3
 # Summary stats by genre
 summary_stats <- df_analysis %>%
   group_by(macro_genre) %>%
@@ -588,7 +551,6 @@ summary_stats <- df_analysis %>%
 
 print(summary_stats)
 
-# Block 4
 # TTR by genre
 ggplot(df_analysis, aes(x = reorder(macro_genre, ttr, median), 
                         y = ttr, 
@@ -600,13 +562,11 @@ ggplot(df_analysis, aes(x = reorder(macro_genre, ttr, median),
   coord_flip() +
   theme(legend.position = "none")
 
-# Block 5
 # ANOVA: TTR across genres
 anova_ttr <- aov(ttr ~ macro_genre, data = df_analysis)
 summary(anova_ttr)
 TukeyHSD(anova_ttr)
 
-# Block 6
 # Genre rankings bar chart
 genre_rankings <- df_analysis %>%
   group_by(macro_genre) %>%
@@ -627,11 +587,9 @@ ggplot(genre_rankings, aes(x = reorder(macro_genre, mean_ttr),
   coord_flip() +
   theme(legend.position = "none")
 
-# Block 7
 # TTR vs chart position correlation
 cor.test(df_analysis$ttr, df_analysis$ranking, method = "spearman")
 
-# Block 8
 # TTR vs ranking scatter by genre
 # X-axis reversed: 1 (best) on left, 100 on right
 ggplot(df_analysis, aes(x = ranking, y = ttr, color = macro_genre)) +
@@ -645,7 +603,6 @@ ggplot(df_analysis, aes(x = ranking, y = ttr, color = macro_genre)) +
        y = "TTR") +
   theme(legend.position = "none")
 
-# Block 9
 # Rare word ratio vs chart position (Creative Vocabulary vs Chart Position)
 # X-axis reversed: 1 (best) on left, 100 on right
 cor_rare <- cor.test(df_analysis$rare_word_ratio, df_analysis$ranking, method = "spearman")
@@ -663,7 +620,6 @@ ggplot(df_analysis, aes(x = ranking, y = rare_word_ratio, color = macro_genre)) 
        y = "Rare Word Ratio") +
   theme(legend.position = "none")
 
-# Block 10
 # Compression ratio by genre
 ggplot(df_analysis, aes(x = reorder(macro_genre, compression_ratio, median), 
                         y = compression_ratio, 
@@ -680,7 +636,6 @@ ggplot(df_analysis, aes(x = reorder(macro_genre, compression_ratio, median),
   theme_minimal() +
   theme(legend.position = "none")
 
-# Block 11
 # Compression ratio over time
 compression_trends <- df_analysis %>%
   group_by(year) %>%
@@ -704,7 +659,6 @@ cor_compression_year <- cor.test(df_analysis$compression_ratio, df_analysis$year
 cat(sprintf("Compression vs Year: rho = %.3f, p = %.4f\n", 
             cor_compression_year$estimate, cor_compression_year$p.value))
 
-# Block 12
 # Jaccard similarity summary
 cat("Jaccard Common (overlap with 10k English words):\n")
 summary(df_analysis$jaccard_common)
@@ -712,7 +666,6 @@ summary(df_analysis$jaccard_common)
 cat("\nRare Word Ratio (words NOT in common 10k):\n")
 summary(df_analysis$rare_word_ratio)
 
-# Block 13
 # Rare word ratio by genre
 ggplot(df_analysis, aes(x = reorder(macro_genre, rare_word_ratio, median), 
                         y = rare_word_ratio, 
@@ -724,7 +677,6 @@ ggplot(df_analysis, aes(x = reorder(macro_genre, rare_word_ratio, median),
   labs(title = "Rare Word Usage by Genre", x = "Genre", y = "Rare Word Ratio") +
   theme(legend.position = "none")
 
-# Block 14
 # TTR vs rare word ratio by genre
 ggplot(df_analysis, aes(x = ttr, y = rare_word_ratio, color = macro_genre)) +
   geom_point(alpha = 0.4, size = 1) +
@@ -735,7 +687,6 @@ ggplot(df_analysis, aes(x = ttr, y = rare_word_ratio, color = macro_genre)) +
   labs(title = "TTR vs Rare Word Ratio by Genre", x = "TTR", y = "Rare Word Ratio") +
   theme(legend.position = "none")
 
-# Block 15
 # TTR vs rare word ratio correlation
 ggplot(df_analysis, aes(x = ttr, y = rare_word_ratio, color = macro_genre)) +
   geom_point(alpha = 0.4, size = 2) +
@@ -747,7 +698,6 @@ ggplot(df_analysis, aes(x = ttr, y = rare_word_ratio, color = macro_genre)) +
 
 cor.test(df_analysis$ttr, df_analysis$rare_word_ratio, method = "spearman")
 
-# Block 16
 # TTR trends over time (overall)
 yearly_trends <- df_analysis %>%
   group_by(year) %>%
@@ -768,7 +718,6 @@ ggplot(yearly_trends, aes(x = year, y = mean_ttr)) +
 cor_ttr_year <- cor.test(df_analysis$ttr, df_analysis$year, method = "spearman")
 cat(sprintf("TTR vs Year (all genres): rho = %.3f, p = %.4f\n", cor_ttr_year$estimate, cor_ttr_year$p.value))
 
-# Block 17
 # TTR trends over time BY GENRE
 yearly_trends_genre <- df_analysis %>%
   group_by(year, macro_genre) %>%
@@ -791,7 +740,6 @@ ggplot(yearly_trends_genre, aes(x = year, y = mean_ttr, color = macro_genre)) +
   theme_minimal() +
   theme(legend.position = "none")
 
-# Block 18
 # Rare word ratio over time (overall)
 ggplot(yearly_trends, aes(x = year, y = mean_rare)) +
   geom_line(linewidth = 1, color = "steelblue") +
@@ -804,7 +752,6 @@ ggplot(yearly_trends, aes(x = year, y = mean_rare)) +
 cor_rare_year <- cor.test(df_analysis$rare_word_ratio, df_analysis$year, method = "spearman")
 cat(sprintf("Rare words vs Year (all genres): rho = %.3f, p = %.4f\n", cor_rare_year$estimate, cor_rare_year$p.value))
 
-# Block 19
 # Rare word ratio over time BY GENRE
 yearly_rare_genre <- df_analysis %>%
   group_by(year, macro_genre) %>%
@@ -828,7 +775,6 @@ ggplot(yearly_rare_genre, aes(x = year, y = mean_rare, color = macro_genre)) +
   theme_minimal() +
   theme(legend.position = "none")
 
-# Block 20
 # Most and least diverse songs
 cat("=== HIGHEST TTR ===\n")
 df_analysis %>%
@@ -842,7 +788,6 @@ df_analysis %>%
   arrange(ttr) %>%
   head(10)
 
-# Block 21
 # Artist vocabulary analysis
 library(tidytext)
 
@@ -869,7 +814,6 @@ artist_vocab <- tokens %>%
 cat(sprintf("Artists with 5+ songs: %d\n", nrow(artist_vocab)))
 head(artist_vocab, 20)
 
-# Block 22
 # Artist vocabulary distribution
 ggplot(artist_vocab, aes(x = 1, y = unique_words)) +
   geom_violin(fill = "steelblue", alpha = 0.5) +
@@ -878,7 +822,6 @@ ggplot(artist_vocab, aes(x = 1, y = unique_words)) +
   theme_minimal() +
   theme(axis.title.x = element_blank(), axis.text.x = element_blank())
 
-# Block 23
 # Drake vs other top artists
 drake_stats <- artist_vocab %>%
   filter(str_detect(str_to_lower(band_singer), "drake"))
@@ -889,7 +832,6 @@ print(drake_stats)
 cat(sprintf("\nDrake's percentile: %.1f%%\n", 
             mean(artist_vocab$unique_words <= drake_stats$unique_words[1]) * 100))
 
-# Block 24
 # Lexical density overview
 cat("Lexical Density Summary:\n")
 summary(df_analysis$lexical_density)
@@ -897,7 +839,6 @@ summary(df_analysis$lexical_density)
 cat(sprintf("\nCorrelation with TTR: %.3f\n", 
             cor(df_analysis$lexical_density, df_analysis$ttr, use = "complete.obs")))
 
-# Block 25
 # Lexical density by genre
 ggplot(df_analysis, aes(x = reorder(macro_genre, lexical_density, median), 
                         y = lexical_density, 
@@ -908,11 +849,9 @@ ggplot(df_analysis, aes(x = reorder(macro_genre, lexical_density, median),
   labs(title = "Lexical Density by Genre", x = "Genre", y = "Lexical Density") +
   theme(legend.position = "none")
 
-# Block 26
 # Lexical density vs chart position
 cor.test(df_analysis$lexical_density, df_analysis$ranking, method = "spearman")
 
-# Block 27
 # Lexical density over time
 lex_trends <- df_analysis %>%
   group_by(year) %>%
@@ -925,12 +864,10 @@ ggplot(lex_trends, aes(x = year, y = mean_lex)) +
   labs(title = "Lexical Density Over Time", x = "Year", y = "Mean Lexical Density") +
   theme_minimal()
 
-# Block 28
 # Jaccard similarity vs chart position
 cor_genre <- cor.test(df_analysis$jaccard_genre, df_analysis$ranking, method = "spearman")
 cat(sprintf("Jaccard genre vs Ranking: rho = %.3f, p = %.4f\n", cor_genre$estimate, cor_genre$p.value))
 
-# Block 29
 # Most and least substantive songs
 cat("=== HIGHEST LEXICAL DENSITY ===\n")
 df_analysis %>%
@@ -944,7 +881,6 @@ df_analysis %>%
   arrange(lexical_density) %>%
   head(10)
 
-# Block 30
 # Jaccard metrics by genre
 jaccard_by_genre <- df_analysis %>%
   group_by(macro_genre) %>%
@@ -955,7 +891,6 @@ jaccard_by_genre <- df_analysis %>%
   )
 print(jaccard_by_genre)
 
-# Block 31
 # Jaccard 2D space: genre-typical vs mainstream
 ggplot(df_analysis, aes(x = jaccard_genre, y = jaccard_corpus, color = macro_genre)) +
   geom_point(alpha = 0.4, size = 2) +
@@ -965,12 +900,10 @@ ggplot(df_analysis, aes(x = jaccard_genre, y = jaccard_corpus, color = macro_gen
        y = "Jaccard Corpus (mainstream)") +
   theme_minimal()
 
-# Block 32
 # Jaccard corpus vs chart position
 cor_corpus <- cor.test(df_analysis$jaccard_corpus, df_analysis$ranking, method = "spearman")
 cat(sprintf("Jaccard corpus vs Ranking: rho = %.3f, p = %.4f\n", cor_corpus$estimate, cor_corpus$p.value))
 
-# Block 33
 # Jaccard trends over time
 jaccard_trends <- df_analysis %>%
   group_by(year) %>%
@@ -987,7 +920,6 @@ ggplot(jaccard_trends, aes(x = year)) +
   labs(title = "Vocabulary Homogeneity Over Time", x = "Year", y = "Mean Jaccard", color = "Metric") +
   theme_minimal()
 
-# Block 34
 # Genre outliers
 cat("=== MOST GENRE-TYPICAL ===\n")
 df_analysis %>%
@@ -1003,7 +935,6 @@ df_analysis %>%
   arrange(jaccard_genre) %>%
   head(10)
 
-# Block 35
 # Jaccard by genre faceted
 ggplot(df_analysis, aes(x = jaccard_genre, y = jaccard_corpus)) +
   geom_point(aes(color = macro_genre), alpha = 0.4, size = 1.5) +
@@ -1014,7 +945,6 @@ ggplot(df_analysis, aes(x = jaccard_genre, y = jaccard_corpus)) +
        x = "Jaccard Genre", y = "Jaccard Corpus") +
   theme(legend.position = "none")
 
-# Block 36
 # Export all visualizations to outputs/lexical_analysis/
 output_dir <- '../../outputs/lexical_analysis'
 dir.create(output_dir, showWarnings = FALSE, recursive = TRUE)
@@ -1202,7 +1132,6 @@ ggsave(file.path(output_dir, '18_jaccard_by_genre.png'), p18, width = 12, height
 cat(sprintf("\nExported 18 visualizations to %s\n", output_dir))
 list.files(output_dir)
 
-# Block 37
 # ============================================
 # SUMMARY STATISTICS TABLES
 # ============================================
@@ -1235,7 +1164,6 @@ print(overall_stats, n = Inf)
 # Helper for string concatenation
 `%s+%` <- function(a, b) paste0(a, b)
 
-# Block 38
 # --- 2. OVERALL LEXICAL METRICS (All Songs) ---
 overall_metrics <- df_analysis %>%
   summarise(
@@ -1298,7 +1226,6 @@ cat("OVERALL LEXICAL METRICS (All Songs)\n")
 cat(paste(rep("=", 51), collapse=""), "\n\n")
 print(overall_summary, n = Inf, width = Inf)
 
-# Block 39
 # --- 3. LEXICAL METRICS BY GENRE ---
 genre_detailed_stats <- df_analysis %>%
   group_by(macro_genre) %>%
@@ -1361,7 +1288,6 @@ print(genre_detailed_stats %>% select(macro_genre, n_songs, total_words_mean, to
 cat("\n--- Jaccard Similarity Metrics ---\n")
 print(genre_detailed_stats %>% select(macro_genre, n_songs, jaccard_genre_mean, jaccard_corpus_mean), n = Inf)
 
-# Block 40
 # --- 4. STATISTICAL TEST RESULTS ---
 cat("\n\n")
 cat(paste(rep("=", 51), collapse=""), "\n")
@@ -1408,7 +1334,6 @@ correlations <- tibble(
 cat("\n--- Spearman Correlation Results ---\n")
 print(correlations, n = Inf, width = Inf)
 
-# Block 41
 # --- 5. EXPORT SUMMARY TABLES TO CSV ---
 
 # Create comprehensive summary table combining all metrics by genre

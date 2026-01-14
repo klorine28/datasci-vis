@@ -1,24 +1,8 @@
-# =============================================================================
 # Compiled Genre Network Analysis
 # Billboard Hot 100 (2000-2023)
-# =============================================================================
-# 
-# This script contains:
-#   - Genre co-occurrence network construction
-#   - Temporal network analysis (yearly snapshots)
-#   - Hub genre identification
-#   - Network visualizations (static and animated)
-#   - Sankey diagrams and dominance charts
-#   - Composite figure generation
-#   - Data enhancement pipeline (Spotify API)
-#
-# Outputs saved to: outputs/genre_network/
-# =============================================================================
+# Outputs: outputs/genre_network/
 
-# =============================================================================
 # Packages
-# =============================================================================
-
 packages <- c(
   "tidyverse", "readr", "stringr",
   "igraph", "ggraph", "GGally", "network", "sna", "intergraph",
@@ -37,16 +21,12 @@ for (pkg in packages) {
 
 theme_set(theme_minimal())
 
-# Output directory
 output_dir <- "outputs/genre_network/"
 dir.create(output_dir, showWarnings = FALSE, recursive = TRUE)
 dir.create(file.path(output_dir, "non_image"), showWarnings = FALSE)
 
-# =============================================================================
-# Genre Network Analysis
-# =============================================================================
+# --- Network Analysis ---
 
-# --- Block 1 ---
 # Load packages
 library(tidyverse)
 library(igraph)
@@ -58,7 +38,6 @@ library(patchwork)
 
 theme_set(theme_minimal())
 
-# --- Block 2 ---
 # Load co-occurrence network
 edges_all <- read_csv(
   '../../data/sql_query_out/QUERY 2_ Genre Co-Occurrence Network (All Time).csv',
@@ -71,7 +50,6 @@ cat(sprintf('%d genre connections loaded\n', nrow(edges_all)))
 
 edges_all %>% arrange(desc(weight)) %>% head(10)
 
-# --- Block 3 ---
 # Load genre mapping
 genre_mapping <- read_csv(
   '../../data/sql_query_out/QUERY 5_ Genre to Main Genre Mapping (For Node Coloring).csv',
@@ -83,7 +61,6 @@ cat(sprintf('%d subgenres mapped\n', nrow(genre_mapping)))
 
 genre_mapping %>% count(primary_main_genre, sort = TRUE) %>% head(10)
 
-# --- Block 4 ---
 # Create temporal edges file with year column for Gephi dynamic filtering
 # Each unique edge pair (from, to) will have 24 rows - one per year (2000-2023)
 # Weight = 0 if no connection that year, otherwise the co-occurrence count
@@ -158,7 +135,6 @@ temporal_edges %>%
   ) %>%
   print(n = 24)
 
-# --- Block 5 ---
 # Load and process supplementary artist genres
 # This adds genres from Spotify API and manual corrections to improve coverage
 
@@ -218,7 +194,6 @@ if (file.exists(supplementary_file)) {
   HAS_SUPPLEMENTARY_DATA <- FALSE
 }
 
-# --- Block 6 ---
 # Merge supplementary co-occurrences with BigQuery edges
 
 if (HAS_SUPPLEMENTARY_DATA && nrow(new_genre_pairs) > 0) {
@@ -266,7 +241,6 @@ if (HAS_SUPPLEMENTARY_DATA && nrow(new_genre_pairs) > 0) {
   cat("Using original BigQuery edges (no supplementary data).\n")
 }
 
-# --- Block 7 ---
 # Merge supplementary co-occurrences with temporal edges (yearly data)
 
 if (HAS_SUPPLEMENTARY_DATA && nrow(new_genre_pairs) > 0) {
@@ -315,7 +289,6 @@ if (HAS_SUPPLEMENTARY_DATA && nrow(new_genre_pairs) > 0) {
   cat("Using original BigQuery temporal edges (no supplementary data).\n")
 }
 
-# --- Block 8 ---
 # Build node list with macro genre mapping
 all_genres <- unique(c(edges_all$from, edges_all$to))
 
@@ -335,7 +308,6 @@ cat(sprintf('%d nodes, %d edges\n', nrow(nodes), nrow(edges_all)))
 cat('\nMacro genre distribution:\n')
 nodes %>% count(macro_genre, sort = TRUE) %>% print(n = 20)
 
-# --- Block 9 ---
 # 16 macro genre colors
 macro_genre_colors <- c(
   'POP' = '#f180a6ff',
@@ -369,7 +341,6 @@ net %v% "macro_genre" <- nodes$macro_genre
 set.seed(42)
 layout <- igraph::layout_with_fr(g, weights = 1/igraph::E(g)$weight, niter = 5000) * 1.5
 
-# --- Block 10 ---
 # Calculate centrality
 hub_metrics <- tibble(
   genre = nodes$name,
@@ -393,7 +364,6 @@ p_hubs <- ggplot(head(hub_metrics, 25), aes(x = reorder(genre, strength), y = st
 
 ggsave('../../outputs/genre_network/genre_hubs.png', p_hubs, width = 12, height = 10, dpi = 300, bg = 'white')
 
-# --- Block 11 ---
 # Full network visualization - FR layout with center scaling and collision detection
 library(ggraph)
 
@@ -479,7 +449,6 @@ ggsave('../../outputs/genre_network/genre_network_full.png', p_full,
 
 cat(sprintf("Saved genre_network_full.png (%d nodes, %d edges)\n", vcount(g_full), ecount(g_full)))
 
-# --- Block 12 ---
 # Create network for a given year - FR layout with "pop" fixed at center
 library(ggraph)
 
@@ -562,7 +531,6 @@ create_year_network_circular <- function(year_val) {
 
 # Key years panel now generated after animation cell (uses same layout as GIF frames)
 
-# --- Block 13 ---
 # Export temporal edges (sparse - only weight > 0)
 temporal_edges_export <- temporal_edges %>% filter(weight > 0) %>%
   select(from, to, weight, year) %>% arrange(from, to, year)
@@ -570,7 +538,6 @@ temporal_edges_export <- temporal_edges %>% filter(weight > 0) %>%
 write_csv(temporal_edges_export, '../../outputs/genre_network/non_image/genre_network_edges_temporal_gephi.csv')
 cat(sprintf('Exported: %d temporal edges\n', nrow(temporal_edges_export)))
 
-# --- Block 14 ---
 # Export edges and nodes CSVs for Gephi
 dir.create('../../outputs/genre_network/non_image', showWarnings = FALSE, recursive = TRUE)
 
@@ -584,7 +551,6 @@ write_csv(nodes_export, '../../outputs/genre_network/non_image/genre_network_nod
 
 cat(sprintf('Exported: %d edges, %d nodes\n', nrow(edges_export), nrow(nodes_export)))
 
-# --- Block 15 ---
 # Generate GEXF file for Gephi dynamic timeline
 library(xml2)
 
@@ -641,7 +607,6 @@ for (i in 1:nrow(active_edges)) {
 write_xml(gexf, '../../outputs/genre_network/non_image/genre_network_dynamic.gexf')
 cat(sprintf('Exported GEXF: %d nodes, %d edges\n', nrow(nodes), nrow(active_edges)))
 
-# --- Block 16 ---
 # Animated network - Top 300 nodes with collision detection and opacity filtering
 library(gganimate)
 
@@ -722,7 +687,6 @@ anim <- animate(p_anim, nframes = 24, fps = 1/2, width = 2400, height = 2000, re
 anim_save('../../outputs/genre_network/genre_network_animated.gif', anim)
 cat('Saved: genre_network_animated.gif\n')
 
-# --- Block 17 ---
 # Key Years Panel - extracted from animated GIF frames
 # Uses the same layout (node_pos_anim) and edges (anim_edges) as the animation
 
@@ -783,7 +747,6 @@ ggsave('../../outputs/genre_network/genre_network_evolution_key_years.png', comb
        width = 28, height = 19, dpi = 300, bg = 'white')
 cat("Saved genre_network_evolution_key_years.png (using GIF frames)\n")
 
-# --- Block 18 ---
 # Total collaborations across all years (2000-2023)
 genre_totals <- temporal_edges %>% filter(weight > 0) %>%
   pivot_longer(cols = c(from, to), names_to = "role", values_to = "genre") %>%
@@ -795,7 +758,6 @@ genre_totals <- temporal_edges %>% filter(weight > 0) %>%
 cat(sprintf('Analyzed %d genres\n', nrow(genre_totals)))
 genre_totals %>% head(20)
 
-# --- Block 19 ---
 # Biggest Rise and Drop in Co-occurrence (Early vs Late period)
 # Compare 2000-2011 vs 2012-2023
 
@@ -899,7 +861,6 @@ top_rises %>% select(genre, macro_genre, early_total, late_total, absolute_chang
 cat("\nTop 10 Drops:\n")
 top_drops %>% select(genre, macro_genre, early_total, late_total, absolute_change) %>% head(10) %>% print()
 
-# --- Block 20 ---
 # Top 25 overall
 top25_overall <- genre_totals %>% head(25)
 
@@ -914,7 +875,6 @@ p_top25 <- ggplot(top25_overall, aes(x = reorder(genre, total_collaborations), y
 ggsave('../../outputs/genre_network/top_25_collaborative_genres.png', p_top25, width = 14, height = 12, dpi = 300, bg = 'white')
 print(p_top25)
 
-# --- Block 21 ---
 # Genre Dominance Over Time - Stacked Area Chart
 # Shows which macro-genres dominated Billboard each year
 
@@ -1001,7 +961,6 @@ ggsave('../../outputs/genre_network/genre_dominance_over_time_absolute.png', p_d
 
 cat("Saved genre_dominance_over_time_absolute.png\n")
 
-# --- Block 22 ---
 # Macro-Genre Flow - Sankey/Alluvial Diagram
 # Shows how genre presence shifted between periods
 
@@ -1092,7 +1051,6 @@ flow_data %>%
   arrange(desc(change)) %>%
   print(n = 20)
 
-# --- Block 23 ---
 # Unique Artists on Billboard Over Time
 # Load Billboard data to count unique artists per year
 
@@ -1162,7 +1120,6 @@ cat(sprintf("Change 2000→2023: %.1f%%\n",
              yearly_stats$unique_artists[yearly_stats$year == 2000]) / 
              yearly_stats$unique_artists[yearly_stats$year == 2000] * 100))
 
-# --- Block 24 ---
 # Average Genre Tags Per Artist Over Time
 # Uses enhanced data if available
 
@@ -1248,7 +1205,6 @@ ggsave('../../outputs/genre_network/avg_genre_tags_per_artist.png', p_avg_tags,
 cat("\nAverage Genre Tags by Year:\n")
 print(avg_tags_by_year, n = 24)
 
-# --- Block 25 ---
 # Investigation 1: Genre Tags Per Artist Over Time
 # Does MusicoSet have fewer genre tags for newer artists?
 
@@ -1307,7 +1263,6 @@ p_genre_tags <- ggplot(genre_tags_by_year, aes(x = year, y = avg_genre_tags)) +
 
 print(p_genre_tags)
 
-# --- Block 26 ---
 # Investigation 2: MusicoSet Matching Rate Over Time
 # Does MusicoSet (from 2019) have worse coverage for newer artists?
 
@@ -1339,7 +1294,6 @@ genre_tags_by_year %>%
   select(year, total_artists, matched_artists, match_rate) %>%
   print(n = 24)
 
-# --- Block 27 ---
 # Investigation 3: Superstar Effect (Artist Concentration)
 # Are fewer artists dominating with more songs?
 
@@ -1392,7 +1346,6 @@ p_concentration <- ggplot(concentration_by_year, aes(x = year, y = top10_share))
 
 print(p_concentration)
 
-# --- Block 28 ---
 # Investigation 4: Combined Summary - All Factors Together
 # Create a combined view to identify the root cause
 
@@ -1480,7 +1433,6 @@ cat(sprintf("  Avg Genre Tags: %.0f%% of 2000 level\n", final_row$avg_tags_idx))
 cat(sprintf("  Total Genre Tags: %.0f%% of 2000 level\n", final_row$total_tags_idx))
 cat(sprintf("  Co-occurrences: %.0f%% of 2000 level\n", final_row$cooccurrence_idx))
 
-# --- Block 29 ---
 # COMMENTED OUT - Spotify API and CSV creation cells
 # These cells were used to create supplementary_artist_genres_final.csv
 # The file already exists, so these don't need to run
@@ -1525,7 +1477,6 @@ cat(sprintf("\n\nExported full list to: data/cleaned/unmatched_billboard_artists
 cat("Columns: band_singer, years_active, first_year, last_year, song_count, sample_songs\n")
 }
 
-# --- Block 30 ---
 # COMMENTED OUT - Spotify API and CSV creation cells
 # These cells were used to create supplementary_artist_genres_final.csv
 # The file already exists, so these don't need to run
@@ -1554,7 +1505,6 @@ cat("Spotify API authenticated successfully!\n")
 cat("Now run the next cell to fetch genres for unmatched artists.\n")
 }
 
-# --- Block 31 ---
 # COMMENTED OUT - Spotify API and CSV creation cells
 # These cells were used to create supplementary_artist_genres_final.csv
 # The file already exists, so these don't need to run
@@ -1648,7 +1598,6 @@ spotify_genres_full %>%
   print(n = 20)
 }
 
-# --- Block 32 ---
 # COMMENTED OUT - Spotify API and CSV creation cells
 # These cells were used to create supplementary_artist_genres_final.csv
 # The file already exists, so these don't need to run
@@ -1707,7 +1656,6 @@ cat("4. For 'NO_GENRES' entries, either leave blank or manually add genres\n")
 cat("5. Run the next cell to merge this data back into the analysis\n")
 }
 
-# --- Block 33 ---
 # COMMENTED OUT - Spotify API and CSV creation cells
 # These cells were used to create supplementary_artist_genres_final.csv
 # The file already exists, so these don't need to run
@@ -1747,7 +1695,6 @@ cat("2. Modify the data loading cells to also load supplementary_artist_genres.c
 cat("3. Combine with musicoset_artists before joining with Billboard\n")
 }
 
-# --- Block 34 ---
 # COMMENTED OUT - Spotify API and CSV creation cells
 # These cells were used to create supplementary_artist_genres_final.csv
 # The file already exists, so these don't need to run
@@ -1854,7 +1801,6 @@ cat("\nColumns include 'suggested_genres' and 'suggested_musicoset_format' as st
 cat("Review and edit the suggestions, then save the file.\n")
 }
 
-# --- Block 35 ---
 # COMMENTED OUT - Spotify API and CSV creation cells
 # These cells were used to create supplementary_artist_genres_final.csv
 # The file already exists, so these don't need to run
@@ -1912,7 +1858,6 @@ cat("\nBy source:\n")
 combined_supplementary %>% count(source) %>% print()
 }
 
-# --- Block 36 ---
 # COMMENTED OUT - Spotify API and CSV creation cells
 # These cells were used to create supplementary_artist_genres_final.csv
 # The file already exists, so these don't need to run
@@ -2017,7 +1962,6 @@ ggsave('../../outputs/genre_network/match_rate_improvement.png', p_improvement,
 cat("\nSaved: match_rate_improvement.png\n")
 }
 
-# --- Block 37 ---
 # Compare original vs enhanced co-occurrences over time
 
 if (exists('temporal_edges_original')) {
@@ -2060,7 +2004,6 @@ if (exists('temporal_edges_original')) {
   cat("No original data to compare (supplementary data was not loaded).\n")
 }
 
-# --- Block 38 ---
 # Composite figure: 4 visualizations in 2x2 grid
 library(cowplot)
 library(png)
@@ -2118,7 +2061,6 @@ ggsave(output_path, composite, width = 11.69, height = 8.27, dpi = 300, bg = "wh
 cat("Saved:", output_path, "\n")
 composite
 
-# --- Block 39 ---
 # Network composite: key years + full network (maximum detail)
 library(cowplot)
 library(png)
