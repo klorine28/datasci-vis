@@ -1495,8 +1495,8 @@ if (!require(spotifyr)) {
 # Get these from https://developer.spotify.com/dashboard
 # Create an app and copy the Client ID and Client Secret
 
-Sys.setenv(SPOTIFY_CLIENT_ID = 'b1867fcb53d64566a78deaae4d70a1c9')
-Sys.setenv(SPOTIFY_CLIENT_SECRET = '2d35f732bcae440792e9e1bc308a6851')
+Sys.setenv(SPOTIFY_CLIENT_ID = 'your_client_id')
+Sys.setenv(SPOTIFY_CLIENT_SECRET = 'your_client_secret')
 
 # Authenticate
 access_token <- get_spotify_access_token()
