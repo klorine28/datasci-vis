@@ -732,13 +732,15 @@ ggplot(yearly_trends_genre, aes(x = year, y = mean_ttr, color = macro_genre)) +
   geom_point(size = 1.5) +
   geom_smooth(method = "lm", se = FALSE, linetype = "dashed", linewidth = 0.5) +
   scale_color_manual(values = genre_colors) +
-  facet_wrap(~macro_genre, ncol = 3) +
-  labs(title = "Are Songs Becoming More or Less Diverse? (By Genre)", 
+  scale_x_continuous(breaks = seq(2000, 2023, by = 4)) +
+  facet_wrap(~macro_genre, ncol = 3, scales = "free_x") +
+  labs(title = "Are Songs Becoming More or Less Diverse? (By Genre)",
        subtitle = "TTR trends over time by genre",
-       x = "Year", 
+       x = "Year",
        y = "Mean TTR") +
   theme_minimal() +
-  theme(legend.position = "none")
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 45, hjust = 1))
 
 # Rare word ratio over time (overall)
 ggplot(yearly_trends, aes(x = year, y = mean_rare)) +
@@ -935,13 +937,25 @@ df_analysis %>%
   arrange(jaccard_genre) %>%
   head(10)
 
-# Jaccard by genre faceted
+# Jaccard by genre faceted with median reference lines
+jaccard_medians <- df_analysis %>%
+  group_by(macro_genre) %>%
+  summarise(
+    median_jaccard_genre = median(jaccard_genre, na.rm = TRUE),
+    median_jaccard_corpus = median(jaccard_corpus, na.rm = TRUE),
+    .groups = "drop"
+  )
+
 ggplot(df_analysis, aes(x = jaccard_genre, y = jaccard_corpus)) +
+  geom_vline(data = jaccard_medians, aes(xintercept = median_jaccard_genre),
+             linetype = "dashed", color = "gray40", linewidth = 0.5) +
+  geom_hline(data = jaccard_medians, aes(yintercept = median_jaccard_corpus),
+             linetype = "dashed", color = "gray40", linewidth = 0.5) +
   geom_point(aes(color = macro_genre), alpha = 0.4, size = 1.5) +
-  geom_smooth(method = "lm", se = FALSE, color = "black", linewidth = 0.8) +
   scale_color_manual(values = genre_colors) +
   facet_wrap(~macro_genre, ncol = 3) +
-  labs(title = "Genre-Typical vs Mainstream by Genre", 
+  labs(title = "Genre-Typical vs Mainstream by Genre",
+       subtitle = "Dashed lines show genre medians",
        x = "Jaccard Genre", y = "Jaccard Corpus") +
   theme(legend.position = "none")
 
@@ -1046,10 +1060,12 @@ p10 <- ggplot(yearly_trends_genre, aes(x = year, y = mean_ttr, color = macro_gen
   geom_point(size = 1.5) +
   geom_smooth(method = "lm", se = FALSE, linetype = "dashed", linewidth = 0.5) +
   scale_color_manual(values = genre_colors) +
-  facet_wrap(~macro_genre, ncol = 3) +
+  scale_x_continuous(breaks = seq(2000, 2023, by = 4)) +
+  facet_wrap(~macro_genre, ncol = 3, scales = "free_x") +
   labs(title = "Are Songs Becoming More or Less Diverse? (By Genre)", subtitle = "TTR trends over time by genre", x = "Year", y = "Mean TTR") +
   theme_minimal() +
-  theme(legend.position = "none")
+  theme(legend.position = "none",
+        axis.text.x = element_text(angle = 45, hjust = 1))
 ggsave(file.path(output_dir, '10_ttr_over_time_by_genre.png'), p10, width = 12, height = 8, dpi = 300, bg = 'white')
 
 # 11. Rare Word Ratio Over Time - All Genres
@@ -1119,13 +1135,18 @@ p17 <- ggplot(jaccard_trends, aes(x = year)) +
   theme_minimal()
 ggsave(file.path(output_dir, '17_vocab_homogeneity_over_time.png'), p17, width = 10, height = 6, dpi = 300, bg = 'white')
 
-# 18. Genre-Typical vs Mainstream by Genre
+# 18. Genre-Typical vs Mainstream by Genre (with median reference lines)
 p18 <- ggplot(df_analysis, aes(x = jaccard_genre, y = jaccard_corpus)) +
+  geom_vline(data = jaccard_medians, aes(xintercept = median_jaccard_genre),
+             linetype = "dashed", color = "gray40", linewidth = 0.5) +
+  geom_hline(data = jaccard_medians, aes(yintercept = median_jaccard_corpus),
+             linetype = "dashed", color = "gray40", linewidth = 0.5) +
   geom_point(aes(color = macro_genre), alpha = 0.4, size = 1.5) +
-  geom_smooth(method = "lm", se = FALSE, color = "black", linewidth = 0.8) +
   scale_color_manual(values = genre_colors) +
   facet_wrap(~macro_genre, ncol = 3) +
-  labs(title = "Genre-Typical vs Mainstream by Genre", x = "Jaccard Genre", y = "Jaccard Corpus") +
+  labs(title = "Genre-Typical vs Mainstream by Genre",
+       subtitle = "Dashed lines show genre medians",
+       x = "Jaccard Genre", y = "Jaccard Corpus") +
   theme(legend.position = "none")
 ggsave(file.path(output_dir, '18_jaccard_by_genre.png'), p18, width = 12, height = 8, dpi = 300, bg = 'white')
 
@@ -1156,13 +1177,10 @@ overall_stats <- tibble(
   )
 )
 
-cat("=" %s+% paste(rep("=", 50), collapse="") %s+% "\n")
+cat(paste(rep("=", 51), collapse=""), "\n")
 cat("OVERALL DATASET STATISTICS\n")
-cat("=" %s+% paste(rep("=", 50), collapse="") %s+% "\n\n")
+cat(paste(rep("=", 51), collapse=""), "\n\n")
 print(overall_stats, n = Inf)
-
-# Helper for string concatenation
-`%s+%` <- function(a, b) paste0(a, b)
 
 # --- 2. OVERALL LEXICAL METRICS (All Songs) ---
 overall_metrics <- df_analysis %>%
