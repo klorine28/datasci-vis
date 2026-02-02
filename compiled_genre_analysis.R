@@ -747,33 +747,61 @@ ggsave('../../outputs/genre_network/genre_network_evolution_key_years.png', comb
        width = 28, height = 19, dpi = 300, bg = 'white')
 cat("Saved genre_network_evolution_key_years.png (using GIF frames)\n")
 
-# Total collaborations across all years (2000-2023)
-genre_totals <- temporal_edges %>% filter(weight > 0) %>%
-  pivot_longer(cols = c(from, to), names_to = "role", values_to = "genre") %>%
-  group_by(genre) %>% summarize(total_collaborations = sum(weight), .groups = 'drop') %>%
-  left_join(nodes %>% select(name, macro_genre), by = c('genre' = 'name')) %>%
-  filter(!is.na(macro_genre), macro_genre != 'OTHER') %>%
+# Load billboard data for corrected methodology
+# This data has one row per song-subgenre combination
+billboard <- read_csv('../../data/cleaned/billboard_lexical_analysis_ready.csv',
+                      show_col_types = FALSE)
+cat(sprintf("Loaded billboard data: %d rows\n", nrow(billboard)))
+
+# Total song appearances per subgenre across all years (2000-2023)
+# CORRECTED: Using billboard data instead of co-occurrence edges to avoid double-counting
+# See ANALYSIS_GUIDE.md "Known Methodological Issues" for explanation
+
+genre_totals <- billboard %>%
+  filter(!is.na(macro_genre), macro_genre != "OTHER") %>%
+  group_by(subgenre) %>%
+  summarize(
+    total_songs = n_distinct(song),  # Count unique songs, not song-artist pairs
+    .groups = "drop"
+  ) %>%
+  rename(genre = subgenre, total_collaborations = total_songs) %>%
+  left_join(
+    billboard %>% distinct(subgenre, macro_genre) %>% rename(genre = subgenre),
+    by = "genre"
+  ) %>%
+  filter(!is.na(macro_genre)) %>%
   arrange(desc(total_collaborations))
 
-cat(sprintf('Analyzed %d genres\n', nrow(genre_totals)))
+cat(sprintf("Analyzed %d genres\n", nrow(genre_totals)))
 genre_totals %>% head(20)
 
-# Biggest Rise and Drop in Co-occurrence (Early vs Late period)
+# Biggest Rise and Drop in Genre Presence (Early vs Late period)
 # Compare 2000-2011 vs 2012-2023
+# CORRECTED: Counting distinct songs per subgenre instead of co-occurrence edges
+
+# Get unique genre to macro_genre mapping (one row per genre)
+genre_macro_map <- billboard %>%
+  filter(!is.na(macro_genre), macro_genre != "OTHER") %>%
+  distinct(subgenre, macro_genre) %>%
+  group_by(subgenre) %>%
+  slice(1) %>%  # Take first macro_genre if multiple
+  ungroup() %>%
+  rename(genre = subgenre)
 
 # Calculate totals for early period (2000-2011)
-early_totals <- temporal_edges %>% 
-  filter(weight > 0, year <= 2011) %>%
-  pivot_longer(cols = c(from, to), names_to = "role", values_to = "genre") %>%
-  group_by(genre) %>% 
-  summarize(early_total = sum(weight), .groups = 'drop')
+# Using n_distinct(song) to count unique songs, not song-artist pairs
+early_totals <- billboard %>%
+  filter(year <= 2011, !is.na(macro_genre), macro_genre != "OTHER") %>%
+  group_by(subgenre) %>%
+  summarize(early_total = n_distinct(song), .groups = "drop") %>%
+  rename(genre = subgenre)
 
 # Calculate totals for late period (2012-2023)
-late_totals <- temporal_edges %>% 
-  filter(weight > 0, year >= 2012) %>%
-  pivot_longer(cols = c(from, to), names_to = "role", values_to = "genre") %>%
-  group_by(genre) %>% 
-  summarize(late_total = sum(weight), .groups = 'drop')
+late_totals <- billboard %>%
+  filter(year >= 2012, !is.na(macro_genre), macro_genre != "OTHER") %>%
+  group_by(subgenre) %>%
+  summarize(late_total = n_distinct(song), .groups = "drop") %>%
+  rename(genre = subgenre)
 
 # Join and calculate change
 genre_change <- early_totals %>%
@@ -781,85 +809,109 @@ genre_change <- early_totals %>%
   mutate(
     early_total = replace_na(early_total, 0),
     late_total = replace_na(late_total, 0),
-    absolute_change = late_total - early_total,
-    pct_change = ifelse(early_total > 0, (late_total - early_total) / early_total * 100, NA)
+    absolute_change = late_total - early_total
   ) %>%
-  left_join(nodes %>% select(name, macro_genre), by = c('genre' = 'name')) %>%
-  filter(!is.na(macro_genre), macro_genre != 'OTHER')
+  left_join(genre_macro_map, by = "genre") %>%
+  filter(!is.na(macro_genre))
 
-# Top 20 biggest rises (absolute change)
+cat(sprintf("Total genres with change data: %d\n", nrow(genre_change)))
+
+# Top 15 biggest rises (absolute change)
 top_rises <- genre_change %>%
   filter(absolute_change > 0) %>%
   arrange(desc(absolute_change)) %>%
-  head(20) %>%
-  mutate(direction = "Rise")
+  head(15) %>%
+  mutate(label = paste0(early_total, " to ", late_total, " (+", absolute_change, ")"))
 
-# Top 20 biggest drops (absolute change)
+# Top 15 biggest drops (absolute change)
 top_drops <- genre_change %>%
   filter(absolute_change < 0) %>%
   arrange(absolute_change) %>%
-  head(20) %>%
-  mutate(direction = "Drop")
+  head(15) %>%
+  mutate(label = paste0(early_total, " to ", late_total, " (", absolute_change, ")"))
 
-# Combine for plotting
-rise_drop_data <- bind_rows(top_rises, top_drops)
+cat(sprintf("Rises: %d, Drops: %d\n", nrow(top_rises), nrow(top_drops)))
 
-# Create side-by-side plot
-p_rises <- ggplot(top_rises, aes(x = reorder(genre, absolute_change), y = absolute_change, fill = macro_genre)) +
+# Create side-by-side plot with improved legibility
+p_rises <- ggplot(top_rises,
+                  aes(x = reorder(genre, absolute_change),
+                      y = absolute_change,
+                      fill = macro_genre)) +
   geom_col(width = 0.7) +
-  geom_text(aes(label = sprintf("+%d", absolute_change)), hjust = -0.1, size = 2.2, color = "gray30") +
+  geom_text(aes(label = label),
+            hjust = -0.05, size = 3, color = "gray20") +
   coord_flip() +
-  scale_fill_manual(values = macro_genre_colors) +
-  scale_y_continuous(expand = expansion(mult = c(0, 0.2))) +
-  labs(title = "Biggest Rise in Co-occurrence", 
-       subtitle = "2012-2023 vs 2000-2011",
-       x = NULL, y = "Change in Co-occurrence Count") +
+  scale_fill_manual(values = macro_genre_colors, name = "Macro-Genre") +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.4))) +
+  labs(
+    title = "Biggest Rises",
+    subtitle = "Song count: 2000-2011 to 2012-2023",
+    x = NULL,
+    y = "Change in Song Count"
+  ) +
   theme_minimal() +
   theme(
     plot.title = element_text(hjust = 0.5, size = 14, face = "bold"),
     plot.subtitle = element_text(hjust = 0.5, size = 10, color = "gray40"),
     legend.position = "none",
-    axis.text.y = element_text(size = 8)
+    axis.text.y = element_text(size = 9),
+    axis.text.x = element_text(size = 9),
+    panel.grid.major.y = element_blank()
   )
 
-p_drops <- ggplot(top_drops, aes(x = reorder(genre, -absolute_change), y = absolute_change, fill = macro_genre)) +
+p_drops <- ggplot(top_drops,
+                  aes(x = reorder(genre, -absolute_change),
+                      y = absolute_change,
+                      fill = macro_genre)) +
   geom_col(width = 0.7) +
-  geom_text(aes(label = sprintf("%d", absolute_change)), hjust = 1.1, size = 2.2, color = "gray30") +
+  geom_text(aes(label = label),
+            hjust = 1.05, size = 3, color = "gray20") +
   coord_flip() +
-  scale_fill_manual(values = macro_genre_colors) +
-  scale_y_continuous(expand = expansion(mult = c(0.2, 0))) +
-  labs(title = "Biggest Drop in Co-occurrence", 
-       subtitle = "2012-2023 vs 2000-2011",
-       x = NULL, y = "Change in Co-occurrence Count") +
+  scale_fill_manual(values = macro_genre_colors, name = "Macro-Genre") +
+  scale_y_continuous(expand = expansion(mult = c(0.4, 0))) +
+  labs(
+    title = "Biggest Drops",
+    subtitle = "Song count: 2000-2011 to 2012-2023",
+    x = NULL,
+    y = "Change in Song Count"
+  ) +
   theme_minimal() +
   theme(
     plot.title = element_text(hjust = 0.5, size = 14, face = "bold"),
     plot.subtitle = element_text(hjust = 0.5, size = 10, color = "gray40"),
     legend.position = "none",
-    axis.text.y = element_text(size = 8)
+    axis.text.y = element_text(size = 9),
+    axis.text.x = element_text(size = 9),
+    panel.grid.major.y = element_blank()
   )
 
-# Combine with shared legend
+# Combine with patchwork and add shared legend
 combined_rise_drop <- (p_rises | p_drops) +
   plot_annotation(
-    title = "Genre Co-occurrence Change: Early (2000-2011) vs Late (2012-2023)",
+    title = "Genre Presence Change: Early Era (2000-2011) vs Late Era (2012-2023)",
+    subtitle = "Based on distinct Billboard song counts per subgenre",
     theme = theme(
-      plot.title = element_text(hjust = 0.5, size = 16, face = "bold")
+      plot.title = element_text(hjust = 0.5, size = 16, face = "bold"),
+      plot.subtitle = element_text(hjust = 0.5, size = 11, color = "gray50")
     )
   )
 
-ggsave('../../outputs/genre_network/genre_cooccurrence_change.png', combined_rise_drop,
+ggsave('../../outputs/genre_network/genre_presence_change.png', combined_rise_drop,
        width = 16, height = 10, dpi = 300, bg = 'white')
 
-cat("Saved genre_cooccurrence_change.png\n")
+cat("Saved genre_presence_change.png\n")
 print(combined_rise_drop)
 
-# Also print the data
-cat("\nTop 10 Rises:\n")
-top_rises %>% select(genre, macro_genre, early_total, late_total, absolute_change) %>% head(10) %>% print()
+# Print the data
+cat("\nTop 15 Rises:\n")
+top_rises %>%
+  select(genre, macro_genre, early_total, late_total, absolute_change) %>%
+  print()
 
-cat("\nTop 10 Drops:\n")
-top_drops %>% select(genre, macro_genre, early_total, late_total, absolute_change) %>% head(10) %>% print()
+cat("\nTop 15 Drops:\n")
+top_drops %>%
+  select(genre, macro_genre, early_total, late_total, absolute_change) %>%
+  print()
 
 # Top 25 overall
 top25_overall <- genre_totals %>% head(25)
@@ -868,38 +920,48 @@ p_top25 <- ggplot(top25_overall, aes(x = reorder(genre, total_collaborations), y
   geom_col() + coord_flip() +
   scale_fill_manual(values = macro_genre_colors, name = "Genre") +
   scale_y_continuous(labels = scales::comma) +
-  labs(title = "Top 25 Most Collaborative Genres (2000-2023)", subtitle = "Total collaborations across all 24 years", x = NULL, y = "Total Collaborations") +
+  labs(title = "Top 25 Most Common Genres (2000-2023)",
+       subtitle = "Number of Billboard songs per subgenre",
+       x = NULL, y = "Number of Songs") +
   theme_minimal() + theme(plot.title = element_text(hjust = 0, size = 16, face = "bold"),
     plot.subtitle = element_text(hjust = 0, size = 11, color = "gray40"), legend.position = "right")
 
 ggsave('../../outputs/genre_network/top_25_collaborative_genres.png', p_top25, width = 14, height = 12, dpi = 300, bg = 'white')
 print(p_top25)
 
-# Genre Dominance Over Time - Stacked Area Chart
+# Genre Dominance Over Time - Stacked Area Chart (CORRECTED METHODOLOGY)
 # Shows which macro-genres dominated Billboard each year
+#
+# NOTE: Previous version used co-occurrence edge data with pivot_longer(),
+# which caused double-counting. See ANALYSIS_GUIDE.md "Known Methodological Issues"
+# for detailed explanation.
+#
+# NEW METHOD: Count distinct songs per macro-genre per year from billboard data
 
-# Calculate macro-genre presence per year from temporal edges
-genre_yearly_presence <- temporal_edges %>%
-  filter(weight > 0) %>%
-  pivot_longer(cols = c(from, to), names_to = "role", values_to = "genre") %>%
-  left_join(nodes %>% select(name, macro_genre), by = c('genre' = 'name')) %>%
+# Load billboard data with one subgenre per row
+billboard <- read_csv('../../data/cleaned/billboard_lexical_analysis_ready.csv', show_col_types = FALSE)
+
+# Count TOTAL subgenre tags per macro-genre per year
+# Each row in expanded data = 1 subgenre tag, so we count all rows
+# This gives higher counts reflecting total genre activity
+genre_yearly <- billboard %>%
   filter(!is.na(macro_genre), macro_genre != 'OTHER') %>%
   group_by(year, macro_genre) %>%
-  summarize(total_weight = sum(weight), .groups = 'drop')
+  summarize(song_count = n(), .groups = 'drop')
 
 # Calculate percentage share per year
-genre_yearly_pct <- genre_yearly_presence %>%
+genre_yearly_pct <- genre_yearly %>%
   group_by(year) %>%
   mutate(
-    year_total = sum(total_weight),
-    pct = total_weight / year_total * 100
+    year_total = sum(song_count),
+    pct = song_count / year_total * 100
   ) %>%
   ungroup()
 
 # Order macro genres by total presence (for consistent stacking)
-macro_order <- genre_yearly_presence %>%
+macro_order <- genre_yearly %>%
   group_by(macro_genre) %>%
-  summarize(total = sum(total_weight), .groups = 'drop') %>%
+  summarize(total = sum(song_count), .groups = 'drop') %>%
   arrange(desc(total)) %>%
   pull(macro_genre)
 
@@ -914,9 +976,9 @@ p_dominance <- ggplot(genre_yearly_pct, aes(x = year, y = pct, fill = macro_genr
   scale_y_continuous(labels = function(x) paste0(x, "%"), expand = c(0, 0)) +
   labs(
     title = "Genre Dominance on Billboard (2000-2023)",
-    subtitle = "Share of total genre co-occurrences per year",
+    subtitle = "Share of Billboard songs per macro-genre each year",
     x = NULL,
-    y = "Share of Co-occurrences"
+    y = "Share of Songs"
   ) +
   theme_minimal() +
   theme(
@@ -934,18 +996,18 @@ cat("Saved genre_dominance_over_time.png\n")
 print(p_dominance)
 
 # Also show the raw counts version
-p_dominance_raw <- ggplot(genre_yearly_presence %>% 
-                            mutate(macro_genre = factor(macro_genre, levels = rev(macro_order))), 
-                          aes(x = year, y = total_weight, fill = macro_genre)) +
+p_dominance_raw <- ggplot(genre_yearly %>%
+                            mutate(macro_genre = factor(macro_genre, levels = rev(macro_order))),
+                          aes(x = year, y = song_count, fill = macro_genre)) +
   geom_area(alpha = 0.85, color = "white", linewidth = 0.3) +
   scale_fill_manual(values = macro_genre_colors, name = "Genre") +
   scale_x_continuous(breaks = seq(2000, 2023, by = 2), expand = c(0, 0)) +
   scale_y_continuous(labels = scales::comma, expand = c(0, 0)) +
   labs(
-    title = "Genre Co-occurrences on Billboard (2000-2023)",
-    subtitle = "Total co-occurrence count per year (absolute values)",
+    title = "Genre Presence on Billboard (2000-2023)",
+    subtitle = "Number of songs per macro-genre each year (absolute values)",
     x = NULL,
-    y = "Co-occurrence Count"
+    y = "Number of Songs"
   ) +
   theme_minimal() +
   theme(
@@ -961,8 +1023,13 @@ ggsave('../../outputs/genre_network/genre_dominance_over_time_absolute.png', p_d
 
 cat("Saved genre_dominance_over_time_absolute.png\n")
 
+# Save the corrected data for reference
+write_csv(genre_yearly_pct, '../../data/cleaned/stacked_area_chart_data.csv')
+cat("Saved stacked_area_chart_data.csv\n")
+
 # Macro-Genre Flow - Sankey/Alluvial Diagram
-# Shows how genre presence shifted between periods
+# Shows how genre presence shifted between 4 periods of 6 years each
+# Using percentages instead of absolute values
 
 # Install ggalluvial if needed
 if (!require(ggalluvial)) {
@@ -970,60 +1037,58 @@ if (!require(ggalluvial)) {
   library(ggalluvial)
 }
 
-# Calculate macro-genre totals for early and late periods
-early_macro <- temporal_edges %>%
-  filter(weight > 0, year <= 2011) %>%
-  pivot_longer(cols = c(from, to), names_to = "role", values_to = "genre") %>%
-  left_join(nodes %>% select(name, macro_genre), by = c('genre' = 'name')) %>%
-  filter(!is.na(macro_genre), macro_genre != 'OTHER') %>%
-  group_by(macro_genre) %>%
-  summarize(early_total = sum(weight), .groups = 'drop')
+# Define 4 periods of 6 years each
+periods <- list(
+  "2000-2005" = 2000:2005,
+  "2006-2011" = 2006:2011,
+  "2012-2017" = 2012:2017,
+  "2018-2023" = 2018:2023
+)
 
-late_macro <- temporal_edges %>%
-  filter(weight > 0, year >= 2012) %>%
-  pivot_longer(cols = c(from, to), names_to = "role", values_to = "genre") %>%
-  left_join(nodes %>% select(name, macro_genre), by = c('genre' = 'name')) %>%
-  filter(!is.na(macro_genre), macro_genre != 'OTHER') %>%
-  group_by(macro_genre) %>%
-  summarize(late_total = sum(weight), .groups = 'drop')
+# Calculate macro-genre counts for each period
+# Using distinct(song, band_singer, macro_genre) to count song-artist pairs
+period_data <- map_dfr(names(periods), function(period_name) {
+  years <- periods[[period_name]]
+  billboard %>%
+    filter(year %in% years, !is.na(macro_genre), macro_genre != "OTHER") %>%
+    distinct(song, band_singer, macro_genre) %>%
+    group_by(macro_genre) %>%
+    summarize(count = n(), .groups = "drop") %>%
+    mutate(period = period_name)
+})
 
-# Combine into flow data
-flow_data <- early_macro %>%
-  full_join(late_macro, by = "macro_genre") %>%
+# Calculate percentages within each period
+flow_long <- period_data %>%
+  group_by(period) %>%
   mutate(
-    early_total = replace_na(early_total, 0),
-    late_total = replace_na(late_total, 0)
+    total = sum(count),
+    pct = count / total * 100
   ) %>%
-  filter(early_total > 0 | late_total > 0)
-
-# Convert to long format for alluvial plot
-flow_long <- flow_data %>%
-  pivot_longer(
-    cols = c(early_total, late_total),
-    names_to = "period",
-    values_to = "count"
-  ) %>%
+  ungroup() %>%
   mutate(
-    period = factor(
-      ifelse(period == "early_total", "2000-2011", "2012-2023"),
-      levels = c("2000-2011", "2012-2023")
-    )
+    period = factor(period, levels = c("2000-2005", "2006-2011",
+                                        "2012-2017", "2018-2023"))
   )
 
-# Create alluvial diagram
-p_sankey <- ggplot(flow_long, 
-                   aes(x = period, y = count, alluvium = macro_genre, stratum = macro_genre, fill = macro_genre)) +
-  geom_alluvium(alpha = 0.7, width = 1/3, curve_type = "sigmoid") +
-  geom_stratum(width = 1/3, color = "white", linewidth = 0.5) +
-  geom_text(stat = "stratum", aes(label = after_stat(stratum)), size = 2.5, fontface = "bold", color = "white") +
+# Create alluvial diagram with percentages
+p_sankey <- ggplot(flow_long,
+                   aes(x = period, y = pct,
+                       alluvium = macro_genre,
+                       stratum = macro_genre,
+                       fill = macro_genre)) +
+  geom_alluvium(alpha = 0.7, width = 1/4, curve_type = "sigmoid") +
+  geom_stratum(width = 1/4, color = "white", linewidth = 0.5) +
+  geom_text(stat = "stratum",
+            aes(label = paste0(after_stat(stratum), "\n", round(after_stat(prop) * 100, 1), "%")),
+            size = 2.5, fontface = "bold", color = "black") +
   scale_fill_manual(values = macro_genre_colors, name = "Genre") +
-  scale_x_discrete(expand = c(0.15, 0.15)) +
-  scale_y_continuous(labels = scales::comma) +
+  scale_x_discrete(expand = c(0.1, 0.1)) +
+  scale_y_continuous(labels = function(x) paste0(x, "%")) +
   labs(
-    title = "Genre Flow: Early vs Late Billboard Era",
-    subtitle = "How macro-genre presence shifted between 2000-2011 and 2012-2023",
+    title = "Genre Flow Across Billboard Eras (2000-2023)",
+    subtitle = "Percentage share of macro-genres across four 6-year periods",
     x = NULL,
-    y = "Total Co-occurrences"
+    y = "Share of Songs (%)"
   ) +
   theme_minimal() +
   theme(
@@ -1032,11 +1097,11 @@ p_sankey <- ggplot(flow_long,
     legend.position = "none",
     panel.grid.major.x = element_blank(),
     panel.grid.minor = element_blank(),
-    axis.text.x = element_text(size = 14, face = "bold")
+    axis.text.x = element_text(size = 12, face = "bold")
   )
 
 ggsave('../../outputs/genre_network/genre_flow_sankey.png', p_sankey,
-       width = 12, height = 10, dpi = 300, bg = 'white')
+       width = 14, height = 10, dpi = 300, bg = 'white')
 
 cat("Saved genre_flow_sankey.png\n")
 print(p_sankey)
@@ -2013,7 +2078,7 @@ output_dir <- "../../outputs/genre_network/"
 img_paths <- list(
   top_left = paste0(output_dir, "genre_dominance_over_time_absolute.png"),
   top_right = paste0(output_dir, "genre_network_evolution_key_years.png"),
-  bottom_left = paste0(output_dir, "genre_cooccurrence_change.png"),
+  bottom_left = paste0(output_dir, "genre_presence_change.png"),
   bottom_right = paste0(output_dir, "genre_flow_sankey.png")
 )
 

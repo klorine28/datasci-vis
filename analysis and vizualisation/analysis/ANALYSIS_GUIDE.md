@@ -417,14 +417,17 @@ This decline reflects changes in the music industry, not less genre diversity:
 
 **File:** `genre_dominance_over_time.png`
 
-This chart shows the **percentage share** of each macro-genre's co-occurrences on Billboard from 2000-2023.
+This chart shows the **percentage share** of each macro-genre's subgenre tags on Billboard from 2000-2023.
+
+**Counting Method:** Total subgenre tags (all rows in expanded data). Each song-artist-subgenre combination counts as one tag. A song with 5 hip hop subgenres contributes 5 tags to HIP HOP's count. This captures the total "genre activity" including how richly tagged artists are.
 
 #### How to Read It
 
-- **Y-axis**: Percentage of total co-occurrences (0-100%)
+- **Y-axis**: Percentage of total subgenre tags (0-100%)
 - **X-axis**: Year (2000-2023)
 - **Colors**: Each band represents a macro-genre
-- **Band thickness**: The genre's share that year
+- **Band thickness**: The genre's share of tags that year
+- **Peak values**: Around 700-1000 total tags per year
 
 #### What the Chart Shows
 
@@ -447,16 +450,22 @@ Billboard shifted from a **POP + R&B + ROCK** dominated landscape in the early 2
 
 **File:** `genre_flow_sankey.png`
 
-This alluvial/Sankey diagram compares **absolute co-occurrence counts** between early (2000-2011) and late (2012-2023) periods.
+This alluvial/Sankey diagram compares **genre presence** across four 6-year periods (2000-2005, 2006-2011, 2012-2017, 2018-2023) using percentages.
+
+**Counting Method:** Song-artist pairs using `distinct(song, band_singer, macro_genre)`. This counts each unique combination of song + artist + macro-genre once. A collaboration between two artists counts twice if both are credited.
+
+**Visual Design:**
+- Black text labels with percentage values on each stratum
+- Shows both genre name and its share of each period (e.g., "POP\n45.2%")
 
 #### How to Read It
 
-- **Left column**: Genre sizes in 2000-2011 period
-- **Right column**: Genre sizes in 2012-2023 period
+- **Four columns**: Each represents a 6-year period
 - **Flowing ribbons**: Connect the same genre across periods
-- **Ribbon width**: Proportional to co-occurrence count
-- **Expanding ribbon**: Genre grew in absolute terms
-- **Narrowing ribbon**: Genre shrank in absolute terms
+- **Ribbon width**: Proportional to percentage share
+- **Stratum labels**: Show genre name and percentage for that period
+- **Expanding ribbon**: Genre grew its share
+- **Narrowing ribbon**: Genre lost share
 
 #### What the Chart Shows
 
@@ -480,19 +489,21 @@ Because total co-occurrences dropped ~45% between periods, **nearly all genres s
 
 ---
 
-### Co-occurrence Change Chart
+### Genre Presence Change Chart
 
-**File:** `genre_cooccurrence_change.png`
+**File:** `genre_presence_change.png`
 
-This side-by-side bar chart shows the **biggest rises and drops** in sub-genre co-occurrences between early (2000-2011) and late (2012-2023) periods.
+This side-by-side bar chart shows the **biggest rises and drops** in sub-genre presence between early (2000-2011) and late (2012-2023) periods.
+
+**Counting Method:** Unique songs only using `n_distinct(song)`. This counts how many distinct songs featured each subgenre, regardless of how many artists performed them. A collaboration song counts as 1 song, not multiple.
 
 #### How to Read It
 
-- **Left panel**: Top 20 genres with biggest absolute increase
-- **Right panel**: Top 20 genres with biggest absolute decrease
-- **Bar length**: Magnitude of change
+- **Left panel**: Top 15 genres with biggest absolute increase in song count
+- **Right panel**: Top 15 genres with biggest absolute decrease in song count
+- **Bar length**: Magnitude of change (number of songs)
 - **Bar color**: Macro-genre category
-- **Labels**: Exact change value (+/- count)
+- **Labels**: Show early count, late count, and change (e.g., "45 to 78 (+33)")
 
 #### What to Look For
 
@@ -642,6 +653,178 @@ musicoset_enhanced <- bind_rows(
 
 ---
 
+## Known Methodological Issues
+
+### Chart Counting Methodologies
+
+Each chart uses a different counting method appropriate to what it measures:
+
+| Chart | Counting Method | Code | What It Measures |
+|-------|-----------------|------|------------------|
+| **Stacked Area** | Total subgenre tags | `summarize(song_count = n())` | Total genre activity including tag richness |
+| **Sankey** | Song-artist pairs | `distinct(song, band_singer, macro_genre)` | Artist-level genre presence |
+| **Rise/Drop** | Unique songs | `n_distinct(song)` | Song-level genre presence |
+
+**Why different methods?**
+- **Stacked Area**: Shows total genre "activity" - artists with more subgenre tags contribute more
+- **Sankey**: Tracks how artists flow between genres across periods
+- **Rise/Drop**: Focuses on which subgenres appeared on more/fewer songs
+
+### Stacked Area Chart Double-Counting (RESOLVED)
+
+**Issue Discovered:** The original stacked area chart methodology inflated genre counts due to double-counting in the co-occurrence data transformation.
+
+---
+
+#### ORIGINAL METHOD (Flawed)
+
+**Step 1: Source Data**
+
+The original approach used genre co-occurrence edge files from SQL queries:
+```
+File: QUERY 4_ Export Individual Year Networks (Example for 2020).csv
+
+genre_1      | genre_2      | co_occurrence_count
+-------------|--------------|--------------------
+pop          | pop          | 35
+rap          | rap          | 23
+dance pop    | pop          | 16
+pop          | rap          | 14
+trap music   | rap          | 14
+hip hop      | rap          | 12
+```
+
+Each row represents: "X songs had both genre_1 AND genre_2 tags on the same artist"
+
+**Step 2: The Pivot Transformation**
+
+The code loaded these edges and pivoted them to count genre presence:
+
+```r
+genre_yearly_presence <- temporal_edges %>%
+  filter(weight > 0) %>%
+  pivot_longer(cols = c(from, to), names_to = "role", values_to = "genre") %>%
+  left_join(nodes %>% select(name, macro_genre), by = c('genre' = 'name')) %>%
+  group_by(year, macro_genre) %>%
+  summarize(total_weight = sum(weight), .groups = 'drop')
+```
+
+**Step 3: What Actually Happened**
+
+The `pivot_longer()` function converted each edge row into TWO rows:
+
+```
+BEFORE pivot (1 row):
+| from      | to   | weight |
+|-----------|------|--------|
+| pop       | rap  | 14     |
+
+AFTER pivot (2 rows):
+| genre | weight |
+|-------|--------|
+| pop   | 14     |
+| rap   | 14     |
+```
+
+**Step 4: The Counting Problem**
+
+When these pivoted rows were grouped by macro_genre and summed:
+
+| Original Edge | After Pivot | Macro-Genre Assignment | Result |
+|---------------|-------------|------------------------|--------|
+| (pop, pop, 35) | pop→35, pop→35 | Both → POP | POP gets +70 (should be +35) |
+| (dance pop, pop, 16) | dance pop→16, pop→16 | Both → POP | POP gets +32 (should be +16) |
+| (pop, rap, 14) | pop→14, rap→14 | POP and HIP HOP | POP +14, HIP HOP +14 |
+| (trap, rap, 14) | trap→14, rap→14 | Both → HIP HOP | HIP HOP gets +28 (should be +14) |
+| (hip hop, rap, 12) | hip hop→12, rap→12 | Both → HIP HOP | HIP HOP gets +24 (should be +12) |
+
+**Step 5: Cumulative Inflation**
+
+For a single year, the inflation compounded across hundreds of edges:
+- Self-loops (genre with itself): 2x inflation
+- Within-macro-genre pairs: 2x inflation to same macro-genre
+- Cross-macro-genre pairs: Both macro-genres credited (arguable if correct)
+
+The resulting "genre dominance" percentages reflected **network co-occurrence activity** rather than **actual chart presence**.
+
+---
+
+#### NEW METHOD (Corrected)
+
+**Step 1: Source Data**
+
+Uses the Billboard song data directly with one row per song-subgenre combination:
+
+```
+File: billboard_lexical_analysis_ready.csv
+
+song          | band_singer  | year | macro_genre | subgenre
+--------------|--------------|------|-------------|------------------
+Savage Love   | Jason Derulo | 2020 | POP         | dance pop
+Savage Love   | Jason Derulo | 2020 | POP         | pop
+Savage Love   | Jawsh 685    | 2020 | POP         | pop
+Rockstar      | DaBaby       | 2020 | HIP HOP     | hip hop
+Rockstar      | DaBaby       | 2020 | HIP HOP     | rap
+Rockstar      | DaBaby       | 2020 | HIP HOP     | trap
+Rockstar      | Roddy Ricch  | 2020 | HIP HOP     | hip hop
+Rockstar      | Roddy Ricch  | 2020 | HIP HOP     | melodic rap
+```
+
+**Step 2: Distinct Song Counting**
+
+The new code counts distinct songs per macro-genre, not subgenre occurrences:
+
+```r
+genre_yearly <- billboard %>%
+  filter(!is.na(macro_genre)) %>%
+  distinct(song, band_singer, year, macro_genre) %>%  # Deduplicate
+  group_by(year, macro_genre) %>%
+  summarize(song_count = n(), .groups = "drop")
+```
+
+**Step 3: What This Means**
+
+| Song | Artist | Subgenres | Old Method Would Count | New Method Counts |
+|------|--------|-----------|------------------------|-------------------|
+| Rockstar | DaBaby | hip hop, rap, trap (all HIP HOP) | HIP HOP inflated via edge pairs | HIP HOP: 1 song |
+| Savage Love | Jason Derulo | dance pop, pop (both POP) | POP inflated via edge pairs | POP: 1 song |
+
+A song with 5 hip hop subgenres counts as **1 HIP HOP song**, not 5+ co-occurrence edges.
+
+**Step 4: Percentage Calculation**
+
+```r
+genre_yearly_pct <- genre_yearly %>%
+  group_by(year) %>%
+  mutate(
+    year_total = sum(song_count),
+    pct = song_count / year_total * 100
+  )
+```
+
+---
+
+#### COMPARISON: 2020 Results
+
+| Macro-Genre | Old Method (Inflated) | New Method (Corrected) |
+|-------------|----------------------|------------------------|
+| HIP HOP | Dominated due to dense internal co-occurrence | 42 songs (40.8%) |
+| POP | Inflated by dance pop↔pop edges | 35 songs (34.0%) |
+| COUNTRY | Relatively accurate | 20 songs (19.4%) |
+| R&B | Over-counted via hip hop crossover | 2 songs (1.9%) |
+
+---
+
+#### KEY INSIGHT
+
+The old method answered: "How interconnected is each macro-genre in the co-occurrence network?"
+
+The new method answers: "How many Billboard songs belong to each macro-genre?"
+
+The new method provides a more intuitive and accurate representation of genre dominance on the charts.
+
+---
+
 ## Output Files
 
 ### Images
@@ -651,7 +834,7 @@ musicoset_enhanced <- bind_rows(
 | genre_network_animated.gif | Animated network (300 nodes, opacity filtering, 3 sec/year) |
 | genre_network_evolution_key_years.png | 6-panel evolution (2000, 2005, 2010, 2015, 2020, 2023) |
 | genre_hubs.png | Top 25 hub genres by connection strength |
-| genre_cooccurrence_change.png | Side-by-side rises/drops in co-occurrence (early vs late period) |
+| genre_presence_change.png | Side-by-side rises/drops in genre presence (early vs late period) |
 | top_25_collaborative_genres.png | Top 25 most collaborative genres overall |
 | genre_dominance_over_time.png | Stacked area chart showing macro-genre % share per year |
 | genre_dominance_over_time_absolute.png | Stacked area chart showing absolute co-occurrence counts |

@@ -447,7 +447,7 @@ outputs/
 │   ├── genre_hubs.png
 │   ├── genre_dominance_over_time.png
 │   ├── genre_flow_sankey.png
-│   ├── genre_cooccurrence_change.png
+│   ├── genre_presence_change.png
 │   ├── genre_evolution_composite.png     # Combined 4-panel figure (A4, 300 DPI)
 │   ├── unique_artists_over_time.png
 │   ├── cooccurrence_drop_investigation.png
@@ -513,8 +513,8 @@ outputs/
 | `genre_network_animated.gif` | Animated evolution across all years |
 | `genre_hubs.png` | Central connector genres by betweenness centrality |
 | `genre_dominance_over_time.png` | Stacked area chart of macro-genre presence |
-| `genre_flow_sankey.png` | Sankey diagram comparing early vs late Billboard eras |
-| `genre_cooccurrence_change.png` | Biggest rise/drop in co-occurrence |
+| `genre_flow_sankey.png` | Sankey diagram showing genre flow across four 6-year periods |
+| `genre_presence_change.png` | Biggest rise/drop in genre presence |
 | `unique_artists_over_time.png` | Billboard artist count by year |
 | `avg_genre_tags_per_artist.png` | Genre tag coverage over time |
 | `cooccurrence_drop_investigation.png` | Root cause analysis of co-occurrence decline |
@@ -578,7 +578,7 @@ outputs/
 *Macro-genre presence on Billboard across 24 years*
 
 ![Genre Flow Sankey](outputs/genre_network/genre_flow_sankey.png)
-*Genre flow between early (2000-2011) and late (2012-2023) Billboard eras*
+*Genre flow across four Billboard eras (2000-2005, 2006-2011, 2012-2017, 2018-2023)*
 
 ### Lexical Analysis
 
