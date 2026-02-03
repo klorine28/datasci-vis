@@ -2118,8 +2118,8 @@ library(png)
 output_dir <- "../../outputs/genre_network/"
 img_paths <- list(
   top_left = paste0(output_dir, "genre_dominance_over_time_absolute.png"),
-  top_right = paste0(output_dir, "genre_network_evolution_key_years.png"),
-  bottom_left = paste0(output_dir, "genre_presence_change.png"),
+  top_right = paste0(output_dir, "genre_presence_change.png"),
+  bottom_left = paste0(output_dir, "genre_network_evolution_key_years.png"),
   bottom_right = paste0(output_dir, "genre_flow_sankey.png")
 )
 
