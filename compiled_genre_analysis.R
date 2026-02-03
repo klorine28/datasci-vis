@@ -342,17 +342,30 @@ set.seed(42)
 layout <- igraph::layout_with_fr(g, weights = 1/igraph::E(g)$weight, niter = 5000) * 1.5
 
 # Calculate centrality
+# HITS algorithm: hub_score = how well a node connects to authorities
+#                 authority_score = how well a node is connected by hubs
+hits_result <- igraph::hits_scores(g)
+
 hub_metrics <- tibble(
   genre = nodes$name,
   main_genre = nodes$macro_genre,
   artists = nodes$artist_count,
   degree = igraph::degree(g),
   strength = igraph::strength(g),
-  betweenness = igraph::betweenness(g, weights = 1/igraph::E(g)$weight)
+  betweenness = igraph::betweenness(g, weights = 1/igraph::E(g)$weight),
+  hits_hub = hits_result$hub,
+  hits_authority = hits_result$authority
 ) %>%
   arrange(desc(strength))
 
+cat("\n=== Top 20 by Strength ===\n")
 head(hub_metrics, 20)
+
+cat("\n=== Top 20 by HITS Hub Score ===\n")
+hub_metrics %>% arrange(desc(hits_hub)) %>% head(20)
+
+cat("\n=== Top 20 by HITS Authority Score ===\n")
+hub_metrics %>% arrange(desc(hits_authority)) %>% head(20)
 
 # Bar chart
 p_hubs <- ggplot(head(hub_metrics, 25), aes(x = reorder(genre, strength), y = strength, fill = main_genre)) +
@@ -363,6 +376,10 @@ p_hubs <- ggplot(head(hub_metrics, 25), aes(x = reorder(genre, strength), y = st
   theme_minimal()
 
 ggsave('../../outputs/genre_network/genre_hubs.png', p_hubs, width = 12, height = 10, dpi = 300, bg = 'white')
+
+# Export centrality metrics including HITS scores
+write_csv(hub_metrics, '../../outputs/genre_network/non_image/genre_centrality_metrics.csv')
+cat(sprintf("Exported centrality metrics: %d genres\n", nrow(hub_metrics)))
 
 # Full network visualization - FR layout with center scaling and collision detection
 library(ggraph)
@@ -789,18 +806,20 @@ genre_macro_map <- billboard %>%
   rename(genre = subgenre)
 
 # Calculate totals for early period (2000-2011)
-# Using n_distinct(song) to count unique songs, not song-artist pairs
+# Using distinct(song, band_singer, subgenre) - each artist-song-genre combo counts once
 early_totals <- billboard %>%
   filter(year <= 2011, !is.na(macro_genre), macro_genre != "OTHER") %>%
+  distinct(song, band_singer, subgenre) %>%
   group_by(subgenre) %>%
-  summarize(early_total = n_distinct(song), .groups = "drop") %>%
+  summarize(early_total = n(), .groups = "drop") %>%
   rename(genre = subgenre)
 
 # Calculate totals for late period (2012-2023)
 late_totals <- billboard %>%
   filter(year >= 2012, !is.na(macro_genre), macro_genre != "OTHER") %>%
+  distinct(song, band_singer, subgenre) %>%
   group_by(subgenre) %>%
-  summarize(late_total = n_distinct(song), .groups = "drop") %>%
+  summarize(late_total = n(), .groups = "drop") %>%
   rename(genre = subgenre)
 
 # Join and calculate change
@@ -832,64 +851,86 @@ top_drops <- genre_change %>%
 
 cat(sprintf("Rises: %d, Drops: %d\n", nrow(top_rises), nrow(top_drops)))
 
-# Create side-by-side plot with improved legibility
-p_rises <- ggplot(top_rises,
-                  aes(x = reorder(genre, absolute_change),
-                      y = absolute_change,
-                      fill = macro_genre)) +
+# Create butterfly chart with drops on left, rises on right, TWO columns of names in center
+# Use rank for positioning so drops and rises can have independent genres
+
+drops_data <- top_drops %>%
+  mutate(
+    direction = "drop",
+    rank = row_number()  # 1 = biggest drop
+  )
+
+rises_data <- top_rises %>%
+  mutate(
+    direction = "rise",
+    rank = row_number()  # 1 = biggest rise
+  )
+
+# Left panel: Drops (bars going left)
+p_drops <- ggplot(drops_data, aes(x = rank, y = -absolute_change, fill = macro_genre)) +
   geom_col(width = 0.7) +
-  geom_text(aes(label = label),
-            hjust = -0.05, size = 3, color = "gray20") +
+  geom_text(aes(label = label), hjust = 1.05, size = 2.8, color = "gray20") +
   coord_flip() +
+  scale_x_reverse(limits = c(15.5, 0.5)) +  # Rank 1 at top
   scale_fill_manual(values = macro_genre_colors, name = "Macro-Genre") +
-  scale_y_continuous(expand = expansion(mult = c(0, 0.4))) +
-  labs(
-    title = "Biggest Rises",
-    subtitle = "Song count: 2000-2011 to 2012-2023",
-    x = NULL,
-    y = "Change in Song Count"
-  ) +
+  scale_y_reverse(limits = c(310, 0), breaks = seq(0, 300, 100)) +
+  labs(title = "Drops", x = NULL, y = NULL) +
   theme_minimal() +
   theme(
     plot.title = element_text(hjust = 0.5, size = 14, face = "bold"),
-    plot.subtitle = element_text(hjust = 0.5, size = 10, color = "gray40"),
     legend.position = "none",
-    axis.text.y = element_text(size = 9),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
     axis.text.x = element_text(size = 9),
-    panel.grid.major.y = element_blank()
+    panel.grid.major.y = element_blank(),
+    plot.margin = margin(5, 0, 5, 5)
   )
 
-p_drops <- ggplot(top_drops,
-                  aes(x = reorder(genre, -absolute_change),
-                      y = absolute_change,
-                      fill = macro_genre)) +
+# Center panel: Two columns of genre names (drops on left, rises on right)
+center_data <- data.frame(
+  rank = c(seq_len(nrow(drops_data)), seq_len(nrow(rises_data))),
+  genre = c(drops_data$genre, rises_data$genre),
+  x_pos = c(rep(-0.5, nrow(drops_data)), rep(0.5, nrow(rises_data))),
+  hjust_val = c(rep(1, nrow(drops_data)), rep(0, nrow(rises_data)))
+)
+
+p_center <- ggplot(center_data, aes(x = x_pos, y = rank, label = genre)) +
+  geom_text(aes(hjust = hjust_val), size = 2.8, fontface = "bold") +
+  scale_y_reverse(limits = c(15.5, 0.5)) +  # Rank 1 at top, matching bar panels
+  scale_x_continuous(limits = c(-1, 1)) +
+  labs(title = "Subgenres") +
+  theme_void() +
+  theme(
+    plot.title = element_text(hjust = 0.5, size = 14, face = "bold"),
+    plot.margin = margin(5, 5, 5, 5)
+  )
+
+# Right panel: Rises
+p_rises <- ggplot(rises_data, aes(x = rank, y = absolute_change, fill = macro_genre)) +
   geom_col(width = 0.7) +
-  geom_text(aes(label = label),
-            hjust = 1.05, size = 3, color = "gray20") +
+  geom_text(aes(label = label), hjust = -0.05, size = 2.8, color = "gray20") +
   coord_flip() +
+  scale_x_reverse(limits = c(15.5, 0.5)) +  # Rank 1 at top
   scale_fill_manual(values = macro_genre_colors, name = "Macro-Genre") +
-  scale_y_continuous(expand = expansion(mult = c(0.4, 0))) +
-  labs(
-    title = "Biggest Drops",
-    subtitle = "Song count: 2000-2011 to 2012-2023",
-    x = NULL,
-    y = "Change in Song Count"
-  ) +
+  scale_y_continuous(limits = c(0, 300), breaks = seq(0, 300, 100)) +
+  labs(title = "Rises", x = NULL, y = NULL) +
   theme_minimal() +
   theme(
     plot.title = element_text(hjust = 0.5, size = 14, face = "bold"),
-    plot.subtitle = element_text(hjust = 0.5, size = 10, color = "gray40"),
     legend.position = "none",
-    axis.text.y = element_text(size = 9),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
     axis.text.x = element_text(size = 9),
-    panel.grid.major.y = element_blank()
+    panel.grid.major.y = element_blank(),
+    plot.margin = margin(5, 5, 5, 0)
   )
 
-# Combine with patchwork and add shared legend
-combined_rise_drop <- (p_rises | p_drops) +
+# Combine with patchwork: drops | center | rises
+combined_rise_drop <- (p_drops | p_center | p_rises) +
+  plot_layout(widths = c(3, 2, 3)) +
   plot_annotation(
     title = "Genre Presence Change: Early Era (2000-2011) vs Late Era (2012-2023)",
-    subtitle = "Based on distinct Billboard song counts per subgenre",
+    subtitle = "Based on distinct song-artist-subgenre counts",
     theme = theme(
       plot.title = element_text(hjust = 0.5, size = 16, face = "bold"),
       plot.subtitle = element_text(hjust = 0.5, size = 11, color = "gray50")
@@ -941,11 +982,11 @@ print(p_top25)
 # Load billboard data with one subgenre per row
 billboard <- read_csv('../../data/cleaned/billboard_lexical_analysis_ready.csv', show_col_types = FALSE)
 
-# Count TOTAL subgenre tags per macro-genre per year
-# Each row in expanded data = 1 subgenre tag, so we count all rows
-# This gives higher counts reflecting total genre activity
+# Count distinct song-artist-subgenre combinations per macro-genre per year
+# Each artist-song-subgenre combo counts once, then aggregate to macro_genre
 genre_yearly <- billboard %>%
   filter(!is.na(macro_genre), macro_genre != 'OTHER') %>%
+  distinct(song, band_singer, subgenre, year, macro_genre) %>%
   group_by(year, macro_genre) %>%
   summarize(song_count = n(), .groups = 'drop')
 
@@ -1002,7 +1043,7 @@ p_dominance_raw <- ggplot(genre_yearly %>%
   geom_area(alpha = 0.85, color = "white", linewidth = 0.3) +
   scale_fill_manual(values = macro_genre_colors, name = "Genre") +
   scale_x_continuous(breaks = seq(2000, 2023, by = 2), expand = c(0, 0)) +
-  scale_y_continuous(labels = scales::comma, expand = c(0, 0)) +
+  scale_y_continuous(labels = scales::comma, limits = c(0, 1100), expand = c(0, 0)) +
   labs(
     title = "Genre Presence on Billboard (2000-2023)",
     subtitle = "Number of songs per macro-genre each year (absolute values)",
@@ -1046,12 +1087,12 @@ periods <- list(
 )
 
 # Calculate macro-genre counts for each period
-# Using distinct(song, band_singer, macro_genre) to count song-artist pairs
+# Using distinct(song, band_singer, subgenre) - each artist-song-subgenre counts once
 period_data <- map_dfr(names(periods), function(period_name) {
   years <- periods[[period_name]]
   billboard %>%
     filter(year %in% years, !is.na(macro_genre), macro_genre != "OTHER") %>%
-    distinct(song, band_singer, macro_genre) %>%
+    distinct(song, band_singer, subgenre, macro_genre) %>%
     group_by(macro_genre) %>%
     summarize(count = n(), .groups = "drop") %>%
     mutate(period = period_name)
