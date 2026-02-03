@@ -78,9 +78,19 @@ The stacked area chart reveals:
 
 ![Genre Dominance](outputs/genre_network/genre_dominance_over_time.png)
 
-### 4. Composite Overview
+### 4. Genre Presence Changes
 
-The composite figure below combines the four key visualizations: genre dominance over time, network evolution across key years, co-occurrence changes, and the Sankey flow diagram.
+The butterfly chart shows the biggest rises and drops in genre presence between the early (2000-2011) and late (2012-2023) Billboard eras. Urban contemporary saw the largest decline (-303), while pop had the biggest rise (+172).
+
+![Genre Presence Change](outputs/genre_network/genre_presence_change.png)
+
+### 5. Composite Overview
+
+The composite figure combines four key visualizations:
+- **Figure 1** (top left): Genre dominance over time
+- **Figure 2** (top right): Genre presence changes (rises/drops)
+- **Figure 3** (bottom left): Network evolution across key years
+- **Figure 4** (bottom right): Sankey flow diagram
 
 ![Genre Evolution Composite](outputs/genre_network/genre_evolution_composite.png)
 

@@ -580,6 +580,12 @@ outputs/
 ![Genre Flow Sankey](outputs/genre_network/genre_flow_sankey.png)
 *Genre flow across four Billboard eras (2000-2005, 2006-2011, 2012-2017, 2018-2023)*
 
+![Genre Presence Change](outputs/genre_network/genre_presence_change.png)
+*Biggest rises and drops in genre presence between early (2000-2011) and late (2012-2023) eras*
+
+![Genre Evolution Composite](outputs/genre_network/genre_evolution_composite.png)
+*Composite overview: Figure 1 - Genre dominance, Figure 2 - Presence changes, Figure 3 - Network evolution, Figure 4 - Sankey flow*
+
 ### Lexical Analysis
 
 ![TTR by Genre](outputs/lexical_analysis/02_avg_ttr_by_genre.png)
